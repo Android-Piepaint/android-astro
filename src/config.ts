@@ -16,11 +16,11 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: true,
-		src: "https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg ", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		src: "https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: true, // Display the credit text of the banner image
-			text: "Shot by EDKPiepaint.", // Credit text to be displayed
+			text: "Shot by EDKPiepaint", // Credit text to be displayed
 			url: "", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
@@ -54,7 +54,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "https://avatars.githubusercontent.com/u/73344795?u=70d863449d42cd4da6fd7215b84aebbd11d1c95e&v=4", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "EDKPiepaint",
-	bio: "[728ms] Look at the code, you are still here.",
+	bio: "Look at the code, you are still here.",
 	links: [
 		{
 			name: "Twitter",
