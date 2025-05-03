@@ -3,7 +3,7 @@ title: 遇見最強ARM筆記本—— Asahi Linux使用有感
 published: 2025-05-03
 description: ''
 image: 'https://picx.zhimg.com/70/v2-0c56b9f40b6fbed5779a3359470c8971_1440w.avis?source=172ae18b&biz_tag=Post'
-tags: [Asahi, Linux, Apple, FOSS, ARM]
+tags: [Asahi, Linux, Apple, FOSS, ARM, zhihu]
 category: 'Linux'
 draft: false
 lang: 'zh_TW'
