@@ -11,7 +11,7 @@ lang: 'en'
 ## Part 1
 
 
-[20250503_141552_TryHardNinja_- Find the Pieces (Instrumental).mp3](assets/20250503_141552_TryHardNinja_- Find the Pieces (Instrumental).mp3)
+![](assets/20250503_141552_TryHardNinja_- Find the Pieces (Instrumental).mp3)
 
 This phone, born in shiny day.</br>
 Powerful, running sandbox game.</br>
