@@ -1,15 +1,16 @@
 ---
 title: Find My Privacy -- A FOSS Parody of Find The Pieces
 published: 2025-05-03
-description: 'A simple lyric based on Tryhardninja's Find the Pieces.'
+description: ''
 image: 'https://picx.zhimg.com/70/v2-0c56b9f40b6fbed5779a3359470c8971_1440w.avis?source=172ae18b&biz_tag=Post'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false
 lang: 'zh_TW'
 ---
- A simple lyric based on Tryhardninja's Find the Pieces.
- 
+
+
+
 ## Part 1
 
 This phone, born in shiny day.</br>
