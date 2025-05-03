@@ -16,11 +16,18 @@ lang: 'zh_TW'
 經過3天的時間後，我收到了心念已久的 MTP850 工程機。是的，對於經常折騰工程機的人（還有那些因爲工作原因接觸到的）而言，這算不得什麼。但是，作爲一個普通消費者的我來說，卻是令人興奮的。可能沒有人能夠想象到開箱時的我有多麼開心了。</br>
 當然，選擇 MTP850 的原因是因爲我有一部分845的BSP原始碼。至於我怎麼得到它們的，我不便說。但我承認，有關MTP850的事的“導火索"，應該與我發佈了有關我用於搭建部落格的 Oneplus 6T 相關的帖子相關（還因此結識了幾位志同道合之人）。
 
-![](assets/my-fajita.png)
+<div class="grid" markdown>
 
-![](assets/sdm850-front-view.png)
+<img src="assets/my-fajita.png" width="100" >
 
-![](assets/sdm850-back.png)
+<img src="assets/sdm850-front-view.png" width="100" >
+
+<img src="assets/sdm850-back.png" width="100" >
+
+</div>
+
+
+
 
 # 爲何選擇MTP850
 
@@ -64,7 +71,7 @@ fastboot flash boot_a /path/to/pagisk_patched-XXXXX.img
 ```
 然後開機，你就取得了Root權限。
 
-![](assets/magisk-main.png)
+<img src="assets/magisk-main.png" width="300" >
 
 # 簡單體驗
 
@@ -80,25 +87,29 @@ fastboot flash system /your/gsi/image.img
 
 # 優化、優化、還是優化！
 
-> V8兄弟們V8！真男人就要用ARM V8指令集！你看這是什麼東西？ 高通MTP845說的呢！
+> V8兄弟們V8！真男人就要用ARM V8指令集！你看這是什麼東西？ 高通MTP845說的呢！（口水噴濺）
+> 熔斷的手機我們不要！黑磚危險！
 
 
 當我成功開機後，我的第一感覺不是無盡的興奮，而是UI卡噸、聲音頓挫，同樣的問題再次出現，彷彿它們註定要與這臺工程機爲伴。
 
-![](assets/trebuchet.png)
+
+<img src="assets/trebuchet.png" width="300" >
+
 
 但是，作爲一個5年的玩機歷史的我，怎能被這種問題打倒！於是，我立刻開始了系統調優工作。</br>
 面對這種情況，我第一個想到的有同樣狀況的手機，是我的華爲Y9（2018），在刷了Android 14 後，也有同樣問題。這樣，我的解決方案就明朗了。
 
  - 首先，下載著名的“YC調度” ，然後在Magisk應用，前往“Modules”，在此介面下，點擊上方的“Install from storage”，在安裝過程中，按下音量加來安裝“A-Soul遊戲優化”模組，完成後重新啓動，你會發現UI明顯順暢了很多。
-
+ 
  ::github{repo="yc9559/uperf"}
 
  - 然後，下載[Scene 4](https://github.com/ramabondanp/vtools_en/releases) 安裝並授予Root權限，雖然它是私有軟體，但是沒有比它更好的了（新版的軟體還有後門）。然後，點擊“功能”，選擇“Swap設置”，按照下圖調整即可：
 
-![](assets/yay.png) 
+<img src="assets/yay.png" width="300" >
 
-![](assets/why.png)
+<img src="assets/why.png" width="300" >
+
 
  - 修復聲音的方式很簡單，在“Phh Treble Settings” 找到“Qualcomm Features”啓用“Disable soundvolume effect" 即可。
 
