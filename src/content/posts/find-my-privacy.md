@@ -6,7 +6,7 @@ image: 'https://picx.zhimg.com/70/v2-0c56b9f40b6fbed5779a3359470c8971_1440w.avis
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false
-lang: 'zh_TW'
+lang: 'en'
 ---
 
 
