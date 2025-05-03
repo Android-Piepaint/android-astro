@@ -8,19 +8,23 @@ category: 'Music'
 draft: false
 lang: 'en'
 ---
-
-
-
 ## Part 1
+
+
+[20250503_141552_TryHardNinja_- Find the Pieces (Instrumental).mp3](assets/20250503_141552_TryHardNinja_- Find the Pieces (Instrumental).mp3)
 
 This phone, born in shiny day.</br>
 Powerful, running sandbox game.</br>
+
 #### Pre-Chorus
+
 And I wish I could, dig stright down,</br>
 find the all componets.</br>
 But in the dark, there're still a sound.</br>
 And nothing changed.</br>
+
 #### Chorus
+
 Don't know if I have compiled kernel,</br>
 but I'll try it. (*try it, try it, try it, try it*)</br>
 Don't know if I find the documents just for some references.(*Reference, reference, reference, reference*)</br>
@@ -37,15 +41,21 @@ Put the source code back together, see what I'm compiling.</br>
 When I find my privacy.
 </br>
 </br>
+
 ## Part 2
+
 Faces, errors with no reason.</br>
 Modem, required special communicaton.</br>
+
 #### Pre-Chorus
+
 And I wish I could, find the firmwares,</br>
 Required for my phone.</br>
 To get linux, running on this beast.</br>
 But something changed.
+
 #### Chorus
+
 Don't know if I have compiled kernel,</br>
 but I'll try it. (*try it, try it, try it, try it*)</br>
 Don't know if I've searched the errors but I'll fix it.(*fix it, fix it, fix it, fix it*)</br>
