@@ -18,11 +18,11 @@ lang: 'zh_TW'
 
 <div class="grid" markdown>
 
-<img src="assets/my-fajita.png" width="100" >
+<img src="https://static.wikitide.net/gnugenshinwiki/0/03/My-fajita.png" width="100" >
 
-<img src="assets/sdm850-front-view.png" width="100" >
+<img src="https://static.wikitide.net/gnugenshinwiki/9/9f/Sdm850-front-view.png" width="100" >
 
-<img src="assets/sdm850-back.png" width="100" >
+<img src="https://static.wikitide.net/gnugenshinwiki/4/41/Sdm850-back.png" width="100" >
 
 </div>
 
@@ -71,7 +71,8 @@ fastboot flash boot_a /path/to/pagisk_patched-XXXXX.img
 ```
 然後開機，你就取得了Root權限。
 
-<img src="assets/magisk-main.png" width="300" >
+<img src="https://static.wikitide.net/gnugenshinwiki/9/94/Magisk-main.png" width="300" >
+
 
 # 簡單體驗
 
@@ -94,7 +95,7 @@ fastboot flash system /your/gsi/image.img
 當我成功開機後，我的第一感覺不是無盡的興奮，而是UI卡噸、聲音頓挫，同樣的問題再次出現，彷彿它們註定要與這臺工程機爲伴。
 
 
-<img src="assets/trebuchet.png" width="300" >
+<img src="https://static.wikitide.net/gnugenshinwiki/7/78/Trebuchet-los.png" width="300" >
 
 
 但是，作爲一個5年的玩機歷史的我，怎能被這種問題打倒！於是，我立刻開始了系統調優工作。</br>
@@ -106,9 +107,9 @@ fastboot flash system /your/gsi/image.img
 
  - 然後，下載[Scene 4](https://github.com/ramabondanp/vtools_en/releases) 安裝並授予Root權限，雖然它是私有軟體，但是沒有比它更好的了（新版的軟體還有後門）。然後，點擊“功能”，選擇“Swap設置”，按照下圖調整即可：
 
-<img src="assets/yay.png" width="300" >
+<img src="https://static.wikitide.net/gnugenshinwiki/8/8b/Scene-Yay.png" width="300" >
 
-<img src="assets/why.png" width="300" >
+<img src="https://static.wikitide.net/gnugenshinwiki/9/9f/Scene-Why.png" width="300" >
 
 
  - 修復聲音的方式很簡單，在“Phh Treble Settings” 找到“Qualcomm Features”啓用“Disable soundvolume effect" 即可。
