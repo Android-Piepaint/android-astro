@@ -3,8 +3,8 @@ title: Find My Privacy -- A FOSS Parody of Find The Pieces
 published: 2025-05-03
 description: 'A simple lyric based on Tryhardninja's Find the Pieces.'
 image: 'https://picx.zhimg.com/70/v2-0c56b9f40b6fbed5779a3359470c8971_1440w.avis?source=172ae18b&biz_tag=Post'
-tags: [Asahi, Linux, Apple, FOSS, ARM, zhihu]
-category: 'Linux'
+tags: [FOSS, Lyric]
+category: 'Music'
 draft: false
 lang: 'zh_TW'
 ---
