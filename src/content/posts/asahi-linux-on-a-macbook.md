@@ -9,6 +9,11 @@ draft: false
 lang: 'zh_TW'
 ---
 
+:::important
+本文最早發佈於[知乎](https://zhuanlan.zhihu.com/p/681941653)，你現在看到的是從知乎複製的一份拷貝。
+:::
+
+
 
 如果你是一名自由軟體愛好者，你可能早在2020年就聽說了Asahi Linux的事情。這是一個旨在為Apple Silicon 晶片移植完整版 Linux的專案。然而就在我從Google上找尋更多相關的信息時，突然想到：Youtube上有不少與之相關的視頻，而國內卻缺少關於Asahi Linux的介紹，使用體驗呢...幾乎沒有幾篇，而且都比較“過時”——因為Asahi Linux的項目進展較快，所以那些文章也就顯得舊了些。
 
