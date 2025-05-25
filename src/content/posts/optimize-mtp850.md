@@ -113,7 +113,7 @@ Magisk作者幾年前把內建的模組倉庫砍掉了，使用者得手動下�
  
  ::github{repo="yc9559/uperf"}
 
- ::github(repo="NotZeetaa/YAKT")
+ ::github{repo="NotZeetaa/YAKT"}
 
 - 雖然可能有些多餘，但我建議安裝[Simple bootloop saver](https://github.com/Magisk-Modules-Alt-Repo/Simple_BootloopSaver)來防止Magisk模組出錯導致卡開機，從而導致一些奇怪的問題發生。
 
