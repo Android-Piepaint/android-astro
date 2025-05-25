@@ -165,6 +165,7 @@ flavour_info: None
 
 :::note
 從這一步開始，我們需要有一個通往歐洲的VPN，因爲[默認的鏡像源會禁止非歐盟地區的使用者](https://gitlab.com/kupfer/kupferbootstrap/-/issues/27)連接！
+:::
 
 鍵入`kupferbootstrap image build`就可以開始構建了（可以修改`kupferbootstrap`的`constants.py`中的`ALARM_REPOS`和`BASE_DISTROS`的軟體源地址，但是不生效)。</br>
 若你有VPN的加持，完成整個過程應該不是問題……
