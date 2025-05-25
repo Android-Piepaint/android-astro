@@ -78,7 +78,7 @@ fastboot flash boot_a /path/to/pagisk_patched-XXXXX.img
 
 我曾經認爲，高通的工程機系統想必會乾淨且流暢，但是直到我親自體驗後，發現我想多了。</br>
 Android 10 雖然順暢，但是它的媒體組件有問題，系統內建的鈴聲壓根不會播放，讓我一度認爲我的硬體有問題。而 Android 12 最起碼媒體組件是正常的...... 但也好不到哪裏去。Android 12 上面，系統UI 卡噸、喇叭破音甚至當機進入Crushdump的現象都會發生。</br>
-當然，我加入了Telegram 上關於MTP845的群組。並且從那裏獲取了 自編譯的 Android 12 EDL 刷機包（`小小的數字9`）。刷入後依舊如此。</br>
+當然，我加入了Telegram 上關於MTP845的群組。並且從那裏獲取了自編譯的 Android 12 EDL 刷機包（`小小的數字9` 你猜我爲什麼會提她？）。刷入後依舊如此。</br>
 所以，是時候切換到 GSI 了！刷寫GSI 映像的過程也十分簡單：
 
 ```bash
@@ -101,9 +101,21 @@ fastboot flash system /your/gsi/image.img
 但是，作爲一個5年的玩機歷史的我，怎能被這種問題打倒！於是，我立刻開始了系統調優工作。</br>
 面對這種情況，我第一個想到的有同樣狀況的手機，是我的華爲Y9（2018），在刷了Android 14 後，也有同樣問題。這樣，我的解決方案就明朗了。
 
- - 首先，下載著名的“YC調度” ，然後在Magisk應用，前往“Modules”，在此介面下，點擊上方的“Install from storage”，在安裝過程中，按下音量加來安裝“A-Soul遊戲優化”模組，完成後重新啓動，你會發現UI明顯順暢了很多。
+
+:::note
+Magisk作者幾年前把內建的模組倉庫砍掉了，使用者得手動下載模組安裝。請不要從不信任的網站上下載模組。來路不明的模組也不要下載！一個惡意的Magisk 模組會使你的手機系統出現不可修復的錯誤，它們通常是致命的。
+:::
+
+
+ - 首先，下載著名的“YC調度” ，然後在Magisk應用，前往“Modules”，在此介面下，點擊上方的“Install from storage”，在安裝過程中，按下音量加來安装。這也會同時安裝“A-Soul遊戲優化”模組，完成後重新啓動，你會發現UI明顯順暢了很多。
+
+ - 然後，下載[YAKT](https://github.com/NotZeetaa/YAKT)，以此來實現核心相關的優化，這也會同時修復聲音頓挫的問題。
  
  ::github{repo="yc9559/uperf"}
+
+ ::github(repo="NotZeetaa/YAKT")
+
+- 雖然可能有些多餘，但我建議安裝[Simple bootloop saver](https://github.com/Magisk-Modules-Alt-Repo/Simple_BootloopSaver)來防止Magisk模組出錯導致卡開機，從而導致一些奇怪的問題發生。
 
  - 然後，下載[Scene 4](https://github.com/ramabondanp/vtools_en/releases) 安裝並授予Root權限，雖然它是私有軟體，但是沒有比它更好的了（新版的軟體還有後門）。然後，點擊“功能”，選擇“Swap設置”，按照下圖調整即可：
 
