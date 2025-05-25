@@ -3,7 +3,7 @@ title: 告別污濁不堪的Android——一加6T刷Arch Linux教學
 published: 2025-05-25
 description: ''
 image: 'https://picx.zhimg.com/v2-9bbb5c2a2b8ee3d520474e35a125e70c_1440w.jpg?source=d16d100b'
-tags: [Linux, Apple, FOSS, ARM, zhihu]
+tags: [Linux, Android, FOSS, ARM, zhihu]
 category: 'Linux'
 draft: false
 lang: 'zh_TW'
