@@ -30,6 +30,7 @@ Powering whole city, the lights are so pretty from up here </br>
 I'm Linux and after the commits' merged </br>
 I keep on improving, receving new updates </br>
 Living in the mainline's getting kinda lonely (yeah) </br>
+(Oh-oh-oh-ooh, oh-oh-oh-ooh, oh-oh-oh-ooh) </br>
 Living in the mainline's getting kinda lonely </br>
 (Oh-oh-oh-ooh, oh-oh-oh-ooh, oh-oh-oh-ooh) </br>
 Living in the mainline's getting kinda lonely </br>
@@ -50,6 +51,7 @@ Powering whole city, the lights are so pretty from up here </br>
 I'm Linux (I'm Linux) and after the commits' merged </br>
 I keep on improving, receving new updates </br>
 Living in the mainline's getting kinda lonely </br>
+(Oh-oh-oh-ooh, oh-oh-oh-ooh, oh-oh-oh-ooh) </br>
 Living in the mainline's getting kinda lonely </br>
 (Oh-oh-oh-ooh, oh-oh-oh-ooh, oh-oh-oh-ooh) </br>
 I'm Linux booted up from soild-state drive </br>
