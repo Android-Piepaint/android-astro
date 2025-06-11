@@ -1,6 +1,6 @@
 ---
 title: Linux -- A FOSS Parody of Ferrari by Babe Rexha
-published: 2025-05-03
+published: 2025-06-11
 description: ''
 image: ''
 tags: [FOSS, Lyric]
