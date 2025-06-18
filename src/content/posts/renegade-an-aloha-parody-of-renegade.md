@@ -11,6 +11,11 @@ lang: 'en'
 
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1289771014&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/10kfollowing10kposts-ii" title="10kfollowing10kposts II" target="_blank" style="color: #cccccc; text-decoration: none;">10kfollowing10kposts II</a> · <a href="https://soundcloud.com/10kfollowing10kposts-ii/axwell-l-ingrosso-renegade" title="Axwell Λ Ingrosso - Renegade (slowed &amp; reverb)" target="_blank" style="color: #cccccc; text-decoration: none;">Axwell Λ Ingrosso - Renegade (slowed &amp; reverb)</a></div>
 
+<audio controls>
+  <source src="assets/Renegade.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
 
 (Baby, I'm a renegade———— Baby you are a firestorm...)
 
