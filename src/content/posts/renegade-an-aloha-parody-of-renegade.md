@@ -52,5 +52,5 @@ The way you, the way you, the way you look tonight ———— </br>
 
 # Post chorus
 
-The way you, the way you, the way you look tonight </br>
-The way you, the way you, the way you look tonight </br>
+The way you, the way you, the way you look tonight... </br>
+The way you, the way you, the way you look tonight... </br>
