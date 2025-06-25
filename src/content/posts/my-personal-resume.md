@@ -2,7 +2,7 @@
 title: 我的個人簡歷——記錄我5年來的搞機歷程
 published: 2025-06-22
 description: 一份個人簡歷，用於記錄我從2020年來的玩機歷程。
-image: 'assets/demo-avatar.png'
+image: 'assets/fajita-and-88047.jpg'
 tags: [Misc]
 category: 'Other'
 draft: false 
