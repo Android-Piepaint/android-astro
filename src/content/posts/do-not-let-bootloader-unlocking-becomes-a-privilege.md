@@ -54,5 +54,5 @@ NiAxMDUgMTIyIDExOSAxMDIgMTIyIDEwMyAxMTggMTE5IDMyIDExNyAxMDUgMTA4IDExMCAzMiAxMTUg
 ```
 
 
-[^1]: [Bootloader unlock wall of shame][https://github.com/melontini/bootloader-unlock-wall-of-shame]
-[^2]: [該項目對於一加的描述][https://github.com/melontini/bootloader-unlock-wall-of-shame/blob/main/brands/oneplus/README.md]
+[^1]: [Bootloader unlock wall of shame](https://github.com/melontini/bootloader-unlock-wall-of-shame)
+[^2]: [該項目對於一加的描述](https://github.com/melontini/bootloader-unlock-wall-of-shame/blob/main/brands/oneplus/README.md)
