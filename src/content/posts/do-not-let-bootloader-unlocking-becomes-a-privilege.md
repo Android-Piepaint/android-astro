@@ -2,7 +2,7 @@
 title: 不要讓解鎖 Bootloader 成爲只有工程機才有的特權
 published: 2025-06-28
 description: 當解鎖 Bootloader 不再可能的時候，自由軟件、個人隱私與消費者權益就成爲了一句空話。當解鎖的指令稿無法找到，那個人的隱私權與知情權等法律權利已經崩潰......
-image: 'assets/fajita-and-88047.jpg'
+image: 'assets/abl-fastboot.jpg'
 tags: [FOSS, Android, Thoughts, Misc]
 category: 'Misc'
 draft: false
@@ -54,5 +54,5 @@ NiAxMDUgMTIyIDExOSAxMDIgMTIyIDEwMyAxMTggMTE5IDMyIDExNyAxMDUgMTA4IDExMCAzMiAxMTUg
 ```
 
 
-[^1]: [Bootloader unlock wall of shame)[https://github.com/melontini/bootloader-unlock-wall-of-shame]
-[^2]: (該項目對於一加的描述)[https://github.com/melontini/bootloader-unlock-wall-of-shame/blob/main/brands/oneplus/README.md]
+[^1]: [Bootloader unlock wall of shame][https://github.com/melontini/bootloader-unlock-wall-of-shame]
+[^2]: [該項目對於一加的描述][https://github.com/melontini/bootloader-unlock-wall-of-shame/blob/main/brands/oneplus/README.md]
