@@ -1,7 +1,7 @@
 ---
 title: Shut Up and Compile (Unfinished) -- A PINE64 Parody of Shut Up and Dance by WALK THE MOON
 published: 2025-08-01
-description: 
+description: When I have a brand new Pinephone...
 image: 'assets/fajita-new.jpg'
 tags: [FOSS, Lyric]
 category: 'Music'
