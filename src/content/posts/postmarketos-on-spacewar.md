@@ -2,7 +2,7 @@
 title: PostmarketOS 在 Nothing Phone 1 上的首秀
 published: 2025-08-11
 description: 這是最漂亮的，性能最強悍的主線Linux 手機！
-image: 'assets/spacewar-back.png'
+image: 'assets/spacewar-back.jpg'
 tags: [FOSS, Android, ARM, Flashing]
 category: 'Linux'
 draft: false
