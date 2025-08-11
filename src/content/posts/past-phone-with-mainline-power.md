@@ -93,7 +93,7 @@ Available devices by codename (40): aries (downstream), armani (downstream), beg
 [21:40:54] Change them? (y/n) [n]: 
 [21:40:54] Additional packages that will be installed to rootfs. Specify them in a comma separated list (e.g.: vim,file) or "none"
 [21:40:54] Extra packages [nano]: 
-[21:40:55] Your host timezone: Asia/Shanghai    #設定時區
+[21:40:55] Your host timezone: Asia/Singapore    #設定時區
 [21:40:55] Use this timezone instead of GMT? (y/n) [y]: 
 [21:40:56] Choose your preferred locale, like e.g. en_US. Only UTF-8 is supported, it gets appended automatically. Use tab-completion if needed.
 [21:40:56] Locale [en_US]: 
