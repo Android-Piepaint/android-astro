@@ -1,5 +1,5 @@
 ---
-title: 當 Linux 遇上 Qualcomm X Elite，在讚嘆其強悍的性能時，請不要忘記它依然處於高度實驗性階段...
+title: （未完成）當 Linux 遇上 Qualcomm X Elite，在讚嘆其強悍的性能時，請不要忘記它依然處於高度實驗性階段...
 published: 2025-09-16
 description: 我或許是世界第一個在聯想 YOGA Air 14S 驍龍版筆電上安裝並測試Linux的用戶，但我對 Qualcomm X Elite 的第一印象，並不像很多人想像的那樣好。
 image: 'assets/yoga-air-14s.jpg'
@@ -25,10 +25,18 @@ lang: 'zh_TW'
 
 ## 安裝 Linux
 
-首先關閉 Windows 自帶的 Bitlocker 硬碟加密，然後重新啓動電腦，在開機時按下F2,以此進入 UEFI設定。選擇“安全”選項，之後關閉安全啓動，到目前唯一支援程度較爲良好的 Ubuntu 網站下載採用針對驍龍X Elite 處理器的自定核心的安裝映像，將其寫入USB隨身碟，插入電腦後啓動，進入Ubuntu安裝程式。根據安裝器指引完成安裝。但是不要高興的太早，因爲我們沒有需要的驅動程式......
+首先關閉 Windows 自帶的 Bitlocker 硬碟加密，然後重新啓動電腦，在開機時按下F2,以此進入 UEFI設定。選擇“安全”選項，之後關閉安全啓動，到目前唯一支援程度較爲良好的 [Ubuntu](https://people.canonical.com/~platform/images/ubuntu-concept/) 網站下載採用針對驍龍X Elite 處理器的自定核心的安裝映像，將其寫入USB隨身碟，插入電腦後啓動，進入Ubuntu安裝程式。根據安裝器指引完成安裝，不知道爲什麼，Ubuntu 給我的筆電套用了 Yoga Slim 7x 的設備樹。但是不要高興的太早，因爲我們沒有需要的驅動程式......
+
+## 目前的問題
+
+- 待機（suspend）還沒有修好，根本無法休眠；
+- 不支援 HDR 視訊；
+- 內建相機無法使用；
+- NPU無法使用、內建TPM也無法使用，可能面臨安全問題；
+- 電源管理有問題，耗電明顯比 Windows 11 高，待機的耗電量也比較高；
 
 ## 修復驅動程式
-正如你在 Live CD 中體驗的那樣，你會面臨沒有硬體加速、電池劑量器始終顯示0%，還有麥克風、攝像頭、聲音不工作的問題。對於後三者，已經有其他部分機型的解決方案，但是前面兩個問題是可以被解決的。在高通平臺上，除了需要必須的核心模組外，還需要相關的韌體，這樣在開機時，核心模組便能載入相關韌體，繼而驅動對應的韌體。在 Ubuntu中，有一個收錄了 X Elite 相關的硬體工具套件庫，裏面有一個腳本，它可以從 Windows 系統中提取韌體，並生成對應的 deb套件包，安裝後，便可解決驅動程式的問題。想要安裝這個腳本，只需要打開終端機，然後鍵入：
+正如你在 Live CD 中體驗的那樣，你會面臨沒有硬體加速、電池記量器始終顯示0%，還有麥克風、攝像頭、聲音不工作的問題。對於後三者，已經有其他部分機型的解決方案，但是前面兩個問題是可以被解決的。在高通平臺上，除了需要必須的核心模組外，還需要相關的韌體，這樣在開機時，核心模組便能載入相關韌體，繼而驅動對應的韌體。在 Ubuntu中，有一個收錄了 X Elite 相關的硬體工具套件庫，裏面有一個腳本，它可以從 Windows 系統中提取韌體，並生成對應的 deb套件包，安裝後，便可解決驅動程式的問題。想要安裝這個腳本，只需要打開終端機，然後鍵入：
 
 ```bash
 sudo apt update && sudo apt install qcom-firmware-extract
@@ -78,7 +86,7 @@ Done! Reboot to load the added firmware files.
 
 ## 嘗試啓用 KVM
 
-根據已有消息，驍龍在PC平臺的處理器上並不會封鎖 KVM，而 ARM 平臺的處理器只有運行在 EL2 模式下才能啓用 KVM。因此我嘗試在 Ubuntu 25.04 上檢查是否開啓了KVM ， 但結果並不愉快：
+根據已有消息，驍龍在410之後的處理器上永久禁用了EL2（只有部分例外），但是PC平臺的處理器上並不會封鎖 EL2異常等級，而 ARM 平臺的處理器只有運行在 EL2 模式下才能啓用 KVM。因此我嘗試在 Ubuntu 25.04 上檢查是否開啓了KVM ， 但結果並不愉快：
 
 ```bash
 ls /dev/kvm
@@ -158,8 +166,98 @@ menuentry 'Ubuntu, with Linux 6.14.0-rc7+' --class ubuntu --class gnu-linux --cl
         }
 ```
 
-那麼最後能否啓用KVM呢？結果是不行。這可能與韌體有關，畢竟 YOGA Slim 7x 的韌體更新後，有日誌明確寫出加入了 Linux EL2的支援。也只能等聯想後續韌體更新了。
+那麼最後能否啓用KVM呢？結果是不行。這可能與韌體有關，畢竟 YOGA Slim 7x 的韌體更新後，有日誌明確寫出加入了 Linux EL2的支援。而與其硬體配置完全相同的 Yoga Air 14s 的韌體更新卻沒有任何日誌。也只能等聯想後續韌體更新了。
 
-## 結論
+## 修復聲音的艱難路
 
-雖然 X Elite 上的 Linux 體驗有了一些改善，但是它依然屬於高度實驗性的平臺，許多功能都還沒有完全穩定。因此，在正式使用前，還是要多加小心。
+在經過檢索大量的資訊和新聞後，我發現聯想Yoga Slim 7x 就是Yoga Air 14s，只是銷售地區的不同，這兩者的外觀、硬體配置完全相同。且Linux 核心也直接套用了 Yoga Slim 7x 的設備樹和韌體。那麼能不能借用 Yoga Slim 7x 的設備樹和韌體，來修復聲音呢？ 在檢索了有關 Ubuntu 在驍龍 X Elite 的Bug 反饋後，有人嘗試修復 Lenovo Yoga Slim 7x 的聲音問題，經過反復的測試和除錯，最終成功修復了聲音問題。而且我還知道，想要修復聲音問題，我還需要對應的 `toplogy` 文件和 ALSA 配置檔，才能修復聲音。`topology`檔可以從[linux-firmware的存儲庫](https://gitlab.com/kernel-firmware/linux-firmware)取得。下載 Yoga Slim 7x 的 `toplogy` 文件，然後複製到 `/lib/firmware/qcom/LENOVO/83ED` 目錄下，重新啓動。</br>
+ </br>
+
+ </br>
+ 那麼聲音修復了嗎？並沒有，喇叭還是沒有聲音，`dmesg` 也只有一句這樣的報錯:
+
+ ```yaml
+ [ 10.603979] MultiMedia2 Playback: ASoC: no backend DAIs enabled for MultiMedia2 Playback, possibly missing ALSA mixer-based routing or UCM profile
+ ```
+ ALSA SoC 層沒有找到對應的路由，也就是說，雖然音效驅動載入了，但缺少正確的 UCM（Use Case Manager）profile 或者 mixer 路由設定，因此聲音無法輸出。在檢索了`/usr/share/alsa/ucm2`目錄後，發現缺少與X1E80100相關的配置文檔。我又將[上游](https://github.com/alsa-project/alsa-ucm-conf)包含 X1E80100 的配置文檔放入 `/usr/share/alsa/ucm2` 目錄下，重新啓動，聲音依然沒有，`dmesg` 也沒有任何改變。這次的錯誤訊息依然是:
+
+ ```yaml
+  [ 10.603979] MultiMedia2 Playback: ASoC: no backend DAIs enabled for MultiMedia2 Playback, possibly missing ALSA mixer-based routing or UCM profile
+  ```
+但是有沒有識別到聲卡呢？當然是有了：
+
+```bash
+aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 0: X1E80100LENOVOY [X1E80100-LENOVO-Yoga-Slim7x], device 1: MultiMedia2 Playback (*) []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
+而之前則是完全不能偵測到音效裝置，說明我的修復思路大體上還是正確的。</br>
+然後我又重新啓動了`pipewire`服務:
+
+```bash
+systemctl --user restart pipewire pipewire-pulse wireplumber
+```
+但是依然沒有聲音。</br>
+隨後我嘗試手動使用`alsamixer`重新創建路由，但是當我面對大大小小的音量調節時，我愣住了，我只會對已有的路由進行修改，這還是建立在有官方文檔的的基礎上進行的。從頭創立ALSA路由表完全就是超出了我的知識範圍，我意識到，我需要其他人的幫助。</br>
+
+![alsamixer](assets/alsamixer.png)
+
+在ChatGPT的輔助下，我最終在 Slim 7x 的UCM配置檔上稍作了修改，將修改後的UCM檔丟入`/usr/share/alsa/ucm2`目錄下，重新啓動，卻迎來了更多的錯誤：
+
+```yaml
+[ 3084.667865] q6apm-dai 6800000.remoteproc:glink-edge:gpr:service@1:dais: Trying to bind component "6800000.remoteproc:glink-edge:gpr:service@1:dais" to card "X1E80100-LENOVO-Yoga-Slim7x" but is already bound to card "X1E80100-LENOVO-Yoga-Slim7x" 
+[ 3084.667876] snd-x1e80100 sound: ASoC: failed to instantiate card -19
+```
+原因是ALSA與核心驅動未對應... </br>
+
+ </br>
+ 在更新到最新的 Ubuntu 25.10 後，新的版本帶給了我很多改變：全新的GNOME 49 和改進的動效在這臺筆電上非常順暢，雖然核心未有升級，但是韌體得到了更新。
+ 
+![GNOME 49](assets/ubuntu2510.png)
+
+ 這次聲音的問題也有了變化，雖然還是沒有聲音：
+
+ ```yaml
+ snd-x1e80100 sound: ASoC: Parent card not yet available, widget card binding deferred
+```
+
+執行 `/proc/asound/cards`後，也偵測到聲卡，這意味着DSP和韌體都OK了, 只是UCM配置和路由設定問題：
+
+```bash
+
+cat /proc/asound/cards
+
+0 [X1E80100LENOVOY]: x1e80100 - X1E80100-LENOVO-Yoga-Slim7x
+                      LENOVO-83ED-YOGAAir14sQ8X9-LNVNB161216
+```
+而過一段時間後，`dmesg` 又顯示了新的訊息：
+
+```yaml
+[ 11.428544] snd-x1e80100 sound: ASoC: Parent card not yet available, widget card binding deferred [ 11.432023] ALSA: Control name 'stream1.vol_ctrl1 MultiMedia2 Playback Volume' truncated to 'stream1.vol_ctrl1 MultiMedia2 Playback Volu' 
+[ 11.433224] input: X1E80100-LENOVO-Yoga-Slim7x Headset Jack as /devices/platform/sound/sound/card0/input14 [ 11.717229] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.717266] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.718469] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.718486] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.719680] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.719696] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.720866] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.720882] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.722028] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.722044] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.723196] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.723240] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.724364] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.724386] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.725528] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.725549] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.726729] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.726745] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.727901] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected 
+[ 11.727920] wsa884x-codec sdw:4:0:0217:0204:00:1: Bus clash detected 
+[ 11.729062] wsa884x-codec sdw:1:0:0217:0204:00:1: Reached MAX_RETRY on alert read 
+[ 11.729081] wsa884x-codec sdw:4:0:0217:0204:00:1: Reached MAX_RETRY on alert read 
+[ 12.159732] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected
+```
+看來功放又出了問題，修復聲音之路依舊漫長...
