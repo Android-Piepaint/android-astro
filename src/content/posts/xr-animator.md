@@ -60,5 +60,5 @@ XR Animator 是開源軟體，其原始碼可於[Github](https://github.com/Butz
 
 # 手機上使用 AR
 
-準備 Android 或者 Linux 手機，然後前往[這裏](https://sao.animetheme.com/XR_Animator.html）用法與電腦版一致，點一下左上角的手機圖標進入AR模式，注意場景儘量比較複雜些，否則人物很難顯示出來。</br>
+準備 Android 或者 Linux 手機，然後前往[這裏](https://sao.animetheme.com/XR_Animator.html) 用法與電腦版一致，點一下左上角的手機圖標進入AR模式，注意場景儘量比較複雜些，否則人物很難顯示出來。</br>
 工具列裡面有接球遊戲，至少要站離模型5公尺遠才能玩！ 
