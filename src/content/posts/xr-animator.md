@@ -9,6 +9,8 @@ draft: false
 lang: 'zh_TW'
 ---
 
+![Iochi Mari setting on a sign with two Snapdragon X Elite CRDs near by](assets/mari-with-x1e78100-crd.png)
+
 :::note
 本文包含部分受版權保護的內容，您在轉載本文章時，請不要包含這些內容。除非您已經事先申請，且版權所有者已同意授權。</br>
 受版權保護的內容：
