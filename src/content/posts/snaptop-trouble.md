@@ -9,6 +9,18 @@ draft: false
 lang: 'en'
 ---
 
+:::note
+本文包含部分受版權保護的內容，您在轉載本文章時，請不要包含這些內容。除非您已經事先申請，且版權所有者已同意授權。</br>
+受版權保護的內容：
+
+- Qualcomm Snapdragon X2 Elite Reference Design 圖片，原圖片由[PCMag](https://www.pcmag.com/news/first-tests-qualcomms-snapdragon-x2-elite-extreme-shows-some-serious-speed#specs-how-the-snapdragon-x2-shapes-up-in-the-stack) 提供，美國高通公司版權所有;
+- Qualcomm Snapdragon X Elite Reference Demo 圖片 ，原圖片由[CNX Software – Embedded Systems News](https://www.cnx-software.com/2023/10/31/qualcomm-snapdragon-x-elite-soc-benchmarks-in-windows-and-linux/) 提供，美國高通公司版權所有；
+- [Iochi Mari](https://3d.nicovideo.jp/works/td91904) （伊落瑪麗）人物模型，Nexon Co., Ltd 版權所有；
+- Trouble (Feat. Karin Andersson)，Dogena Music 版權所有；
+- 本文歌詞，由 Nile Oryon 和 EDKPiepaint 持有版權和著作權
+:::
+
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2fBOmKdvq1U?si=VsWsqEEKIGcsw35o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
