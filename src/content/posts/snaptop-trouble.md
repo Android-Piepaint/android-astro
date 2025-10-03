@@ -47,9 +47,6 @@ That make me feel like Mac's do.
  </br>
  </br>
  </br>
- </br>
- </br>
- </br>
 
  # Part 3
 
@@ -81,4 +78,5 @@ Started to study, and joined community </br>
  </br>
  </br>
  </br>
- 스냅샷(Snaptop)... </br>
+ 스냅탑(Snaptop)... </br>
+ </br>
