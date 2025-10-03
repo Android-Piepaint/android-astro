@@ -2,7 +2,7 @@
 title: Snaptop Trouble -- A FOSS Parody of Trouble by Dogena & Karin Andersson
 published: 2025-10-03
 description: Little Snaptop, big trouble...
-image: 'assets/snaptop-trouble.png'
+image: 'assets/mari-with-x1e78100-crd.png'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false
