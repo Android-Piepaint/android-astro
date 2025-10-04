@@ -44,7 +44,7 @@ Contributing to Open-Source, you aren't supposed to ask why </br>
 # Part 3
 She is the one that you never forget, </br>
 She is the Ferrari-made laptop you met </br>
-Oh, she must be the reason why you fall into love for snaptop </br>
+Oh, she must be the reason why you fall into love for snaptii </br>
 She'll always help you, no matter you want </br>
 
 # Part 4
@@ -100,7 +100,7 @@ She'll always help you, no matter you want </br>
 
 (She is the one---) She is the one (That you never forget) that you never forget, </br>
 She is the Ferrari-made laptop you met </br>
-She's the reason (Oh, she must be the reason) why you fall into love for snaptop </br>
+She's the reason (Oh, she must be the reason) why you fall into love for snaptii </br>
 She'll always help you, no matter you want </br>
 
 # Ending
