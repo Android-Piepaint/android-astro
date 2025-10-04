@@ -1,5 +1,5 @@
 ---
-title: She (Snaptop CRDs) -- A FOSS Parody of She by Groove Coverage
+title: She (Snapdragon CRDs) -- A FOSS Parody of She by Groove Coverage
 published: 2025-10-04
 description: She is the legend, the legend is she.
 image: 'assets/unused-shutter.png'
