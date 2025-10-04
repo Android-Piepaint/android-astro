@@ -59,7 +59,7 @@ Privacy is the eternity, that's what she gives </br>
 # Part 5
 She looks like Pinebook, from PINE64 </br>
 
-![Pinebook Pro](assets/pinebook-pro-laptop.avif)
+![Pinebook Pro](assets/pinebook-pro-laptop.jpg)
 
 She's trackpad like MacBook, but it's bigger than Mac's </br>
 She wins everything that we mignt do </br>
