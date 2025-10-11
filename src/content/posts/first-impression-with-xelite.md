@@ -207,6 +207,72 @@ systemctl --user restart pipewire pipewire-pulse wireplumber
 ![alsamixer](assets/alsamixer.png)
 
 在ChatGPT的輔助下，我最終在 Slim 7x 的UCM配置檔上稍作了修改，將修改後的UCM檔丟入`/usr/share/alsa/ucm2`目錄下，重新啓動，卻迎來了更多的錯誤：
+這是我寫的UCM配置檔（我知道有很多資工系的人看了會生氣，但是原諒我吧，我是一個新手）：
+```yaml
+Syntax 4
+
+Comment "Lenovo Yoga Air 14s (X1E80100)"
+
+SectionUseCase."HiFi" {
+    File "/Qualcomm/x1e80100/Air14s-HiFi.conf"
+    Comment "Play HiFi quality Music"
+}
+
+Include.card-init.File "/lib/card-init.conf"
+Include.ctl-remap.File "/lib/ctl-remap.conf"
+Include.wsa-init.File "/codecs/wsa884x/four-speakers/init.conf"
+Include.wsam-init.File "/codecs/qcom-lpass/wsa-macro/four-speakers/init.conf"
+```
+這是我寫的HiFi.conf:
+
+```yaml
+SectionVerb {
+	EnableSequence [
+		cset "name='WSA_CODEC_DMA_RX_0 Audio Mixer MultiMedia2' 1"
+		cset "name='MultiMedia4 Mixer VA_CODEC_DMA_TX_0' 1"
+	]
+
+	Include.wsae.File "/codecs/wsa884x/four-speakers/DefaultEnableSeq.conf"
+	Include.wsm1e.File "/codecs/qcom-lpass/wsa-macro/Wsa1SpeakerEnableSeq.conf"
+	Include.wsm2e.File "/codecs/qcom-lpass/wsa-macro/Wsa2SpeakerEnableSeq.conf"
+
+	Value {
+		TQ "HiFi"
+	}
+}
+
+SectionDevice."Speaker" {
+	Comment "Speaker playback"
+
+	Include.wsmspk1e.File "/codecs/qcom-lpass/wsa-macro/Wsa1SpeakerEnableSeq.conf"
+	Include.wsmspk2e.File "/codecs/qcom-lpass/wsa-macro/Wsa2SpeakerEnableSeq.conf"
+	Include.wsmspk1d.File "/codecs/qcom-lpass/wsa-macro/Wsa1SpeakerDisableSeq.conf"
+	Include.wsmspk2d.File "/codecs/qcom-lpass/wsa-macro/Wsa2SpeakerDisableSeq.conf"
+	Include.wsaspk.File "/codecs/wsa884x/four-speakers/SpeakerSeq.conf"
+
+	Value {
+		PlaybackChannels 4
+		PlaybackPriority 100
+		PlaybackPCM "hw:${CardId},1"
+		PlaybackMixer "default:${CardId}"
+		PlaybackMixerElem "Speakers"
+	}
+}
+
+SectionDevice."Mic" {
+	Comment "Internal microphones"
+
+	Include.vadm0e.File "/codecs/qcom-lpass/va-macro/DMIC0EnableSeq.conf"
+	Include.vadm0d.File "/codecs/qcom-lpass/va-macro/DMIC0DisableSeq.conf"
+	Include.vadm1e.File "/codecs/qcom-lpass/va-macro/DMIC1EnableSeq.conf"
+	Include.vadm1d.File "/codecs/qcom-lpass/va-macro/DMIC1DisableSeq.conf"
+
+	Value {
+		CapturePriority 100
+		CapturePCM "hw:${CardId},3"
+	}
+}
+```
 
 ```yaml
 [ 3084.667865] q6apm-dai 6800000.remoteproc:glink-edge:gpr:service@1:dais: Trying to bind component "6800000.remoteproc:glink-edge:gpr:service@1:dais" to card "X1E80100-LENOVO-Yoga-Slim7x" but is already bound to card "X1E80100-LENOVO-Yoga-Slim7x" 
