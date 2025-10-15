@@ -17,7 +17,7 @@ lang: 'en'
 </audio>
 
 
-(Baby, I'm a renegade———— Baby you are a firestorm...)
+(Baby, I'm a renegade... Baby you are a firestorm...)
 
 
 # Chorus
@@ -48,7 +48,7 @@ We can compile it until the dawn </br>
 I can see we're getting late </br>
 The way you, the way you, the way you look tonight </br>
 And I could lose a year of sleep </br>
-The way you, the way you, the way you look tonight ———— </br>
+The way you, the way you, the way you look tonight... </br>
 
 # Post chorus
 
