@@ -41,8 +41,8 @@ You'll be much better than </br>
 
 Loot at the code, you're still here, </br>
 You'll be alive next year, </br>
-I will port something good, oh </br>
-Something good </br>
+I will port mainline goods, oh </br>
+Mainline goods </br>
 
 ## Part 4
 
