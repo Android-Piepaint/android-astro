@@ -47,7 +47,7 @@ Droidian 是一個基於 Debian 的 Testing 分支開發的行動裝置作業系
  
  ### 刷機過程
 
- 參考 XDA 的[教學](https://xdaforums.com/t/rom-linux-droidian-for-spacewar-with-waydroid.4762595/），到[這裏](https://github.com/Nonta72/nothing-spacewar) 下載需要的文件，你可以去 [Droidian](https://github.com/droidian-images/droidian/releases) 的GitHub 上下載最新版的映像檔嘗試。</br>
+ 參考 XDA 的[教學](https://xdaforums.com/t/rom-linux-droidian-for-spacewar-with-waydroid.4762595/)，到[這裏](https://github.com/Nonta72/nothing-spacewar)下載需要的文件，你可以去 [Droidian](https://github.com/droidian-images/droidian/releases) 的GitHub 上下載最新版的映像檔嘗試。</br>
  下載完成後，解壓縮文件。</br>
  之後，去[這裏](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_T1.5-230310-1650)下載 Android 13 韌體，必須是原廠韌體，否則會有顯示Bug。下載完後，通過fastboot刷入各分區即可。或使用下面的腳本（來源：[Nothing Flasher](https://github.com/spike0en/nothing_flasher/blob/main/README.md#-download) by spike0en)：
 
