@@ -145,7 +145,7 @@ fastboot --disable-verity flash vbmeta /path/to/vbmeta.img
  ## 修復 Wi-Fi 和 5G 行動網路
  通過核心日誌可以看出，數據機已經被初始化了：
 
- ```bash
+ ```yaml
  [    4.343776] remoteproc remoteproc0: modem is available
 ```
 因此只需要啟動管理數據機的相關軟體就可以了。在 Linux 中，管理數據機的軟體是 `ModemManager`，因此我們需要通過 `rc-service` 開關服務即可：
