@@ -1,5 +1,5 @@
 ---
-title: （未完成）當 Linux 遇上 Qualcomm X Elite，在讚嘆其強悍的性能時，請不要忘記它依然處於高度實驗性階段...
+title: （未完成）當 Linux 遇上 Qualcomm X Elite，在讚嘆其強悍的性能時，請不要忘記它依然處於高度實驗性階段—— Ubuntu 25.04 在 Lenovo YOGA Air 14s 的體驗
 published: 2025-09-16
 description: 我或許是世界第一個在聯想 YOGA Air 14S 驍龍版筆電上安裝並測試Linux的用戶，但我對 Qualcomm X Elite 的第一印象，並不像很多人想像的那樣好。
 image: 'assets/yoga-air-14s.jpg'
@@ -329,3 +329,39 @@ cat /proc/asound/cards
 [ 12.159732] wsa884x-codec sdw:1:0:0217:0204:00:1: Bus clash detected
 ```
 看來功放又出了問題，修復聲音之路依舊漫長...
+
+## 關於相機的二三事
+
+儘管目前只有極少數的驍龍本能夠使用相機，但是高通的相機子系統已經在主線核心中得到了支援。在終端機中鍵入 ``ls /dev/video*`` 會看到很多視訊設備節點，例如 ``/dev/video0`` 、 ``/dev/video1`` 、 ``/dev/video2`` 等等。通過 ``v4l2-ctl -A	`` 命令也可以看到先前的設備節點隸屬於高通的相機子系統：
+
+```yaml
+Qualcomm Camera Subsystem (platform:acb6000.isp):
+	/dev/video0
+	/dev/video1
+	/dev/video2
+	/dev/video3
+	/dev/video4
+	/dev/video5
+	/dev/video6
+	/dev/video7
+	/dev/video8
+	/dev/video9
+	/dev/video10
+	/dev/video11
+	/dev/video12
+	/dev/video13
+	/dev/video14
+	/dev/video15
+	/dev/media0
+```
+那麼，相機可以使用嗎？答案是不能。使用 `qcam` 發現相機列表是空白的，其它軟體亦不能調用相機。通過核心日誌除錯發現了下面一條信息：
+
+```yaml
+[    5.108101] i2c-qcom-cci ac16000.cci: master 1 queue 0 timeout
+[    5.110920] ov02c10 2-0036: Error reading reg 0x300a: -110
+[    5.113375] ov02c10 2-0036: failed to find sensor: -110
+
+[    5.134422] ov02c10 2-0036: probe with driver ov02c10 failed with error -110
+```
+或許是因爲I2C通信失敗，導致硬體加電時序出現了偏差，相機無法工作。然後我又去看了[主線核心的原始碼](https://github.com/torvalds/linux)發現Lenovo Yoga Slim 7x 的設備樹也沒有明確給出相機的節點。那 Air 14s 就更不可能了。
+
