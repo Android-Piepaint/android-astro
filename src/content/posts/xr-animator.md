@@ -58,6 +58,10 @@ XR Animator 是開源軟體，其原始碼可於[Github](https://github.com/Butz
 
 首先，設定要使用的照相機，按一下工具列的“相機”設定，在對話框中選擇你的相機。然後點選“動作”設定，選擇第三個，按一下“動態捕捉”設定身體部分。之後人物會根據你的面部表情和動作跟着反應了。
 
+![A body tracking demostration](assets/motion-test.jpg)
+
+![](assets/motion-demo.jpg)
+
 # 手機上使用 AR
 
 準備 Android 或者 Linux 手機，然後前往[這裏](https://sao.animetheme.com/XR_Animator.html) 用法與電腦版一致，點一下左上角的手機圖標進入AR模式，注意場景儘量比較複雜些，否則人物很難顯示出來。</br>
