@@ -1,5 +1,5 @@
 ---
-title: （轉載）Everypoints I've Created (Feat. Lahaina Oryon) -- An OpenstreetMap Parody of Everywhere We Go by Edsion Chen (Everypoints I've Created (Feat. Lahaina Oryon)
+title: （轉載）Everypoints I've Created (Feat. Lahaina Oryon) -- An OpenstreetMap Parody of Everywhere We Go by Edsion Chen
 published: 2025-10-25
 description: 仿佛分別之日發生在昨天，憑開放街圖，隨時可以把我找，執意用 Google（地圖）就當我沒說...
 image: 'https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg'
@@ -9,7 +9,7 @@ draft: false
 lang: 'en'
 ---
 
-一個關於 OpenstreetMap 的歌曲改編，基於由陳冠希、MC仁、廚房仔等人所創作的《Everywhere We Go》(Feat. 應采兒))
+一個關於 OpenstreetMap 的歌曲改編，基於由陳冠希、MC仁、廚房仔等人所創作的《Everywhere We Go》(Feat. 應采兒)
 
 :::note
 本文包含部分受版權保護的內容，您在轉載本文章時，請不要包含這些內容。除非您已經事先申請，且版權所有者已同意授權。</br>

@@ -1,5 +1,5 @@
 ---
-title: Snaptop Trouble -- A FOSS Parody of Trouble by Dogena & Karin Andersson
+title: Snaptop Trouble (Feat. Nile Oryon) -- A FOSS Parody of Trouble by Dogena & Karin Andersson
 published: 2025-10-03
 description: Little Snaptop, big trouble...
 image: 'assets/mari-with-x1e78100-crd.png'
@@ -78,5 +78,5 @@ Started to study, and joined community </br>
  </br>
  </br>
  </br>
- 스냅탑(Snaptop)... </br>
+ 스냅탑(Snaptop) </br>
  </br>
