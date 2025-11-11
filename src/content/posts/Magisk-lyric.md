@@ -2,7 +2,7 @@
 title: Lovin' Magisk -- A FOSS Parody of Thinking out Loud by ED Sheeran
 published: 2025-07-31
 description: A lyric about modding my first Android phone -- Coolpad C106. 
-image: 'assets/fajita-new.jpg'
+image: 'https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false

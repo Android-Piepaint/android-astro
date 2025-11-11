@@ -2,7 +2,7 @@
 title: Linux -- A FOSS Parody of Ferrari (Orginal song is made by Babe Rexha)
 published: 2025-06-11
 description: ''
-image: ''
+image: 'https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false

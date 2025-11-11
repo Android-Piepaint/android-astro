@@ -2,7 +2,7 @@
 title: --Warrior -- A FOSS Parody of Closer by The Chainsmokers (Unfinished)
 published: 2025-07-19
 description: --Warrior is a misspelled flag "-Werror" in GCC. I got inspired from Raiders by Redstone Records, which is also inspired from Closer, too.
-image: 'assets/fajita-new.jpg'
+image: 'https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false
