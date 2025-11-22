@@ -121,7 +121,7 @@ MTP(**M**obile **T**est **P**latform)是 Qualcomm 為手機開發者、晶片調
 刷機之前，最好是備份一份韌體，以備不時之需。因爲工程機沒有開啓安全啓動，所以可以直接從網路上搜尋驍龍8 Elite 至尊版的手機韌體，然後從中提取`xbl_s_devprg_ns.melf`文件，這是驍龍8 Elite 至尊版的EDL引導文件。後續的韌體提取工作要用到這個文件。</br>
 然後，下載“高通工具箱”（Linux可使用`edl`或者`qdl`程式代替），將其解壓，執行程式。在“存儲類型”中選擇“UFS”，LUN數默認爲6即可，然後選擇引導文件，發送引導，點擊“全分區回讀”，之後軟體會彈出提示。值得注意的是我們需要在將要回讀的分割表0中，講`[rawdump]`的方括號刪掉，跳過讀取 `rawdump` 分區，之後的分區表保持默認就可以，稍作等待，我們會得到一個大小爲15.5GB的映像檔和EDL刷機用的 `rawprograms.xml`  `patch.xml` 和 `partition.xml` 文件。
 
-！[Screen showing the process of extracting the firmware](assets/qcom-toolbox.jpg)
+![Screen showing the process of extracting the firmware](assets/qcom-toolbox.jpg)
 
 下面的文本展示了韌體的結構圖（使用 `tree` 命令）:
 
