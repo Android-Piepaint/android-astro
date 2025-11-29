@@ -6,7 +6,7 @@ image: 'https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.gith
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false
-lang: 'en'
+lang: 'zh_TW'
 ---
 
 一個關於 OpenstreetMap 的歌曲改編，基於由陳冠希、MC仁、廚房仔等人所創作的《Everywhere We Go》(Feat. 應采兒)
