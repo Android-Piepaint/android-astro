@@ -2,7 +2,7 @@
 title: MTP Trouble (Feat. Pakala Oryon & Lanai Kaanapali) -- A FOSS Parody of Trouble by Avicii
 published: 2025-12-03
 description: I've seen the trouble more than anyone can bear.
-image: 'https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg'
+image: 'assets/mtp8750-front-view.jpg'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false
