@@ -2,7 +2,7 @@
 title: Code is a Good Thing (Feat. Pakala Oryon) -- A FOSS Parody of Rain is a Good Thing by Luke Bryan
 published: 2025-12-09
 description: Linus writes code, code creates Linux. Linux runs on my chip, make my phone little risky. A song about my first LFS(Linux From Scratch) trial.
-image: 'assets/mari-with-x1e78100-crd.png'
+image: 'assets/mtp8750-label-new.jpg'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false

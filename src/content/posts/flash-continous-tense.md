@@ -2,7 +2,7 @@
 title: 刷機進行式 (Feat. Pakala Oryon) —— 根據 May'n 的 《人生進行形》的 FOSS 改編
 published: 2025-11-29
 description: 我們曾一起奔向那自由的彼方，與專有軟體說過“明天見”後便永不再見面。
-image: 'https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg'
+image: 'assets/mtp8750-front-view.jpg'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false
