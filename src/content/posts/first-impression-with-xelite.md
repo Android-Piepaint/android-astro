@@ -379,9 +379,6 @@ camera@36 {
                orientation = <0>; 
                rotation = <180>;
  
-               avdd-supply = <&vreg_l7m_2p8>;
-               dvdd-supply = <&vreg_l2m_1p2>;
-               dovdd-supply = <&vreg_l4m_1p8>;
                avdd-supply = <&vreg_l7b_2p8>;
                dvdd-supply = <&vreg_l1m_1p2>;
                dovdd-supply = <&vreg_l3m_1p8>;
