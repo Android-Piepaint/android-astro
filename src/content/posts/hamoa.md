@@ -26,7 +26,7 @@ Ooh (It's happening now, woo)</br>
 # Verse 1: Hamoa Oryon
 
 The newer they are, the better they run (Yeah)</br>
-The biggest SRC is a magical world (Yeah)
+The biggest SRC is a magical world (Yeah)</br>
 Recently I just brought a brand-new CRD (Yeah)</br>
 I gonna compile them all (Hamoa)</br>
 Plug in, boot it up (Hamoa)</br>
