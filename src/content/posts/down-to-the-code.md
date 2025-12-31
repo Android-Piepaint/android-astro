@@ -12,14 +12,14 @@ lang: 'en'
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/cWSvI3F5kdQ?si=UjG6VmhXkdj1UdvP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-> Piepaint? Piepaint, wake up !
-> _Ugh.. What's up Hamoa[^4]?_
-> A developer has escaped from the Windows world!
-> _Really?  Are you ready to perform a **TLS handshake[^1]** to them?_
-> Ugh! No time for your technical puns !
-> _Ah c'mon! That would be a good **Installfest[^2]** to hold!_
-> ENOUGH!!
-> _Alright, here we go again..._
+> Piepaint? Piepaint, wake up ! </br>
+> _Ugh.. What's up Hamoa[^4]?_ </br>
+> A developer has escaped from the Windows world! </br>
+> _Really?  Are you ready to perform a **TLS handshake[^1]** to them?_ </br>
+> Ugh! No time for your technical puns ! </br>
+> _Ah c'mon! That would be a good **Installfest[^2]** to hold!_ </br>
+> ENOUGH!! </br>
+> _Alright, here we go again..._ </br>
 
 # Chrous
 
@@ -59,11 +59,11 @@ A developer, or a raider, now you should know</br>
 
 # Verse: EDKPiepaint and Hamoa Oryon
 
->_Guess what, Hamoa?_
-> What?
-> _The last line of the chrous is a technical pun!_
-> Huh? Your little _beep_ ! That is really... clever!
-> _Thanks, bro._
+>_Guess what, Hamoa?_ </br>
+> What? </br>
+> _The last line of the chrous is a technical pun!_ </br>
+> Huh? Your little _beep_ ! That is really... clever!</br>
+> _Thanks, bro._</br>
 
 # Chrous
 
