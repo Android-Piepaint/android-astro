@@ -14,16 +14,18 @@ lang: 'zh_TW'
 # 硬體探索
 
 在上次的測評中我將高通常見的工程平臺（MTP,QRD）與一般量產手機進行了對比，同時也簡單的介紹了這臺 MTP8750 的硬體配置。這裏，我們再從之前的文章中貼上這些規格，供大家參考：
- - 一顆早期（ES）版的 SM8750 CPU [^1]，8個核心，ARM V9指令集；
- - Adreno 830 GPU，支援 OpenGL ES 3.2；
- - 16GB LPDDR5X記憶體；
- - 512GB UFS 4.0，經確認UFS來自東芝
+
+- 一顆早期（ES）版的 SM8750 CPU [^1]，8個核心，ARM V9指令集；
+- Adreno 830 GPU，支援 OpenGL ES 3.2；
+- 16GB LPDDR5X記憶體；
+- 512GB UFS 4.0，經確認UFS來自東芝
 
 想要獲取更多硬體資訊，我們就需要從作業系統下手了，好在 Android 至少算是個 Linux 發行版，有很多 Linux 獲取硬體資料的方法在 Android 上同樣使用。只是對於默認拔掉 Root 的 Android 來說，Linux 上獲取硬體信息的方法會有不少阻礙，破除這些阻礙的方法就是取得 Root 權限。不過工程機的 AOSP 系統默認開啓 `ADB Root` ，因此除錯和獲取日誌都要比量產機容易的多，只需要一根 Type-C 數據線就可以開始工作了：首先，開啓終端機，安裝 `android-tools` 套件：
 
 ```bash
 sudo pacman -S android-tools
 ```
+
 然後鍵入 `adb root` 將 `adbd` 以 Root 重開，當看到用戶提示符號變成井號（#）之後，就代表你成功取得 Root 權限了！現在，讓我們開始後續的工作吧！
 
 ## 獲取核心版本
@@ -34,6 +36,7 @@ sudo pacman -S android-tools
 sun:/ # cat /proc/version
 Linux version 6.6.50-android15-8-maybe-dirty-4k (kleaf@build-host) (Android (11368308, +pgo, +bolt, +lto, +mlgo, based on r510928) clang version 18.0.0 (https://android.googlesource.com/toolchain/llvm-project 477610d4d0d988e69dbc3fae4fe86bff3f07f2b5), LLD 18.0.0) #1 SMP PREEMPT Thu Jan  1 00:00:00 UTC 1970
 ```
+
 核心採用的是基於長期支援版本（LTS）修改的 6.6.50核心，發佈於2023年。雖然近些年來 Google 的 GKI 在一定程度上縮短了 Android 下游核心與主線核心的差距，但是問題依舊嚴峻。作爲一個發佈於2024年的晶片，卻還再用著過時的 6.6 核心... 值得一提的是核心採用了 4K 分頁大小編譯，看來 SM8750 還有支援16K 分頁的核心嘍？不過這都和我們的主線任務沒有任何關係。
 
 ## 獲取記憶體資訊
@@ -88,6 +91,7 @@ FilePmdMapped:         0 kB
 CmaTotal:         643072 kB
 CmaFree:          590220 kB
 ```
+
 目前來看，這裏面唯一有用的一句是 `MemTotal` 字段，它告訴我們這臺工程機有16GB的記憶體...
 
 ## 獲取分區信息
@@ -321,6 +325,7 @@ major minor  #blocks  name
  253        0    6291456 zram0
  254       51  459208524 dm-51
 ```
+
 這樣只能得到每個分割的大小，看不出其他資訊來。想要獲得每個設備節點的對應關係，需要在 `/dev` 目錄下執行 `ls -l /dev` 獲取結果：
 
 ```yaml
@@ -453,14 +458,18 @@ lrwxrwxrwx 1 root root 16 1970-01-07 17:43 xbl_ramdump_b -> /dev/block/sdf63
 lrwxrwxrwx 1 root root 16 1970-01-07 17:43 xbl_sc_logs -> /dev/block/sdf87
 lrwxrwxrwx 1 root root 16 1970-01-07 17:43 xbl_sc_test_mode -> /dev/block/sdf86
 ```
+
 現在，每個分割的信息便一目瞭然了。需要注意的是在新的平臺下，高通將 UEFI 韌體放到了單獨的UEFI分割中，原來的`XBL`分割只是一個空殼而已（當然也不是什麼都沒有）。
 
 ## 獲取其他硬體（觸摸屏、Wi-Fi網路卡、音訊 Codec 等）
+
 通過獲取 `dmesg`， 可以得到大量關於設備的信息。其中核心啓動引數中有一段非常引人注意：
+
 ```yaml
 [    0.000000] Kernel command line: console=ttynull stack_depot_disable=on cgroup_disable=pressure kasan.stacktrace=off kvm-arm.mode=protected bootconfig ioremap_guard log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 irqaffinity=0-1 pcie_ports=compat printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 pci-msm-drv.pcie_sm_regs=0x1D07000,0x1040,0x1048,0x3000,0x1 ftrace_dump_on_oops slub_debug=- video=vfb:640x400,bpp=32,memsize=3072000 nosoftlockup console=ttynull qcom_geni_serial.con_enabled=0 bootconfig  msm_drm.dsi_display0=qcom,mdss_dsi_nt37801_wqhd_plus_cmd: rootwait ro init=/init silent_boot.mode=nonsilent
 ```
-其中 `msm_drm.dsi_display0=qcom,mdss_dsi_nt37801_wqhd_plus_cmd` 告訴了我們關於屏幕的信息：這是一塊由 Novatek 生產的顯示面板（Panel），型號是 NT37801，分辨率是 1440x3220，AMOLED，重新整理頻率爲120Hz，DSI接口，輸出格式是 WQHD+。于是我在網路上檢索關於這塊面板的圖紙和 datasheet，但是並沒有找到。于是我又到 `lwn.net` 上檢索關於該面板的相關合並請求或者 commit，果不其然，我找到了：
+
+其中 `msm_drm.dsi_display0=qcom,mdss_dsi_nt37801_wqhd_plus_cmd` 告訴了我們關於屏幕的信息：這是一塊由 Novatek 生產的顯示面板（Panel），型號是 NT37801，解析度是 1440x3220，AMOLED，重新整理頻率爲120Hz，DSI接口，輸出格式是 WQHD+。于是我在網路上檢索關於這塊面板的圖紙和 datasheet，但是並沒有找到。于是我又到 `lwn.net` 上檢索關於該面板的相關合並請求或者 commit，果不其然，我找到了：
 
 ![NT37801 merge request on LWN.net](assets/lwn-net.png)
 
@@ -472,6 +481,7 @@ lspci -e
 01:00.0 :   (rev 01)
 00:00.0 :  
 ```
+
 但是，從中並不能得到什麼有效信息，于是我附加了 `-nn` 參數：
 
 ```yaml
@@ -497,10 +507,8 @@ sun:/ $ lspci -nn
 
 ![camara in Deviceinfo HW app](assets/screenshot/deviceinfoHW.png)
 
-
 ## 總結
 
 看來 SM8750 的主線 Linux 移植又是困難重重喔...不過，在瞭解了這些硬體信息後，就可以爲主線 Linux 的移植做好準備了。
 
- 
  [^1]:與正式版的4.32GHz時脈不同，這顆ES版的基頻只有3.63GHz。
