@@ -1,7 +1,7 @@
 ---
-title: 在驍龍 X Elite 筆電上啓用KVM安裝 Alpine Linux, 基於64位元ARM平臺的KVM安裝教學
+title: 在驍龍 X Elite 筆電上啓用KVM安裝 Alpine Linux~ 基於64位元ARM平臺的KVM安裝教學
 published: 2026-01-04
-description: 
+description: ''
 image: 'assets/virt-demo-host.png'
 tags: [FOSS, ARM, Libvirt, KVM, Qualcomm]
 category: 'Linux'
