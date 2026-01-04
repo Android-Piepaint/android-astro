@@ -170,3 +170,5 @@ ykia ALL=(ALL:ALL) ALL
 ![](assets/opengl-accelerate.png)
 
 ![](assets/adreno-3d-accelerate.png)
+
+[^1]:唯一的例外是 ChromeOS 平臺(LC)，它採用 ARM 的 Trusted Firmware (TF-A)，而不是高通專有的引導流程，默認允許作業系統以 EL2異常層級啓動。
