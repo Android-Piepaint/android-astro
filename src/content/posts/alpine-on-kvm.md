@@ -27,7 +27,7 @@ lang: 'zh_TW'
 
 - 現代的 Windows on ARM（WoA）設備默認使用 Hyper-V 提供部分虛擬化功能（例如：Windows Subsys. for Linux (WSL), Windows Sandbox, Windows Subsystem for Android (WSA) 以及 Docker 之類），其虛擬機管理員總是以EL2異常層級執行。這與作業系統核心在EL1異常層級執行，和應用程式在EL0異常層級執行所不同。因爲 ARM 提出的 [ARM Base Root Requirements](https://developer.arm.com/documentation/den0044/latest) 規範強制要求，UEFI韌體必須執行在 EL2異常層級下，以准許安裝或配置虛擬機或者支援虛擬化感知的作業系統；
 - 自 SD835 (MSM8998)起，高通驍龍平臺的引導程式一律採用標準的 UEFI 韌體取代了之前的 Little Kernel 引導程式。但是高通的 UEFI 韌體並不滿足上述的「 ARM Base Root Requirements 」 中對於 UEFI 韌體的要求，儘管高通平臺支援 ARM 虛擬化技術，但是 UEFI 韌體是以 EL1 異常層級執行，所以作業系統及其虛擬機管理員無法訪問硬體 Hypervisior 。因此就必須實現自訂軟體實作，使得作業系統可以接管EL2異常層級的控制權，並且啓動Hypervisior；
-- Qualcomm 所謂的 Secure Launch，不是 ARM Trusted Boot（BL1/BL2/BL31/TF-A）[^1]，也不是 UEFI Secure Boot，而是 Windows 專用的 hypervisor 啓動過程：即在 Windows kernel 啓動前，於「可信狀態」下建立 EL2 執行環境，並讓 Hyper‑V 接管該層級；
+- Qualcomm 所謂的 Secure Launch，不是 ARM Trusted Boot（BL1/BL2/BL31/TF-A）[^1] ，也不是 UEFI Secure Boot，而是 Windows 專用的 hypervisor 啓動過程：即在 Windows kernel 啓動前，於「可信狀態」下建立 EL2 執行環境，並讓 Hyper‑V 接管該層級；
 - `tcblaunch.exe` 是 Microsoft 簽名的 TCB（Trusted Computing Base）組件，其能力包括：呼叫 Qualcomm 平臺私有的 Secure Monitor / firmware 接口、重新配置 Exception Level、初始化 hypervisor 所需的系統暫存器與記憶體佈局，這是在不修改韌體的情況下進入 EL2異常層級的唯一方法；
 - `slbounce` 的設計目標並非繞過或破壞 Secure Launch，而是在合法且被信任的前提下觸發 Secure Launch，於不啓動 Windows 的情況下取得 EL2，並將已建立之 EL2 狀態交由 Linux 繼承；
 - Secure Launch 在設計上即發生於 OS 啓動之前，因此 EFI 階段是唯一合理的切入點。其中，`ExitBootServices()` 函式作為 UEFI 與作業系統之間的邊界，因此成為最合適的攔截位置。slbounce 以 EFI driver 形式載入，其實際流程如下：
@@ -171,4 +171,4 @@ ykia ALL=(ALL:ALL) ALL
 
 ![](assets/adreno-3d-accelerate.png)
 
-[^1]:唯一的例外是 ChromeOS 平臺(LC)，它採用 ARM 的 Trusted Firmware (TF-A)，而不是高通專有的引導流程，默認允許作業系統以 EL2異常層級啓動。
+[^1]: 唯一的例外是 ChromeOS 平臺(LC)，它採用 ARM 的 Trusted Firmware (TF-A)，而不是高通專有的引導流程，默認允許作業系統以 EL2異常層級啓動。
