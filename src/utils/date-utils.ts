@@ -1,6 +1,6 @@
-//export function formatDateToYYYYMMDD(date: Date): string {
-//	return date.toISOString().substring(0, 10);
-//}
+export function formatDateToYYYYMMDD(date: Date): string {
+	return date.toISOString().substring(0, 10);
+}
 
 export function formatDateMinguo(dateInput: string | Date): string {
   const date = new Date(dateInput)
