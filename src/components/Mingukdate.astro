@@ -1,0 +1,11 @@
+---
+import { formatDateMinguo } from '@/utils/formatDate'
+
+const { frontmatter } = Astro.props
+const pubDate = frontmatter.pubDate
+---
+
+<time datetime={pubDate}>
+  {formatDateMinguo(pubDate)}
+  <span class="ad">（{pubDate}）</span>
+</time>
