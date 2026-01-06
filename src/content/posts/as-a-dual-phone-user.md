@@ -37,7 +37,6 @@ lang: 'zh_TW'
 
 ![A normal MTP8750 on desk](assets/mtp8750-random-photo.jpg)
 
-![](assets/random-photo.jpg)
 
 ![](assets/ramdom-photo2.jpg)
 
