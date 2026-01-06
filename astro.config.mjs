@@ -18,7 +18,7 @@ import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
-
+import { formatDateMinguo } from "@/utils/date-utils"
 // https://astro.build/config
 export default defineConfig({
   site: "https://fuwari.vercel.app/",
