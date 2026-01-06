@@ -40,7 +40,7 @@ const jsonLd = {
 		name: profileConfig.name,
 		url: Astro.site,
 	},
-	datePublished: formatDateToYYYYMMDD(entry.data.published),
+	//datePublished: formatDateToYYYYMMDD(entry.data.published),
     datePublished: formatDateMinguo(entry.data.published),
 	inLanguage: entry.data.lang
 		? entry.data.lang.replace("_", "-")
