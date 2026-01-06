@@ -13,6 +13,8 @@ import PostMetadata from "../../components/PostMeta.astro";
 import ImageWrapper from "../../components/misc/ImageWrapper.astro";
 import { profileConfig, siteConfig } from "../../config";
 import { formatDateToYYYYMMDD } from "../../utils/date-utils";
+import { formatDateMinguo } from "../../utils/date-utils"
+
 
 export async function getStaticPaths() {
 	const blogEntries = await getSortedPosts();
@@ -39,6 +41,7 @@ const jsonLd = {
 		url: Astro.site,
 	},
 	datePublished: formatDateToYYYYMMDD(entry.data.published),
+    datePublished: formatDateMinguo(entry.data.published),
 	inLanguage: entry.data.lang
 		? entry.data.lang.replace("_", "-")
 		: siteConfig.lang.replace("_", "-"),
