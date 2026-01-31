@@ -657,6 +657,15 @@ Link up Failed..!!
 
 # 最後是如何解決的？
 
+> (I'm) Neither an user, nor a programmer </br>
+> (They) Shipping (a) firmware full of mistakes </br>
+> Capturing all logs, (but) void my warranty </br>
+> But I never cares, And I've stay determined -- </br>
+> I'll fix all bugs for you.</br>
+>                            ---- Adopted from _Bugs Thru Life: A FOSS Parody of Walk Thru Fire by Vicetone & Meron Ryan_
+> </br>
+>                            ---- _Written by Hamoa Oryon and her best friend, EDKPiepaint_
+
 很遺憾，韌體和UEFI程式碼的問題我無法改善，即使我想辦法取得了驍龍 X Elite 的 BSP 原始碼，也會因爲「硬體安全啓動」而被攔在外面。唯一的辦法只有嘗試更換網路卡的韌體。在 Ubuntu 的論壇中發現不少使用者也遇到了網路卡相關的問題，大部分都與網路鏈接相關[^1]。和我
 遇到的問題完全不同，那是否可以套用這一問題的解決方法呢？我決定試一下。首先，前往 [Linaro 的GitLab ](https://git.codelinaro.org/clo/ath-firmware/ath12k-firmware/-/tree/main?ref_type=heads)下載網路卡的韌體，然後安裝它們，重開機。</br>
 之後，編輯 `/etc/modprobe.d/wireless.conf` 檔案，改用這些核心模組開機：
