@@ -92,3 +92,5 @@ _（主機：嗯...唔...哈啊！要去了！...要去了...嗯...哈...**Kerne
 ![Qutebrowser showing Buildroot website](assets/qutebrowser.png)
 
 它採用 QtWebEngine 渲染網頁元素，載入完整網頁的話RAM佔用與一般 Chromium 瀏覽器無異（約2~4GB，內建 Adblocker 用於擋廣告）。所以這個比較適合用在硬體資源豐裕的嵌入式設備上，比較適合用於控制中心、點餐機、和POS等類似用途設備上，也能夠較爲方便地被編譯到 Buildroot，OpenEmbedded，Yocto 之類的嵌入式 Linux 或者其它基於BSD的嵌入式作業系統。
+
+[^1]:至少使用 Linux 或者 BSD 的話...是不會被發現啦！畢竟沒有人會用 Linux 來辦公吧？
