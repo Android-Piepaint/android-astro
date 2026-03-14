@@ -75,13 +75,16 @@ MTP(**M**obile **T**est **P**latform)是 Qualcomm 為手機開發者、晶片調
 ## 啓動
 插電、開機，從Qualcomm 的 logo顯示到系統啓動，全程僅過去了5秒，這速度甚至要比現在主流的手機要快了很多。我想應該歸功於BSP裸機化程度高、無多餘動畫和組件。系統方面是高通提供的BSP，基於 AOSP Android 15 開發而來，包含了簡化的 Google 框架和高通的測試程式。
 
-![About Phone report](assets/screenshot/about-phone.png)
+<img src="assets/screenshot/about-phone.png" width="40%">
 
-![Nigahara Launcher homescreen](assets/screenshot/home.png)
+
+<img src="assets/screenshot/home.png" width="40%">
 
 核心方面，採用了 6.6 核心，高通自己的QGKI，基於 Android GKI 核心修改而來。因爲高通平臺`init_boot`映像與`boot`映像通用，所以修補`init_boot`的映像來獲取root權限的方法就行不通了。而傳統 Magisk 的方法又過於簡單，我決定採用更新的解決方案—— Apatch。好在高通的工程機韌體自帶root權限，這也是為什麼 MTP 是工程人員最喜歡的設備，完全沒有解鎖層級的限制。通過`dd`命令提取映像，丟到 Apatch 中修補，然後 fastboot 刷入修補後的映像就行了。
 
-![Rooted Android with Apatch](assets/screenshot/apatch.png)
+
+<img src="assets/screenshot/apatch.png" width="40%">
+
 
 值得注意的是，MTP8750的核心採用了4K分頁大小編譯。難道說驍龍8 Elite 也支援16K 分頁的核心開機？這得等我備份韌體之後從BSP編譯再試試了。
 

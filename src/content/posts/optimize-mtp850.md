@@ -3,7 +3,7 @@ title: 我是如何優化我的 MTP850 工程機來實現正常使用的
 published: 2025-05-03
 description: 也許這就是在浪費時間？誰知道呢！
 image: 'assets/sdm850-front-view.png'
-tags: [Qualcomm, Android, MTP850, Flashing]
+tags: [Qualcomm, Android, MTP850, Flashing, Embed]
 category: 'Android'
 draft: false 
 lang: 'zh_TW'
