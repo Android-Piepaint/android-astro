@@ -1,7 +1,7 @@
 ---
 title: Framebuffer Love -- A FOSS Parody of With You by Babz Wayne
 published: 2026-03-21
-description: Just a song written for my little sc9832e linux atch.
+description: Just a song written for my little sc9832e linux watch.
 image: 'assets/mtp8750-front-view.jpg'
 tags: [FOSS, Lyric]
 category: 'Music'
