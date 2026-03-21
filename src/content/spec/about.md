@@ -1,3 +1,13 @@
+---
+title: About this blog
+published: 2025-05-11
+description: ''
+image: 'assets/mtp8750-front-view.jpg'
+tags: [FOSS, Lyric]
+category: 'Music'
+draft: false
+lang: 'en'
+---
 # About
 This is my personal blog site running on a Qualcomm SM8750 MTP development platform.</br>
 
