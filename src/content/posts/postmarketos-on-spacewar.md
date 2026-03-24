@@ -217,5 +217,5 @@ sudo rc-update add poklit
 
 經過這些修補，這個 Nothing Phone（1）總算可以正常使用了。最後，這裡是EDKPiepaint，登出，祝你有個美好的一天！
 
-[^1]: [原文表述為：“本設備可以執行PostmarketOS，但其相關依賴軟體未進入套件庫“](https://wiki.postmarketos.org/wiki/Nothing_Phone_1_(nothing-spacewar))
+[^1]: [原文表述為：“本裝置可以執行PostmarketOS，但其相關依賴軟體未進入套件庫“](https://wiki.postmarketos.org/wiki/Nothing_Phone_1_(nothing-spacewar))
 [^2]: [mainlining/pmaports -- GitHub](https://github.com/mainlining/pmaports/tree/danila/spacewar)

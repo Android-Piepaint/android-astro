@@ -326,7 +326,7 @@ major minor  #blocks  name
  254       51  459208524 dm-51
 ```
 
-這樣只能得到每個分割的大小，看不出其他資訊來。想要獲得每個設備節點的對應關係，需要在 `/dev` 目錄下執行 `ls -l /dev` 獲取結果：
+這樣只能得到每個分割的大小，看不出其他資訊來。想要獲得每個裝置節點的對應關係，需要在 `/dev` 目錄下執行 `ls -l /dev` 獲取結果：
 
 ```yaml
 sun:/dev/block/by-name # ls -l
@@ -463,7 +463,7 @@ lrwxrwxrwx 1 root root 16 1970-01-07 17:43 xbl_sc_test_mode -> /dev/block/sdf86
 
 ## 獲取其他硬體（觸摸屏、Wi-Fi網路卡、音訊 Codec 等）
 
-通過獲取 `dmesg`， 可以得到大量關於設備的信息。其中核心啓動引數中有一段非常引人注意：
+通過獲取 `dmesg`， 可以得到大量關於裝置的信息。其中核心啓動引數中有一段非常引人注意：
 
 ```yaml
 [    0.000000] Kernel command line: console=ttynull stack_depot_disable=on cgroup_disable=pressure kasan.stacktrace=off kvm-arm.mode=protected bootconfig ioremap_guard log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 irqaffinity=0-1 pcie_ports=compat printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 pci-msm-drv.pcie_sm_regs=0x1D07000,0x1040,0x1048,0x3000,0x1 ftrace_dump_on_oops slub_debug=- video=vfb:640x400,bpp=32,memsize=3072000 nosoftlockup console=ttynull qcom_geni_serial.con_enabled=0 bootconfig  msm_drm.dsi_display0=qcom,mdss_dsi_nt37801_wqhd_plus_cmd: rootwait ro init=/init silent_boot.mode=nonsilent
@@ -474,7 +474,7 @@ lrwxrwxrwx 1 root root 16 1970-01-07 17:43 xbl_sc_test_mode -> /dev/block/sdf86
 ![NT37801 merge request on LWN.net](assets/lwn-net.png)
 
 其提交日誌中明確寫到：「[添加了 Novatek NT37801（也叫 Novetek NT37801 AMOLED DSI 顯示面板）的驅動支援，其被用於高通 SM8750 MTP 開發板(SM8750)](https://lwn.net/Articles/1020176/)」，這就是我想要的結果了，雖然沒有發現 datasheet，但是知道了面板型號和連接方式，這就足夠了。</br>
-獲取PCIE設備需要我們通過 `lspci` 命令：
+獲取PCIE裝置需要我們通過 `lspci` 命令：
 
 ```bash
 lspci -e                                                               
@@ -490,12 +490,12 @@ sun:/ $ lspci -nn
 00:00.0  [0604]:   [17cb:011c]
 ```
 
-這樣就得到了 PCIe 設備的 Vendor 和 Device ID，接下來就可以到 [PCI ID Repository](https://pci-ids.ucw.cz/) 資料庫中查詢了。造訪[該網站](https://pci-ids.ucw.cz/)，選擇「PCI Devices」，在「Vendor」一列，選擇「All」，之後使用瀏覽器的搜索功能，鍵入 `17cb`，之後再鍵入 `110e`。不幸的是，PCI ID Repository 沒有收錄這個設備，那要怎麼辦呢？只能通過 Termux 來幫助我們了。首先安裝 `pciutils`，Termux 的 `root repo` 裏有收。然後執行 `lspci` 即可：
+這樣就得到了 PCIe 裝置的 Vendor 和 Device ID，接下來就可以到 [PCI ID Repository](https://pci-ids.ucw.cz/) 資料庫中查詢了。造訪[該網站](https://pci-ids.ucw.cz/)，選擇「PCI Devices」，在「Vendor」一列，選擇「All」，之後使用瀏覽器的搜索功能，鍵入 `17cb`，之後再鍵入 `110e`。不幸的是，PCI ID Repository 沒有收錄這個裝置，那要怎麼辦呢？只能通過 Termux 來幫助我們了。首先安裝 `pciutils`，Termux 的 `root repo` 裏有收。然後執行 `lspci` 即可：
 
 ![lspci output with PCIe device](assets/screenshot/termux.png)
 
 依然沒有什麼變化，不過根據[公佈的規格](https://phonedb.net/index.php?m=processor&id=999&c=qualcomm_snapdragon_8_elite_sm8750-ab__sun&d=detailed_specs)來看，PCIE掛的應該是自家的 X80 5G NR 數據機。</br>
-音訊codec用的是WSA 883X晶片，目前主線設備樹中已有音訊的定義，ALSA也有了對應的配置文件。
+音訊codec用的是WSA 883X晶片，目前主線裝置樹中已有音訊的定義，ALSA也有了對應的配置文件。
 
 ![audio codec in Deviceinfo HW app](assets/screenshot/deviceinfoHW.png)
 

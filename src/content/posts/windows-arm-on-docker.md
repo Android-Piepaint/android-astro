@@ -155,4 +155,4 @@ environment:
 
 其它進階使用方式可在專案的 GitHub 原始碼的 `Readme` 中查看。
 
-[^1]:對於驍龍845等手機平臺的晶片，只有未開啓硬體安全啓動的設備（原型機、測試機、部分零售機如 SHIFT6mq）且配置了支援 Secure Launch 的 `devcfg` 配置的韌體才可以通過執行 Secure launch 使 HLOS（高階作業系統，諸如 Windows，Linux，ChromeOS等）核心執行於 EL2 異常層級下，並可以使用硬體虛擬化。
+[^1]:對於驍龍845等手機平臺的晶片，只有未開啓硬體安全啓動的裝置（原型機、測試機、部分零售機如 SHIFT6mq）且配置了支援 Secure Launch 的 `devcfg` 配置的韌體才可以通過執行 Secure launch 使 HLOS（高階作業系統，諸如 Windows，Linux，ChromeOS等）核心執行於 EL2 異常層級下，並可以使用硬體虛擬化。

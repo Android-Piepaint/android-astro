@@ -59,7 +59,7 @@ lang: 'zh_TW'
 git clone -b 鍵入分支名 https://gitlab.com/kupfer/kupferbootstrap 
 ```
 
-根據文檔所寫（寫的很簡單，下次別寫了！），我們需要選擇分支。有`main`和`dev`分支可選。其中，`main`是穩定版，而`dev`是開發版，後者隨時都會有新的設備（連只可以開機的也算在內）和新的軟體出現，更新的頻次也更高，根據個人需要選擇即可。
+根據文檔所寫（寫的很簡單，下次別寫了！），我們需要選擇分支。有`main`和`dev`分支可選。其中，`main`是穩定版，而`dev`是開發版，後者隨時都會有新的裝置（連只可以開機的也算在內）和新的軟體出現，更新的頻次也更高，根據個人需要選擇即可。
 
 在克隆完之後，我們進入kupferbootstrap的 目錄，通過這個命令來安裝所需依賴：
 
@@ -71,7 +71,7 @@ sudo ln -s "$(pwd)/bin/kupferbootstrap" /usr/local/bin/
 
 #  創建配置文件
 
-使用`kupferbootstrap init` 來開始設備的初始化，前半部分沒什麼需要關注的，默認就可以了。
+使用`kupferbootstrap init` 來開始裝置的初始化，前半部分沒什麼需要關注的，默認就可以了。
 
 ![](https://picx.zhimg.com/v2-ab5110cb8b831f23b0e86b593cfe5091_1440w.jpg)
 
@@ -99,7 +99,7 @@ sudo ln -s "$(pwd)/bin/kupferbootstrap" /usr/local/bin/
 
 ![](https://pic2.zhimg.com/v2-57ba73157c59ca82d9d3163b2a8ecb33_1440w.jpg)
 
-之後，`kupferbootstrap` 會要求你選擇設備，鍵入一加6T對應的`sdm845-oneplus-fajita` 即可；然後會來到桌面環境選擇（未列出的可以自行下載）。不同於Android，你有若干種選擇：
+之後，`kupferbootstrap` 會要求你選擇裝置，鍵入一加6T對應的`sdm845-oneplus-fajita` 即可；然後會來到桌面環境選擇（未列出的可以自行下載）。不同於Android，你有若干種選擇：
 
 ```bash
 name: barebone            #僅控制檯可用
@@ -186,7 +186,7 @@ flavour_info: None
 fastboot flashing unlock
 ```
 
-…… 但是，許多Android設備卻是“暴君”。它們通過修改Bootloader中的一些命令，來刪除常見的"`flashing unlock`" "`oem unlock`"命令，讓它們失效，從而讓解鎖不再可行。不僅如此，像是Vivo、OPPO 等廠商還通過修改核心使得設備即使解鎖也無法使用第三方作業系統……這無疑是軟體“獨裁”的表現。臣服於誘惑之下已經空前地普及，時至今日反倒成為標準作法。三星手機在解鎖後，部分功能將永遠無法使用；一直違反GPL的小米在推出HyperOS之後，不但修改了解鎖規定，要求使用者在自己的“小米社群”中賬戶等級達到5級，並完成答題才可以解鎖，這種奇怪的行爲實在是讓人不解。而且要求使用者在他們的伺服器上註冊賬號和提供手機號，作爲想要換取自由的代價！在最近，小米也不再釋出修改的Linux核心原始碼。[^2]看來，自由之路依舊漫長，奮鬥仍舊不能停止……
+…… 但是，許多Android裝置卻是“暴君”。它們通過修改Bootloader中的一些命令，來刪除常見的"`flashing unlock`" "`oem unlock`"命令，讓它們失效，從而讓解鎖不再可行。不僅如此，像是Vivo、OPPO 等廠商還通過修改核心使得裝置即使解鎖也無法使用第三方作業系統……這無疑是軟體“獨裁”的表現。臣服於誘惑之下已經空前地普及，時至今日反倒成為標準作法。三星手機在解鎖後，部分功能將永遠無法使用；一直違反GPL的小米在推出HyperOS之後，不但修改了解鎖規定，要求使用者在自己的“小米社群”中賬戶等級達到5級，並完成答題才可以解鎖，這種奇怪的行爲實在是讓人不解。而且要求使用者在他們的伺服器上註冊賬號和提供手機號，作爲想要換取自由的代價！在最近，小米也不再釋出修改的Linux核心原始碼。[^2]看來，自由之路依舊漫長，奮鬥仍舊不能停止……
 
 再把目光轉向到映像上來。我們已經有了製作好的映像包，現在就可以通過fastboot來刷入它們了：
 
@@ -205,11 +205,11 @@ fastboot flash boot /path/to/boot.img
 
 大小竟然不正確！那要怎麼刷呢？
 
-別慌，此時我們需要通過`mkbootimg`（使用`pacman -S android-tools`來安裝它）來手動創建一個映像，先掛載這個啓動映像，複製出裏面的兩個文件：一個是Gzip壓縮的Image.gz核心映像，另一個是位於dtb中的設備樹文件，把它們複製到其他位置即可：
+別慌，此時我們需要通過`mkbootimg`（使用`pacman -S android-tools`來安裝它）來手動創建一個映像，先掛載這個啓動映像，複製出裏面的兩個文件：一個是Gzip壓縮的Image.gz核心映像，另一個是位於dtb中的裝置樹文件，把它們複製到其他位置即可：
 
-![啓動映像包括的，一個Gzip壓縮的核心、一個Initramfs映像和設備樹文件夾。](https://pic1.zhimg.com/v2-75c751d4ef517628d6440b5000bba726_1440w.jpg)
+![啓動映像包括的，一個Gzip壓縮的核心、一個Initramfs映像和裝置樹文件夾。](https://pic1.zhimg.com/v2-75c751d4ef517628d6440b5000bba726_1440w.jpg)
 
-![設備樹文件。](https://pic1.zhimg.com/v2-def6eb49c864e9f0d4fec86fc51bdf06_1440w.jpg)
+![裝置樹文件。](https://pic1.zhimg.com/v2-def6eb49c864e9f0d4fec86fc51bdf06_1440w.jpg)
 
 然後，使用mkbootimg來生成映像：
 
