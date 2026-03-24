@@ -19,17 +19,17 @@ lang: 'zh_TW'
 
 ## 我爲什麼選擇 Qualcomm X Elite？
 
-我最早看到有關驍龍版筆電的消息是在2020年，那時候我還在唸初中二年級，因爲COVID-19的全球流行，我便在家中上網課。在一個偶然的機會下，我在網路上找到了一加6T安裝Windows 11 ARM的教學影片，在當時這個影片給了我一個極大的震撼，我無法相信，一個婦孺皆知的常識“手機因爲與個人電腦（PC）的CPU架構不同，是無法執行常見的 Windows 11 和 Linux 作業系統的”在這個教學影片中被完全地推翻了。也是從那時，我第一次知道了 Windows還有 ARM 的版本。以及一系列關於 Windows on ARM 設備的技術性知識。其中影片中提到現在手機安裝 Windows 作業系統的驅動程式，大多是由搭載 Windows ARM 的筆電、工程機、平板電腦等設備的驅動程式提取或簡單修改而來的。我便在網路上檢索有關 Windows on ARM 的設備，結果發現市面上竟然真的有這樣的筆電！它們採用高通驍龍SoC，使用eMMC或者UFS快閃記憶體作爲內置硬碟，並且支援硬體虛擬化，還內建數據機，方便在沒有無線網路的地方，使用4G上網來連接到網際網路。</br>
+我最早看到有關驍龍版筆電的消息是在2020年，那時候我還在唸初中二年級，因爲COVID-19的全球流行，我便在家中上網課。在一個偶然的機會下，我在網路上找到了一加6T安裝Windows 11 ARM的教學影片，在當時這個影片給了我一個極大的震撼，我無法相信，一個婦孺皆知的常識“手機因爲與個人電腦（PC）的CPU架構不同，是無法執行常見的 Windows 11 和 Linux 作業系統的”在這個教學影片中被完全地推翻了。也是從那時，我第一次知道了 Windows還有 ARM 的版本。以及一系列關於 Windows on ARM 裝置的技術性知識。其中影片中提到現在手機安裝 Windows 作業系統的驅動程式，大多是由搭載 Windows ARM 的筆電、工程機、平板電腦等裝置的驅動程式提取或簡單修改而來的。我便在網路上檢索有關 Windows on ARM 的裝置，結果發現市面上竟然真的有這樣的筆電！它們採用高通驍龍SoC，使用eMMC或者UFS快閃記憶體作爲內置硬碟，並且支援硬體虛擬化，還內建數據機，方便在沒有無線網路的地方，使用4G上網來連接到網際網路。</br>
 
 雖然驍龍本非常吸引我，但是本着“能用就不要買新”的原則，父母一直不同意給我買驍龍本，我只好繼續用我父親的華碩 K50IE筆記本，來自2010年，使用雙核 Core 2 Duo處理器的筆電，外附輝達GeForce 310M GPU。直到初四那年，我考上了高中，又想盡辦法說服了我的父親，但是我父親認爲驍龍本不過是什麼低端筆電，想要給我購入一臺華爲筆電。但我知道，x86超級本的性能並不好，很多超級本甚至只有內建GPU，其繪圖能力相當底下，最終我買了 MacBook Air，採用蘋果M1晶片，並同時也瞭解了Asahi Linux 專案正在開發爲M1晶片適配的 Linux 發行版。並一直用到現在，直到上週五，因爲一場大雨，我的筆電由於保管不當而導致熒幕受潮而不得不運到上海進行維修。在此期間我便沒有了筆電可用，翌日，父母便要我從我唸大學的城市回家，並且帶着我去選購一臺新的筆電。我便藉此機會，把驍龍本的事情告訴了父親。他便疑惑的問我，什麼是“驍龍本”，我把我所知道的一切告訴了他。但是父親覺得不如選一臺x86超級本，因爲驍龍本在軟體上存在相容性問題，而且價格也比普通x86超級本高出許多，甚至可以用購買驍龍本的錢來買一臺極致性能的遊戲本。考慮到便攜性以及我過去五年來幾乎不再使用 Windows 作業系統，而以 Linux 系統爲主，父親也曾問我驍龍本是否有完善的 Linux 核心支援。我便把我所收集到的資料和相關專案給了他，最終我提着我的驍龍本回了家。
 
 ## 我對於驍龍本的印象
 
-我所購買的設備是聯想的 YOGA Air 14S，雖然是個比較老的型號，但是其驍龍版在2024年上市，並不算是什麼老舊的東西。它配備了一個分辨率爲2944x1840的OLED屏幕，其重新整理頻率爲90Hz，支援觸控。以及驍龍 X1E80100，12核心的CPU。響應速度非常快。由於我需要做開發之用，我選擇了32GB的RAM，1TB的三星NVME高速固態硬碟。到手的時候，我發現它安裝的是 Windows 11 ARM 版，並且還預裝了廠商的軟體，我本想把整個硬碟抹掉重新安裝 Linux，但是考慮到 Windows on ARM 設備的韌體更新往往隨着Windows 更新而更新，我只好暫且保留它，在默認分出的500 GB 分割中，我決定安裝 Linux。
+我所購買的裝置是聯想的 YOGA Air 14S，雖然是個比較老的型號，但是其驍龍版在2024年上市，並不算是什麼老舊的東西。它配備了一個分辨率爲2944x1840的OLED屏幕，其重新整理頻率爲90Hz，支援觸控。以及驍龍 X1E80100，12核心的CPU。響應速度非常快。由於我需要做開發之用，我選擇了32GB的RAM，1TB的三星NVME高速固態硬碟。到手的時候，我發現它安裝的是 Windows 11 ARM 版，並且還預裝了廠商的軟體，我本想把整個硬碟抹掉重新安裝 Linux，但是考慮到 Windows on ARM 裝置的韌體更新往往隨着Windows 更新而更新，我只好暫且保留它，在默認分出的500 GB 分割中，我決定安裝 Linux。
 
 ## 安裝 Linux
 
-首先關閉 Windows 自帶的 Bitlocker 硬碟加密，然後重新啓動電腦，在開機時按下F2,以此進入 UEFI設定。選擇“安全”選項，之後關閉安全啓動，到目前唯一支援程度較爲良好的 [Ubuntu](https://people.canonical.com/~platform/images/ubuntu-concept/) 網站下載採用針對驍龍X Elite 處理器的自定核心的安裝映像，將其寫入USB隨身碟，插入電腦後啓動，進入Ubuntu安裝程式。根據安裝器指引完成安裝，不知道爲什麼，Ubuntu 給我的筆電套用了 Yoga Slim 7x 的設備樹。但是不要高興的太早，因爲我們沒有需要的驅動程式......
+首先關閉 Windows 自帶的 Bitlocker 硬碟加密，然後重新啓動電腦，在開機時按下F2,以此進入 UEFI設定。選擇“安全”選項，之後關閉安全啓動，到目前唯一支援程度較爲良好的 [Ubuntu](https://people.canonical.com/~platform/images/ubuntu-concept/) 網站下載採用針對驍龍X Elite 處理器的自定核心的安裝映像，將其寫入USB隨身碟，插入電腦後啓動，進入Ubuntu安裝程式。根據安裝器指引完成安裝，不知道爲什麼，Ubuntu 給我的筆電套用了 Yoga Slim 7x 的裝置樹。但是不要高興的太早，因爲我們沒有需要的驅動程式......
 
 ## 目前的問題
 
@@ -122,7 +122,7 @@ sltest.efi tcblaunch.exe
 
 ![EL2 Mode Activation](assets/efi-shell.jpg)
 
-然後，到[這裏](https://gitlab.com/Linaro/arm64-laptops/linux) 下載一份支援 X1E80100 的主線核心，之後編譯核心並安裝，重新啓動，驗證核心是否爲自行編譯的版本，值得一提的是，因爲 Linaro 的分支已經包含了 X Elite 的 EL2 模式的 DTBO文件，所以編譯設備樹時會一並編譯所有 X Elite 筆電的EL2 設備樹。
+然後，到[這裏](https://gitlab.com/Linaro/arm64-laptops/linux) 下載一份支援 X1E80100 的主線核心，之後編譯核心並安裝，重新啓動，驗證核心是否爲自行編譯的版本，值得一提的是，因爲 Linaro 的分支已經包含了 X Elite 的 EL2 模式的 DTBO文件，所以編譯裝置樹時會一並編譯所有 X Elite 筆電的EL2 裝置樹。
 然後重新配置`grub.cfg`:
 
 ```bash
@@ -149,7 +149,7 @@ menuentry 'Ubuntu, with Linux 6.18.0-rc7+' --class ubuntu --class gnu-linux --cl
 
 ## 修復聲音的艱難路
 
-在經過檢索大量的資訊和新聞後，我發現聯想Yoga Slim 7x 就是Yoga Air 14s，只是銷售地區的不同，這兩者的外觀、硬體配置完全相同。且Linux 核心也直接套用了 Yoga Slim 7x 的設備樹和韌體。那麼能不能借用 Yoga Slim 7x 的設備樹和韌體，來修復聲音呢？ 在檢索了有關 Ubuntu 在驍龍 X Elite 的Bug 反饋後，有人嘗試修復 Lenovo Yoga Slim 7x 的聲音問題，經過反復的測試和除錯，最終成功修復了聲音問題。而且我還知道，想要修復聲音問題，我還需要對應的 `toplogy` 文件和 ALSA 配置檔，才能修復聲音。`topology`檔可以從[linux-firmware的存儲庫](https://gitlab.com/kernel-firmware/linux-firmware)取得。下載 Yoga Slim 7x 的 `toplogy` 文件，然後複製到 `/lib/firmware/qcom/LENOVO/83ED` 目錄下，重新啓動。</br>
+在經過檢索大量的資訊和新聞後，我發現聯想Yoga Slim 7x 就是Yoga Air 14s，只是銷售地區的不同，這兩者的外觀、硬體配置完全相同。且Linux 核心也直接套用了 Yoga Slim 7x 的裝置樹和韌體。那麼能不能借用 Yoga Slim 7x 的裝置樹和韌體，來修復聲音呢？ 在檢索了有關 Ubuntu 在驍龍 X Elite 的Bug 反饋後，有人嘗試修復 Lenovo Yoga Slim 7x 的聲音問題，經過反復的測試和除錯，最終成功修復了聲音問題。而且我還知道，想要修復聲音問題，我還需要對應的 `toplogy` 文件和 ALSA 配置檔，才能修復聲音。`topology`檔可以從[linux-firmware的存儲庫](https://gitlab.com/kernel-firmware/linux-firmware)取得。下載 Yoga Slim 7x 的 `toplogy` 文件，然後複製到 `/lib/firmware/qcom/LENOVO/83ED` 目錄下，重新啓動。</br>
 </br>
 
 </br>
@@ -318,7 +318,7 @@ cat /proc/asound/cards
 
 ## 關於相機的二三事
 
-儘管目前只有極少數的驍龍本能夠使用相機，但是高通的相機子系統已經在主線核心中得到了支援。在終端機中鍵入 ``ls /dev/video*`` 會看到很多視訊設備節點，例如 ``/dev/video0`` 、 ``/dev/video1`` 、 ``/dev/video2`` 等等。通過 ``v4l2-ctl -A	`` 命令也可以看到先前的設備節點隸屬於高通的相機子系統：
+儘管目前只有極少數的驍龍本能夠使用相機，但是高通的相機子系統已經在主線核心中得到了支援。在終端機中鍵入 ``ls /dev/video*`` 會看到很多視訊裝置節點，例如 ``/dev/video0`` 、 ``/dev/video1`` 、 ``/dev/video2`` 等等。通過 ``v4l2-ctl -A	`` 命令也可以看到先前的裝置節點隸屬於高通的相機子系統：
 
 ```yaml
 Qualcomm Camera Subsystem (platform:acb6000.isp):
@@ -351,7 +351,7 @@ Qualcomm Camera Subsystem (platform:acb6000.isp):
 [    5.134422] ov02c10 2-0036: probe with driver ov02c10 failed with error -110
 ```
 
-或許是因爲I2C通信失敗，導致硬體加電時序出現了偏差，相機無法工作。隨後我搜索了關於上面錯誤的解決方案，在 Linaro 維護的核心分支上找到了一個人提出的 [issue](https://gitlab.com/Linaro/arm64-laptops/linux/-/issues?show=eyJpaWQiOiI5IiwiZnVsbF9wYXRoIjoiTGluYXJvL2FybTY0LWxhcHRvcHMvbGludXgiLCJpZCI6MTcyNDg3MDY3fQ%3D%3D) 裏面的錯誤日誌與我遇到的完全一致。在粗略瀏覽了問題之後，發現是因爲設備樹中關於相機的定義不正確（因爲 Yoga Slim 7x 的設備樹是從 ThinkPad T14s 複製來的）：
+或許是因爲I2C通信失敗，導致硬體加電時序出現了偏差，相機無法工作。隨後我搜索了關於上面錯誤的解決方案，在 Linaro 維護的核心分支上找到了一個人提出的 [issue](https://gitlab.com/Linaro/arm64-laptops/linux/-/issues?show=eyJpaWQiOiI5IiwiZnVsbF9wYXRoIjoiTGluYXJvL2FybTY0LWxhcHRvcHMvbGludXgiLCJpZCI6MTcyNDg3MDY3fQ%3D%3D) 裏面的錯誤日誌與我遇到的完全一致。在粗略瀏覽了問題之後，發現是因爲裝置樹中關於相機的定義不正確（因爲 Yoga Slim 7x 的裝置樹是從 ThinkPad T14s 複製來的）：
 
 ```yaml
  		avdd-supply = <&vreg_l7m_2p8>;
@@ -370,7 +370,7 @@ vreg_l7b_2p8: ldo7 {
              };
 ```
 
-只是添加電源調節還不夠，我們還需要修正設備樹中相機的參數，因爲相機的錯誤安裝（我想負責組裝的工人當時一定在忙着愛愛，所以把相機裝反了），我們需要添加`rotation = <180>` 參數，告訴作業系統將畫面倒轉。相機傳感器需要三組電源：類比 (AVDD)、數位 (DVDD) 和 I/O (DOVDD)，因此修改 `avdd-supply` `dvdd-supply` `dovdd-supply` 參數，換成正確的即可：
+只是添加電源調節還不夠，我們還需要修正裝置樹中相機的參數，因爲相機的錯誤安裝（我想負責組裝的工人當時一定在忙着愛愛，所以把相機裝反了），我們需要添加`rotation = <180>` 參數，告訴作業系統將畫面倒轉。相機傳感器需要三組電源：類比 (AVDD)、數位 (DVDD) 和 I/O (DOVDD)，因此修改 `avdd-supply` `dvdd-supply` `dovdd-supply` 參數，換成正確的即可：
 
 ```yaml
 camera@36 {
@@ -389,6 +389,6 @@ camera@36 {
 - **DVDD** (Digital): 從 l2m 改為 l1m (1.2V)；
 - **DOVDD** (Digital I/O): 從 l4m 改為 l3m (1.8V)。
 
-之後，編譯新的設備樹，重新啓動核心，相機就工作了。
+之後，編譯新的裝置樹，重新啓動核心，相機就工作了。
 
 ![Working camera](assets/working-cam.jpg)

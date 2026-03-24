@@ -20,7 +20,7 @@ lang: 'zh_TW'
 - [Iochi Mari](https://3d.nicovideo.jp/works/td91904) （伊落瑪麗）人物模型，Nexon Co., Ltd 版權所有
 :::
 XR Animator是一個支援Linux、Windows、macOS的開源桌寵軟體，可以在桌面放3D模型，讓他/她與你打招呼。內建採用了[MediaPipe](https://github.com/google/mediapipe)和[TensorFlow](https://github.com/tensorflow/tfjs-models)機器學習技術的動態捕捉，能夠實時偵測到人體的動作，並將其轉化爲人物模型的動作。
-比起其他需要專業設備才能進行身體動作的捕捉，XR Animator 只需要使用者有一個支援720P解析度的攝像機即可。如果作業系統不支援，亦可以通過[這裏](https://sao.animetheme.com/XR_Animator.html)來存取網頁版，如果手機是 Android 或 iPhone，還可以通過AR技術將人物放置於真實的世界中，與她們進行互動！
+比起其他需要專業裝置才能進行身體動作的捕捉，XR Animator 只需要使用者有一個支援720P解析度的攝像機即可。如果作業系統不支援，亦可以通過[這裏](https://sao.animetheme.com/XR_Animator.html)來存取網頁版，如果手機是 Android 或 iPhone，還可以通過AR技術將人物放置於真實的世界中，與她們進行互動！
 
 # 下載 XR Animator
 
@@ -28,7 +28,7 @@ XR Animator 是開源軟體，其原始碼可於[Github](https://github.com/Butz
 
  ::github{repo="ButzYung/SystemAnimatorOnline"}
 
- 根據自己的作業系統，選擇合適的文件下載。需要注意的是，雖然僅提供了 64位元`X86` 架構的安裝檔，Windows 版的亦可以在 Windows On ARM 設備上執行，而 Linux 需要使用 `Box64` 轉譯。</br>
+ 根據自己的作業系統，選擇合適的文件下載。需要注意的是，雖然僅提供了 64位元`X86` 架構的安裝檔，Windows 版的亦可以在 Windows On ARM 裝置上執行，而 Linux 需要使用 `Box64` 轉譯。</br>
  程式設定非常簡單，例如我是 Gentoo Linux 只需解壓歸檔，然後通過 `chmod +x` 賦予程式可執行權限，最後雙擊 `electron` 來打開程式即可！
 
 # 基本用法

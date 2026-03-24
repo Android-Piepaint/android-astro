@@ -27,7 +27,7 @@ lang: 'zh_TW'
 # 小米平板5 ——  主線Linux核心、Windows 11
 2023年至今 </br>
 
-- 我知道你們在想什麼，平板和手機不能運行 Windows 對不對？由於我的桌機過於老舊，我急需一個可以運行 Windows 的設備，所以我成功說服我的父親，我便因此有了我的第一台平板。在解鎖後，我便一直尋找運行Windows的方案。通過GitHub找到了一個叫 [Renegade Project](https://renegade-project.tech/en/home) 的專案，它旨在為所有搭載高通驍龍的SoC的手機提供完整的UEFI支持。但是，為了能夠緊跟上游，我便根據官方的安裝指南和編譯指南，以及合適的驅動程序後，成功得到了一個全部功能運行正常的Windows 11環境；</br>
+- 我知道你們在想什麼，平板和手機不能運行 Windows 對不對？由於我的桌機過於老舊，我急需一個可以運行 Windows 的裝置，所以我成功說服我的父親，我便因此有了我的第一台平板。在解鎖後，我便一直尋找運行Windows的方案。通過GitHub找到了一個叫 [Renegade Project](https://renegade-project.tech/en/home) 的專案，它旨在為所有搭載高通驍龍的SoC的手機提供完整的UEFI支持。但是，為了能夠緊跟上游，我便根據官方的安裝指南和編譯指南，以及合適的驅動程序後，成功得到了一個全部功能運行正常的Windows 11環境；</br>
 - 在接觸了自由軟體和GNU哲學後，我便將研究目標轉向了主線Linux。隨著主線核心的不斷完善，我便根據教程編譯了小米平板5的主線核心，並安裝了 Arch Linux ARM作為我的主力系統，並將相關教程以英語寫成，發布在我的網站上。
 
 # MacBook Air M1 —— 移植PostmarketOS

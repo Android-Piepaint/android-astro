@@ -12,7 +12,7 @@ lang: 'zh_TW'
 
 ## 什麼是 MTP 工程機？
 
-MTP(**M**obile **T**est **P**latform)是 Qualcomm 為手機開發者、晶片調校與技術測試使用的官方工程開發設備，不是市售消費手機。主要用於模組研發、數據機測試、驅動與 Android HAL 研發、相機ISP調教等偏向硬體和底層韌體的工作，亦可用於評估硬體效能之用。與同樣作爲工程機的QRD（**Q**ualcomm **R**eference **D**esign）不同，後者更接近完整的商用手機方案開發樣機。
+MTP(**M**obile **T**est **P**latform)是 Qualcomm 為手機開發者、晶片調校與技術測試使用的官方工程開發裝置，不是市售消費手機。主要用於模組研發、數據機測試、驅動與 Android HAL 研發、相機ISP調教等偏向硬體和底層韌體的工作，亦可用於評估硬體效能之用。與同樣作爲工程機的QRD（**Q**ualcomm **R**eference **D**esign）不同，後者更接近完整的商用手機方案開發樣機。
 如果把手機開發比作蓋樓：
 
 - MTP：打地基 + 建結構
@@ -80,7 +80,7 @@ MTP(**M**obile **T**est **P**latform)是 Qualcomm 為手機開發者、晶片調
 ![](assets/screenshot/home.png)
 
 
-核心方面，採用了 6.6 核心，高通自己的QGKI，基於 Android GKI 核心修改而來。因爲高通平臺`init_boot`映像與`boot`映像通用，所以修補`init_boot`的映像來獲取root權限的方法就行不通了。而傳統 Magisk 的方法又過於簡單，我決定採用更新的解決方案—— Apatch。好在高通的工程機韌體自帶root權限，這也是為什麼 MTP 是工程人員最喜歡的設備，完全沒有解鎖層級的限制。通過`dd`命令提取映像，丟到 Apatch 中修補，然後 fastboot 刷入修補後的映像就行了。
+核心方面，採用了 6.6 核心，高通自己的QGKI，基於 Android GKI 核心修改而來。因爲高通平臺`init_boot`映像與`boot`映像通用，所以修補`init_boot`的映像來獲取root權限的方法就行不通了。而傳統 Magisk 的方法又過於簡單，我決定採用更新的解決方案—— Apatch。好在高通的工程機韌體自帶root權限，這也是為什麼 MTP 是工程人員最喜歡的裝置，完全沒有解鎖層級的限制。通過`dd`命令提取映像，丟到 Apatch 中修補，然後 fastboot 刷入修補後的映像就行了。
 
 
 ![](assets/screenshot/apatch.png)
@@ -359,7 +359,7 @@ MTP(**M**obile **T**est **P**latform)是 Qualcomm 為手機開發者、晶片調
 adb root
 adb shell setprop sys.usb.config diag,adb
 ```
-之後通過 `lsusb` 可以看到 UID 爲 “901D”的設備出現了，然後選擇QCN保存目錄即可。
+之後通過 `lsusb` 可以看到 UID 爲 “901D”的裝置出現了，然後選擇QCN保存目錄即可。
 
 這樣，MTP8750的韌體就算備份完成了，可以開始後續的主線核心移植了。
 
@@ -385,7 +385,7 @@ adb shell setprop sys.usb.config diag,adb
 
 對 Kernel、Modem、Camera、BSP 工程師來說：
 
-- 是一台能工作、能測試、能刷、能玩，甚至能拿來日用的夢幻開發設備。
+- 是一台能工作、能測試、能刷、能玩，甚至能拿來日用的夢幻開發裝置。
 
 接下來，我會開始：
 

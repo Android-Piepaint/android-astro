@@ -25,7 +25,7 @@ lang: 'zh_TW'
 如果妳使用的是 rEFInd 或者 `systemd-boot` 引導載入器，那麼它們會自動搜尋 UEFI shell 並將其添加到選單中，如果是 GRUB 使用者，可能還需要進行手動設定。</br>
 然後，到 GitHub 上搜尋[「slbounce」](https://github.com/TravMurav/slbounce)，然後下載 `slbounce.efi` 和 `sltest.efi` 兩個EFI應用程式，將其複製到 EFI系統分割中。之後我們需要從 Windows 中複製 `tcblaunch.exe`，可以從正常的系統中複製，也可以從其他地方獲取。至於 `tcblaunch.exe` 則是我們要後續執行「安全啓動」（Secure Launch，高通 Windows 平臺中，作業系統核心將自身從默認的EL1異常層級提升到EL2層級執行的過程）所需要的關鍵「鑰匙」。其原理過於複雜，對於絕大多數使用者可能難以理解，所以我將其根據我的理解寫於下面，供專業讀者進行參考：
 
-- 現代的 Windows on ARM（WoA）設備默認使用 Hyper-V 提供部分虛擬化功能（例如：Windows Subsys. for Linux (WSL), Windows Sandbox, Windows Subsystem for Android (WSA) 以及 Docker 之類），其虛擬機管理員總是以EL2異常層級執行。這與作業系統核心在EL1異常層級執行，和應用程式在EL0異常層級執行所不同。因爲 ARM 提出的 [ARM Base Root Requirements](https://developer.arm.com/documentation/den0044/latest) 規範強制要求，UEFI韌體必須執行在 EL2異常層級下，以准許安裝或配置虛擬機或者支援虛擬化感知的作業系統；
+- 現代的 Windows on ARM（WoA）裝置默認使用 Hyper-V 提供部分虛擬化功能（例如：Windows Subsys. for Linux (WSL), Windows Sandbox, Windows Subsystem for Android (WSA) 以及 Docker 之類），其虛擬機管理員總是以EL2異常層級執行。這與作業系統核心在EL1異常層級執行，和應用程式在EL0異常層級執行所不同。因爲 ARM 提出的 [ARM Base Root Requirements](https://developer.arm.com/documentation/den0044/latest) 規範強制要求，UEFI韌體必須執行在 EL2異常層級下，以准許安裝或配置虛擬機或者支援虛擬化感知的作業系統；
 - 自 SD835 (MSM8998)起，高通驍龍平臺的引導程式一律採用標準的 UEFI 韌體取代了之前的 Little Kernel 引導程式。但是高通的 UEFI 韌體並不滿足上述的「 ARM Base Root Requirements 」 中對於 UEFI 韌體的要求，儘管高通平臺支援 ARM 虛擬化技術，但是 UEFI 韌體是以 EL1 異常層級執行，所以作業系統及其虛擬機管理員無法訪問硬體 Hypervisior 。因此就必須實現自訂軟體實作，使得作業系統可以接管EL2異常層級的控制權，並且啓動Hypervisior；
 - Qualcomm 所謂的 Secure Launch，不是 ARM Trusted Boot（BL1/BL2/BL31/TF-A）[^1] ，也不是 UEFI Secure Boot，而是 Windows 專用的 hypervisor 啓動過程：即在 Windows kernel 啓動前，於「可信狀態」下建立 EL2 執行環境，並讓 Hyper‑V 接管該層級；
 - `tcblaunch.exe` 是 Microsoft 簽名的 TCB（Trusted Computing Base）組件，其能力包括：呼叫 Qualcomm 平臺私有的 Secure Monitor / firmware 接口、重新配置 Exception Level、初始化 hypervisor 所需的系統暫存器與記憶體佈局，這是在不修改韌體的情況下進入 EL2異常層級的唯一方法；
@@ -48,7 +48,7 @@ lang: 'zh_TW'
 # 編譯核心
 
 由於 Ubuntu 的核心並不支援 EL2 異常層級，所以我們需要自行編譯核心。我採用了 Linaro 維護的 `aarch64-laptop` [核心分支](https://gitlab.com/Linaro/arm64-laptops/linux/-/tree/qcom-laptops)。
-使用 `git clone` 將原始碼下載到本機，然後鍵入 `make defconfig qcom_laptops.config` 產生核心配置檔，之後鍵入 `make -j12` 開始編譯。整個編譯過程耗時大約5分鐘（我有拿手機記錄時間，並把編譯核心和模組的時間算進去），之後鍵入 `sudo make modules_install install` 安裝編譯好的核心。在編譯中會生成所有 X Elite 設備的`-el2.dtb` 設備樹，這是啓用 Secure Launch 所需的設備樹。之後配置引導載入器，新增 EL2 異常層級的配置檔，並指定對應的設備樹：
+使用 `git clone` 將原始碼下載到本機，然後鍵入 `make defconfig qcom_laptops.config` 產生核心配置檔，之後鍵入 `make -j12` 開始編譯。整個編譯過程耗時大約5分鐘（我有拿手機記錄時間，並把編譯核心和模組的時間算進去），之後鍵入 `sudo make modules_install install` 安裝編譯好的核心。在編譯中會生成所有 X Elite 裝置的`-el2.dtb` 裝置樹，這是啓用 Secure Launch 所需的裝置樹。之後配置引導載入器，新增 EL2 異常層級的配置檔，並指定對應的裝置樹：
 
 ```yaml
 # NOTE: This is an example configuration file for systemd-boot.

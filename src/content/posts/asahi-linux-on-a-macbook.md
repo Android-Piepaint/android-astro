@@ -35,7 +35,7 @@ lang: 'zh_TW'
 
 Asahi Linux 早在去年（2023年）的8月2日就宣布他們將要[進行一次發行版的變動](https://asahilinux.org/2023/08/fedora-asahi-remix/)，從[原來的Arch Linux遷移到Fedora Linux](https://asahilinux.org/2024/01/fedora-asahi-new/)，因為後者有官方的ARM支援，且有完善的硬體驅動和豐富的社區支援。目前，該專案已經遷移完成，自2024年1月12日後，Asahi Linux將基於新的Fedora Linux開發，成為Fedora Linux的一個官方姊妹發行版：Fedora Asahi Remix 。
 
-至於設備的支援情況，在我的M1 MacBook Air 上，除去已有的鍵盤（包括鍵盤燈）、觸摸板、顯示、GPU、3.5mm耳機口、Type-C（USB 3.0）、無線網路和藍牙，又新增了揚聲器和Facetime攝像頭的支援。（其實所有M1 和M2的Mac都支援了上面這些）
+至於裝置的支援情況，在我的M1 MacBook Air 上，除去已有的鍵盤（包括鍵盤燈）、觸摸板、顯示、GPU、3.5mm耳機口、Type-C（USB 3.0）、無線網路和藍牙，又新增了揚聲器和Facetime攝像頭的支援。（其實所有M1 和M2的Mac都支援了上面這些）
 
 當然，還有主線核心！
 

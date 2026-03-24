@@ -17,19 +17,19 @@ lang: 'zh_TW'
 一直在想能不能通過 Linux 或是 FreeBSD 的TTY控制臺，不使用任何桌面環境來訪問網際網路，因爲現在的瀏覽器都太肥了。無論是
 FireFox 還是 Chrome 都是如此，我們的老祖宗（不過才過去三十年而已）都是用 DOS 文字介面訪問 BBS 的。
 
-其實臺灣的PTT就可以支援SSH訪問（ `ssh bbsu@ptt.cc`）而不用開瀏覽器。在只能用SSH或是 Telnet 的工作階段也可以上去發廢文，尤其適用於那些只提供控制臺的設備，比如採用嵌入式 Linux 的機上盒、路由器或者數據機之類。不過部分終端機可能受限於編碼問題，中文可能無法顯示。
+其實臺灣的PTT就可以支援SSH訪問（ `ssh bbsu@ptt.cc`）而不用開瀏覽器。在只能用SSH或是 Telnet 的工作階段也可以上去發廢文，尤其適用於那些只提供控制臺的裝置，比如採用嵌入式 Linux 的機上盒、路由器或者數據機之類。不過部分終端機可能受限於編碼問題，中文可能無法顯示。
 
 
 ![](assets/ptt-on-ssh.png)
 
 那我們沒理由不能通過終端機造訪網路。
 
-特別是像一些嵌入式設備，只有幾百MB的記憶體，CPU時脈又相對低下，而且都使用客製化的 Linux 作業系統，根本沒有足夠的硬體資源去支援常見的桌面環境的執行。連一些簡單的 WM 都會卡頓，至於吃上幾GB甚至十幾GB記憶體的瀏覽器就更不用想了。</br>
+特別是像一些嵌入式裝置，只有幾百MB的記憶體，CPU時脈又相對低下，而且都使用客製化的 Linux 作業系統，根本沒有足夠的硬體資源去支援常見的桌面環境的執行。連一些簡單的 WM 都會卡頓，至於吃上幾GB甚至十幾GB記憶體的瀏覽器就更不用想了。</br>
 
 _（主機：嗯...唔...哈啊！要去了！...要去了...嗯...哈...**Kernel Panic**)_
 
 
-現在的主流社群媒體網站，大抵只有像 [Hacker News](https://news.ycombinator.com/) 和 [舊版 Reddit](https://old.reddit.com/)能夠方便用終端機來瀏覽，其他的網站還是太「臃腫」了一點。其實我的部落格採用了基於 Astro 的框架，已經盡最大可能爲低階設備進行了優化，且介面也較爲簡潔明朗，但還是不適合用終端機來檢視。從下面的對比就可以看出：
+現在的主流社群媒體網站，大抵只有像 [Hacker News](https://news.ycombinator.com/) 和 [舊版 Reddit](https://old.reddit.com/)能夠方便用終端機來瀏覽，其他的網站還是太「臃腫」了一點。其實我的部落格採用了基於 Astro 的框架，已經盡最大可能爲低階裝置進行了優化，且介面也較爲簡潔明朗，但還是不適合用終端機來檢視。從下面的對比就可以看出：
 
 ![Using LibreWolf visiting my blog](assets/normal-view.png)
 
@@ -44,7 +44,7 @@ _（主機：嗯...唔...哈啊！要去了！...要去了...嗯...哈...**Kerne
 > Screw you, Crashdump! </br>
 > _--- Adopted from [Blow Your Fuses -- A FOSS Parody of You're Mine by DAGames](https://blog.cloudflare88.eu.org/posts/blow-your-fuses/) by EDKPiepaint_
 
-啊...久等了。看看 Linux 有哪些終端瀏覽器可以使用，這些瀏覽器可比主流的瀏覽器方案要簡單多了呢。這些文字瀏覽器不需要像是 X11, Wayland 之類任何顯示協定就可以工作，甚至妳在工作期間還可以偷偷開SSH來摸魚一下，它們的響應速度也很快，對於低階設備和嵌入式設備非常友好。不過妳在檢視或下載檔案時，可能還是需要圖形環境。</br>
+啊...久等了。看看 Linux 有哪些終端瀏覽器可以使用，這些瀏覽器可比主流的瀏覽器方案要簡單多了呢。這些文字瀏覽器不需要像是 X11, Wayland 之類任何顯示協定就可以工作，甚至妳在工作期間還可以偷偷開SSH來摸魚一下，它們的響應速度也很快，對於低階裝置和嵌入式裝置非常友好。不過妳在檢視或下載檔案時，可能還是需要圖形環境。</br>
 文字瀏覽器在各大 Linux 發行版或者 FreeBSD 套件庫都有收，終端機的特色就是鍵盤操作，可不是用滑鼠點一點就可以上網了。如果妳會用 Vim 或是 EE 之類編輯器的話，相信妳只需要檢視每個程式的 `man page` 就能上網了。
 
 # EWW 和 Lynx
@@ -77,7 +77,7 @@ _（主機：嗯...唔...哈啊！要去了！...要去了...嗯...哈...**Kerne
 
 ::github{repo="browsh-org/browsh"}
 
-比 Browsh 更進階的有基於 Chromium 的 [Carbonyl](https://github.com/fathyb/carbonyl)，沒有執行一個瀏覽器實例，而是渲染後傳到終端機裏面。讓 WebGL 運作並且使用 Unicode 顯示字元，除了文字以外就是馬賽克，RAM佔用不到100MB，並且在SSH階段也可以使用，不過實用性不高。我打中文都會變成韓文，實用性還可以，至少可以檢視一些網頁，並且可以下載檔案。支援通過 Docker 或者下載二進位檔案運行，對於嵌入式設備來說是個不錯的瀏覽器。而且在最新的版本中還[改善了 BitMap 渲染](https://github.com/fathyb/carbonyl/releases/tag/v0.0.3)，網頁元素更加易於辨識了（所以吶，末花，老師很快就可以從終端機看妳和別人愛愛的影片了，而且不會擔心被發現！[^1]）
+比 Browsh 更進階的有基於 Chromium 的 [Carbonyl](https://github.com/fathyb/carbonyl)，沒有執行一個瀏覽器實例，而是渲染後傳到終端機裏面。讓 WebGL 運作並且使用 Unicode 顯示字元，除了文字以外就是馬賽克，RAM佔用不到100MB，並且在SSH階段也可以使用，不過實用性不高。我打中文都會變成韓文，實用性還可以，至少可以檢視一些網頁，並且可以下載檔案。支援通過 Docker 或者下載二進位檔案運行，對於嵌入式裝置來說是個不錯的瀏覽器。而且在最新的版本中還[改善了 BitMap 渲染](https://github.com/fathyb/carbonyl/releases/tag/v0.0.3)，網頁元素更加易於辨識了（所以吶，末花，老師很快就可以從終端機看妳和別人愛愛的影片了，而且不會擔心被發現！[^1]）
 
 ![Using terminal visiting my blog](assets/terminal-view.png)
 
@@ -91,6 +91,6 @@ _（主機：嗯...唔...哈啊！要去了！...要去了...嗯...哈...**Kerne
 
 ![Qutebrowser showing Buildroot website](assets/qutebrowser.png)
 
-它採用 QtWebEngine 渲染網頁元素，載入完整網頁的話RAM佔用與一般 Chromium 瀏覽器無異（約2~4GB，內建 Adblocker 用於擋廣告）。所以這個比較適合用在硬體資源豐裕的嵌入式設備上，比較適合用於控制中心、點餐機、和POS等類似用途設備上，也能夠較爲方便地被編譯到 Buildroot，OpenEmbedded，Yocto 之類的嵌入式 Linux 或者其它基於BSD的嵌入式作業系統。
+它採用 QtWebEngine 渲染網頁元素，載入完整網頁的話RAM佔用與一般 Chromium 瀏覽器無異（約2~4GB，內建 Adblocker 用於擋廣告）。所以這個比較適合用在硬體資源豐裕的嵌入式裝置上，比較適合用於控制中心、點餐機、和POS等類似用途裝置上，也能夠較爲方便地被編譯到 Buildroot，OpenEmbedded，Yocto 之類的嵌入式 Linux 或者其它基於BSD的嵌入式作業系統。
 
 [^1]:至少使用 Linux 或者 BSD 的話...是不會被發現啦！畢竟沒有人會用 Linux 來辦公吧？

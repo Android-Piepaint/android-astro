@@ -18,7 +18,7 @@ Droidian 是一個基於 Debian 的 Testing 分支開發的行動裝置作業系
 
 ## 安裝 Droidian
 
-我的設備在 XDA 上有[非官方移植](https://github.com/Nonta72/nothing-spacewar)，支援狀況也非常不錯：大部分功能正常，甚至也可以撥打電話，相機的畫素雖然被限制在1200萬，但是畫面的顏色卻非常不錯，比起主線核心那個沒有經過3A處理的樣子好了不少。</br>
+我的裝置在 XDA 上有[非官方移植](https://github.com/Nonta72/nothing-spacewar)，支援狀況也非常不錯：大部分功能正常，甚至也可以撥打電話，相機的畫素雖然被限制在1200萬，但是畫面的顏色卻非常不錯，比起主線核心那個沒有經過3A處理的樣子好了不少。</br>
 
 ![Working camera on nothing phone 1](assets/droidian-working-cam.jpg)
 
@@ -336,7 +336,7 @@ echo "You may now optionally re-lock the bootloader if you haven't disabled andr
 
 ![Droidian's NFC settings](assets/droidian-nfc.jpg)
 
-- 設置中還有指紋選項，雖然 GNOME 也支援了指紋解鎖，但是我沒有一臺設備有指紋識別器，那些內建指紋識別的，能夠刷 Linux 的手機，因爲廠商不提供 Linux 驅動，而不支援指紋解鎖，真是可惜。如今我終於可以在 Droidian 上一飽眼福了（爲什麼是“飽眼福”？因爲Phosh不支援屏幕下指紋識別，即使識別器本身可用，也無法解鎖屏幕）！
+- 設置中還有指紋選項，雖然 GNOME 也支援了指紋解鎖，但是我沒有一臺裝置有指紋識別器，那些內建指紋識別的，能夠刷 Linux 的手機，因爲廠商不提供 Linux 驅動，而不支援指紋解鎖，真是可惜。如今我終於可以在 Droidian 上一飽眼福了（爲什麼是“飽眼福”？因爲Phosh不支援屏幕下指紋識別，即使識別器本身可用，也無法解鎖屏幕）！
 
 ![Fingerprint unlocking in Droidian](assets/droidian-fingerprint.jpg)
 
@@ -351,5 +351,5 @@ echo "You may now optionally re-lock the bootloader if you haven't disabled andr
 
 ## 總結
 
-Droidian 在 Nothing Phone 1 上的移植體驗讓我看見了「Android 與 Linux 能夠真正融合」的可能。雖然目前仍存在許多小問題，但它已經證明：即便在封閉的 Android 裝置上，我們仍能擁抱一個真正自由的 Linux 桌面。但它同樣讓我明白了 Android 手機與 Linux 手機的差異： Android 核心落後於主線核心至少5年，大量上游的修補無法及時應用於 Android，使 Android 裝置面臨着安全問題。此外，設備廠商對於核心的大量修改，使得 Android 設備移植主線 Linux 核心非常困難。主線核心對於硬體的實現，往往需要核心開發者花費幾個月甚至幾年時間才能做好。曾經有人拿 Pinephone 與 一加6T的主線核心原始碼做過對比，結果是 Pinephone 的主線核心與上游相差50行代碼，而後者則相差500行代碼。這個差距正是目前 Android 裝置在自由軟體世界中難以完全融入的現實寫照。這也是 Droidian 和 Halium 教給我的，最爲生動的一課，它不是教科書，卻勝似教科書。而最可貴的一點是：這節課必須由你親自完成，對照文檔從無到有，一步步修復、除錯甚至於重新實現手機的所有功能。</br>
+Droidian 在 Nothing Phone 1 上的移植體驗讓我看見了「Android 與 Linux 能夠真正融合」的可能。雖然目前仍存在許多小問題，但它已經證明：即便在封閉的 Android 裝置上，我們仍能擁抱一個真正自由的 Linux 桌面。但它同樣讓我明白了 Android 手機與 Linux 手機的差異： Android 核心落後於主線核心至少5年，大量上游的修補無法及時應用於 Android，使 Android 裝置面臨着安全問題。此外，裝置廠商對於核心的大量修改，使得 Android 裝置移植主線 Linux 核心非常困難。主線核心對於硬體的實現，往往需要核心開發者花費幾個月甚至幾年時間才能做好。曾經有人拿 Pinephone 與 一加6T的主線核心原始碼做過對比，結果是 Pinephone 的主線核心與上游相差50行代碼，而後者則相差500行代碼。這個差距正是目前 Android 裝置在自由軟體世界中難以完全融入的現實寫照。這也是 Droidian 和 Halium 教給我的，最爲生動的一課，它不是教科書，卻勝似教科書。而最可貴的一點是：這節課必須由你親自完成，對照文檔從無到有，一步步修復、除錯甚至於重新實現手機的所有功能。</br>
 這種學習,不是速成的知識輸入，而是緩慢而紮實的理解；它會讓你更尊重硬體、理解驅動、體會抽象核心與具體裝置之間那條看不見的拉鋸線，它也會讓你對於 Linux，乃至整個 UNIX 世界有着比以往更加深刻的認識。它也會讓你對於自由軟體、開源社群、開放文化有著更深刻的理解。完成它的報酬或許不是獎盃或者金錢，也可能不會有任何商業價值。但它會是一段值得珍惜的歷程，一個你永遠都不會忘記的經驗。是能讓一台手機在自由軟體下運作的成就感，更是你對一個開源生態貢獻的一小塊基石——雖小，卻能被後來者踏上，繼續向前。
