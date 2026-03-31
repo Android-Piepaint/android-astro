@@ -1,15 +1,15 @@
 ---
-title: 給 SM8750 MTP 移植 Arch Linux ARM —— 第一章：硬體探索
+title: 給 SM8750 MTP 移植 Armbian GNU/Linux —— 第一章：硬體探索
 published: 2025-12-16
 description: 想要移植作業系統，必須先了解硬體的組成及通信總線。這是嵌入式 Linux 移植的第一步。
 image: 'assets/mtp8750-axis-view.jpg'
-tags: [Qualcomm, ARM, Linux]
+tags: [Qualcomm, ARM, Linux, Embed, FOSS]
 category: 'Porting'
 draft: false 
 lang: 'zh_TW'
 ---
 
-在上次的 MTP8750 評測後，我給予這臺工程機非常好的評價。既然它作爲一臺合格的工程機，那就必須要做點只有工程機才能乾的事，所以我決定要移植 Arch Linux ARM 作業系統。
+在上次的 MTP8750 評測後，我給予這臺工程機非常好的評價。既然它作爲一臺合格的工程機，那就必須要做點只有工程機才能乾的事，所以我決定要移植 Armbian 作業系統。
 
 # 硬體探索
 
@@ -18,7 +18,7 @@ lang: 'zh_TW'
 - 一顆早期（ES）版的 SM8750 CPU [^1]，8個核心，ARM V9指令集；
 - Adreno 830 GPU，支援 OpenGL ES 3.2；
 - 16GB LPDDR5X記憶體；
-- 512GB UFS 4.0，經確認UFS來自東芝
+- 512GB UFS 4.0，經確認UFS來自東芝生產
 
 想要獲取更多硬體資訊，我們就需要從作業系統下手了，好在 Android 至少算是個 Linux 發行版，有很多 Linux 獲取硬體資料的方法在 Android 上同樣使用。只是對於默認拔掉 Root 的 Android 來說，Linux 上獲取硬體信息的方法會有不少阻礙，破除這些阻礙的方法就是取得 Root 權限。不過工程機的 AOSP 系統默認開啓 `ADB Root` ，因此除錯和獲取日誌都要比量產機容易的多，只需要一根 Type-C 數據線就可以開始工作了：首先，開啓終端機，安裝 `android-tools` 套件：
 
