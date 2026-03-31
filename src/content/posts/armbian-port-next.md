@@ -12,7 +12,7 @@ lang: 'zh_TW'
 在前面簡單瞭解了韌體之後，這次就要開始系統移植了。畢竟原型機就要做些只有原型機才能做的事...</br>
 當然，我的移植過程也並不是一帆風順。這不是舊平臺，像SD410、845、660 那樣，主線核心支援基本完善，網路上能夠找到的資料也有很多。到目前爲止，SM8750的主線核心支援程度比較良好，像是CPU，USB，顯示，GPU，音訊以及ADSP，CDSP等功能已有支援。[^1] </br>
 
-<img src="/assets/screenshot/mainline-status.png" width="60%">
+<img src="/assets/mainline-status.png" width="60%">
 
 # 一切要從這裏開始...
 
@@ -126,11 +126,11 @@ Target = 0004.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ecv3HICeK74?si=5m9OW-QJOP2zHKan" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<img src="/assets/screenshot/sm8750-bootlog.jpg" width="60%">
+<img src="/assets/sm8750-bootlog.jpg" width="60%">
 
-<img src="/assets/screenshot/sm8750-uefi.jpg" width="60%">
+<img src="/assets/sm8750-uefi.jpg" width="60%">
 
-<img src="/assets/screenshot/armbian-screenfetch.jpg" width="60%">
+<img src="/assets/armbian-screenfetch.jpg" width="60%">
 
 
 
