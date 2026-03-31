@@ -107,7 +107,7 @@ Available devices by codename (40): aries (downstream), armani (downstream), beg
 ```
 需要注意的是，因爲驍龍410裝置的記憶體都很小，因此官方提供了停用數據機、Wi-Fi 和藍牙的相關軟體，這樣可以爲手機節約80～90MiB的記憶體。還有最新的 ```edge``` 分支的GPU驅動有問題，使用 Plasma 桌面會有過於好笑的圖形BUG。</br>
 
-刷機過程就平平無奇了。需要注意的是紅米2因爲 SoC 沒有熔斷，因此不需要解開鎖，在更新到最新的 [Android 5.1 ](https://xiaomirom.com/en/rom/redmi-2-redmi-2-pro-wt88047-global-fastboot-recovery-rom/)之後，還需要刷入 ```lk2nd``` 來充當引導 Linux 的中間層，避免原廠 Bootloader 向主線核心傳遞不必要的核心引數。
+刷機過程就平平無奇了。需要注意的是紅米2因爲 SoC 沒有熔燬，因此不需要解開鎖，在更新到最新的 [Android 5.1 ](https://xiaomirom.com/en/rom/redmi-2-redmi-2-pro-wt88047-global-fastboot-recovery-rom/)之後，還需要刷入 ```lk2nd``` 來充當引導 Linux 的中間層，避免原廠 Bootloader 向主線核心傳遞不必要的核心引數。
 
 ::github{repo="msm8916-mainline/lk2nd"}
 

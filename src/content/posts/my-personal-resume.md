@@ -59,7 +59,7 @@ lang: 'zh_TW'
 2025年2月至今 </br>
 
 - 由於845的主線核心不支援Type-C角色切換，以及電池供電導致的安全問題，一個可以使用直流電源供電的手機或其類似物就成為了我的急需；</br>
-- 在購買MTP845工程機後，我便根據高通的官方WP平台構建指南，在MTP845上成功運行了Windows 11 ARM版，由於工程機CPU的eFUSE未熔斷，所以我通過[slbounce](https://github.com/TravMurav/slbounce)成功啟用了EL2模式，使得我可以安裝Docker和Nextcloud用於搭建NAS和個人博客，並使用高通的Debug Board 直接供電，避免了安全問題。</br>
+- 在購買MTP845工程機後，我便根據高通的官方WP平台構建指南，在MTP845上成功運行了Windows 11 ARM版，由於工程機CPU的eFUSE未熔燬，所以我通過[slbounce](https://github.com/TravMurav/slbounce)成功啟用了EL2模式，使得我可以安裝Docker和Nextcloud用於搭建NAS和個人博客，並使用高通的Debug Board 直接供電，避免了安全問題。</br>
 
 # 紅米2 ——  Linux 手機
 2025年6月15日至今
