@@ -76,7 +76,7 @@ git clone https://github.com/Xlie-Electronic-Customs/linux.git
 之後，準備一條 micro USB 數據線，將裝置與電腦鏈接。在終端機上鍵入`sudo minicom qcom`來存取 UART 序列（或者使用`sudo minicom -D /dev/ttyUSB0 -b 115200`來存取），之後就可以通過鍵盤控制妳的裝置了（終端機展示的內容與裝置熒幕上的一致）。在裝置上，使用音量增減按鈕選取「Mass storage mode」（或按一下鍵盤上的`9`），按一下電源按鈕確認（或者`Enter`鍵），此時熒幕會熄滅，裝置上UFS快閃記憶體的分割表會在終端機展示出來。通過鍵盤上的上下鍵選擇「UFS LUN 0」，按下「Enter」鍵確認分割，再按一下`M`掛載 LUN 0 的分割，從電腦上存取內容。</br>
 在電腦上開啓GNOME Disks 磁碟管理工具（也可使用 `parted` 命令）。找到掛載的磁碟，使用鍵盤的左右鍵找到 `userdata` 分割，點擊左下的齒輪圖示，點選「調整分割大小」，鍵入一個數字，將 `partlabel` 命名爲 `linux` 或者其他名字，之後點選「格式化」將分割格式化爲 Ext4 文件系統，原先的 `userdata` 分割保持默認，妳的資料會保留下來（也可以直接格式化）。然後，新建一個 `EFI` 系統分割，格式化爲 FAT32 文件系統（FAT16 或者 W95 FAT32 也可以），大小爲500~1000MB。完成後按下任意鍵離開「Mass storage mode」，之後選擇「Reboot」重開機來套用新的分割。進入「BDS 設定選單」後，再次進入「Mass storage mode」（或者在 EBL 中鍵入`mass`命令也可以），掛載 LUN 0。到 [Armbian](https://www.armbian.com/uefi-arm64/) 網站去下載 UEFI ARM 64位元的通用映像檔，然後掛載映像，找到 Armbian 的 rootfs，選擇「建立分割映像」，將建立的分割映像刷入裝置的UFS快閃記憶體。</br>
 
-然後，從 [PostmarketOS][https://images.postmarketos.org/bpo/edge/postmarketos-trailblazer/]的網站下載通用映像，掛載映像，從 EFI 分割中複製出 `bootaa64.efi` `loader/entries/pmos.conf` 文件。在裝置上建立 `EFI/BOOT` 和 `loader/entries` 資料夾，將二個檔案分別複製到對應目錄下。然後從核心原始碼中複製編譯的 `sm8750-mtp.dtb` 設備樹到EFI分割中。</br>
+然後，從 [PostmarketOS](https://images.postmarketos.org/bpo/edge/postmarketos-trailblazer/)的網站下載通用映像，掛載映像，從 EFI 分割中複製出 `bootaa64.efi` `loader/entries/pmos.conf` 文件。在裝置上建立 `EFI/BOOT` 和 `loader/entries` 資料夾，將二個檔案分別複製到對應目錄下。然後從核心原始碼中複製編譯的 `sm8750-mtp.dtb` 設備樹到EFI分割中。</br>
 
 之後修改並更名 `pmos.conf`配置檔，使得下次開機後能夠引導 Armbian：
 
