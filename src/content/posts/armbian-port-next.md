@@ -19,7 +19,7 @@ lang: 'zh_TW'
 先說結果：「目前是未完成狀態」。僅有CPU（包括DVFS），顯示（採用 EFI framebuffer），USB網路，音訊，內建UFS快閃記憶體，UART序列，基於GPIO的按鍵，ADSP，CDSP工作，其餘部分仍在嘗試修補中。這比我在去年的時候根據 [Linaro 的教學](https://www.linaro.org/blog/let-s-boot-the-mainline-linux-kernel-on-qualcomm-devices/)第一次嘗試移植的結果要好不少。花費了半天時間，最後只有UART工作，熒幕也沒有畫面。</br>
 不過，高通對於自家的晶片的主線核心支援還是比較積極的。我認識的一位朋友「_堪拉派裏*_」就對我說，他使用 SD 8 Elite Gen 5 的原型機，根據[高通給出的教學](https://www.qualcomm.com/developer/blog/2025/10/same-day-snapdragon-8-elite-gen-5-upstream-linux-support)，只用了半個小時就移植了完整版的 Debian 13 並且實現了大部分被主線核心支援的功能！不過那就是另一個文章會講到的事情了。
 
-> _*這裏作者開了一個玩笑，「堪拉派裏」（Kaanapali）就是高通驍龍 8 Elite Gen 5 晶片的開發代號的非正式音譯。其韓國標準語的非正式音譯爲「가나파리」或「카나파리」。_
+> _*這裏作者開了一個玩笑，「堪拉派裏」（Kaanapali）就是高通驍龍 8 Elite Gen 5 晶片的開發代號的非正式音譯。其韓國標準語的非正式音譯爲「가나파리」或「카나팔리」。_
 
 # 硬體需求
 
@@ -71,6 +71,7 @@ git clone https://github.com/Xlie-Electronic-Customs/linux.git
 
 將原型機關機，按住電源按鈕和音量增按鈕開機（不是正常的「按一下電源按鈕開機」），此時裝置會進入「BDS 設定選單（BDS Menu）」（該功能需要開啓了除錯功能的韌體支援)。在這裏就可以對裝置的USB、PMIC、以及UEFI韌體進行設定。</br>
 
+<img src="/assets/bds-menu.jpg" width="80%">
 
 
 之後，準備一條 micro USB 數據線，將裝置與電腦鏈接。在終端機上鍵入`sudo minicom qcom`來存取 UART 序列（或者使用`sudo minicom -D /dev/ttyUSB0 -b 115200`來存取），之後就可以通過鍵盤控制妳的裝置了（終端機展示的內容與裝置熒幕上的一致）。在裝置上，使用音量增減按鈕選取「Mass storage mode」（或按一下鍵盤上的`9`），按一下電源按鈕確認（或者`Enter`鍵），此時熒幕會熄滅，裝置上UFS快閃記憶體的分割表會在終端機展示出來。通過鍵盤上的上下鍵選擇「UFS LUN 0」，按下「Enter」鍵確認分割，再按一下`M`掛載 LUN 0 的分割，從電腦上存取內容。</br>
@@ -95,7 +96,7 @@ devicetree sm8750-mtp.dtb
 
 ## 修改引導順序
 
-高通SM8750 MTP 原型機的開機韌體採用符合 [ARM Embedded Base Boot Requirements](https://arm-software.github.io/ebbr/) 標準的 UEFI 韌體，能夠支援PXE啓動、USB啓動，同時提供 UEFI Shell 方便進行韌體管理。
+高通SM8750 MTP 原型機的開機韌體採用符合 [ARM Embedded Base Boot Requirements](https://arm-software.github.io/ebbr/) 標準的 UEFI 韌體（所有零售機也如此），能夠支援PXE啓動、USB啓動，同時提供 UEFI Shell 方便進行韌體管理。
 
 按住電源按鈕和音量增按鈕來進入「BSD 設定選單」，選擇「Enter Shell」來進入 UEFI Shell。然後鍵入 `map -a` 來檢視裝置上的UFS快閃記憶體分割，找到建立的EFI分割（例如`fs4`），鍵入 `fs4:`來檢視 EFI分割中的內容。
 
