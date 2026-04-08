@@ -27,6 +27,8 @@ lang: 'zh_TW'
 ![A MacBook running macOS Big Sur](assets/mac.jpg)
 後來，我認識並且開始嘗試用 Linux 取代 Windows 作業系統。我喜歡自由軟體精神，後來受到疫情影響在家學習，我又了解了 FSF 和 GNU哲學，也因此開始了我的自由軟體探索之路。因此時常會編譯一些常用的軟體，因爲有些軟體沒有針對我的發行版打包，便只能自行編譯。而這時，我的桌機和筆電便因爲過於老舊，使用逐漸力不從心。但是我又不敢開口要求父母買新筆電，就只好忍着。直到我初三，桌機的機械硬碟不知道爲什麼開始發生頻繁斷電現象，導致壞軌增多。檢視 `SMART` 數據發現硬盤的通電時間已有7年之久，壞軌數有四個...我決定趁機提出購買新的筆電的要求，沒想到父親居然同意，我便拉着他去看那臺採用 M1 晶片的 MacBook Air，在了解完筆電的性能後，父親便買下來了。就這樣，我與 ARM 這個CPU架構的羈絆正式開始。
 
+![](assets/arch-linux-arm-hyfetch.png)
+
 ![My MacBook Air running Arch Linux ARM](assets/tonga.jpg)
 
 ## 有痛苦，亦有樂趣
