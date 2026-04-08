@@ -123,7 +123,7 @@ Target = 0004.
 
 # 結果
 
-這是我在 [YouTube 上發佈的視頻](https://youtube.com/shorts/Ecv3HICeK74?si=5m9OW-QJOP2zHKan)：
+這是我在 [YouTube 上發佈的影片](https://youtube.com/shorts/Ecv3HICeK74?si=5m9OW-QJOP2zHKan)：
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ecv3HICeK74?si=5m9OW-QJOP2zHKan" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

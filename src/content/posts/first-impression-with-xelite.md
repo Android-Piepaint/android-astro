@@ -1,5 +1,5 @@
 ---
-title: （未完成）當 Linux 遇上 Qualcomm X Elite，在讚嘆其強悍的性能時，請不要忘記它依然處於高度實驗性階段—— Ubuntu 25.04 在 Lenovo YOGA Air 14s 的體驗
+title: 當 Linux 遇上 Qualcomm X Elite，在讚嘆其強悍的性能時，請不要忘記它依然處於高度實驗性階段—— Ubuntu 25.04 在 Lenovo YOGA Air 14s 的體驗
 published: 2025-12-12
 description: 我或許是世界第一個在聯想 YOGA Air 14S 驍龍版筆電上安裝並測試Linux的用戶，但我對 Qualcomm X Elite 的第一印象，並不像很多人想像的那樣好。
 image: 'assets/yoga-air-14s.jpg'
