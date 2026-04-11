@@ -12,6 +12,10 @@ lang: 'zh_TW'
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xzhAOVbGrUs?si=9XvqCgimGi_uOqES" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/Porter%20Robinson%20-%20Look%20at%20the%20Sky%20(loophoof,%20NLS%20and%20Proto_ssin%20Remix_Cover)%20ft.%20hittcell%20-%20PR%CE%9BDA%20_%20_ssynae.ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 「저는 리뉴스(Linux)를 공부하는 좋아합니다.」和大多數計算機工學的人不同，學習 Linux 並非是學校要我學，才不得已開始學習。相反，我是完全主動踏入 Linux，BSD 和自由軟體相關的議題的。因為我崇尚自由軟體和GNU哲學，而且我唸的是網路相關的科系。</br>
 我從來都沒有認為，我已經學會 Linux。尤其是伺服器方面，我的掌握還不夠深入，畢竟家裡沒有辦法真的擺一臺伺服器硬體在那裡，無論是噪聲還是能耗都無法忍受。現在我已經把 Linux 當作日常主力作業系統，用於瀏覽網路、文書處理、美工，在極少數情況下我也會玩遊戲（Minecraft），也會用C開發簡單的程式。比如上週剛剛為一臺不知名廠家生產的POS機上的七畫管設計了一個[顯示系統時間、CPU平均時脈和記憶體使用情況的程式](https://github.com/Android-Piepaint/Dumb-POS-display-clock-monitor)。光是逆向顯示協定就花了我半小時。</br>
@@ -100,7 +104,6 @@ Manjaro 的體驗，也算是為我之後的 Distro hoppin’ 做了基礎。
 好在高通從835之後在所有的晶片上改用符合 [ARM EBBR 標準](https://arm-software.github.io/ebbr/)的 UEFI 韌體（根據高通BSP中的文檔來看，應該叫「Core Platform Boot，是基於 Coreboot 修改的韌體」），一些從UEFI韌體學習到的知識也可以直接搬到這裡來用。後來從編譯 Nothing Phone 1 的主線核心的過程想到必須要把韌體放到設備樹中給定的位置才能夠加載必要的韌體。靠著這個簡單的方法，我成功在7.0主線核心上修補了MTP原型機上的 ADSP，CDSP 二個遠程處理器，後來驚喜的發現主線核心支援了 Type-C 的雙重角色切換，我之前專門為筆電購置的 Type-C Dock 終於派上了用場。
 
 <img src="/assets/bds-menu.jpg" width="80%">
-
 
 <img src="/assets/sm8750-bootlog.jpg" width="60%">
 
