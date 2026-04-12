@@ -39,7 +39,9 @@ lang: 'zh_TW'
 
 在那之後沉寂了一段時日，後來我認識的同學家裡有用 MacBook，她便向我興致勃勃的講述關於 macOS 的事情。我第一次看到UI介面如此現代化的作業系統，和精緻的筆電，這也同時是我第一次接觸到 Android，Chrome OS 和 Windows 之外的，採用 Mach-O 微核心的商業 UNIX 作業系統。但是我總不可能說服家人去買幾千臺幣的 MacBook 吧！所以只好用虛擬機過過癮。至於我對 MacBook 的印象，只有2013年在某個地下街的 Apple 專賣店看到過一次，當時對於鍵盤上的「Command」鍵還有上面四葉草的圖示留下了深刻的記憶。為此在我小時設計「拙劣」的「苦力怕」筆電（不過是用紙盒拼成筆電造型）上也留下了它的影子。甚至於15年後的今日，我也會盯著 MacBook 上的「Command」鍵看一看。</br>
 </br>
-後來瞭解了什麼是「Hackintosh」（OSX86）專案，經過一段時間的檢索與嘗試，最終把 macOS 安裝在桌機上。當時使用的是 macOS 10.15.6 版本，發覺安裝之後並沒有像 Mac 一樣好用，或許並非 G2020 CPU 的關係，而是CPU內建的 Intel HD Graphics 2500 繪圖卡沒有 macOS 驅動程式，只能使用軟體渲染。即使如此，我還是堅持著用了一年，到後面才改用 Manjaro Linux。期間學會了使用虛擬機。在 macOS 下面，我也開始學習了基本的 UNIX 命令（`cd` `ls` `top` 之類），同時還學會了設定 `brew` 和 `macports` 套件管理員，算是為之後改用 Linux 作了基礎。
+後來瞭解了什麼是「Hackintosh」（OSX86）專案，經過一段時間的檢索與嘗試，最終把 macOS 安裝在桌機上。當時使用的是 macOS 10.15.6 版本，發覺安裝之後並沒有像 Mac 一樣好用，或許並非 G2020 CPU 的關係，而是CPU內建的 Intel HD Graphics 2500 繪圖卡沒有 macOS 驅動程式，只能使用軟體渲染。即使如此，我還是堅持著用了一年，到後面才改用 Manjaro Linux。期間學會了使用虛擬機。爲此還特意製作了[主機板的 OpenCore 配置檔](https://github.com/Android-Piepaint/GIGABYTE-B460M-D2V-Hackintosh)。在 macOS 下面，我也開始學習了基本的 UNIX 命令（`cd` `ls` `top` 之類），同時還學會了設定 `brew` 和 `macports` 套件管理員，算是為之後改用 Linux 作了基礎。
+
+ ::github{repo="Android-Piepaint/GIGABYTE-B460M-D2V-Hackintosh"}
 
 ## 2020年：Fedora 登臺，Manjaro Linux 主場，Linux 時代來臨
 
