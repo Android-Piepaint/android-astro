@@ -33,7 +33,7 @@
     "astro": "^6.0.4",
     "astro-compress": "^2.3.8",
     "astro-icon": "^1.1.5",
-    "axios": "^1.10.0",
+    "axios": "^1.15.0",
     "dotenv": "^16.6.1",
     "hastscript": "^9.0.1",
     "katex": "^0.16.45",
