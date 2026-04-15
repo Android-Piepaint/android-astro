@@ -60,3 +60,5 @@ Apple產品借用了一部分BSD開源專案的成果，卻把系統變成不自
 Apple公司對用戶的控制，有增無減，所謂的Apple生態系，實則是將用戶困入更深的牢籠中無法脫身。
 
 如果你本身就有相對自由的硬體（X86不錯，ARM更好，RISC-V更棒），而且還有自由的Linux與BSD作業系統可選，爲什麼一定要去應援專有軟體，把自己關進專有軟體鑄成的監獄？
+
+[^1]:[I'm glad since Hackintosh is coming to the end -- Ivon's Blog](https://ivonblog.com/posts/i-am-glad-hackintosh-is-dead/)
