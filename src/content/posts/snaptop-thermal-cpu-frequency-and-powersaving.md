@@ -48,7 +48,7 @@ gnome-session-inhibit --inhibit suspend gnome-clock
 當妳覺得驍龍 X Elite 零售筆電的 CPU，GPU 時脈不能滿足妳的需要而過度超頻時，妳的筆電:
 <img src="/assets/ehentai/huh.png" width="65%">
 
-_(啊...哈啊...要去了!...)
+_(啊...哈啊...要去了!...)_
 :::
 
 :::warning
