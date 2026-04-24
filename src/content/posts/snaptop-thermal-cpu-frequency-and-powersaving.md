@@ -167,6 +167,6 @@ echo 40000  > /sys/class/thermal/thermal_zone0/trip_point_0_temp
 echo 100000 > /sys/class/thermal/thermal_zone0/trip_point_1_temp
 ```
 
-[^1][hamoa.dtsi - qcom-laptops Linaro GitLab](https://gitlab.com/Linaro/arm64-laptops/linux/-/blob/qcom-laptops/arch/arm64/boot/dts/qcom/hamoa.dtsi)
+[^1]:[hamoa.dtsi - qcom-laptops Linaro GitLab](https://gitlab.com/Linaro/arm64-laptops/linux/-/blob/qcom-laptops/arch/arm64/boot/dts/qcom/hamoa.dtsi)
 
-[^2][ PinePhone 的超頻，省電，溫控策略 - Ivon's Blog](https://ivonblog.com/posts/pinephone-thermal/)
+[^2]:[PinePhone 的超頻，省電，溫控策略 - Ivon's Blog](https://ivonblog.com/posts/pinephone-thermal/)
