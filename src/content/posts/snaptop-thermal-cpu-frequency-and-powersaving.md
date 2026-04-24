@@ -165,6 +165,7 @@ grep . /sys/class/thermal/thermal_zone0/trip_point_*_temp
 ```bash
 echo 40000  > /sys/class/thermal/thermal_zone0/trip_point_0_temp
 echo 100000 > /sys/class/thermal/thermal_zone0/trip_point_1_temp
+```
 
 [^1][hamoa.dtsi - qcom-laptops Linaro GitLab](https://gitlab.com/Linaro/arm64-laptops/linux/-/blob/qcom-laptops/arch/arm64/boot/dts/qcom/hamoa.dtsi)
 
