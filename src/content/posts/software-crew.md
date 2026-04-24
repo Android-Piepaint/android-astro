@@ -1,6 +1,6 @@
 ---
 title: Software Crew -- A FOSS Parody of Shape of You by Ed Sheeran
-published: 2022-03-03
+published: 2026-03-03
 description: One day they'll fear my doom, and I don't care about your cookies too.
 image: 'assets/mtp8750-front-view.jpg'
 tags: [FOSS, Lyric]
@@ -8,6 +8,8 @@ category: 'Music'
 draft: false
 lang: 'en'
 ---
+
+(寫於2022年3月)</br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/79urGY80Xs0?si=MEvT8OzcP3G_Dh8c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
