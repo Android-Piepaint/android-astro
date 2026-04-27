@@ -3,7 +3,7 @@ title: 最像正常手機的工程機——驍龍 SM8750 MTP 工程機評測
 published: 2025-11-22
 description: 這次上場的，是來自 Qualcomm 最新一代的旗艦工程平台 —— Snapdragon SM8750 MTP（Mobile Test Platform）。與我之前測過的 Snapdragon 845 MTP 相比，8750 世代的工程機無論是性能、通訊架構、系統完成度，甚至可玩性，都提升到一個完全不同的高度。
 image: 'assets/mtp8750.jpg'
-tags: [Qualcomm, SM8750 MTP, ARM, FOSS]
+tags: [Qualcomm, SM8750 MTP, ARM, FOSS, Review]
 category: 'Android'
 draft: false
 lang: 'zh_TW'
