@@ -70,9 +70,9 @@ lang: 'zh_TW'
 <img src="/assets/subway-crop.png" width="60%">
 
 圖中青色線路爲「OpenCore 支線」，淺綠色線路爲「熔絲輕軌(Fuse L.R.T.)」。</br>
-「阿羅娜平原站」出入口，注意地面上的「Microsoft logo，曾是 Aloha 擁有重新設計的圖示前，MU UEFI 韌體的默認 Logo」。
 
 <img src="/assets/minecraft/aloha-plain-sta.png" width="75%">
+「阿羅娜平原站」出入口，注意地面上的「Microsoft logo，曾是 Aloha 擁有重新設計的圖示前，MU UEFI 韌體的默認 Logo」。
 :::
 
 他們不畏懼艱難，在沒有原理圖，BSP 的情況下，憑藉着廠商釋出的原始碼，在荒野中開闢出一條條小路，他們花費大量時間，對裝置展開逆向工程，只是爲了讓主線核心更好的相容裝置，在這混亂的硬體中建立起統一的秩序。無論是讓 Android 手機重獲新生，可以載入 Linux 甚至 OpenBSD 作業系統的 Renegade Project，還是致力於讓驍龍 X Elite 真正成為「Linux 生力軍」的開發者們，他們在 GitHub 上提交的每一行 commit，都是在為我們爭取那一點點微弱但珍貴的選擇權。</br>
