@@ -13,7 +13,7 @@ lang: 'zh_TW'
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Fs7MuuVwCOM?si=5PJSfvkHBlZQb60x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 :::
 
-最近在進行 SM8750 MTP 原型機的主線核心移植工作，隨著測試硬體功能而重編核心的次數不斷增多，原本僅有8GB記憶體的 Rock 5B 單板機在編譯核心時所花費的時間也就馬慢慢增加。雖說不會影響整體移植進展就是了，更沒有人要求我在哪天結束之前上傳成果。不過總覺得...身邊的設備都改用16GB記憶體了，我的驍龍筆電更是有32GB的RAM。何況在嵌入式裝置這種對記憶體要求嚴格的地方，更多的記憶體加上優秀的作業系統，只會讓這部裝置硬體資源更充足，所以經過多次考慮後，最終選擇了12GB記憶體的版本。
+最近在進行 SM8750 MTP 原型機的主線核心移植工作，隨著測試硬體功能而重編核心的次數不斷增多，原本僅有8GB記憶體的 Rock 5B 單板機在編譯核心時所花費的時間也就慢慢增加。雖說不會影響整體移植進展就是了，更沒有人要求我在哪天結束之前上傳成果。不過總覺得...身邊的設備都改用16GB記憶體了，我的驍龍筆電更是有32GB的RAM。何況在嵌入式裝置這種對記憶體要求嚴格的地方，更多的記憶體加上優秀的作業系統，只會讓這部裝置硬體資源更充足，所以經過多次考慮後，最終選擇了12GB記憶體的版本。
 
 ![Q6A running Armbian Rolling release](assets/q6a-fastfetch.png)
 
