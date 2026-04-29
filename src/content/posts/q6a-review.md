@@ -44,14 +44,14 @@ Radxa Dragon Q6A 是一顆採用驍龍 Dragonwing QCS6490 ARM 晶片的單板機
 插上電源，隨著綠色的LED點亮，螢幕上也隨之出現 Radxa 的 logo。在使用記憶卡的情況下，完全開機需要20秒。就像高通平臺的既有風格那樣，Q6A單板電腦的開機韌體同樣基於 Coreboot 和最新的 EDK II UEFI 實作，可以相容任何支援UEFI開機的作業系統。另外韌體還內建ACPI支援，甚至可以使用官方釋出的驅動程式改裝 Windows 11,幾乎所有的硬體都是正常的（韌體適用於 Windows 平臺）。可以通過進入 EDL 手動更新新的韌體，只需要按下耳機插孔旁邊的按鈕即可。另外晶片沒有熔燬，因此刷自己的客製化韌體來提升開機速度也是可以的。
 
 
-<img src="/assets/q6a-firmware.png" width="50%">
+<img src="/assets/q6a-firmware.jpg" width="50%">
 
 想要更新韌體，將單板機進入EDL，然後下載[官方韌體](https://dl.radxa.com/dragon/q6a/images/dragon-q6a_flat_build_wp_260120.zip)，使用 `edl` 工具進行韌體更新：
 
 ```bash
 sudo edl --memory=spinor rawprogram rawprogram0.xml patch0.xml --loader=prog_firehose_ddr.elf
 ```
-需要注意的是。必須使用 USB-A to USB-A 線將單板機與電腦相連！不知道為什麼這臺單板電腦非要這麼做，推測可能是因為 QCS6490 內部的引腳定義或初級引導程式（PBL）在硬體設計上，將其中一個 USB-A 接口定義為首選的數據傳輸路徑。雖然這對習慣了「萬物皆可 Type-C」的現代開發者來說有點復古，但也算是玩驍龍開發板的一種獨特儀式感吧。</br>
+需要注意的是。必須使用 USB-A to USB-A 線將單板機與電腦相連！不知道為什麼這臺單板電腦非要這麼做，推測可能是因為 QCS6490 內部的引腳定義或初級引導程式（PBL）在硬體設計上，將其中一個 USB-A 接口定義為首選的數據傳輸路徑。雖然這對習慣了「萬物皆可 Type-C」的現代開發者來說有點復古，但也算是玩驍龍單板機的一種獨特儀式感吧。</br>
 </br>
 軟體方面，目前只有 Armbian 對這臺裝置支援還比較不錯。當然因為這臺裝置尚處於初期階段，很多針對裝置的更改還沒有進入主線，所以目前常見的採用主線核心的發行版都開不起來。現在的 Radxa 和 PINE64 一樣，都是負責設計和製造硬體，至於軟體和作業系統則完全交給社群開發。如果想要存取UART，只需要通過杜邦線連接到UART轉換裝置，通過電腦存取即可。</br>
 
