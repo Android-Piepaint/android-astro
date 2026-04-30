@@ -21,6 +21,11 @@ lang: 'zh_TW'
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/n6GVaJL_eeY?si=T-7F7bfpk5GGeWWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%E5%88%B7%E6%A9%9F%E9%80%B2%E8%A1%8C%E6%99%82%E2%80%94%E6%A0%B9%E6%93%9AMay'n%20%E7%9A%84%E3%80%8C%E4%BA%BA%E7%94%9F%E9%80%B2%E8%A1%8C%E5%BD%A2%E3%80%8D%E6%94%B9%E7%B7%A8.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 # Part 1
 
 你在漆黑的熒幕上</br>
