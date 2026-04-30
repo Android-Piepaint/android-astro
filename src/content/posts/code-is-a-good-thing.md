@@ -11,6 +11,11 @@ lang: 'en'
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4VKy69sE4VY?si=N9z2BFPZ6BXNq_7G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/Code%20is%20a%20Good%20Thing%20--%20A%20FOSS%20parody%20of%20Rain%20is%20a%20Good%20Thing%20.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 # Part 1
 
 My daddy spent too much time, dealing with his laggy phone</br>

@@ -8,6 +8,10 @@ category: 'Music'
 draft: false
 lang: 'en'
 ---
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%E6%BA%96%E5%82%99%E9%96%8B%E5%88%B7%EF%BC%81--%E6%A0%B9%E6%93%9A%E3%80%8C%E8%94%9A%E8%97%8D%E6%AA%94%E6%A1%88%E3%80%8D%E4%B8%AD%E5%9C%8B%E6%9C%8D%E5%A4%A7%E9%81%8B%E5%8B%95%E6%9C%83%E4%B8%BB%E9%A1%8C%E6%9B%B2%E3%80%8C%E6%BA%96%E5%82%99%E5%87%BA%E7%99%BC%EF%BC%81%E3%80%8D%E6%94%B9%E7%B7%A8.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DLzUDHSYUWM?si=HR8Gia2XaX4PUVBb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

@@ -9,6 +9,11 @@ draft: false
 lang: 'en'
 ---
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/MTP%20Trouble%20--%20A%20FOSS%20parody%20of%20Trouble%20.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GiuabrUp8zM?si=Jpt7GThbrNFuzm6_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # Part 1
