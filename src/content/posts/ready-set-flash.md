@@ -1,8 +1,8 @@
 ---
 title: 準備開刷！(Feat. Kryo Kodiak) -- 根據「蔚藍檔案」中國服大運動會主題曲「準備出發！」的 FOSS 改編
-published: 2026-04-29
+published: 2026-04-30
 description: 讓我們在一起，構建新的篇章！寫給我的 QCS6490 單板機和 SM8750 MTP 原型機。
-image: 'assets/q6a-chip-view.jpg'
+image: 'assets/mtp8750-front-view.jpg'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false
