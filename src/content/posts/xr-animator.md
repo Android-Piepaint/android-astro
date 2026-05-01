@@ -4,7 +4,7 @@ published: 2025-10-02
 description: 網課時的摸魚神器！還有... SD X2 Elite 的參考設計工程機好好看！
 image: 'assets/mari-with-x2elite-crd.png'
 tags: [Linux, Misc]
-category: 'Other'
+category: 'FOSS & FOSS related'
 draft: false
 lang: 'zh_TW'
 ---

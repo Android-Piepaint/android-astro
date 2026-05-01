@@ -4,7 +4,7 @@ published: 2026-03-03
 description: 我的手機，我說了算。這本該是理所當然的事，不應該成為一種奢求。
 image: 'assets/keep-android-open.png'
 tags: [FOSS, Android, Thoughts, Misc]
-category: 'Misc'
+category: 'FOSS & FOSS related'
 draft: false
 lang: 'zh_TW'
 ---

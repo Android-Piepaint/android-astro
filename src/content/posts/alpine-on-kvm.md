@@ -165,7 +165,7 @@ ykia ALL=(ALL:ALL) ALL
 ```
 之後重開機，改用一般賬號登入。</br>
 
-如果覺得虛擬機執行效能低下，可以在「設定」中配置使用 OpenGL 加速，虛擬機可以喫到 Adreno 內建繪圖卡的 3D 加速：
+如果覺得虛擬機執行效能低下，可以在「設定」中配置使用 OpenGL 加速，虛擬機可以吃到 Adreno 內建繪圖卡的 3D 加速：
 
 ![](assets/opengl-accelerate.png)
 
