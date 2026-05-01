@@ -4,7 +4,7 @@ published: 2026-04-15
 description: 6F 75 72 68 61 72 64 77 6F 72 6B 62 79 74 68 65 73 65 77 6F 72 64 73 67 75 61 72 64 65 64 70 6C 65 61 73 65 64 6F 6E 74 73 74 65 61 6C 28 63 29 61 70 70 6C 65 63 6F 6D 70 75 74 65 72 69 6E 63
 image: 'assets/mtp8750-front-view.jpg'
 tags: [FOSS, UNIX, Thoughts, Misc]
-category: 'Linux'
+category: 'FOSS & FOSS related'
 draft: false
 lang: 'zh_TW'
 ---
