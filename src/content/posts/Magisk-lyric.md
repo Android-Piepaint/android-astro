@@ -9,6 +9,11 @@ draft: false
 lang: 'en'
 ---
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/Lovin'%20Magisk%20--%20A%20FOSS%20parody%20of%20Thinking%20Out%20Loud.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
 # Part 1
 
 When I got my first phone in my life, </br>
