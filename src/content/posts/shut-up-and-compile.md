@@ -11,6 +11,11 @@ lang: 'en'
 
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/195826564&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/raczeek" title="Raczek" target="_blank" style="color: #cccccc; text-decoration: none;">Raczek</a> · <a href="https://soundcloud.com/raczeek/shut-up-and-dance-walk-the-moon-devin-kyle-cover" title="Shut Up And Dance - Walk The Moon (Devin &amp; Kyle Cover)" target="_blank" style="color: #cccccc; text-decoration: none;">Shut Up And Dance - Walk The Moon (Devin &amp; Kyle Cover)</a></div>
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/Shut%20Up%20and%20Compile%20(Unfinished)%20--%20A%20PINE64%20Parody%20of%20Shut%20Up%20and%20Dance.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
 # Part 1
 
 Oh don't you dare look back, </br>

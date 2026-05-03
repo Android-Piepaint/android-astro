@@ -1,7 +1,7 @@
 ---
 title: Linux -- A FOSS Parody of Ferrari (Orginal song is made by Babe Rexha)
 published: 2025-06-11
-description: ''
+description: Living in the mainline's getting kinda lonely
 image: 'https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg'
 tags: [FOSS, Lyric]
 category: 'Music'
@@ -11,6 +11,10 @@ lang: 'en'
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/425969949&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/beberexha" title="Bebe Rexha" target="_blank" style="color: #cccccc; text-decoration: none;">Bebe Rexha</a> · <a href="https://soundcloud.com/beberexha/ferrari" title="Ferrari" target="_blank" style="color: #cccccc; text-decoration: none;">Ferrari</a></div>
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/Linux%20--%20A%20FOSS%20Parody%20of%20Ferrari%20(Orginal%20song%20is%20made%20by%20Babe%20Rexha).mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
 
 # Part 1 
 
@@ -20,7 +24,7 @@ Don't know what day it is </br>
 Can you tell me what day it is? </br>
 Time's passing by </br>
 'Cause I'm out chasing empty highs </br>
-Every hello just means goodbye </br>
+Every obsolete just means goodbye </br>
 But I'm looking for more this time </br>
 Can we start to slow it down? </br>
 Can we learn to live right now? </br>
@@ -42,7 +46,7 @@ Got a FOSS heart</br>
 'Cause it's still beating on its own </br>
 Might be going out in the crowd </br>
 But I'm still coming home alone </br>
-Not trying to say </br>
+Not trying to hide </br>
 I'm not a developer or programmer </br>
 I'm just trying these as my hobby </br>
 'Cause I just wanna protect my privacy </br>
