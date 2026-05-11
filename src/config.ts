@@ -7,7 +7,7 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "EDK Piepaint's Personal Collections -- EDK Piepaint 의 개인소장 플로그, EDK Piepaint 的個人所藏",
+	title: "EDK Piepaint's Personal Collections -- EDK Piepaint 의 개인소장",
 	subtitle: "Powered by QTI SM8750 MTP (SM8750 MTP 개발 플랫폼)",
 	lang: "en", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
