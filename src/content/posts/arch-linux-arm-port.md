@@ -473,7 +473,7 @@ lrwxrwxrwx 1 root root 16 1970-01-07 17:43 xbl_sc_test_mode -> /dev/block/sdf86
 
 ![NT37801 merge request on LWN.net](assets/lwn-net.png)
 
-其提交日誌中明確寫到：「[添加了 Novatek NT37801（也叫 Novetek NT37801 AMOLED DSI 顯示面板）的驅動支援，其被用於高通 SM8750 MTP 開發板(SM8750)](https://lwn.net/Articles/1020176/)」，這就是我想要的結果了，雖然沒有發現 datasheet，但是知道了面板型號和連接方式，這就足夠了。</br>
+其提交日誌中明確寫到：「[添加了 Novatek NT37801（也叫 Novetek NT37801 AMOLED DSI 顯示面板）的驅動支援，其被用於高通 SM8750 MTP 單板電腦(SM8750)](https://lwn.net/Articles/1020176/)」，這就是我想要的結果了，雖然沒有發現 datasheet，但是知道了面板型號和連接方式，這就足夠了。</br>
 獲取PCIE裝置需要我們通過 `lspci` 命令：
 
 ```bash

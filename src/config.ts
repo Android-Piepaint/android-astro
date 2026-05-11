@@ -7,8 +7,8 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "EDKPiepaint's Personal Collections",
-	subtitle: "Powered by QTI SM8750 MTP",
+	title: "EDK Piepaint's Personal Collections (EDK Piepaint 의 개인소장 플로그, EDK Piepaint 的個人所藏)",
+	subtitle: "Powered by QTI SM8750 MTP (SM8750 MTP 개발 플랫폼)",
 	lang: "en", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
@@ -54,7 +54,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar:
 		"https://avatars.githubusercontent.com/u/73344795?u=70d863449d42cd4da6fd7215b84aebbd11d1c95e&v=4", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "EDKPiepaint",
+	name: "EDK Piepaint",
 	bio: "Look at the code, you are still here.",
 	links: [
 		{
