@@ -13,7 +13,7 @@ lang: 'en'
 Hello, the page you're reading now is "EDK Piepaint's Personal Collections (EDK 파이페인트의 개인소장 플로그)".</br>
 This is my personal blog site running on a Qualcomm SM8750 MTP development platform. Powered by Astro website framework.</br>
 
-<img src="https://blog.cloudflare88.eu.org/_astro/mtp8750-front-view.DLQRhBDd_ZNVu5v.webp" width="500" >
+<img src="/assets/mtp8750-front-view.jpg" width="500" >
 
 It isn't a place just for sharing the information of Free and Open source softwares and interesting hardwares (e.g. Engineering devices, development boards, small Android garbages, etc), but also a place to share personal thoughts and political views. Here, you’ll find many firsthand accounts of using free softwares and discover ways to apply it to your daily life. Most contents of this website are written in Chinese.
 ## Theme I used
