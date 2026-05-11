@@ -15,7 +15,7 @@ lang: 'zh_TW'
 但是，SoC本身是一個四核心，時脈達1.4GHz的64位元CPU，只是Bootloader和作業系統是32位元的。因此，我們還是有辦法讓這個10年的“老傢伙”執行最新的軟體的。
 
 # 硬體雖弱，軟實力卻很強
-紅米 2 有非常豐富的第三方 Android 刷機包，出廠搭載 Android 4.4 的它能刷到 Android 12 的 Lineage OS 19.1 （3.10核心）。當它的性能已經不足以支撐在 Android 中多做什麼時，它還可以運行接近最新主線的 Linux Kernel 和 Debian, Ubuntu 等正兒八經的 Linux 發行版。可能是得益於高通官方基於 MSM8916 推出了支援 Ubuntu Linux 的 DragonBoard 410c 開發板，也得益於後續開源社群的努力，MSM8916 的主線核心功能已經比較完善，UART、USB、內部存儲 (eMMC/SD 卡)、WiFi 與藍牙、GPU、顯示 (需要 panel 驅動)、聲音、基於 GPIO 的按鍵、震動、數據機 (SMS,撥打電話, 行動數據) 等都得到了支援。
+紅米 2 有非常豐富的第三方 Android 刷機包，出廠搭載 Android 4.4 的它能刷到 Android 12 的 Lineage OS 19.1 （3.10核心）。當它的性能已經不足以支撐在 Android 中多做什麼時，它還可以運行接近最新主線的 Linux Kernel 和 Debian, Ubuntu 等正兒八經的 Linux 發行版。可能是得益於高通官方基於 MSM8916 推出了支援 Ubuntu Linux 的 DragonBoard 410c 單板電腦，也得益於後續開源社群的努力，MSM8916 的主線核心功能已經比較完善，UART、USB、內部存儲 (eMMC/SD 卡)、WiFi 與藍牙、GPU、顯示 (需要 panel 驅動)、聲音、基於 GPIO 的按鍵、震動、數據機 (SMS,撥打電話, 行動數據) 等都得到了支援。
 有了非常完善的主線核心支援之後，紅米2作爲一個廉價嵌入式 Linux 平臺，可以輕鬆應對一部分專業用途。有很多 Youtuber 還發佈了講紅米2改裝爲 3D 列印的上位機的方法，甚至還有人把同樣基於驍龍410 SoC 的可攜式 Wi-Fi 也改裝 Linux 甚至是 Openwrt，將它變爲真正的“路由器”。
 
 # 安裝過程
