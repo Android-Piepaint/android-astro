@@ -7,7 +7,7 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "EDK Piepaint's Personal Collections -- EDK Piepaint 의 개인소장",
+	title: "EDK Piepaint's Personal Collections -- EDK Piepaint 的個人所藏",
 	subtitle: "Powered by QTI SM8750 MTP (SM8750 MTP 개발 플랫폼)",
 	lang: "en", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
@@ -21,7 +21,7 @@ export const siteConfig: SiteConfig = {
 		credit: {
 			enable: true, // Display the credit text of the banner image
 			text: "Shot by EDKPiepaint", // Credit text to be displayed
-			url: "", // (Optional) URL link to the original artwork or artist's page
+			url: "https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
 	toc: {

@@ -1,11 +1,11 @@
 ---
 import path from "node:path";
-import type { CollectionEntry } from "astro:content";
+//import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 import { Icon } from "astro-icon/components";
 import I18nKey from "../i18n/i18nKey";
-import { render } from 'astro:content';
 import { i18n } from "../i18n/translation";
-import { getDir } from "../utils/url-utils";
+import { getDir, getPostUrlBySlug } from "../utils/url-utils";
 import PostMetadata from "./PostMeta.astro";
 import ImageWrapper from "./misc/ImageWrapper.astro";
 
@@ -26,7 +26,6 @@ interface Props {
 const {
 	entry,
 	title,
-	url,
 	published,
 	updated,
 	tags,
@@ -36,6 +35,9 @@ const {
 	style,
 } = Astro.props;
 const className = Astro.props.class;
+
+const postSlug = entry.id.replace(/\.[^/.]+$/, "");
+const url = getPostUrlBySlug(postSlug);
 
 const hasCover = image !== undefined && image !== null && image !== "";
 
