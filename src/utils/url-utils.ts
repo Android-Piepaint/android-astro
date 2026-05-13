@@ -12,8 +12,14 @@ function joinUrl(...parts: string[]): string {
 	return joined.replace(/\/+/g, "/");
 }
 
+//export function getPostUrlBySlug(slug: string): string {
+//	return url(`/posts/${slug}/`);
+//}
+
 export function getPostUrlBySlug(slug: string): string {
-	return url(`/posts/${slug}/`);
+	if (!slug) return url("/nothing/"); // 防止 undefined 導致的崩潰
+	const cleanSlug = slug.replace(/\.[^/.]+$/, "");
+	return url(`/posts/${cleanSlug}/`);
 }
 
 export function getCategoryUrl(category: string): string {
