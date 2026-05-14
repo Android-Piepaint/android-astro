@@ -30,9 +30,9 @@ lang: 'zh_TW'
 </br>
 即使是「開放」的 Android 裝置的拍照技術，也很大程度上被封閉原始碼的 APP 控制着呢...每家手機廠商都會編寫針對自家手機的相機 APP，並且強迫我們使用這些 APP。縱然我們有 [OpenCamera](https://sourceforge.net/p/opencamera/code/ci/master/tree/) 和 [FreeDCam](https://github.com/KillerInk/FreeDcam)這些開放原始碼的相機 APP，他們也不能完全利用每臺手機的鏡頭硬體功能，例如30倍 AI 放大，以及美化相片的演算法。</br>
 拍照之後的演算法更是各大廠家的機密。Sony，小米，Google，Samsung 都有自家的韻味，即使妳有辦法移植 Google camera 到其他裝置，也無法弄清背後的機理。因此，Opencamera 所拍的相片品質就會與原廠相機 APP 所拍的相片品質有所落差，往往需要使用 digiKam 修圖。成爲單純看感光元件效能的軟體，不過這樣也可以看出廠商在背後做的手腳。</br>
-因爲 Android 最初是作爲數位相機所開發的作業系統，因此在存取相機硬體方面的效果遠遠要比 GNU/Linux 成熟。例如 AOSP 所支援的 `Camera2API` 可以讓妳[調整 ISO](https://developer.android.com/media/camera/camerax)</br>
+因爲 Android 最初是作爲數位相機所開發的作業系統，因此在存取相機硬體方面的效果遠遠要比 GNU/Linux 成熟。例如 AOSP 所支援的 `Camera2API` 可以讓妳[調整 ISO](https://developer.android.com/media/camera/camerax)。</br>
 </br>
-至於像 Arch Linux，PostmarketOS 那樣的上游 Linux 發行版，想要驅動相機硬體會更困難。光是跑通相機硬體就謝天謝地了。看看主線核心對於 Nothing Phone 1 的相機支援程度就知道大概，只有長焦鏡頭和前置鏡頭才被支援，對於 Oneplus 6T 而言卻要好一些。不過高通平臺相機在主線核心中的顏色總是怪怪的，遠不如 Android 下面表現的鮮豔。對於 GNU/Linux 下面拍照的學問，目前鮮有人研究(似乎不知不覺又發現了研究方向呢...?)。</br>
+至於像 Arch Linux，PostmarketOS 那樣的上游 Linux 發行版，想要驅動相機硬體會更困難。光是跑通相機硬體就謝天謝地了。看看[主線核心對於 Nothing Phone 1 的相機支援程度](https://wiki.postmarketos.org/wiki/Nothing_Phone_1_(nothing-spacewar))就知道大概，只有長焦鏡頭和前置鏡頭才被支援，對於 Oneplus 6T 而言卻要好一些。不過高通平臺相機在主線核心中的顏色總是怪怪的，遠不如 Android 下面表現的鮮豔。對於 GNU/Linux 下面拍照的學問，目前鮮有人研究(似乎不知不覺又發現了研究方向呢...?)。</br>
 目前我在非 Android 系統上能夠做到影片畫質和在 Android 下表現相當的裝置，是很久以前在高通 SDM845 MTP 原型機上改裝 Windows 11 Arm 系統，安裝高通爲 MTP 原型機開發的驅動程式在 Windows 自帶的相機 APP 上拍攝的。但畢竟是原型機，沒有普遍參考意義。
 </br>
 爲 PinePhone 開發Megapixel 相機 App 的開發者也只是寫了一個 pipeline 出來。雖然也有 Oneplus 6T 的支援，但是並不能用。</br>
