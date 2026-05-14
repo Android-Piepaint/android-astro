@@ -1,7 +1,7 @@
 ---
 title: 開源數位相機，似乎只有 Android + Opencamera 才是最佳選擇
 published: 2026-05-14
-description: 
+description: 看來，現在最務實的「開源攝影」方式，還是買一臺硬體素質足夠強的 Android 手機，可以刷 crDroid 或者 LineageOS，然後安裝 OpenCamera 或者 FreeDCam 這些自由軟體相機 APP。
 image: 'assets/mtp8750-front-view.jpg'
 tags: [Thoughts, Misc, FOSS, Android]
 category: 'FOSS & FOSS related'
