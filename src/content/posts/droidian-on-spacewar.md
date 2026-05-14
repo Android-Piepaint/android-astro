@@ -14,7 +14,7 @@ lang: 'zh_TW'
 ## Droidian 介紹
 
 Droidian 是一個基於 Debian 的 Testing 分支開發的行動裝置作業系統，目的在於將 Android 手機的系統改裝爲 Debian 系統，讓 Android 手機可以像一般 Linux 電腦一樣，享受 Debian 的各種好處。</br>
-由於 Android 對 Linux 核心和文件系統做出了大量修改（例如刪除了 Linux 中常見的 X 視窗系統和 Wayland，亦不支援支撐大多數 Linux 程式所需的 Glib 或 musl C函式庫），使得市面上的絕大多數 Android 手機移植 Linux 系統變得疑難重重。因此，Droidian 專案的產生，便是解決這個問題而來的：它採用 [Halium](https://halium.org/) 和 libhybris，把 Android 的 bionic 與普通 Linux 的 Glibc 的C函式庫進行對應，並且相容 Android 中的 HAL 和硬體驅動程式，以此來降低移植難度。如果你的手機出廠預載 Android 9 及以上系統，Droidian 還可以通過 GSI 的方式移植，只需重新編譯核心即可。</br>
+由於 Android 對 Linux 核心和文件系統做出了大量修改（例如刪除了 Linux 中常見的 X 視窗系統和 Wayland，亦不支援支撐大多數 Linux 程式所需的 Glib 或 musl C函式庫），使得市面上的絕大多數 Android 手機移植 Linux 系統變得疑難重重。因此，Droidian 專案的產生，便是解決這個問題而來的：它採用 [Halium](https://halium.org/) 和 libhybris，把 Android 的 bionic 與普通 Linux 的 Glibc 的C函式庫進行對應，並且相容 Android 中的 HAL 和硬體驅動程式，以此來降低移植難度。如果妳的手機出廠預載 Android 9 及以上系統，Droidian 還可以通過 GSI 的方式移植，只需重新編譯核心即可。</br>
 
 ## 安裝 Droidian
 
@@ -47,7 +47,7 @@ Droidian 是一個基於 Debian 的 Testing 分支開發的行動裝置作業系
  
  ### 刷機過程
 
- 參考 XDA 的[教學](https://xdaforums.com/t/rom-linux-droidian-for-spacewar-with-waydroid.4762595/)，到[這裏](https://github.com/Nonta72/nothing-spacewar)下載需要的文件，你可以去 [Droidian](https://github.com/droidian-images/droidian/releases) 的GitHub 上下載最新版的映像檔嘗試。</br>
+ 參考 XDA 的[教學](https://xdaforums.com/t/rom-linux-droidian-for-spacewar-with-waydroid.4762595/)，到[這裏](https://github.com/Nonta72/nothing-spacewar)下載需要的文件，妳可以去 [Droidian](https://github.com/droidian-images/droidian/releases) 的GitHub 上下載最新版的映像檔嘗試。</br>
  下載完成後，解壓縮文件。</br>
  之後，去[這裏](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_T1.5-230310-1650)下載 Android 13 韌體，必須是原廠韌體，否則會有顯示Bug。下載完後，通過fastboot刷入各分區即可。或使用下面的腳本（來源：[Nothing Flasher](https://github.com/spike0en/nothing_flasher/blob/main/README.md#-download) by spike0en)：
 
@@ -340,7 +340,7 @@ echo "You may now optionally re-lock the bootloader if you haven't disabled andr
 
 ![Fingerprint unlocking in Droidian](assets/droidian-fingerprint.jpg)
 
-- 因爲是基於原廠核心修改，加之 Halium 與 libhybris 的採用，數據機的韌體實現方式也不同了。它被一個叫“ofono”的軟體棧替代，而不是主線核心中掛載數據機韌體啓動數據機的方案，與此同時，數據機的廠商也變成了“binder”，而不是“Qualcomm Incomprated”。不過，你依然可以撥打電話，與朋友發短訊聊天：
+- 因爲是基於原廠核心修改，加之 Halium 與 libhybris 的採用，數據機的韌體實現方式也不同了。它被一個叫“ofono”的軟體棧替代，而不是主線核心中掛載數據機韌體啓動數據機的方案，與此同時，數據機的廠商也變成了“binder”，而不是“Qualcomm Incomprated”。不過，妳依然可以撥打電話，與朋友發短訊聊天：
 
 ![modem details in droidian](assets/droidian-modem.jpg)
 
@@ -351,5 +351,5 @@ echo "You may now optionally re-lock the bootloader if you haven't disabled andr
 
 ## 總結
 
-Droidian 在 Nothing Phone 1 上的移植體驗讓我看見了「Android 與 Linux 能夠真正融合」的可能。雖然目前仍存在許多小問題，但它已經證明：即便在封閉的 Android 裝置上，我們仍能擁抱一個真正自由的 Linux 桌面。但它同樣讓我明白了 Android 手機與 Linux 手機的差異： Android 核心落後於主線核心至少5年，大量上游的修補無法及時應用於 Android，使 Android 裝置面臨着安全問題。此外，裝置廠商對於核心的大量修改，使得 Android 裝置移植主線 Linux 核心非常困難。主線核心對於硬體的實現，往往需要核心開發者花費幾個月甚至幾年時間才能做好。曾經有人拿 Pinephone 與 一加6T的主線核心原始碼做過對比，結果是 Pinephone 的主線核心與上游相差50行代碼，而後者則相差500行代碼。這個差距正是目前 Android 裝置在自由軟體世界中難以完全融入的現實寫照。這也是 Droidian 和 Halium 教給我的，最爲生動的一課，它不是教科書，卻勝似教科書。而最可貴的一點是：這節課必須由你親自完成，對照文檔從無到有，一步步修復、除錯甚至於重新實現手機的所有功能。</br>
-這種學習,不是速成的知識輸入，而是緩慢而紮實的理解；它會讓你更尊重硬體、理解驅動、體會抽象核心與具體裝置之間那條看不見的拉鋸線，它也會讓你對於 Linux，乃至整個 UNIX 世界有着比以往更加深刻的認識。它也會讓你對於自由軟體、開源社群、開放文化有著更深刻的理解。完成它的報酬或許不是獎盃或者金錢，也可能不會有任何商業價值。但它會是一段值得珍惜的歷程，一個你永遠都不會忘記的經驗。是能讓一台手機在自由軟體下運作的成就感，更是你對一個開源生態貢獻的一小塊基石——雖小，卻能被後來者踏上，繼續向前。
+Droidian 在 Nothing Phone 1 上的移植體驗讓我看見了「Android 與 Linux 能夠真正融合」的可能。雖然目前仍存在許多小問題，但它已經證明：即便在封閉的 Android 裝置上，我們仍能擁抱一個真正自由的 Linux 桌面。但它同樣讓我明白了 Android 手機與 Linux 手機的差異： Android 核心落後於主線核心至少5年，大量上游的修補無法及時應用於 Android，使 Android 裝置面臨着安全問題。此外，裝置廠商對於核心的大量修改，使得 Android 裝置移植主線 Linux 核心非常困難。主線核心對於硬體的實現，往往需要核心開發者花費幾個月甚至幾年時間才能做好。曾經有人拿 Pinephone 與 一加6T的主線核心原始碼做過對比，結果是 Pinephone 的主線核心與上游相差50行代碼，而後者則相差500行代碼。這個差距正是目前 Android 裝置在自由軟體世界中難以完全融入的現實寫照。這也是 Droidian 和 Halium 教給我的，最爲生動的一課，它不是教科書，卻勝似教科書。而最可貴的一點是：這節課必須由妳親自完成，對照文檔從無到有，一步步修復、除錯甚至於重新實現手機的所有功能。</br>
+這種學習,不是速成的知識輸入，而是緩慢而紮實的理解；它會讓妳更尊重硬體、理解驅動、體會抽象核心與具體裝置之間那條看不見的拉鋸線，它也會讓妳對於 Linux，乃至整個 UNIX 世界有着比以往更加深刻的認識。它也會讓妳對於自由軟體、開源社群、開放文化有著更深刻的理解。完成它的報酬或許不是獎盃或者金錢，也可能不會有任何商業價值。但它會是一段值得珍惜的歷程，一個妳永遠都不會忘記的經驗。是能讓一台手機在自由軟體下運作的成就感，更是妳對一個開源生態貢獻的一小塊基石——雖小，卻能被後來者踏上，繼續向前。

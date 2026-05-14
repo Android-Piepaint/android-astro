@@ -42,7 +42,7 @@ sudo apt update
 
 # 架設 Windows 11 ARM 容器
 
-本文所使用的專案來自 GitHub，你可以在這裏檢視其原始碼：
+本文所使用的專案來自 GitHub，妳可以在這裏檢視其原始碼：
 
 ::github{repo="dockur/windows-arm"}
 
@@ -80,7 +80,7 @@ docker run -it --rm --name windows -e "VERSION=11" -p 8006:8006 --device=/dev/kv
 
 ![](assets/working-kvm-demo.png)
 
-執行指令後，如果沒有任何錯誤訊息，且你的裝置支援KVM，就可以開啓瀏覽器，在地址欄鍵入 `http://127.0.0.1:8006` 來訪問 Windows 11 的桌面環境。</br>
+執行指令後，如果沒有任何錯誤訊息，且妳的裝置支援KVM，就可以開啓瀏覽器，在地址欄鍵入 `http://127.0.0.1:8006` 來訪問 Windows 11 的桌面環境。</br>
 
 ![](assets/windows-on-docker-cli.png)
 
