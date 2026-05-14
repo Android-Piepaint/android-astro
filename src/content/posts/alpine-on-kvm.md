@@ -41,7 +41,7 @@ lang: 'zh_TW'
 7. `tcblaunch.exe` 正常返回；
 8. 控制權交還 bootloader，繼續啓動 Linux；
    此時，系統已完成 Secure Launch，但後續啓動的並非 Windows，而是 Linux。</br>
-   下載完成後，重開機到 `systemd-boot` 引導器，選擇「 EFI Shell 」，之後你就會進入 UEFI Shell。此時我們需要找到硬碟的 EFI系統分割（例如 `fs3`），然後在 shell 中鍵入 `fs3:`，按下 Enter 鍵，你就會來到 EFI系統分割。可以鍵入 `ls` 來查看分割內容。
+   下載完成後，重開機到 `systemd-boot` 引導器，選擇「 EFI Shell 」，之後妳就會進入 UEFI Shell。此時我們需要找到硬碟的 EFI系統分割（例如 `fs3`），然後在 shell 中鍵入 `fs3:`，按下 Enter 鍵，妳就會來到 EFI系統分割。可以鍵入 `ls` 來查看分割內容。
    找到先前複製的 `sltest.efi` `slbounce.efi` 以及 `tcblaunch.exe`，開始進行測試。
    鍵入 `sltest.efi tcblaunch.exe`，此時螢幕上會出現「 Performing Secure Launch 」的日誌，如果成功，在熒幕頂端會展示綠色的矩形框。之後重開機即可。
 
@@ -69,7 +69,7 @@ devicetree /x1e80100-lenovo-yoga-slim7x-el2.dtb
 
 ![](assets/working-kvm-demo.png)
 
-之後的步驟，建議將你的筆電接上電源，因爲高通 ADSP 在 EL2 異常層級下不會被核心 Hypervisior 初始化，因此所有依賴 ADSP 子系統的功能會噴掉，比如 Wi-Fi和電池（表現爲電量始終顯示0%），還有聲音。目前的解決辦法是使用 ADSP-lite 驅動，這樣勉強可以補回一些功能。或者改用新的 [qebspil](https://github.com/stephan-gh/qebspil/)驅動，讓UEFI初始化這些子系統。
+之後的步驟，建議將妳的筆電接上電源，因爲高通 ADSP 在 EL2 異常層級下不會被核心 Hypervisior 初始化，因此所有依賴 ADSP 子系統的功能會噴掉，比如 Wi-Fi和電池（表現爲電量始終顯示0%），還有聲音。目前的解決辦法是使用 ADSP-lite 驅動，這樣勉強可以補回一些功能。或者改用新的 [qebspil](https://github.com/stephan-gh/qebspil/)驅動，讓UEFI初始化這些子系統。
 
 現在，讓我們來安裝 Virt Manager，這是一個用於管理虛擬機的圖形化工具。在 Ubuntu 26.04 環境下，可以通過 `sudo apt install virt-manager` 安裝。之後啓用對應的 `systemd` 服務即可。
 然後，安裝`qemu-system-arm`套件：
@@ -96,7 +96,7 @@ sudo apt install qemu-system-arm
 
 ![](assets/alpine-disk.png)
 
-設定虛擬機的網路，保持默認即可。之後開機，你應該會看到 Tianocore 的啓動 Logo:
+設定虛擬機的網路，保持默認即可。之後開機，妳應該會看到 Tianocore 的啓動 Logo:
 
 ![](assets/alpine-boot.png)
 

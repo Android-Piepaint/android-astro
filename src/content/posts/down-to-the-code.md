@@ -155,7 +155,7 @@ _I'll decompress all dirty things inside your soul,_</br>
 A developer, or a raider, now you should know</br>
 'Cause it's a long-lived rule down to the code</br>
 
-[^1]:TLS（傳輸層安全性協定）握手是建立安全網路連線的關鍵程序。簡單來說，每當你訪問一個以 `https://` 開頭的網站時，你的瀏覽器與伺服器之間就會進行這段「對話」，目的是在傳送數據之前先確認對方的身分，並協議出一套加密方式。
+[^1]:TLS（傳輸層安全性協定）握手是建立安全網路連線的關鍵程序。簡單來說，每當妳訪問一個以 `https://` 開頭的網站時，妳的瀏覽器與伺服器之間就會進行這段「對話」，目的是在傳送數據之前先確認對方的身分，並協議出一套加密方式。
 [^2]:北美地區Linux愛好者舉行的同行者聚會，旨在分享自己的FOSS經驗，幫助別人解決相關問題等。
 [^3]:系統呼叫（System Call，簡稱 `syscall`） 是應用程式（User Space）與作業系統核心（Kernel Space）之間的橋樑。在電腦中，為了保證安全性，普通程式（如瀏覽器、遊戲）被限制直接操作硬體（如硬碟、網路、記憶體）。當程式需要執行這些敏感操作時，就必須向作業系統「發出請求」，這個請求機制就是 System Call。在C中，程式需使用`syscall()`函式才能進行系統呼叫。歌詞中將常見的「打電話」這一行爲與`syscall()`建立聯繫，是一種更形象的記憶方式。
 [^4]:高通驍龍 X Elite（先前叫做SC8380XP）的代號，其姓氏「Oryon」則是暗指高通的自研ARM處理器核心「Oryon」。

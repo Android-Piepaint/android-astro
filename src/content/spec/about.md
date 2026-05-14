@@ -23,7 +23,7 @@ It isn't a place just for sharing the information of Free and Open source softwa
 
 妳現在正檢視的是「EDK Piepaint's Personal Collections」,「EDK Piepaint 的個人所藏」頁面。</br>
 這是我的個人部落格，採用 Astro 框架架設，目前由我的 Qualcomm SM8750 MTP開發平臺（原型）設備直接託管運行。</br>
-這裏不僅是分享自由軟體和硬體（例如各種原型機，工程機，單板電腦，Android 小物件）也是展現個人思考，政治觀點的所在。在這裏妳會看到許多自由軟體的實際體驗心得，以及發現把自由軟體應用於日常生活的可能性。順便說一下，部落格的主要內容是用中文寫的。</br>
+這裏不僅是分享自由軟體和硬體（例如各種原型機，原型機，單板電腦，Android 小物件）也是展現個人思考，政治觀點的所在。在這裏妳會看到許多自由軟體的實際體驗心得，以及發現把自由軟體應用於日常生活的可能性。順便說一下，部落格的主要內容是用中文寫的。</br>
 ## 使用的界面主題
 ::github{repo="saicaca/fuwari"}
 

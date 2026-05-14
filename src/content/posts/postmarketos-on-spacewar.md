@@ -13,7 +13,7 @@ lang: 'zh_TW'
 
 :::note
 本文僅代表作者（EDKPiepaint）個人及少數刷機和自由軟體愛好者的觀點，請不要參考。（是的，**請不要參考**)
- - 由於本文所使用的專業術語較多，對於沒有相關經歷的人而言，本文會比較晦澀難懂，請謹慎閱讀。如果你是只會大喊大叫諸如”我不懂！“之類的話，並且會發火，還有種被人瞧不起的感覺的，或者是只會擺出架子（一些家長或者”老爺“最擅長這麼做）的人，我建議你不要閱讀了。
+ - 由於本文所使用的專業術語較多，對於沒有相關經歷的人而言，本文會比較晦澀難懂，請謹慎閱讀。如果妳是只會大喊大叫諸如”我不懂！“之類的話，並且會發火，還有種被人瞧不起的感覺的，或者是只會擺出架子（一些家長或者”老爺“最擅長這麼做）的人，我建議妳不要閱讀了。
 :::
 
 :::warning[中國大陸的閱讀者請注意]
@@ -140,7 +140,7 @@ fastboot --disable-verity flash vbmeta /path/to/vbmeta.img
 # 修復 bug
 
 但是，在清除 `dtbo` 分割並禁用 AVB 後，手機仍然會卡在 bootloader 無法繼續。因為我們不知道這個手機的 UART 位置，所以就無法通過 UART 了解到底發生了什麼，如果執行 `fastboot reboot recovery` 就可以使手機開機。由此我懷疑這個手機的引導程式有 bug，解決這個 bug 的唯一辦法是同時將 `boot.img` 刷到兩個槽位。</br>
-在開機之後，因為 Nothing Phone（1）的主線核心目前不穩定，像是GPU、聲音和藍牙就需要我們手動修補。你會遇到畫面響應卡頓、沒有聲音、藍牙、Wi-Fi還有5G行動網路不工作的問題。但是這些問題都是可以解決的。
+在開機之後，因為 Nothing Phone（1）的主線核心目前不穩定，像是GPU、聲音和藍牙就需要我們手動修補。妳會遇到畫面響應卡頓、沒有聲音、藍牙、Wi-Fi還有5G行動網路不工作的問題。但是這些問題都是可以解決的。
 
  ## 修復 Wi-Fi 和 5G 行動網路
  通過核心日誌可以看出，數據機已經被初始化了：
@@ -215,7 +215,7 @@ sudo rc-update add poklit
 
 ![](assets/home.png)
 
-經過這些修補，這個 Nothing Phone（1）總算可以正常使用了。最後，這裡是EDKPiepaint，登出，祝你有個美好的一天！
+經過這些修補，這個 Nothing Phone（1）總算可以正常使用了。最後，這裡是EDKPiepaint，登出，祝妳有個美好的一天！
 
 [^1]: [原文表述為：“本裝置可以執行PostmarketOS，但其相關依賴軟體未進入套件庫“](https://wiki.postmarketos.org/wiki/Nothing_Phone_1_(nothing-spacewar))
 [^2]: [mainlining/pmaports -- GitHub](https://github.com/mainlining/pmaports/tree/danila/spacewar)

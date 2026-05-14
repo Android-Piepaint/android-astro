@@ -233,7 +233,7 @@ SUBSYSTEM=="input", ATTRS{name}=="inphic S6 Keyboard", ENV{ID_INPUT_KEYBOARD}=="
 w = macro(layer(custom_action))  # 使用 keyd 的 macro（宏）功能來捕獲按鍵行爲
 
 [custom_action]
-# 當檢測到第一個 'w' 後，你可以讓它執行一個命令
+# 當檢測到第一個 'w' 後，妳可以讓它執行一個命令
 # 例如：切換桌面、打開計算器、甚至執行一個腳本
 w = f12 
 # 或者執行系統命令（需要配合 keyd 的 command 功能）

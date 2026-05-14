@@ -1,7 +1,7 @@
 ---
 title: Renegade -- An Aloha Parody of Renegade (Orginal song is made by Axwell Λ Ingrosso and Sebastian Ingrosso)
 published: 2026-05-03
-description: 妳們是否發現了我的大頭貼離遠點看很像 Renegade 專案的 UEFI 韌體 Logo 呢？不管你有沒有發現都無所謂...
+description: 妳們是否發現了我的大頭貼離遠點看很像 Renegade 專案的 UEFI 韌體 Logo 呢？不管妳有沒有發現都無所謂...
 image: 'https://user-images.githubusercontent.com/17036722/199902341-b086ec31-8d5c-4766-953a-8b9e1492de8b.png'
 tags: [FOSS, Lyric]
 category: 'Music'

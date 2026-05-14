@@ -1,5 +1,5 @@
 ---
-title: MMD Skin -- 採用 Rust 編寫的模組，把你最喜歡的動漫角色帶到「當個創世神」的方塊世界，給你與衆不同的遊戲體驗 ~ 
+title: MMD Skin -- 採用 Rust 編寫的模組，把妳最喜歡的動漫角色帶到「當個創世神」的方塊世界，給妳與衆不同的遊戲體驗 ~ 
 published: 2026-02-17
 description: 把自己最喜歡的動漫角色放到麥塊中是多麼有趣的事情！
 image: 'assets/mari-station.png'
@@ -17,8 +17,8 @@ lang: 'zh_TW'
 :::
 
 把動漫人物模型放到 Minecraft 中並藉由玩家控制的模組很早就有了（比如 CustomSteve 之類），但是很多模組要麼版本太舊，新版本根本不相容，要麼就是私有軟體，常常做一些見不得人的勾當。</br>
-嗯，我知道「當個創世神」自從1.16以後在遊戲中內嵌了追蹤程式，收集使用者隱私。而且麥塊本身就是不開源的專有軟體，但是你很難在 Linux 上找到可以跨平臺協作的遊戲了。</br>
-今天 Piepaint 要來介紹的就是這樣一款開放原始碼的麥塊模組，它可以把你最喜歡的動漫人物用於替換遊戲裏原本方方正正的 Steve ，同時還可以實現自訂人物動作，能夠更好豐富你的遊戲體驗。</br>
+嗯，我知道「當個創世神」自從1.16以後在遊戲中內嵌了追蹤程式，收集使用者隱私。而且麥塊本身就是不開源的專有軟體，但是妳很難在 Linux 上找到可以跨平臺協作的遊戲了。</br>
+今天 Piepaint 要來介紹的就是這樣一款開放原始碼的麥塊模組，它可以把妳最喜歡的動漫人物用於替換遊戲裏原本方方正正的 Steve ，同時還可以實現自訂人物動作，能夠更好豐富妳的遊戲體驗。</br>
 放上實際體驗效果圖片：
 
 ![](assets/minecraft/allwinner-station.png)
@@ -67,7 +67,7 @@ lang: 'zh_TW'
 
 ![Mod settings](assets/minecraft/modsettings.png)
 
-選擇右上角的「Model switch」選項，模組就會讀取你放在資料夾下的人物模型，此時選擇你喜歡的模型，然後按下「Done」按鈕（模組本身僅支援簡體中文和英語）。
+選擇右上角的「Model switch」選項，模組就會讀取妳放在資料夾下的人物模型，此時選擇妳喜歡的模型，然後按下「Done」按鈕（模組本身僅支援簡體中文和英語）。
 
 ![Model switch options showing 2 model avaliable](assets/minecraft/model-selector.png)
 
@@ -83,7 +83,7 @@ lang: 'zh_TW'
 
 ![](assets/minecraft/motions-example.png)
 
-通過「Expression select」選單也可以爲你的人物更換表情，也可以點擊右下的「+」按鈕來新增表情（啊嘿顏最好了~）
+通過「Expression select」選單也可以爲妳的人物更換表情，也可以點擊右下的「+」按鈕來新增表情（啊嘿顏最好了~）
 
 ![](assets/minecraft/emotions.png)
 
@@ -91,7 +91,7 @@ lang: 'zh_TW'
 
 ![](assets/minecraft/material-settings.png)
 
-最後，你可以配置使用舞臺，匯入你的舞臺設定，讓人物跳舞給你看！
+最後，妳可以配置使用舞臺，匯入妳的舞臺設定，讓人物跳舞給妳看！
 
 ![](assets/minecraft/stage-mode.png)
 

@@ -63,7 +63,7 @@ When I tired, loot at the sky, </br>
 Look back progress I've made, </br>
 （回首我所走過的路） </br>
 I can't wait to share it with you. </br>
-（我迫不及待想要與你分享） </br>
+（我迫不及待想要與妳分享） </br>
 </br>
 </br>
 
@@ -76,7 +76,7 @@ I can't wait to share it with you. </br>
 </br>
 高中時候，熱愛自由開源 </br>
 父母說這些東西在中國無人使用 </br>
-你這樣的（犟）脾氣，獨立後難以（在國內）生存， </br>
+妳這樣的（犟）脾氣，獨立後難以（在國內）生存， </br>
 此時此刻，（我）早已自建代理（伺服器）</br>
 代理，純淨家庭IP </br>
 代理，（學會流量）上下行分離 </br>
@@ -105,7 +105,7 @@ When I tired, loot at the sky, </br>
 Look back progress I've made, </br>
 （回首我所走過的路） </br>
 I can't wait to share it with you. </br>
-（我迫不及待想要與你分享） </br>
+（我迫不及待想要與妳分享） </br>
 </br>
 </br>
 
@@ -118,7 +118,7 @@ I can't wait to share it with you. </br>
 </br>
 收拾行李走嘍，一步一步，計算好 </br>
 看熟悉的家、熟悉的路，一點一點落在身後 </br>
-到了這大學校，與你們分別，改日再見 </br>
+到了這大學校，與妳們分別，改日再見 </br>
 適應好新生活，迎接各種挑戰 </br>
 </br>
 On a phone, a laptop, or any smartwatches, </br>
@@ -130,7 +130,7 @@ When I tired, loot at the sky, </br>
 Look back progress I've made, </br>
 （回首我所走過的路） </br>
 I can't wait to share it with you. </br>
-（我迫不及待想要與你分享） </br>
+（我迫不及待想要與妳分享） </br>
 </br>
 </br>
 
