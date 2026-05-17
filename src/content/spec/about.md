@@ -35,5 +35,5 @@ It isn't a place just for sharing the information of Free and Open source softwa
 이곳은 단순히 오픈소스 소프트웨어나(Open source software) 흥미로운 하드웨어(Hardware)(엔지니어링 샘플(sample), 개발 보드(board), 각종 Android 기기(機器) 등)에 대한 정보(情報)를 공유(共有)하는 공간(空間)을 넘어, 저의 개인적인 생각(思考)과 철학(哲學)을 담아내는 소중한 기록(記錄) 저장소(貯藏所)이기도 합니다.</br>
 
 여기에서 여러분은 자유(自由) 소프트웨어(Free Software,FLOSS)를 실제 환경(實際 環境)에서 사용(使用)해 본 생생한 후기(後記)와, 이를 일상생활(日常生活)에 어떻게 접목하고 활용(活用)할 수 있는지에 대한 다양(多樣)한 가능성(可能性)을 발견하실 수 있을 것입니다. 참고(參考)로, 블로그의 주요 콘텐츠(Contents)는 중국어(中國語)로 작성(作成)되어 있습니다.
-## 사용 중인 테마 (Theme)
+## 사용 중(使用 中)인 테마 (Theme)
 ::github{repo="saicaca/fuwari"}
