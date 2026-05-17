@@ -9,7 +9,6 @@ draft: false
 lang: 'en'
 ---
 
-[點擊這裏](https://blog.cloudflare88.eu.org/posts/ready-set-flash-korean/)檢視韓語版歌詞以及中文翻譯。</br>
 
 <audio controls>
   <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/Ready,%20Set,%20Flash!%20(%EC%A4%80%EB%B9%84,%20%EC%8B%9C%EC%9E%91,%20%ED%94%8C%EB%9E%98%EC%8B%B1!).mp3" type="audio/mpeg">
@@ -121,7 +120,7 @@ La la la, la la la la la la la </br>
 
 ## Ending
 
-나 리 라 바 라 바, 준비(準備)되면 플래싱!</br>
+나 리 라 바 라 바, 준비(準備)되면 플래싱(flash)!</br>
 나 리 라 바 라 바, 오픈 소스(Open source) 빛(光) 아래!</br>
 
 > Na Li La Ba La Ba，準備好了就開刷！</br>
