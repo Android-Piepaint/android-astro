@@ -22,7 +22,7 @@ lang: 'en'
 
 # 5月20日
 
-一直在思考如何改善 Armbian Linux 在我的 SM8750 MTP 原型機上的開機流程。不想每次都要從 BDS Menu 進入 UEFI Shell 打指令手動開機(之前使用 `bcfg` 指令手動建立引導選項的方法在原型機上不生效，可以建立引導選項，但是無法開機)，今天通過爬文找到一個[高通原型機愛好者/開發者的解法](https://kancy.life/2025/08/16/ABL2ESP/)。了解到了高通開發的 `abl2esp` [專案](https://github.com/qualcomm/abl2esp)，建立一個最基本的 ABL bootloader，可以在開機後檢索並執行位於內建 UFS 快閃記憶體的 EFI 應用程式。能夠執行 GRUB，`systemd-boot` 之類的系統開機載入器，甚至也可以通過 GRUB chainload 裝置原本的 ABL，保留使用 Android 的功能。或者直接替換成高通的 `fastboot.efi` [EFI 應用](https://github.com/qualcomm/fastboot.efi)，實作了簡單的 Fastboot 功能（`boot` `continue` `reboot`之類）。每次開機的時候通過 Fastboot 把 kernel 或者 EFI 應用傳進去，倒是有點像我之前在 SDM845 MTP 原型機的做法了。不過好像無法使用鍵盤輸入？至少可以改善開機流程了。
+一直在思考如何改善 Armbian Linux 在我的 SM8750 MTP 原型機上的開機流程。不想每次都要從 BDS Menu 進入 UEFI Shell 打指令手動開機(之前使用 `bcfg` 指令手動建立引導選項的方法在原型機上不生效，可以建立引導選項，但是建立的開機次序會在重開機後消失)，今天通過爬文找到一個[高通原型機愛好者/開發者的解法](https://kancy.life/2025/08/16/ABL2ESP/)。了解到了高通開發的 `abl2esp` [專案](https://github.com/qualcomm/abl2esp)，建立一個最基本的 ABL bootloader，可以在開機後檢索並執行位於內建 UFS 快閃記憶體的 EFI 應用程式。能夠執行 GRUB，`systemd-boot` 之類的系統開機載入器，甚至也可以通過 GRUB chainload 裝置原本的 ABL，保留使用 Android 的功能。或者直接替換成高通的 `fastboot.efi` [EFI 應用](https://github.com/qualcomm/fastboot.efi)，實作了簡單的 Fastboot 功能（`boot` `continue` `reboot`之類）。每次開機的時候通過 Fastboot 把 kernel 或者 EFI 應用傳進去，倒是有點像我之前在 SDM845 MTP 原型機的做法了。不過好像無法使用鍵盤輸入？至少可以改善開機流程了。
 
 # 5月19日
 
