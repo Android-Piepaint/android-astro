@@ -45,7 +45,7 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.About,
 		{
 			name: "/dev/random",
-			url: "https://blog.cloudflare88.eu.org/ublog", // Internal links should not include the base path, as it is automatically added
+			url: "/ublog", // Internal links should not include the base path, as it is automatically added
 			external: false, // Show an external link icon and will open in a new tab
 		},
 		{
