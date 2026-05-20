@@ -44,7 +44,12 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		LinkPreset.About,
 		{
-			name: "My Project",
+			name: "/dev/random",
+			url: "https://blog.cloudflare88.eu.org/ublog", // Internal links should not include the base path, as it is automatically added
+			external: false, // Show an external link icon and will open in a new tab
+		},
+		{
+			name: "My Projects",
 			url: "https://linux-on-nabu.gitbook.io/linux-for-mi-pad-5", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},
