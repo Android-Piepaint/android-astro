@@ -13,16 +13,18 @@ export async function GET(context: APIContext) {
 	return rss({
 		title: siteConfig.title,
 		description: siteConfig.subtitle || "No description",
-		site: context.site ?? "https://android-astro.vercel.app/",
+		site: context.site ?? "https://blog.cloudflare88.eu.org/",
 		items: blog.map((post) => {
 			const content =
 				typeof post.body === "string" ? post.body : String(post.body || "");
+
+			const cleanSlug = post.id.replace(/\.[^/.]+$/, "");
 
 			return {
 				title: post.data.title,
 				pubDate: post.data.published,
 				description: post.data.description || "",
-				link: `/posts/${post.slug}/`,
+				link: `/posts/${cleanSlug}/`,
 				content: sanitizeHtml(parser.render(content), {
 					allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
 				}),
