@@ -79,6 +79,11 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:github",
 			url: "https://github.com/Android-Piepaint",
 		},
+		{
+			name: "RSS Atom Feed",
+			icon: "fa6-solid:square-rss",
+			url: "https://blog.cloudflare88.eu.org/rss.xml",
+		},
 	],
 };
 
