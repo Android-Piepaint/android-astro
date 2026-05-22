@@ -1,6 +1,7 @@
 ---
 title: 解決聯想 Yoga Air 14s 在 Linux 作業系統下載大於1GB的檔案時當機重啓的問題
 published: 2026-01-31
+updated: 2026-05-22
 description: 或許打開筆電外殼的行爲很蠢，但是我真的不知道該從哪裏下手了。
 image: 'assets/q8x9-overview.png'
 tags: [Thoughts, ARM, Embed]

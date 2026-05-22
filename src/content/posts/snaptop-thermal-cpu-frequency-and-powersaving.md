@@ -1,6 +1,7 @@
 ---
 title: Lenovo Yoga Air 14S （或者 Slim 7x）筆電的溫控，超頻和省電策略
 published: 2026-04-24
+updated: 2026-05-22
 description: 事實證明，研究 Linux on Everything 的樂趣遠比 Windows on ARM 的樂趣要豐富不少。或許會對我完善 SM8750 MTP Armbian 的移植和研究嵌入式系統有幫助。
 image: 'assets/ideapad-ubuntu.png'
 tags: [Qualcomm, Laptop, ARM, Linux, Embed]
