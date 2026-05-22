@@ -1,6 +1,7 @@
 ---
 title: 高通平臺真的對自由軟體友好嗎？-- 我對於使用自由軟體的看法
 published: 2026-04-27
+updated: 2026-05-22
 description: 如果一臺設備需要每次開機時都需要 tweak，那麼這就註定了它不適合日常使用。
 image: 'assets/mtp8750-front-view.jpg'
 tags: [Thoughts, Misc, ARM, FOSS, Qualcomm]
