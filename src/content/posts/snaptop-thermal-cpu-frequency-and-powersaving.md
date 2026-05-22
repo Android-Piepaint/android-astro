@@ -9,7 +9,7 @@ draft: false
 lang: 'zh_TW'
 ---
 
-聯想 Yoga Slim 7x 筆電採用驍龍 X Elite 晶片，相容 Arm V9 指令集，4nm製程。爲12核心，採用經典的 Big.Little 大小核心設計，最高時脈爲 4.2GHz，提供42MB的L2快取。GPU 則是 Adreno X1 繪圖卡，外掛 Fastconnect 7800 PCIe 無線網路卡，這個網路卡在主線核心下似乎不穩定，但是經過更換韌體後可以[改善問題](https://blog.cloudflare88.eu.org/posts/fix-broken-wifi-card-on-laptop/)。</br>
+聯想 Yoga Slim 7x 筆電採用驍龍 X Elite 晶片，相容 Arm V9 指令集，4nm製程。爲12核心，採用經典的 Big.Little 大小核心設計，最高時脈爲 4.2GHz，提供42MB的L2快取。GPU 則是 Adreno X1 繪圖卡，外掛 Quectel NCM825A PCIe 無線網路卡，這個網路卡在主線核心下似乎不穩定，但是經過更換韌體後可以[改善問題](https://blog.cloudflare88.eu.org/posts/fix-broken-wifi-card-on-laptop/)。</br>
 記憶體是 32GB LPDDR 5x SDRAM。</br>
 </br>
 和我曾經用過的 Apple MacBook Air 相比（不是講好了不宣傳 Apple 產品嗎），這晶片的最高能耗爲80W，一般使用時也有23W。屬於比較耗電的晶片（M1 晶片最高才20W功耗，平日使用也只有18W），當然效能也要比 M1 好上不少。在執行編譯 Linux 核心或者其他程式時，筆電的風扇會全速運轉， CPU 的溫度發熱到91度。平時運作下晶片的溫度則維持在40~50度，無需風扇，僅靠被動散熱就可以。相比其他筆電，Yoga Slim 7x 的 Linux 表現非常「安靜」，是個不錯的日用筆電。</br>

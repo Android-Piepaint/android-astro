@@ -490,7 +490,7 @@ sun:/ $ lspci -nn
 00:00.0  [0604]:   [17cb:011c]
 ```
 
-這樣就得到了 PCIe 裝置的 Vendor 和 Device ID，接下來就可以到 [PCI ID Repository](https://pci-ids.ucw.cz/) 資料庫中查詢了。造訪[該網站](https://pci-ids.ucw.cz/)，選擇「PCI Devices」，在「Vendor」一列，選擇「All」，之後使用瀏覽器的搜索功能，鍵入 `17cb`，之後再鍵入 `110e`。不幸的是，PCI ID Repository 沒有收錄這個裝置，那要怎麼辦呢？只能通過 Termux 來幫助我們了。首先安裝 `pciutils`，Termux 的 `root repo` 裏有收。然後執行 `lspci` 即可：
+這樣就得到了 PCIe 裝置的 Vendor 和 Device ID，接下來就可以到 [PCI ID Repository](https://pci-ids.ucw.cz/) 資料庫中查詢了。造訪[該網站](https://pci-ids.ucw.cz/)，選擇「PCI Devices」，在「Vendor」一列，選擇「All」，之後使用瀏覽器的檢索功能，鍵入 `17cb`，之後再鍵入 `110e`。不幸的是，PCI ID Repository 沒有收錄這個裝置，那要怎麼辦呢？只能通過 Termux 來幫助我們了。首先安裝 `pciutils`，Termux 的 `root repo` 裏有收。然後執行 `lspci` 即可：
 
 ![lspci output with PCIe device](assets/screenshot/termux.png)
 
