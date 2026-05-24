@@ -20,6 +20,20 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 5月24日
+
+ - Toby Fox 在他的大學時期就開始思考新的遊戲作品內容，最後寫出了無數電玩愛好者公認的「神作」Undertale（地域傳說）。我是不是也要學習他，開發出一個以 Undertale 爲靈感的開源冒險遊戲？不過遊戲角色和劇情我還沒有想好...遊戲名稱暫定爲「FOSSTALE」，大概講的是一位開發者從污濁不堪的 Windows 世界逃離，卻不小心踏入 Arm Linux 世界，並和這片自由土地上的人們開始的一系列冒險和羈絆，最終這位開發者接受了自由軟體的理念，成爲一名 FOSS enthusiast 的故事。不過，要是真的做出遊戲來，會有人去遊玩嗎？</br>
+ 至於遊戲進程，和 Undertale 一樣，分爲和平線路，絕滅線路，和一般線路。只是這裏的「絕滅」指的是玩家講對應的人物角色「解除安裝」（畢竟 UNIX 中一切皆檔案），使得這個人從遊戲世界中永遠消失...</br>
+ 至於像 Sans 那樣檢定玩家行爲的角色我還沒有決定要給她什麼名字...或許「`littlehana`」比較不錯？</br>
+ </br>
+
+  - > Remember what I told, no matter where I go. I never leave your shadow, you'll never be alone.</br>
+    > Even whether season changes, even where we old. Remember what I told, you'll find the way back home. </br>
+
+    顯然這首歌並不是給 Android 和 iOS 這二個系統所寫的，因爲嘗試在 Android 上執行 `cd /home` 命令會得到 `/home: inaccessible or not found` 的錯誤，而 iOS 的 `/home` 是指向 `/var/mobile` 目錄的檔案連結，不是真正的 `/home` 目錄。所以，Android 和 iOS 使用者永遠無法找到自己的「家」了~ `xD`</br>
+</br>
+
+ - 或許我應該像 FlashTeens 那樣，把自己的 Minecraft 地圖架設成伺服器之後讓其他鐵路迷進來一起建造地鐵和高速鐵路，還能夠加快地圖的整體建設，順便減輕自己的工作量... 另外，目前「拿維鐵路」全線的路線圖以及開設的車站也已經定好了，歡迎大家爲車站設計提供建議！</br>
 ## 5月23日
 
 我之前一直都搞錯了我的 Lenovo Yoga Slim 7x 筆電的內建 PCIE 網路卡型號，因爲核心 `lspci` 命令展示的裝置名是 Fastconnect 7800，導致我很長一段時間裏認爲這是高通自家網路卡。到 Google 爬到一張不知名的[圖紙](https://blog.cloudflare88.eu.org/_astro/yoga-datasheet.CCssOcjz_v66nT.webp)看了才發現用的是 Quectel NCM825A 網路卡，無論是樣張還是我自己拆解筆電後看到的裝置都完全一致。原來我很早就接觸了 Quectel 家的產品呀...難怪驅動程式不穩定。之後我就把所有寫驍龍筆電的文章中提到網路卡的部分全部修改了。</br>
