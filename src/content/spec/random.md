@@ -24,9 +24,12 @@ lang: 'en'
 
 - 都說用左手的人比較聰明，因爲他們的大腦可以均衡開發。那爲什麼我是傻子呢？我平時都喜歡用左手打手槍啊！</br>
 </br>
+
 - [NT synchronization primitive driver](https://docs.kernel.org/userspace-api/ntsync.html) 可惡，我們的 Linux 終究還是被邪惡的 Windows 所攻陷了。但是 Windows NT 的多執行緒功能確實可以改善程式的效能，特別是在遊戲等吃系統延遲效能的場景中效果非常明顯。這依賴於 Linux 中的 `/dev/ntsync` node，可以有效減少 Wine 模擬 Windows `syscall()` 的時延。比起過去的 `wineserver` 和執行於 userspace 的 `fsync` `esync` 要好，根據 NTSync 作者的測試，遊戲 FPS 可以提高10倍以上。</br>
 </br>
-- 「[零售預備，熔絲熔燬！晶片報廢記得賠！](https://blog.cloudflare88.eu.org/posts/ready-set-flash/#verse)」話說現在手機廠家之所以在手機出廠前把晶片的 eFUSE 熔燬來打開安全啓動，一方面是爲了保障裝置在丟失後被別人破解的可能，但我想更多應該是爲了阻止使用者隨心所欲的客製化自己的手機吧！然後封鎖使用者解鎖 bootloader 的途徑，強制推行自家的專有軟體和間諜軟體。因爲同樣是零售機的 Shift SHIFT6mq 就沒有熔燬！而且 Shift 還有釋出自家手機 [ABL bootloader 的原始碼](https://codeberg.org/SHIFTPHONES/android_bootable_bootloader_edk2)並且 Bootloader 可以通過 Linux 的 Linux Firmware Repository 定期獲得更新。這樣看來，買一臺 SHIFT 的手機，然後改裝 PostmarketOS，就是很好的 PinePhone alternative 啊...還順便可以客製化自己的 ABL，真的就是 FOSS 愛好者的完美手機！</br>
+
+- 「[零售預備，熔絲熔燬！晶片報廢記得賠！](https://blog.cloudflare88.eu.org/posts/ready-set-flash/#verse)」話說現在手機廠家之所以在手機出廠前把晶片的 eFUSE 熔燬來打開安全啓動，一方面是爲了保障裝置在丟失後被別人破解的可能，但我想更多應該是爲了阻止使用者隨心所欲的客製化自己的手機吧！然後封鎖使用者解鎖 bootloader 的途徑，強制推行自家的專有軟體和間諜軟體。因爲同樣是零售機的 Shift SHIFT6mq 就沒有熔燬！而且 Shift 還有釋出自家手機 [ABL bootloader 的原始碼](https://codeberg.org/SHIFTPHONES/android_bootable_bootloader_edk2)，並且 Bootloader 可以通過 Linux 的 Linux Firmware Repository 定期獲得更新。這樣看來，買一臺 SHIFT 的手機，然後改裝 PostmarketOS，就是很好的 PinePhone alternative 啊...還順便可以客製化自己的 ABL，真的就是 FOSS 愛好者的完美手機！</br>
+</br>
 
 
 ## 5月27日
