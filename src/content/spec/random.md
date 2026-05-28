@@ -20,6 +20,15 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 5月28日
+
+- 都說用左手的人比較聰明，因爲他們的大腦可以均衡開發。那爲什麼我是傻子呢？我平時都喜歡用左手打手槍啊！</br>
+</br>
+- [NT synchronization primitive driver](https://docs.kernel.org/userspace-api/ntsync.html) 可惡，我們的 Linux 終究還是被邪惡的 Windows 所攻陷了。但是 Windows NT 的多執行緒功能確實可以改善程式的效能，特別是在遊戲等吃系統延遲效能的場景中效果非常明顯。這依賴於 Linux 中的 `/dev/ntsync` node，可以有效減少 Wine 模擬 Windows `syscall()` 的時延。比起過去的 `wineserver` 和執行於 userspace 的 `fsync` `esync` 要好，根據 NTSync 作者的測試，遊戲 FPS 可以提高10倍以上。</br>
+</br>
+- 「[零售預備，熔絲熔燬！晶片報廢記得賠！](https://blog.cloudflare88.eu.org/posts/ready-set-flash/#verse)」話說現在手機廠家之所以在手機出廠前把晶片的 eFUSE 熔燬來打開安全啓動，一方面是爲了保障裝置在丟失後被別人破解的可能，但我想更多應該是爲了阻止使用者隨心所欲的客製化自己的手機吧！然後封鎖使用者解鎖 bootloader 的途徑，強制推行自家的專有軟體和間諜軟體。因爲同樣是零售機的 Shift SHIFT6mq 就沒有熔燬！而且 Shift 還有釋出自家手機 [ABL bootloader 的原始碼](https://codeberg.org/SHIFTPHONES/android_bootable_bootloader_edk2)並且 Bootloader 可以通過 Linux 的 Linux Firmware Repository 定期獲得更新。這樣看來，買一臺 SHIFT 的手機，然後改裝 PostmarketOS，就是很好的 PinePhone alternative 啊...還順便可以客製化自己的 ABL，真的就是 FOSS 愛好者的完美手機！</br>
+
+
 ## 5月27日
 
 我好像沒有可以代表我形象的大頭貼。儘管我部落格上的 avatar 是用 AI 跑的繪圖，要改用手繪嗎？儘管現在 AI 生圖的效果都不錯，但我還是喜歡自己手繪的更好。畢竟可以更加鮮明的體現我的人設...好吧，我對於自己的人設並沒有清晰的認知。畢竟我的人生從國中之後就一直是「渾渾噩噩」的，不願意和別人交流，和別人講話就會緊張，只願意坐在電腦前研究我的自由軟體議題，連社交活動也不願參加。要不是考慮到將來的職業發展，我甚至連大學都不願去唸。加上我有社會恐懼症不可能像賣課仔一樣大方的露臉出來，那就只能維持目前這樣。要是繪製新的大頭貼的話，最多像「蔚藍檔案」裡的學生一樣，在自己的頭像上面畫一個代表「自由軟體」或者是 Tianocore 和高通驍龍 logo 的光環吧。畢竟，沒有人會在意妳在熒幕背後是不是一條狗。倘若我放棄寫自由軟體相關的議題，我只需要隨便套用一個爆款文案就會有流量，就會有大批 brainrot 去按讚。誰會在意妳的 avatar...</br>
