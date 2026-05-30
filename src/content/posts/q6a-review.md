@@ -115,7 +115,7 @@ sudo edl --memory=spinor rawprogram rawprogram0.xml patch0.xml --loader=prog_fir
 	Kernel modules: shpchp
 
 ```
-不難發現，QCS6490應該是驍龍865或者870為基礎修改的晶片（韌體中也可以看到晶片的代號為 `Kodiak`）。同時也可以看到由 Realtek 生產的網路卡。想要檢視硬體的信息可以通過 `dmidecode` 檢視：
+不難發現，QCS6490應該是驍龍778G為基礎修改的晶片（韌體中也可以看到晶片的代號為 `Kodiak`）。同時也可以看到由 Realtek 生產的網路卡。想要檢視硬體的信息可以通過 `dmidecode` 檢視：
 
 ```bash
 # sudo dmidecode
