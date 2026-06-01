@@ -111,7 +111,6 @@ Available devices by codename (40): aries (downstream), armani (downstream), beg
 
 ::github{repo="msm8916-mainline/lk2nd"}
 
-![](assets/88047-lk2nd.jpg)
 
 更新至 Android 5.1 之後，在原廠的 Fastboot 下，鍵入下列命令就可以刷入最新版的 ```lk2nd``` :
 
