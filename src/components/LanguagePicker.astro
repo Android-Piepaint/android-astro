@@ -3,12 +3,9 @@ import { Icon } from "astro-icon/components";
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const { pathname } = Astro.url;
-const currentLang = Astro.currentLocale || 'zh-TW';
+const currentLang = Astro.currentLocale || 'en';
 
-// 判斷要切換過去的目標語系
-const targetLang = currentLang === 'zh-TW' ? 'en' : 'zh-TW';
-
-// 計算目標網址
+// 清理目前的網址路徑，去掉語系前綴，以便重新組裝
 let cleanPath = pathname;
 if (cleanPath.startsWith('/en/')) {
     cleanPath = cleanPath.replace('/en/', '/');
@@ -17,23 +14,90 @@ if (cleanPath.startsWith('/en/')) {
 }
 if (cleanPath === '') cleanPath = '/';
 
-const targetUrl = getRelativeLocaleUrl(targetLang, cleanPath);
-const label = currentLang === 'zh-TW' ? 'Switch to English' : '切換至中文';
-
-// 格式化顯示的小標籤文字
-const displayLangLabel = currentLang === 'zh-TW' ? 'ZH' : 'EN';
+// 定義所有支援的語言列表
+const languages = [
+    { code: 'zh-TW', label: '中文', flag: 'ZH' },
+    { code: 'en', label: 'English', flag: 'EN' },
+    // 未來如果增加新語言，直接在這裡加一行即可，例如：
+     { code: 'ko', label: '한국어(대한민국) ', flag: 'KO' }
+];
 ---
 
-<a 
-    href={targetUrl} 
-    aria-label={label} 
-    title={label}
-    class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md text-[var(--primary)] shadow-md transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95"
-    data-swup-preload
->
-    <Icon name="material-symbols:translate-rounded" class="text-[1.4rem]"></Icon>
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2" id="lang-picker-container">
     
-    <span class="absolute -bottom-1 -right-1 flex h-4 px-1 items-center justify-center rounded bg-[var(--primary)] text-[8px] font-bold text-white uppercase tracking-tight shadow-sm">
-        {displayLangLabel}
-    </span>
-</a>
+    <!-- 1. 隱藏的語言選擇列表 (預設藉由 pointer-events-none, opacity-0 與 translate-y-2 隱藏) -->
+    <div 
+        id="lang-list-panel"
+        class="flex flex-col gap-1.5 p-1.5 rounded-2xl border border-black/10 dark:border-white/10 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl transition-all duration-300 translate-y-2 opacity-0 pointer-events-none"
+    >
+        {languages.map((lang) => {
+            const isCurrent = lang.code === currentLang;
+            const targetUrl = getRelativeLocaleUrl(lang.code, cleanPath);
+            return (
+                <a
+                    href={targetUrl}
+                    data-swup-preload
+                    class={`flex items-center gap-3 px-4 py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap ${
+                        isCurrent 
+                            ? 'bg-[var(--primary)] text-white shadow-sm' 
+                            : 'text-zinc-700 dark:text-zinc-300 hover:bg-black/5 dark:hover:bg-white/5 active:scale-95'
+                    }`}
+                >
+                    <span class={`text-[10px] px-1 rounded border ${isCurrent ? 'border-white/30 bg-white/10' : 'border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5'}`}>
+                        {lang.flag}
+                    </span>
+                    {lang.label}
+                </a>
+            );
+        })}
+    </div>
+
+    <!-- 2. 主懸浮按鈕 (點擊它會展開/收合選單) -->
+    <button 
+        id="lang-main-btn"
+        aria-label="Select Language"
+        class="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md text-[var(--primary)] shadow-md transition-all duration-300 hover:scale-105 active:scale-95"
+    >
+        <Icon name="material-symbols:translate-rounded" class="text-[1.4rem]"></Icon>
+        <!-- 目前語系的小標籤 -->
+        <span class="absolute -bottom-1 -right-1 flex h-4 px-1 items-center justify-center rounded bg-[var(--primary)] text-[8px] font-bold text-white uppercase tracking-tight shadow-sm">
+            {currentLang === 'zh' ? 'ZH' : 'EN'}
+        </span>
+    </button>
+</div>
+
+<!-- 3. 控制展開收合的腳本 (完美相容 Swup 轉場) -->
+<script>
+    function initLanguagePicker() {
+        const container = document.getElementById('lang-picker-container');
+        const mainBtn = document.getElementById('lang-main-btn');
+        const panel = document.getElementById('lang-list-panel');
+
+        if (!mainBtn || !panel || !container) return;
+
+        // 點擊按鈕切換顯示狀態
+        mainBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // 防止事件冒泡觸發點擊外部關閉
+            panel.classList.toggle('opacity-0');
+            panel.classList.toggle('pointer-events-none');
+            panel.classList.toggle('translate-y-2');
+            mainBtn.classList.toggle('rotate-12'); // 加上一點點旋活動效
+        });
+
+        // 點擊網頁其他任何地方時，自動收合選單
+        document.addEventListener('click', (e) => {
+            if (!container.contains(e.target as Node)) {
+                panel.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+                mainBtn.classList.remove('rotate-12');
+            }
+        });
+    }
+
+    // 初次載入時執行
+    initLanguagePicker();
+
+    // 💡 關鍵：在 Swup 轉場完成後重新綁定事件，防止按鈕失效
+    document.addEventListener('swup:enable', () => {
+        window.swup.hooks.on('content:replace', initLanguagePicker);
+    });
+</script>
