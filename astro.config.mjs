@@ -24,6 +24,14 @@ export default defineConfig({
 	site: "https://blog.cloudflare88.eu.org/",
 	base: "/",
 	trailingSlash: "always",
+	i18n: {
+        defaultLocale: "zh-TW",               // 預設語系（例如：中文）
+        locales: ["zh-TW", "en", "ko"],             // 所有支援的語系清單
+        routing: {
+            prefixDefaultLocale: false,    // false 代表預設語系的網址不用加前綴（如：/about/）
+                                           // 其他語系會加上前綴（如：/en/about/）
+        }
+    },
 	integrations: [
 		tailwind({
 			nesting: true,

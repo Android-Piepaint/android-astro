@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon/components";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const { pathname } = Astro.url;
+const currentLang = Astro.currentLocale || 'zh-TW';
+
+// 判斷要切換過去的目標語系
+const targetLang = currentLang === 'zh-TW' ? 'en' : 'zh-TW';
+
+// 計算目標網址
+let cleanPath = pathname;
+if (cleanPath.startsWith('/en/')) {
+    cleanPath = cleanPath.replace('/en/', '/');
+} else if (cleanPath.startsWith('/zh/')) {
+    cleanPath = cleanPath.replace('/zh/', '/');
+}
+if (cleanPath === '') cleanPath = '/';
+
+const targetUrl = getRelativeLocaleUrl(targetLang, cleanPath);
+const label = currentLang === 'zh-TW' ? 'Switch to English' : '切換至中文';
+
+// 格式化顯示的小標籤文字
+const displayLangLabel = currentLang === 'zh-TW' ? 'ZH' : 'EN';
+---
+
+<a 
+    href={targetUrl} 
+    aria-label={label} 
+    title={label}
+    class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md text-[var(--primary)] shadow-md transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95"
+    data-swup-preload
+>
+    <Icon name="material-symbols:translate-rounded" class="text-[1.4rem]"></Icon>
+    
+    <span class="absolute -bottom-1 -right-1 flex h-4 px-1 items-center justify-center rounded bg-[var(--primary)] text-[8px] font-bold text-white uppercase tracking-tight shadow-sm">
+        {displayLangLabel}
+    </span>
+</a>
