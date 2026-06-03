@@ -47,7 +47,7 @@ lang: 'zh_TW'
 
 含義：高通的MTP原型機因爲其低調的黑色塑料外殼、以及邊角料熒幕，配以內在性能強大的晶片，這與普通手機的現代、精緻的外觀有着鮮明的對比，常常會被人誤認爲是十幾年前的手機。
 
-![](assets/sdm850-front-view.png)
+<img src="/assets/mtp8750-front-view-2.png" >
 
 
 ## Linux終於成為了4%

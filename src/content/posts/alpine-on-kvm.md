@@ -4,7 +4,7 @@ published: 2026-01-04
 description: ''
 image: 'assets/virt-demo-host.png'
 tags: [FOSS, ARM, Libvirt, KVM, Qualcomm]
-category: 'Linux'
+category: 'KVM'
 draft: false
 lang: 'zh_TW'
 ---
@@ -65,7 +65,21 @@ devicetree /x1e80100-lenovo-yoga-slim7x-el2.dtb
 
 # 安裝 Virt Manager
 
-準備完成後，進入 EFI Shell，找到硬碟的 EFI系統分割，鍵入 `load slbounce.efi` 加載驅動程式，之後找到系統的開機載入器，通過 EFI Shell 執行，選擇先前的配置選項。如果核心正常啓動，就說明 Secure Launch 成功。在終端機中鍵入 `ls /dev/kvm` 確認是否有 `/dev/kvm` 裝置，如果有，就表示 KVM 模組成功安裝。
+準備完成後，進入 EFI Shell，找到硬碟的 EFI系統分割，鍵入 `load slbounce.efi` 加載驅動程式，之後找到系統的開機載入器，通過 EFI Shell 執行，選擇先前的配置選項。如果核心正常啓動，就說明 Secure Launch 成功。在終端機中鍵入 `ls /dev/kvm` 確認是否有 `/dev/kvm` 裝置，如果有，就表示 KVM 模組成功安裝。同時 `dmesg` 中應該會出現關於 GIC 和 KVM 的日誌:
+
+```yaml
+# dmesg | grep kvm
+[    0.067555] kvm [1]: nv: 568 coarse grained trap handlers
+[    0.067687] kvm [1]: nv: 664 fine grained trap handlers
+[    0.067777] kvm [1]: IPA Size Limit: 44 bits
+[    0.067789] kvm [1]: GICv4 support disabled
+[    0.067791] kvm [1]: GICv3: no GICV resource entry
+[    0.067792] kvm [1]: disabling GICv2 emulation
+[    0.067806] kvm [1]: GIC system register CPU interface enabled
+[    0.067813] kvm [1]: vgic interrupt IRQ9
+[    0.067839] kvm [1]: Broken CNTVOFF_EL2, trapping virtual timer
+[    0.067845] kvm [1]: VHE mode initialized successfully
+```
 
 ![](assets/working-kvm-demo.png)
 
