@@ -126,7 +126,7 @@ write_sysreg(SYS_IMP_APL_GXF_ENTER_EL1, arg_struct);
 CPU 保存當前 EL1 context，然後切換到 GL2，SPTM handler 根據傳入的引數進行頁表驗証(Page table validation)，和權限相關的工作。完成後再次返回 EL1. </br>
 在 Arm 匯編語言中，不難發現 `m1n1` 對 EL1 至 GL2 的實作[^4]：
 
-```assembly
+```asm
 // 首先執行 gxf_init 進行 GXF 環境準備（此函式省略），SPRR 會早於 GXF 被開啓。
 
 gxf_enter: 
