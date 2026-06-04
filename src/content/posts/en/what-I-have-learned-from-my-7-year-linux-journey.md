@@ -145,7 +145,7 @@ It just so happened that I remembered seeing a Lenovo Snaptop in a store earlier
 
 With deeper learning in embedded systems, ordinary Linux phones no longer satisfy my needs. Most phones supporting the mainline kernel are retail devices with hardware-based Secure Boot enabled, making firmware modification nearly impossible. Since the previous 845 prototype's battery became too old to continue using, I had to buy an 8750 MTP prototype (actually two; the other is used as a server to host my blog. If you look closely, you'll see "Powered by QTI SM8750 MTP" at the end of the site title) and began the porting of the mainline kernel and Armbian Linux. Fortunately, the mainline kernel has always had a Device Tree for the SM8750 MTP, and ALSA configuration files were also available for audio. However, the porting work remains difficult; porting the kernel alone took three months, just to solve a display issue. To escape Android's convoluted boot process (mainly because `boot` images are hard to create), I switched to the common UEFI boot method found on PCs, using an EFI Framebuffer to temporarily resolve the display issue.</br>
 
-<img src="assets/mtp8750-front-view-2.jpg">
+<img src="https://blog.cloudflare88.eu.org/assets/mtp8750-front-view-2.png">
 
 Fortunately, since the 835, Qualcomm has switched to UEFI firmware adhering to the [ARM EBBR standard](https://arm-software.github.io/ebbr/) on all chips (according to Qualcomm BSP documentation, it should be called "Core Platform Boot," firmware based on Coreboot). Knowledge learned from UEFI firmware can be directly applied here. </br>
 </br>
