@@ -1,6 +1,6 @@
 ---
 title: 在驍龍 X Elite 筆電上啓用KVM安裝 Alpine Linux~ 基於64位元ARM平臺的KVM安裝教學
-published: 2026-01-04
+published: 2026-06-04
 description: ''
 image: 'assets/virt-demo-host.png'
 tags: [FOSS, ARM, Libvirt, KVM, Qualcomm]
@@ -9,6 +9,7 @@ draft: false
 lang: 'zh_TW'
 ---
 
+(原文寫於 2026年1月4日)
 # 一切的開端
 
 自從我將我的主力筆電從 MacBook Air 換成這臺 Lenovo Yoga Air 14s 之後，我對於驍龍 X Elite 的好感也逐漸上升。不只是震驚於12顆效能強勁的Oryon CPU 核心和32GB的記憶體，使得我無論是應付日常事物，亦或是嵌入式Linux開發都變得綽綽有餘。但是，就像其他任何筆電一樣，這臺 Yoga Air 14s 也有自己的缺點。</br>
@@ -83,7 +84,9 @@ devicetree /x1e80100-lenovo-yoga-slim7x-el2.dtb
 
 ![](assets/working-kvm-demo.png)
 
-之後的步驟，建議將妳的筆電接上電源，因爲高通 ADSP 在 EL2 異常層級下不會被核心 Hypervisior 初始化，因此所有依賴 ADSP 子系統的功能會噴掉，比如 Wi-Fi和電池（表現爲電量始終顯示0%），還有聲音。目前的解決辦法是使用 ADSP-lite 驅動，這樣勉強可以補回一些功能。或者改用新的 [qebspil](https://github.com/stephan-gh/qebspil/)驅動，讓UEFI初始化這些子系統。
+之後的步驟，建議將妳的筆電接上電源，因爲高通 ADSP, CDSP 等遠端處理器在 EL2 異常層級下僅會被核心 Hypervisior 初始化基礎韌體使用部分功能，因此所有依賴 ADSP, CDSP 遠端處理器完整韌體的功能會噴掉，比如 Wi-Fi和電池（表現爲電量始終顯示0%），還有音訊。目前的解決辦法是使用 ADSP-lite 驅動，這樣勉強可以補回一些功能。或者改用新的 [qebspil](https://github.com/stephan-gh/qebspil/)驅動，讓 UEFI 韌體初始化這些遠端處理器。</br>
+
+如果需要使用 `qebspli` 驅動，需要在 EFI 分割建立 `firmware` 資料夾，並將晶片的遠程協處理器韌體放在資料夾下。可以使用 `find /sys/firmware/devicetree -name firmware-name -exec cat {} + | xargs -0n1` 指令檢視需要的韌體。</br>
 
 現在，讓我們來安裝 Virt Manager，這是一個用於管理虛擬機的圖形化工具。在 Ubuntu 26.04 環境下，可以通過 `sudo apt install virt-manager` 安裝。之後啓用對應的 `systemd` 服務即可。
 然後，安裝`qemu-system-arm`套件：
