@@ -3,7 +3,7 @@ title: Reflections on 7 Years of Learning Linux -- Why I Persist with Linux, Ope
 published: 2026-04-08
 description: Somethings we lose, something for shooting, broken codes in the dark.
 image: 'assets/macbook-tonga.png'
-tags: [Thoughts, Misc, ARM, FOSS]
+tags: [Thoughts, Misc, ARM, FOSS, English]
 category: 'Linux'
 draft: false
 lang: 'zh_TW'
