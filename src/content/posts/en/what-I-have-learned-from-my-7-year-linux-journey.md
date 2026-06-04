@@ -134,12 +134,12 @@ Later, unsatisfied with Fedora on the MacBook, I began porting PostmarketOS to i
 
 <img src="assets/droidian-phosh.jpg">
 
-As for the arrival of the "Snaptop," it could be called an "accident." Due to a heavy rainstorm, my MacBook suffered water damage to the screen due to improper protection and had to be sent for repairs. While waiting, I needed a new laptop for daily use, and I didn't want to switch to an X86 laptop because their performance is as weak as ever! </br>
+As for the arrival of the "Snaptop," it could be called an "accident." Due to a heavy rainstorm, my MacBook suffered water damage to the screen due to improper protection and had to be sent for repairs. While waiting, I needed a new laptop for daily use, and I didn't want to switch to any X86-based laptop because their performance is as weak as ever! </br>
 
  <img src="/assets/yoga-vibe.png" >
 
 </br>
-It just so happened that I remembered seeing a Lenovo Snaptop in a store earlier. To test the mainline kernel support for the Qualcomm Snapdragon X Elite chip, I once again convinced my family to buy one for me. Later, I conducted many experiments on this laptop, such as using "[Secure launch" to run Linux in EL2](https://blog.cloudflare88.eu.org/posts/alpine-on-kvm-en/#preparations) so I could [use KVM virtual machines and other containers using KVM](https://blog.cloudflare88.eu.org/posts/alpine-on-kvm-en/). Roughly a quarter of the content on this blog is about Snaptops.
+It just so happened that I remembered seeing a Lenovo Snaptop in a store earlier. To test the mainline kernel support for the Qualcomm Snapdragon X Elite chip, I once again convinced my family to buy one for me. Later, I conducted many experiments on this laptop, such as using "Secure launch" to run Linux in EL2 so I could use KVM virtual machines and other containers using KVM. Roughly a quarter of the content on this blog is about Snaptops.
 
 ## 2025 – Present: Becoming a Linux Porter, Growing Slowly
 
