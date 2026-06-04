@@ -96,7 +96,7 @@ Finally, during a trip to a mall, I took the opportunity to suggest getting a ne
 </br>
 Around the same time, I also started researching "embedded devices." Because my laptop used an ARM chip, I could treat it as a large "single-board computer" for porting purposes. Since all MacBook components are soldered to the motherboard and it provides a UART for debugging, it was the first embedded device I encountered. Asahi Linux uses `m1n1` and U-Boot as the bootloaders to initiate Linux, which also led me to start learning about U-Boot, mastering simple commands to control computer booting. My learning direction was **officially** set.</br>
 
-<img src="assets/arch-linux-arm-hyfetch.png">
+![](assets/arch-linux-arm-hyfetch.png)
 
 </br>
 As the hardware environment migrated to Arm, the corresponding software had to migrate as well. Fortunately, most common software on Linux has an Arm version released, so the migration process was smooth. However, many commercial proprietary programs I used did not have an Arm release.</br>
@@ -125,14 +125,14 @@ In short, I set up everything commonly found on a server on a phone. Plus, they 
 
 <img src="https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg">
 
-<img src="assets/fajita-new.jpg>
+<img src="assets/fajita-new.jpg">
 
 Naturally, for better performance, I later switched to a Nothing Phone 1. Its 12GB of RAM allows for more Docker containers, but this time the focus was more on daily use. The only problem was that the Snapdragon 778G CPU had poor mainline kernel support; for instance, the audio required manually patching every time I booted to work. Of course, I learned many things, such as patching firmware based on hardware nodes in the Device Tree and modifying kernel configuration files to enable Docker support... </br>
 </br>
 Later, unsatisfied with Fedora on the MacBook, I began porting PostmarketOS to it, which has now been accepted upstream and entered the testing branch.</br>
 </br>
 
-<img src="assets/droidian-phosh.jpg>
+<img src="assets/droidian-phosh.jpg">
 
 As for the arrival of the "Snaptop," it could be called an "accident." Due to a heavy rainstorm, my MacBook suffered water damage to the screen due to improper protection and had to be sent for repairs. While waiting, I needed a new laptop for daily use, and I didn't want to switch to an X86 laptop because their performance is as weak as ever! </br>
 
