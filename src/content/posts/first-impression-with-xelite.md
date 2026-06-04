@@ -318,7 +318,7 @@ cat /proc/asound/cards
 
 ## 關於相機的二三事
 
-儘管目前只有極少數的驍龍本能夠使用相機，但是高通的相機子系統已經在主線核心中得到了支援。在終端機中鍵入 ``ls /dev/video*`` 會看到很多視訊裝置節點，例如 ``/dev/video0`` 、 ``/dev/video1`` 、 ``/dev/video2`` 等等。通過 ``v4l2-ctl -A	`` 命令也可以看到先前的裝置節點隸屬於高通的相機子系統：
+儘管目前只有極少數的驍龍本能夠使用相機，但是高通的相機遠端處理器已經在主線核心中得到了支援。在終端機中鍵入 ``ls /dev/video*`` 會看到很多視訊裝置節點，例如 ``/dev/video0`` 、 ``/dev/video1`` 、 ``/dev/video2`` 等等。通過 ``v4l2-ctl -A	`` 命令也可以看到先前的裝置節點隸屬於高通的相機遠端處理器：
 
 ```yaml
 Qualcomm Camera Subsystem (platform:acb6000.isp):
