@@ -18,10 +18,18 @@ import { formatDateMinguo, formatDateToYYYYMMDD } from "../../utils/date-utils";
 
 export async function getStaticPaths() {
 	const blogEntries = await getSortedPosts();
-	return blogEntries.map((entry) => ({
-		params: { slug: entry.id },
-		props: { entry },
-	}));
+    
+    return blogEntries.map((entry) => {
+        // 💡 清理副檔名，保留完整的子目錄結構當作 slug
+        // 中文：'alpine-on-kvm.md' -> slug: 'alpine-on-kvm'
+        // 英文：'en/alpine-on-kvm.md' -> slug: 'en/alpine-on-kvm'
+        const cleanSlug = entry.id.replace(/\.[^/.]+$/, "");
+
+        return {
+            params: { slug: cleanSlug },
+            props: { entry },
+        };
+    });
 }
 
 const { entry } = Astro.props;
