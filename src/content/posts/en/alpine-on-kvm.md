@@ -18,7 +18,7 @@ Since I swapped my primary laptop from a MacBook Air to this Lenovo Yoga Air 14s
 </br>
 It ships by default with Windows 11 ARM, and specifically the Home Edition, which lacks Hyper-V virtualization support compared to the Pro version. I ended up backing up my useful data and wiping the entire drive to install Windows 11 Pro. This time, the "Optional features" finally included the "Hyper-V" option. I enabled the relevant features, rebooted, and downloaded the Debian 13 ARM installation image. I tried to fire up a virtual machine, but it hung; no matter how I tweaked the VM configuration, I couldn't get into the Debian installer. Plus, Windows is notorious "spyware," and I have zero desire to let Microsoft monitor me! So, I installed the only OS where most hardware currently works reasonably well: Ubuntu. But KVM functionality requires manual configuration.</br>
 
-![](assets/final-result.png)
+<img src="/assets/final-result.png">
 
 # Preparations
 
