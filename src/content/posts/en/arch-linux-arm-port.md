@@ -1,47 +1,48 @@
 ---
-title: 給 SM8750 MTP 移植 Armbian GNU/Linux —— 第一章：硬體探索
+title: Porting Armbian GNU/Linux to SM8750 MTP – Chapter One：Hardware Exploration
 published: 2025-12-16
-description: 想要移植作業系統，必須先了解硬體的組成及通信總線。這是嵌入式 Linux 移植的第一步。
+description: To port an operating system, one must first understand the hardware's composition and communication buses. This is the first step in embedded Linux porting.
 image: 'assets/mtp8750-axis-view.jpg'
-tags: [Qualcomm, ARM, Linux, Embed, FOSS]
+tags: [Qualcomm, ARM, Linux, Embed, FOSS, English]
 category: 'Porting'
 draft: false 
-lang: 'zh_TW'
+lang: 'en'
 ---
+<!-- Co-translated by Gemini -->
 
-在上次的 MTP8750 評測後，我給予這臺原型機非常好的評價。既然它作爲一臺合格的原型機，那就必須要做點只有原型機才能乾的事，所以我決定要移植 Armbian 作業系統。
+After my previous review of the MTP8750, I gave this prototype a stellar evaluation. Since it's a proper prototype, it's only fitting to do something only a prototype can do, so I've decided to port the Armbian operating system to it.
 
-# 硬體探索
+# Hardware Exploration
 
-在上次的測評中我將高通常見的工程平臺（MTP,QRD）與一般量產手機進行了對比，同時也簡單的介紹了這臺 MTP8750 的硬體配置。這裏，我們再從之前的文章中貼上這些規格，供大家參考：
+In my last review, I compared Qualcomm's common engineering platforms (MTP, QRD) with mass-produced smartphones and briefly introduced the MTP8750's hardware configuration. Here, I'll reiterate those specifications from the previous article for your reference:
 
-- 一顆早期（ES）版的 SM8750 CPU [^1]，8個核心，ARM V9指令集；
-- Adreno 830 GPU，支援 OpenGL ES 3.2；
-- 16GB LPDDR5X記憶體；
-- 512GB UFS 4.0，經確認UFS來自東芝生產
+- An early sample (ES) version of the SM8750 CPU [^1], 8 cores, ARM V9 instruction set;
+- Adreno 830 GPU, supporting OpenGL ES 3.2;
+- 16GB LPDDR5X memory;
+- 512GB UFS 4.0, confirmed to be manufactured by Toshiba.
 
-想要獲取更多硬體資訊，我們就需要從作業系統下手了，好在 Android 至少算是個 Linux 發行版，有很多 Linux 獲取硬體資料的方法在 Android 上同樣使用。只是對於默認拔掉 Root 的 Android 來說，Linux 上獲取硬體信息的方法會有不少阻礙，破除這些阻礙的方法就是取得 Root 權限。不過原型機的 AOSP 系統默認開啓 `ADB Root` ，因此除錯和獲取日誌都要比量產機容易的多，只需要一根 Type-C 數據線就可以開始工作了：首先，開啓終端機，安裝 `android-tools` 套件：
+To obtain more hardware information, we need to start with the operating system. Fortunately, Android is, at its core, a Linux distribution, so many Linux methods for retrieving hardware data are equally applicable on Android. However, for Android, which typically lacks root access by default, obtaining hardware information via Linux methods can be quite an obstacle. The way to overcome these hurdles is to acquire root privileges. Luckily, the prototype's AOSP system comes with `ADB Root` enabled by default, making debugging and log retrieval significantly easier than on production devices. All you need is a Type-C data cable to get started: First, open a terminal and install the `android-tools` package:
 
 ```bash
 sudo pacman -S android-tools
 ```
 
-然後鍵入 `adb root` 將 `adbd` 以 Root 重開，當看到用戶提示符號變成「#」之後，就代表妳成功取得 Root 權限了！現在，讓我們開始後續的工作吧！
+Then, type `adb root` to restart `adbd` with root privileges. Once the user prompt changes to a hash symbol (#), you've successfully obtained root access! Now, let's proceed with the rest of the work!
 
-## 獲取核心版本
+## Obtaining Kernel Version
 
-和 Linux 發行版一樣，Android也可以通過常見的 `uname` 和 `cat /proc/version` 命令來獲得核心版本，這樣可以讓我們明白這臺手機的核心版本與主線核心的差別。這是來自 SM8750 MTP 的結果：
+Just like with any Linux distribution, Android allows you to retrieve the kernel version using the common `uname` and `cat /proc/version` commands. This helps us understand the difference between the phone's kernel version and the mainline kernel. Here's the output from the SM8750 MTP:
 
 ```bash
 sun:/ # cat /proc/version
-Linux version 6.6.50-android15-8-maybe-dirty-4k (kleaf@build-host) (Android (11368308, +pgo, +bolt, +lto, +mlgo, based on r510928) clang version 18.0.0 (https://android.googlesource.com/toolchain/llvm-project 477610d4d0d988e69dbc3fae4fe86bff3f07f2b5), LLD 18.0.0) #1 SMP PREEMPT Thu Jan  1 00:00:00 UTC 1970
+Linux version 6.6.50-android15-8-maybe-dirty-4k (kleaf@build-host) (Android (11368308, +pgo, +bolt, +lto, +mlgo, based on r510928) clang version 18.0.0 (<https://android.googlesource.com/toolchain/llvm-project> 477610d4d0d988e69dbc3fae4fe86bff3f07f2b5), LLD 18.0.0) #1 SMP PREEMPT Thu Jan  1 00:00:00 UTC 1970
 ```
 
-核心採用的是基於長期支援版本（LTS）修改的 6.6.50核心，發佈於2023年。雖然近些年來 Google 的 GKI 在一定程度上縮短了 Android 下游核心與主線核心的差距，但是問題依舊嚴峻。作爲一個發佈於2024年的晶片，卻還再用著過時的 6.6 核心... 值得一提的是核心採用了 4K 分頁大小編譯，看來 SM8750 還有支援16K 分頁的核心嘍？不過這都和我們的主線任務沒有任何關係。
+The kernel is a modified 6.6.50 kernel based on a Long-Term Support (LTS) version, released in 2023. While Google's GKI has somewhat narrowed the gap between Android downstream kernels and the mainline kernel in recent years, the issue remains severe. For a chip released in 2024, it's still running an outdated 6.6 kernel... It's worth noting that the kernel was compiled with 4K page size. Does this mean the SM8750 also has a kernel that supports 16K pages? Anyway, none of this is relevant to our main task.
 
-## 獲取記憶體資訊
+## Obtaining Memory Information
 
-記憶體資訊可以通過 `cat /proc/meminfo` 命令獲取，這樣可以獲得記憶體容量、使用量、空間等資訊。這是來自 SM8750 MTP 的結果：
+Memory information can be obtained using the `cat /proc/meminfo` command, which provides details such as memory capacity, usage, and available space. Here's the output from the SM8750 MTP:
 
 ```bash
 130|sun:/ # cat /proc/meminfo
@@ -92,11 +93,11 @@ CmaTotal:         643072 kB
 CmaFree:          590220 kB
 ```
 
-目前來看，這裏面唯一有用的一句是 `MemTotal` 字段，它告訴我們這臺原型機有16GB的記憶體...
+For now, the only useful line here is the `MemTotal` field, which tells us this prototype has 16GB of RAM...
 
-## 獲取分區信息
+## Obtaining Partition Information
 
-同樣地，使用 `cat /proc/partitions` 命令可以獲取分區信息，這樣可以獲得各個分區的大小、格式、掛載點等資訊。這是來自 SM8750 MTP 的結果：
+Similarly, using the `cat /proc/partitions` command provides partition information, including the size, format, and mount points of each partition. Here's the output from the SM8750 MTP:
 
 ```bash
 major minor  #blocks  name
@@ -326,7 +327,7 @@ major minor  #blocks  name
  254       51  459208524 dm-51
 ```
 
-這樣只能得到每個分割的大小，看不出其他資訊來。想要獲得每個裝置節點的對應關係，需要在 `/dev` 目錄下執行 `ls -l /dev` 獲取結果：
+This only gives us the size of each partition, without any other details. To get the mapping of each device node, we need to execute `ls -l /dev` in the `/dev` directory to obtain the results:
 
 ```yaml
 sun:/dev/block/by-name # ls -l
@@ -391,8 +392,6 @@ lrwxrwxrwx 1 root root 15 1970-01-07 17:43 multiimgqti_a -> /dev/block/sdb3
 lrwxrwxrwx 1 root root 15 1970-01-07 17:43 multiimgqti_b -> /dev/block/sdc3
 lrwxrwxrwx 1 root root 16 1970-01-07 17:43 pdp_a -> /dev/block/sdf35
 lrwxrwxrwx 1 root root 16 1970-01-07 17:43 pdp_b -> /dev/block/sdf69
-lrwxrwxrwx 1 root root 16 1970-01-07 17:43 pdp_cdb_a -> /dev/block/sdf36
-lrwxrwxrwx 1 root root 16 1970-01-07 17:43 pdp_cdb_b -> /dev/block/sdf70
 lrwxrwxrwx 1 root root 15 1970-01-07 17:43 persist -> /dev/block/sda2
 lrwxrwxrwx 1 root root 16 1970-01-07 17:43 pvmfw_a -> /dev/block/sdf32
 lrwxrwxrwx 1 root root 16 1970-01-07 17:43 pvmfw_b -> /dev/block/sdf66
@@ -459,22 +458,24 @@ lrwxrwxrwx 1 root root 16 1970-01-07 17:43 xbl_sc_logs -> /dev/block/sdf87
 lrwxrwxrwx 1 root root 16 1970-01-07 17:43 xbl_sc_test_mode -> /dev/block/sdf86
 ```
 
-現在，每個分割的信息便一目瞭然了。需要注意的是在新的平臺下，高通將 UEFI 韌體放到了單獨的UEFI分割中，原來的`XBL`分割只是一個空殼而已（當然也不是什麼都沒有）。
+Now, the information for each partition is crystal clear. It's worth noting that on this new platform, Qualcomm has placed the UEFI firmware in a separate UEFI partition, and the original `XBL` partition is merely a shell (though not entirely empty, of course).
 
-## 獲取其他硬體（觸摸屏、Wi-Fi網路卡、音訊 Codec 等）
+## Obtaining Other Hardware Information (Touchscreen, Wi-Fi Card, Audio Codec, etc.)
 
-通過獲取 `dmesg`， 可以得到大量關於裝置的信息。其中核心啓動引數中有一段非常引人注意：
+By fetching `dmesg`, we can obtain a wealth of information about the device. Among the kernel boot parameters, one particular section stands out:
 
 ```yaml
 [    0.000000] Kernel command line: console=ttynull stack_depot_disable=on cgroup_disable=pressure kasan.stacktrace=off kvm-arm.mode=protected bootconfig ioremap_guard log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 irqaffinity=0-1 pcie_ports=compat printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 pci-msm-drv.pcie_sm_regs=0x1D07000,0x1040,0x1048,0x3000,0x1 ftrace_dump_on_oops slub_debug=- video=vfb:640x400,bpp=32,memsize=3072000 nosoftlockup console=ttynull qcom_geni_serial.con_enabled=0 bootconfig  msm_drm.dsi_display0=qcom,mdss_dsi_nt37801_wqhd_plus_cmd: rootwait ro init=/init silent_boot.mode=nonsilent
 ```
 
-其中 `msm_drm.dsi_display0=qcom,mdss_dsi_nt37801_wqhd_plus_cmd` 告訴了我們關於屏幕的信息：這是一塊由 Novatek 生產的顯示面板（Panel），型號是 NT37801，解析度是 1440x3220，AMOLED，重新整理頻率爲120Hz，DSI接口，輸出格式是 WQHD+。于是我在網路上檢索關於這塊面板的圖紙和 datasheet，但是並沒有找到。于是我又到 `lwn.net` 上檢索關於該面板的相關合並請求或者 commit，果不其然，我找到了：
+The `msm_drm.dsi_display0=qcom,mdss_dsi_nt37801_wqhd_plus_cmd` parameter provides information about the display: it's a panel manufactured by Novatek, model NT37801, with a resolution of 1440x3220, AMOLED, a refresh rate of 120Hz, DSI interface, and WQHD+ output format. I then scoured the internet for schematics and datasheets for this panel but came up empty. So, I turned to `lwn.net` to search for related merge requests or commits for this panel, and lo and behold, I found it:
 
 ![NT37801 merge request on LWN.net](assets/lwn-net.png)
 
-其提交日誌中明確寫到：「[添加了 Novatek NT37801（也叫 Novetek NT37801 AMOLED DSI 顯示面板）的驅動支援，其被用於高通 SM8750 MTP 單板電腦(SM8750)](https://lwn.net/Articles/1020176/)」，這就是我想要的結果了，雖然沒有發現 datasheet，但是知道了面板型號和連接方式，這就足夠了。</br>
-獲取PCIE裝置需要我們通過 `lspci` 命令：
+
+Its commit log explicitly states: '[Added driver support for Novatek NT37801 (also known as Novetek NT37801 AMOLED DSI display panel)](https://lwn.net/Articles/1020176/), used on the Qualcomm SM8750 MTP board'. This is exactly what I was looking for. Although I didn't find a datasheet, knowing the panel model and connection method is sufficient.
+
+To obtain PCIe device information, we need to use the `lspci` command:
 
 ```bash
 lspci -e                                                               
@@ -482,20 +483,21 @@ lspci -e
 00:00.0 :  
 ```
 
-但是，從中並不能得到什麼有效信息，于是我附加了 `-nn` 參數：
+However, this didn't yield any useful information, so I appended the `-nn` parameter:
 
 ```yaml
 sun:/ $ lspci -nn                                                              
-01:00.0  [0280]:   [17cb:110e] (rev 01)
-00:00.0  [0604]:   [17cb:011c]
+01:00.0 :   [17cb:110e] (rev 01)
+00:00.0 :   [17cb:011c]
 ```
 
-這樣就得到了 PCIe 裝置的 Vendor 和 Device ID，接下來就可以到 [PCI ID Repository](https://pci-ids.ucw.cz/) 資料庫中查詢了。造訪[該網站](https://pci-ids.ucw.cz/)，選擇「PCI Devices」，在「Vendor」一列，選擇「All」，之後使用瀏覽器的檢索功能，鍵入 `17cb`，之後再鍵入 `110e`。不幸的是，PCI ID Repository 沒有收錄這個裝置，那要怎麼辦呢？只能通過 Termux 來幫助我們了。首先安裝 `pciutils`，Termux 的 `root repo` 裏有收。然後執行 `lspci` 即可：
+This gave us the Vendor and Device IDs of the PCIe device. Next, we can query the PCI ID Repository database. Visit the website, select 'PCI Devices', choose 'All' in the 'Vendor' column, then use your browser's search function to type `17cb`, followed by `110e`. Unfortunately, the PCI ID Repository doesn't list this device. What now? We'll have to rely on Termux. First, install `pciutils`, which is available in Termux's `root repo`. Then, simply run `lspci`:
 
 ![lspci output with PCIe device](assets/screenshot/termux.png)
 
-依然沒有什麼變化，不過根據[公佈的規格](https://phonedb.net/index.php?m=processor&id=999&c=qualcomm_snapdragon_8_elite_sm8750-ab__sun&d=detailed_specs)來看，PCIE掛的應該是自家的 X80 5G NR 數據機。</br>
-音訊codec用的是WSA 883X晶片，目前主線裝置樹中已有音訊的定義，ALSA也有了對應的配置文件。
+Still no change. However, according to the [published specifications](https://phonedb.net/index.php?m=processor&id=999&c=qualcomm_snapdragon_8_elite_sm8750-ab__sun&d=detailed_specs), the PCIe device should be Qualcomm's own X80 5G NR modem.
+
+The audio codec uses the WSA 883X chip. There are already audio definitions in the mainline device tree, and ALSA has corresponding configuration files.
 
 ![audio codec in Deviceinfo HW app](assets/screenshot/deviceinfoHW.png)
 
@@ -503,12 +505,15 @@ sun:/ $ lspci -nn
 
 ![SM8750 MTP ALSA USM routing table in upstream repository](assets/mtp8750-alsa.png)
 
-相機依然使用I²C，前面和背部的加起來統共5個鏡頭：前面用的是三星的`s5kjn1`，後面面兩個索尼的`imx766` `imx858` 一個來自 OmniVision 的`ov32c4c`，還有一個三星的`s5k33dxx`。值得一提的是相機還附帶了兩個EEPROM，看來主線核心的相機修復工作應該比較困難了...
+The camera still uses I²C, with a total of 5 lenses, front and back combined: the front uses Samsung's `s5kjn1`, and the rear features two Sony `imx766` `imx858` sensors, one OmniVision `ov32c4c`, and another Samsung `s5k33dxx`. It's worth noting that the camera also comes with two EEPROMs, which suggests that mainline kernel camera support will likely be quite challenging...
 
 ![camara in Deviceinfo HW app](assets/screenshot/deviceinfoHW.png)
 
-## 總結
+## Conclusion
 
-看來 SM8750 的主線 Linux 移植又是困難重重喔...不過，在瞭解了這些硬體信息後，就可以爲主線 Linux 的移植做好準備了。
+It seems that porting mainline Linux to the SM8750 is going to be a tough nut to crack... Nevertheless, now that we have this hardware information, we can prepare for the mainline Linux port.
 
- [^1]:與正式版的4.32GHz時脈不同，這顆ES版的基頻只有3.63GHz。
+ [^1]:Unlike the official version's 4.32GHz clock speed, this ES version has a base frequency of only 3.63GHz.
+
+
+
