@@ -1,38 +1,58 @@
 ---
 import { Icon } from "astro-icon/components";
-import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const { pathname } = Astro.url;
-const currentLang = Astro.currentLocale || 'en';
 
-// 清理目前的網址路徑，去掉語系前綴，以便重新組裝
-let cleanPath = pathname;
-if (cleanPath.startsWith('/en/')) {
-    cleanPath = cleanPath.replace('/en/', '/');
-} else if (cleanPath.startsWith('/zh/')) {
-    cleanPath = cleanPath.replace('/zh/', '/');
+// 💡 透過手動分析網址，找出當前的語言
+let currentLang = 'zh-TW'; // 預設中文
+if (pathname.includes('/posts/en/') || pathname.includes('/en/')) {
+    currentLang = 'en';
+} else if (pathname.includes('/posts/ko/') || pathname.includes('/ko/')) {
+    currentLang = 'ko';
 }
-if (cleanPath === '') cleanPath = '/';
 
-// 定義所有支援的語言列表
+// 💡 從目前網址中榨取出純粹的文章 slug 主體
+// 例如：/posts/alpine-on-kvm/ -> alpine-on-kvm
+// 例如：/posts/en/alpine-on-kvm/ -> alpine-on-kvm
+let pureSlug = pathname
+    .replace(/^\/posts\/(en|ko)\//, '') // 移除 /posts/en/ 或 /posts/ko/
+    .replace(/^\/posts\//, '')         // 移除中文的 /posts/
+    .replace(/\/$/, '');               // 移除結尾的斜線
+
+if (pureSlug === '' || pureSlug === 'posts') pureSlug = '';
+
+// 定義所有支援的語言列表 (對齊你的選單顯示)
 const languages = [
-    { code: 'zh-TW', label: '中文', flag: 'ZH' },
+    { code: 'zh-TW', label: '繁體中文', flag: 'ZH' },
     { code: 'en', label: 'English', flag: 'EN' },
-    // 未來如果增加新語言，直接在這裡加一行即可，例如：
-     { code: 'ko', label: '한국어(대한민국) ', flag: 'KO' }
+    { code: 'ko', label: '한국어', flag: 'KO' }
 ];
 ---
 
 <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2" id="lang-picker-container">
     
-    <!-- 1. 隱藏的語言選擇列表 (預設藉由 pointer-events-none, opacity-0 與 translate-y-2 隱藏) -->
     <div 
         id="lang-list-panel"
         class="flex flex-col gap-1.5 p-1.5 rounded-2xl border border-black/10 dark:border-white/10 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl transition-all duration-300 translate-y-2 opacity-0 pointer-events-none"
     >
         {languages.map((lang) => {
             const isCurrent = lang.code === currentLang;
-            const targetUrl = getRelativeLocaleUrl(lang.code, cleanPath);
+            
+            // 💡 完全採用全手動字串路徑拼接，不再呼叫任何 Astro 內建 i18n 函數！
+            let targetUrl = '/';
+            if (pureSlug) {
+                if (lang.code === 'zh-TW') {
+                    // 中文版網址：/posts/alpine-on-kvm/
+                    targetUrl = `/posts/${pureSlug}/`;
+                } else {
+                    // 英文/韓文版網址：/posts/en/alpine-on-kvm/
+                    targetUrl = `/posts/${lang.code.toLowerCase()}/${pureSlug}/`;
+                }
+            } else {
+                // 如果在首頁或其他非文章常規頁面，直接跳回根目錄（或可依需求客製化）
+                targetUrl = '/';
+            }
+
             return (
                 <a
                     href={targetUrl}
@@ -52,21 +72,18 @@ const languages = [
         })}
     </div>
 
-    <!-- 2. 主懸浮按鈕 (點擊它會展開/收合選單) -->
     <button 
         id="lang-main-btn"
         aria-label="Select Language"
         class="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md text-[var(--primary)] shadow-md transition-all duration-300 hover:scale-105 active:scale-95"
     >
         <Icon name="material-symbols:translate-rounded" class="text-[1.4rem]"></Icon>
-        <!-- 目前語系的小標籤 -->
         <span class="absolute -bottom-1 -right-1 flex h-4 px-1 items-center justify-center rounded bg-[var(--primary)] text-[8px] font-bold text-white uppercase tracking-tight shadow-sm">
-            {currentLang === 'zh' ? 'ZH' : 'EN'}
+            {currentLang === 'zh-TW' ? 'ZH' : currentLang.toUpperCase()}
         </span>
     </button>
 </div>
 
-<!-- 3. 控制展開收合的腳本 (完美相容 Swup 轉場) -->
 <script>
     function initLanguagePicker() {
         const container = document.getElementById('lang-picker-container');
@@ -75,16 +92,16 @@ const languages = [
 
         if (!mainBtn || !panel || !container) return;
 
-        // 點擊按鈕切換顯示狀態
+        // 點擊按鈕切換面板狀態
         mainBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // 防止事件冒泡觸發點擊外部關閉
+            e.stopPropagation();
             panel.classList.toggle('opacity-0');
             panel.classList.toggle('pointer-events-none');
             panel.classList.toggle('translate-y-2');
-            mainBtn.classList.toggle('rotate-12'); // 加上一點點旋活動效
+            mainBtn.classList.toggle('rotate-12');
         });
 
-        // 點擊網頁其他任何地方時，自動收合選單
+        // 點擊外部任何地方時，自動收合選單
         document.addEventListener('click', (e) => {
             if (!container.contains(e.target as Node)) {
                 panel.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
@@ -93,10 +110,10 @@ const languages = [
         });
     }
 
-    // 初次載入時執行
+    // 初次頁面渲染時初始化
     initLanguagePicker();
 
-    // 💡 關鍵：在 Swup 轉場完成後重新綁定事件，防止按鈕失效
+    // 監聽 Swup 轉場，在內容被替換後重新綁定事件，防止切換頁面後點擊失效
     document.addEventListener('swup:enable', () => {
         window.swup.hooks.on('content:replace', initLanguagePicker);
     });
