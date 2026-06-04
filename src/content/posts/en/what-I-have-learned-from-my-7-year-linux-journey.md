@@ -83,7 +83,7 @@ When the process ended and I saw the familiar TTY console appear after rebooting
 
 However, this time I gained a relatively comprehensive understanding of Linux installation mechanisms. Simultaneously, I learned to configure `swap` and `zram` to improve system memory and how to use GRUB and `systemd-boot` to modify kernel boot parameters, which laid the groundwork for my attempts to port Linux to phones, tablets, and eventually prototype machines.
 
-## 2022: Migrating to 64-bit ARM, Starting the Embedded Journey; Fully Embracing Free Software Starts Now
+## 2022: Migrating to 64-bit ARM Architecture, Starting the Embedded Journey; Fully Embracing Free Software Starts Now
 
 > See also: [My 5-Year ARM64 Architecture Journey](https://blog.cloudflare88.eu.org/posts/my-5-years-arm64-architecture-journey/)
 
