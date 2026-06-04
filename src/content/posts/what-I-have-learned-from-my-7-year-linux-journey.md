@@ -27,7 +27,7 @@ lang: 'zh_TW'
 
 # 「編年記」
 
-實際上我真正使用 Linux 和 BSD 的時間總共只有6年半，之前都只是「過渡期」而已。
+實際上我真正使用 Linux 和 *BSD 的時間總共只有6年半，之前都只是「過渡期」而已。
 
 ## 2018年：序章
 
@@ -55,7 +55,7 @@ Manjaro 的體驗，也算是為我之後的 Distro hoppin’ 做了基礎。
 ## 2021年：遷移到 Arch Linux，成為 Distro hopper
 
 在使用過 Fedora 和 Manjaro 之後，我對於 Linux 的興致開始消退。所以決定嘗試不同的發行版。從3月到8月期間有嘗試過不少發行版：以安全性為主，採用虛擬機技術的 Qubes OS；主打客製化系統，改善電腦效能的 Gentoo Linux；還有不可變動的「穩定發行版」Fedora Sliverblue 之類。後來對 PinePhone 這類採用 Linux 系統的智慧型手機感興趣，又開始了瞭解為行動裝置設計的 Linux 發行版，但是當時手邊沒有裝置受支援，也只好用 QEMU 看一看...</br>
-後來又對 Arch Linux 感興趣，通過網路下載映像後安裝。與絕大多數 Linux 發行版不同，Arch Linux 的安裝映像沒有圖形介面，也沒有安裝指令稿。所有的安裝流程都要通過命令完成。這對於習慣了圖形介面的我而言，第一次看到僅有黑白二色的TTY控制臺是非常新奇的。「這就是 Linux 最本質的一面，曾經熟悉的安裝流程如今已經成為了檢驗妳的試驗」。靠著 Arch Wiki 的安裝說明，我開始了安裝流程：分割硬碟，掛載分割，安裝基礎系統，使用 `chroot` 建立使用者，配置系統檔案...當所有的流程結束，重開機電腦後看到熟悉的TTY控制臺出現後，喜悅的心情早已溢於言表。我竟然會對「安裝完成 Linux 系統」這件事產生成就感，真是不可思議。至於使用部分，因為先前使用過基於 Arch Linux 的 Manjaro，所以沒有什麼特別之處。（下面的圖片並不是當時留下的，而是遷移到 ARM 架構之後的事情了。）</br>
+後來又對 Arch Linux 感興趣，通過網路下載映像後安裝。與絕大多數 Linux 發行版不同，Arch Linux 的安裝映像沒有圖形介面，也沒有安裝指令稿。所有的安裝流程都要通過命令完成。這對於習慣了圖形介面的我而言，第一次看到僅有黑白二色的TTY控制臺是非常新奇的。「這就是 Linux 最本質的一面，曾經熟悉的安裝流程如今已經成為了檢定妳的試驗」。靠著 Arch Wiki 的安裝說明，我開始了安裝流程：分割硬碟，掛載分割，安裝基礎系統，使用 `chroot` 建立使用者，配置系統檔案...當所有的流程結束，重開機電腦後看到熟悉的TTY控制臺出現後，喜悅的心情早已溢於言表。我竟然會對「安裝完成 Linux 系統」這件事產生成就感，真是不可思議。至於使用部分，因為先前使用過基於 Arch Linux 的 Manjaro，所以沒有什麼特別之處。（下面的圖片並不是當時留下的，而是遷移到 ARM 架構之後的事情了。）</br>
 
 ![Arch Linux ARM with GNOME desktop](assets/arch-linux-arm-hyfetch.png)
 
@@ -70,8 +70,11 @@ Manjaro 的體驗，也算是為我之後的 Distro hoppin’ 做了基礎。
 或許是因為嘗試各種作業系統和編譯程式，桌機上用了7年的500GB機械硬碟開始頻繁斷電，反應速度明顯變長，壞軌數量也多了。雖然後期有換固態硬碟，但是雙核心的 G2020 CPU 已經無法滿足我的使用需求。我對於新電腦的需求越來越迫切，最後在有一次去商場的時候趁機向家人提出添置新的筆電，沒想到大家都同意了，就破例買了一臺8GB記憶體，512GB硬碟的 MacBook Air 「基本款」，剛好趕上 Apple 發佈自己的 M1 ARM 晶片，因此裡所應當的成為了「試驗者」。在享受到 Retina 熒幕的
 豔麗之後，又很快瞭解到了 Asahi Linux 專案，他們給 Apple 製造的M系列晶片移植了主線核心。我也在我的筆電上安裝了 Arch Linux Arm 取代 macOS 用於日常使用和辦公，由此也開始了我向 Arm 遷移的過程。也就是在那一時間，我也開始研究「嵌入式裝置」。因為我的筆電採用 ARM 晶片，在移植系統上就可以把它當作大型的「單板電腦」來處理，加上 MacBook 所有的元件都是焊在主機板上，也提供 UART 方便除錯。這也是我第一個接觸到的嵌入式裝置。Asahi Linux 使用 `m1n1` 與 U-Boot 作為引導 Linux 開機的 bootloader，這也同時讓我開始學習 U-Boot 的內容，學會了簡單的命令，用來控制電腦開機。也確認了學習方向。</br>
 </br>
+
+<img src="assets/arch-linux-arm-hyfetch.png">
+
 隨著硬體環境遷移到了 Arm 架構，與之相對應的軟體也要進行遷移。好在 Linux 上大多數常用的軟體都有釋出 Arm 版本，因此遷移的過程比較順利。但是很多我使用的商業閉源軟體沒有釋出 Arm 版，那時候還沒有像 `box64` `FeX-EMU` 的方案能夠以近乎原生效能執行為X86架構設計的應用，因此只好開始找尋開源的「替代品」：用 Inkscape 取代 Sketch 做美工，用 Kdenlive 取代 Davinci Resolve 來製作影片；用 Blender 取代 SketchUP 設計 3D 模型之類。但也同時讓我體會到了「開源軟體」的便利——只要有原始碼，即使開發者沒有釋出妳所在平臺的檔案，也可以自己編譯安裝，為此還學會了修補程式和 Git 的用法；原始碼公開，所有人都可以檢視，也就不會容許開發者做見不得人的勾當。或許就是因為這份經歷，使得我如今在軟體的選擇上，多半選擇自由軟體。在裝置的選擇上，也是以 Arm 和 RISC-V 架構為主。</br>
-另外，一些嵌入式 Linux 作業系統中常見的詞彙，像是「設備樹」「分頁大小」「就地執行」這類也開始取代過去常見的「ACPI」「DSDT」「BIOS」「超執行緒」這些詞，我也把以前比較「通用」的 Linux 系統學習，轉為嵌入式裝置和嵌入式作業系統移植的學習，到此學習的方向正式確定。</br>
+另外，一些嵌入式 Linux 作業系統中常見的詞彙，像是「設備樹」「分頁大小」「就地執行」這類也開始取代過去常見的「ACPI」 「DSDT」「BIOS」 「超執行緒」這些詞，我也把以前比較「通用」的 Linux 系統學習，轉為嵌入式裝置和嵌入式作業系統移植的學習，到此學習的方向正式確定。</br>
 </br>
 8月份在網路上翻看了關於自由軟體基金會（FSF）的紹介，同時也瞭解了GNU哲學。加之線上參加了 FOSDEM 2022 的開發人員會議，「自由軟體」「數位人權」「隱私權」的觀念開始深入我的思想，GNU 哲學也成為我日後撰寫文章，發佈影片，以及日常處理文書的行為標準（到現在別人要我寫一篇文字稿，我都會用沒有專利的`.odt`格式保存並傳送，至於別人能否存取，我不關心）。
 
@@ -95,7 +98,8 @@ Manjaro 的體驗，也算是為我之後的 Distro hoppin’ 做了基礎。
 
 至於「驍龍本」的到來，可以說是一次「意外」。因為一場大雨，我的 MacBook 因為保護不當導致熒幕進水，而不得不送修。在等待期間需要有新的筆電來滿足我的日常使用，又不想改用 X86 筆電，因為效能一如既往的弱！恰好想到之前在商店看到一臺[聯想的驍龍本](https://blog.cloudflare88.eu.org/posts/first-impression-with-xelite/)，為了測試高通驍龍 X Elite 晶片受主線核心的支援程度，我再一次說服家人給我買下了一臺。後期也這臺筆電上開展了許多實驗，比如採用[「Secure launch」](https://blog.cloudflare88.eu.org/posts/alpine-on-kvm/#%E6%BA%96%E5%82%99%E5%B7%A5%E4%BD%9C)讓 Linux 執行在 EL2 下從而可以[使用 KVM 虛擬機](https://blog.cloudflare88.eu.org/posts/alpine-on-kvm/)和[其它採用KVM的容器](https://blog.cloudflare88.eu.org/posts/windows-arm-on-docker/)。這篇部落格上，經過粗略計算，關於驍龍本的內容佔了四分之一。
 
-![](assets/working-cam.jpg)
+ <img src="/assets/yoga-vibe.png" >
+
 
 ## 2025年～現在：成為一名 Linux porter，慢慢成長
 
@@ -114,7 +118,7 @@ Manjaro 的體驗，也算是為我之後的 Distro hoppin’ 做了基礎。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ecv3HICeK74?si=5m9OW-QJOP2zHKan" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-每當螢幕上跳動起熟悉的 Linux Boot Log，那種在純黑背景下閃爍的白色字元，對我而言，不僅是程式碼的執行，更像是一種跨越硬體封鎖的「呼吸」。
+每當螢幕上跳動起熟悉的 Linux boot log，那種在純黑背景下閃爍的白色字元，對我而言，不僅是程式碼的執行，更像是一種跨越硬體封鎖的「呼吸」。
 在這幾個月與 SM8750 原型機沒日沒夜的對話中，我突然明白，Porter Robinson 在歌詞裡唱的那句「I'm still here」，其實也是硬體對開發者的回應。那些被廠商鎖定、被時代遺忘、或被視為「早期原型」的電子零件，本該在垃圾堆中沈默，卻因為我們對主線核心的執著，重新獲得了自由呼吸的權利。只要有人還在寫 Code，這份技術的生命力就會延續到下一年，甚至更久。</br>
 
 這讓我重新審視了接下來想聊的主題。</br>

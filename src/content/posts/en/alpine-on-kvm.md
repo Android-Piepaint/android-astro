@@ -3,7 +3,7 @@ title: Enabling KVM on Snapdragon X Elite Laptops to Install Alpine Linux — A 
 published: 2026-06-04
 description: ''
 image: 'assets/virt-demo-host.png'
-tags: [FOSS, ARM, Libvirt, KVM, Qualcomm]
+tags: [FOSS, ARM, Libvirt, KVM, Qualcomm, English]
 category: 'KVM'
 draft: false
 lang: 'en'

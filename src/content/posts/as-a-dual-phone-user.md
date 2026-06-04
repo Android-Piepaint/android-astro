@@ -33,9 +33,8 @@ lang: 'zh_TW'
 
 ![](assets/mtp8750-label-new.jpg)
 
-![A HP laptop running Manjaro Linux](assets/hp-omen-laptop.jpg)
 
-![A normal MTP8750 on desk](assets/mtp8750-random-photo.jpg)
+<img src="/assets/mtp8750-front-view-2.png" >
 
 
 ![](assets/ramdom-photo2.jpg)

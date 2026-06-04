@@ -1,0 +1,1 @@
+/home/pakala/Projects/android-astro/src/content/posts/what-I-have-learned-from-my-7-year-linux-journey.md No issues.

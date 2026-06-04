@@ -26,7 +26,7 @@ lang: 'zh_TW'
 sudo pacman -S android-tools
 ```
 
-然後鍵入 `adb root` 將 `adbd` 以 Root 重開，當看到用戶提示符號變成井號（#）之後，就代表妳成功取得 Root 權限了！現在，讓我們開始後續的工作吧！
+然後鍵入 `adb root` 將 `adbd` 以 Root 重開，當看到用戶提示符號變成「#」之後，就代表妳成功取得 Root 權限了！現在，讓我們開始後續的工作吧！
 
 ## 獲取核心版本
 
