@@ -57,7 +57,7 @@ During this period, I learned to use virtual machines. I even went as far as cre
 
 ## 2020: Fedora Takes the Stage, Manjaro Linux Dominates, The Linux Era Arrives
 
-2020 was the year of the broadest exposure. My Asus K501E laptop was unable to upgrade to Windows 10 due to having only 2GB of RAM and an old BIOS firmware, leaving it stuck on the end-of-life Windows 7. I had no choice but to install Linux to keep using the laptop. </br>
+2020 was the year of the broadest exposure. My Asus K501E laptop was unable to upgrade to Windows 10 due to having only 2GB of RAM and a legacy BIOS firmware, leaving it stuck on the end-of-life Windows 7. I had no choice but to install Linux to keep using the laptop. </br>
 </br>
 Perhaps out of a desire to be "different," I didn't choose the common Ubuntu but instead used Fedora Linux for the latest software. Compared to the fan "going full throttled" under Windows, it was almost silent in Fedora, only spinning slightly and blowing out warm air when watching YouTube videos. I completed many "firsts" on that fifteen-year-old laptop: the first time using the `dnf` package manager to install common software (Firefox, LibreOffice, Telegram...), the first time customizing GNOME and KDE Plasma desktops, and the first time compiling software... Naturally, as more "firsts" appeared, I unconsciously learned more command usages: using `ps -aux` to view current processes, `free` to check remaining memory space, `df -h` to inspect disk partitions and capacity, and `dmesg` to grab kernel logs. </br>
 </br>
@@ -101,7 +101,7 @@ Around the same time, I also started researching "embedded devices." Because my 
 </br>
 As the hardware environment migrated to Arm, the corresponding software had to migrate as well. Fortunately, most common software on Linux has an Arm version released, so the migration process was smooth. However, many commercial proprietary programs I used did not have an Arm release.</br>
 </br> 
-At the time, solutions like `box64` or `FeX-EMU`, which can execute X86 applications with near-native performance, were not yet available. Thus, I began looking for open-source "alternatives": using Inkscape instead of Sketch for graphic design, using Kdenlive instead of DaVinci Resolve for video production, and using Blender instead of SketchUp for 3D modeling. </br>
+At the time, solutions like box64 or Fex-Emu , which can execute X86 applications with near-native performance, were not yet available. Thus, I began looking for open-source "alternatives": using Inkscape instead of Sketch for graphic design, using Kdenlive instead of DaVinci Resolve for video production, and using Blender instead of SketchUp for 3D modeling. </br>
 </br>
 This also allowed me to experience the convenience of "open-source software"—as long as you have the source code, you can compile and install it yourself even if the developer hasn't released a file for your platform. For this, I learned about patching and using Git. With the source code public and viewable by everyone, developers couldn't hide any shady business. Perhaps it is because of this experience that most of the software I choose today is Free Software. Regarding devices, my choices are primarily based on the Arm and RISC-V architectures.</br>
 </br>
