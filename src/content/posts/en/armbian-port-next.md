@@ -19,6 +19,7 @@ Of course, my porting process wasn't all smooth sailing. This isn't an old platf
 # Everything begins here...
 
 TL;DR: "It's currently a work-in-progress." Only the CPU (including DVFS), display (using EFI framebuffer), USB networking, audio, internal UFS flash, UART serial, GPIO-based buttons, ADSP, and CDSP are functional; the rest is still undergoing patching. This is significantly better than my first attempt based on [Linaro's tutorial](https://www.linaro.org/blog/let-s-boot-the-mainline-linux-kernel-on-qualcomm-devices/) last year. Back then, after half a day of effort, only the UART worked, and the screen remained black.</br>
+
 However, Qualcomm is quite proactive regarding mainline kernel support for its own chips. A friend of mine, "Kaanapali*", told me that using an SD 8 Elite Gen 5 prototype and following [Qualcomm's instructions](https://www.qualcomm.com/developer/blog/2025/10/same-day-snapdragon-8-elite-gen-5-upstream-linux-support), he ported a full version of Debian 13 and implemented most mainline-supported features in just half an hour! But that's a story for another article.
 
 > _*The author is making a joke here; "Kaanapali" (Kaanapali) is the informal phonetic transliteration of the development codename for the Qualcomm Snapdragon 8 Elite Gen 5 chip. Its informal phonetic transliteration in Standard Korean is "가나파리" or "카나팔리"._

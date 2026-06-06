@@ -4,7 +4,7 @@ published: 2026-03-13
 description: ''
 image: 'assets/terminal-view.png'
 tags: [FOSS, Embed, Thoughts, Misc, NSFW]
-category: 'Linux'
+category: 'Linux & Linux related'
 draft: false
 lang: 'zh_TW'
 ---

@@ -4,7 +4,7 @@ published: 2026-03-24
 description: ''
 image: 'assets/i-refuse-to-give-a-name.png'
 tags: [Customize, Thoughts, Mice]
-category: 'Linux'
+category: 'Linux & Linux related'
 draft: false
 lang: 'zh_TW'
 ---

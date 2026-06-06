@@ -101,7 +101,9 @@ Around the same time, I also started researching "embedded devices." Because my 
 </br>
 As the hardware environment migrated to Arm, the corresponding software had to migrate as well. Fortunately, most common software on Linux has an Arm version released, so the migration process was smooth. However, many commercial proprietary programs I used did not have an Arm release.</br>
 </br> 
-At the time, solutions like box64 or Fex-Emu , which can execute X86 applications with near-native performance, were not yet available. Thus, I began looking for open-source "alternatives": using Inkscape instead of Sketch for graphic design, using Kdenlive instead of DaVinci Resolve for video production, and using Blender instead of SketchUp for 3D modeling. </br>
+
+At the time, solutions like `box64` or `Fex-Emu` , which can execute X86 applications with near-native performance, were not yet available. Thus, I began looking for open-source "alternatives": using Inkscape instead of Sketch for graphic design, using Kdenlive instead of DaVinci Resolve for video production, and using Blender instead of SketchUp for 3D modeling. </br>
+
 </br>
 This also allowed me to experience the convenience of "open-source software"—as long as you have the source code, you can compile and install it yourself even if the developer hasn't released a file for your platform. For this, I learned about patching and using Git. With the source code public and viewable by everyone, developers couldn't hide any shady business. Perhaps it is because of this experience that most of the software I choose today is Free Software. Regarding devices, my choices are primarily based on the Arm and RISC-V architectures.</br>
 </br>
@@ -119,8 +121,10 @@ To this day, fully Free Software accounts for 90% of the software installed on m
 
 Initially, I wanted to add a few servers to my home, but after careful consideration, I gave up because it didn't suit my household conditions; keeping them running 24/7 would be a significant burden in terms of noise and electricity bills. </br>
 </br>
+
 I decided to use retired, out-of-season phones with Linux installed to serve as lightweight servers instead. After all, the performance of current Android phones has generally improved, making them suitable for running Docker container services. Since I already had experience with Linux, I bought a OnePlus 6T with good mainline kernel support, installed PostmarketOS, and set up containers to self-host a gallery service as an alternative to Google Photos, ran an Ad Blocker, and even briefly set up a Minecraft server for multiplayer games... </br>
 </br>
+
 In short, I set up everything commonly found on a server on a phone. Plus, they have built-in batteries, serving as a cheap UPS system; even a power outage wouldn't be a problem. Later, my SDM845 MTP prototype replaced my OnePlus 6T and was also used to host my blog, while the original OnePlus 6T became a "backup phone." After inserting a SIM card, it even gave me a "PinePhone-like" experience. Later, I ported Arch Linux ARM to it, allowing me to enjoy the latest software. This is also the origin of the background on my blog's homepage.</br>
 
 <img src="https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg">
@@ -129,7 +133,9 @@ In short, I set up everything commonly found on a server on a phone. Plus, they 
 
 Naturally, for better performance, I later switched to a Nothing Phone 1. Its 12GB of RAM allows for more Docker containers, but this time the focus was more on daily use. The only problem was that the Snapdragon 778G CPU had poor mainline kernel support; for instance, the audio required manually patching every time I booted to work. Of course, I learned many things, such as patching firmware based on hardware nodes in the Device Tree and modifying kernel configuration files to enable Docker support... </br>
 </br>
+
 Later, unsatisfied with Fedora on the MacBook, I began porting PostmarketOS to it, which has now been accepted upstream and entered the testing branch.</br>
+
 </br>
 
 <img src="https://blog.cloudflare88.eu.org/_astro/droidian-phosh.B02q2LJ5_ZfB7jG.webp">
@@ -143,7 +149,10 @@ It just so happened that I remembered seeing a Lenovo Snaptop in a store earlier
 
 ## 2025 – Present: Becoming a Linux Porter, Growing Slowly
 
-With deeper learning in embedded systems, ordinary Linux phones no longer satisfy my needs. Most phones supporting the mainline kernel are retail devices with hardware-based Secure Boot enabled, making firmware modification nearly impossible. Since the previous 845 prototype's battery became too old to continue using, I had to buy an 8750 MTP prototype (actually two; the other is used as a server to host my blog. If you look closely, you'll see "Powered by QTI SM8750 MTP" at the end of the site title) and began the porting of the mainline kernel and Armbian Linux. Fortunately, the mainline kernel has always had a Device Tree for the SM8750 MTP, and ALSA configuration files were also available for audio. However, the porting work remains difficult; porting the kernel alone took three months, just to solve a display issue. To escape Android's convoluted boot process (mainly because `boot` images are hard to create), I switched to the common UEFI boot method found on PCs, using an EFI Framebuffer to temporarily resolve the display issue.</br>
+With deeper learning in embedded systems, ordinary Linux phones no longer satisfy my needs. Most phones supporting the mainline kernel are retail devices with hardware-based Secure Boot enabled, making firmware modification nearly impossible. Since the previous 845 prototype's battery became too old to continue using, I had to buy an 8750 MTP prototype (actually two; the other is used as a server to host my blog. </br>
+</br>
+
+If you look closely, you'll see "Powered by QTI SM8750 MTP" at the end of the site title) and began the porting of the mainline kernel and Armbian Linux. Fortunately, the mainline kernel has always had a Device Tree for the SM8750 MTP, and ALSA configuration files were also available for audio. However, the porting work remains difficult; porting the kernel alone took three months, just to solve a display issue. To escape Android's convoluted boot process (mainly because `boot` images are hard to create), I switched to the common UEFI boot method found on PCs, using an EFI Framebuffer to temporarily resolve the display issue.</br>
 
 <img src="https://blog.cloudflare88.eu.org/assets/mtp8750-front-view-2.png">
 
@@ -157,12 +166,14 @@ Later, during the process of compiling the mainline kernel for the Nothing Phone
 
 This was my first time successfully porting a Linux operating system to a relatively modern platform without the aid of any schematics or BSP references (Because I don't own any BSP codes). Although more than half of the hardware is non-functional, considering the scarcity of mainline kernel support for phones using the SM8750 chip and that most phones are supported even less than my prototype, I feel my progress has been somewhat rapid. I even went as far as posting a video on YouTube; although it has fewer than 2K views, it's clear that everyone likes "developers" who port Linux to devices...</br>
 </br>
+
 Here is the link to my video: _Look at the code, I'm still here, and you'll be alive next year_ (the background music of my video is "Look at the Sky" by Porter Robinson)!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ecv3HICeK74?si=5m9OW-QJOP2zHKan" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Every time the familiar Linux boot log flickers on the screen, those white characters flashing against a pure black background are, to me, not just the execution of code, but a form of "breathing" that transcends hardware lock-ins.</br>
 </br>
+
 In these past few months of day-and-night dialogue with the SM8750 prototype, I suddenly understood that the line "I'm still here" in Porter Robinson's lyrics is actually the hardware's response to the developer. Those electronic parts locked by manufacturers, forgotten by the era, or viewed as "early prototypes" should have remained silent in a landfill, but because of our obsession with the mainline kernel, they have regained the right to breathe freely. As long as someone is still writing code, the vitality of this technology will continue into next year and beyond.</br>
 
 This made me re-examine the theme I want to talk about next.
@@ -173,6 +184,8 @@ In Korean, one way to write "learning" is "공부 (Gongbu)," whose Hanja origin 
 
 I used to view porting Linux as a technical intuition, but this three-month process—just to solve a single screen issue—made me realize that true learning is, in fact, a kind of "Kung Fu." </br>
 </br>
+
 It's not a fast-track cram school; it's like an old monk entering meditation or a craftsman sharpening a blade. It's the resilience ground out second by second amidst countless Kernel Panics and CrashDumps. When I push aside the wasted time that could have been spent in "idle leisure" to read books like "NiaoGe's Linux Private Kitchen" or "Running Linux on Computers: Hardware Testing Notes," or search for articles on embedded devices, or spend hours on YouTube watching embedded OS porting and Linux-related course videos; or when I use the "`make`" command to verify results while compiling programs or kernels, I am not just learning "knowledge" but practicing "Kung Fu." </br>
 </br>
+
 This Kung Fu is simple to describe but difficult to master. The simplicity lies in merely making those cold chips "come alive" as described in the lyrics; the difficulty lies in often requiring months or even years of sweat. it requires developers to be able to endure loneliness and, in the midst of months or years of boredom, hold onto that glimmer representing the "Free Software spirit" and the "GNU philosophy."

@@ -4,7 +4,7 @@ published: 2025-06-25
 description: 一臺十年前的手機，卻執行着最新的主線核心...
 image: 'assets/fajita-and-88047.jpg'
 tags: [FOSS, Android, Flashing, ARM]
-category: 'Linux'
+category: 'Linux & Linux related'
 draft: false
 lang: 'zh_TW'
 ---
