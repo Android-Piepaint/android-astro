@@ -4,7 +4,7 @@ published: 2025-10-21
 description: 經過修改的 Android 核心與上游主線核心到底相差多遠，只需兩個發行版便知。
 image: 'assets/droidian-plymonth.jpg'
 tags: [FOSS, Android, ARM, Flashing]
-category: 'Linux'
+category: 'Linux & Linux related'
 draft: false
 lang: 'zh_TW'
 ---

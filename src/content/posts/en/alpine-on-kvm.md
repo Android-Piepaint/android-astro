@@ -16,6 +16,7 @@ lang: 'en'
 
 Since I swapped my primary laptop from a MacBook Air to this Lenovo Yoga Air 14s, my fondness for the Snapdragon X Elite has been steadily climbing. It's not just the shock of having 12 high-performance Oryon CPU cores and 32GB of RAM that makes it more than enough for daily tasks and embedded Linux development alike. However, like any laptop, this Yoga Air 14s has its shortcomings.</br>
 </br>
+
 It ships by default with Windows 11 ARM, and specifically the Home Edition, which lacks Hyper-V virtualization support compared to the Pro version. I ended up backing up my useful data and wiping the entire drive to install Windows 11 Pro. This time, the "Optional features" finally included the "Hyper-V" option. I enabled the relevant features, rebooted, and downloaded the Debian 13 ARM installation image. I tried to fire up a virtual machine, but it hung; no matter how I tweaked the VM configuration, I couldn't get into the Debian installer. Plus, Windows is notorious "spyware," and I have zero desire to let Microsoft monitor me! So, I installed the only OS where most hardware currently works reasonably well: Ubuntu. But KVM functionality requires manual configuration.</br>
 
 <img src="/assets/final-result.png">
@@ -32,14 +33,20 @@ Next, head over to GitHub and search for 「slbounce」, then download the `slbo
 
 - Modern Windows on ARM (WoA) devices default to using Hyper-V to provide certain virtualization features (e.g., WSL, Windows Sandbox, WSA, and Docker). Its hypervisor always executes at the EL2 Exception Level. This differs from the OS kernel running at EL1 and applications at EL0. The [ARM Base Boot Requirements (BBR)](https://developer.arm.com/documentation/den0044/latest) specification strictly requires that UEFI firmware must execute at EL2 to permit the installation or configuration of hypervisors or virtualization-aware operating systems.</br>
 </br>
+
 - Since the SD835 (MSM8998), Qualcomm Snapdragon platforms have uniformly adopted standard UEFI firmware to replace the previous Little Kernel (LK) bootloader. However, Qualcomm's UEFI implementation does not satisfy the aforementioned ARM BBR requirements. Although the Snapdragon platform supports ARM virtualization extensions, the UEFI firmware executes at EL1. Consequently, the OS and its VM managers cannot access the hardware hypervisor. Therefore, a custom software implementation is required to allow the OS to seize control of the EL2 Exception Level and start the Hypervisor.</br>
+
 </br>
+
 - Qualcomm's so-called Secure Launch is neither ARM Trusted Boot (BL1/BL2/BL31/TF-A) [^1] nor UEFI Secure Boot. It is a Windows-proprietary hypervisor startup sequence: before the Windows kernel starts, it establishes an EL2 execution environment under a "trusted state" and lets Hyper-V take over that level.</br>
 </br>
+
 - `tcblaunch.exe` is a Microsoft-signed TCB (Trusted Computing Base) component. Its capabilities include: calling Qualcomm's private Secure Monitor / firmware interfaces, reconfiguring Exception Levels, and initializing the system registers and memory layout required by the hypervisor. This is the only way to enter the EL2 Exception Level without modifying the firmware.</br>
 </br>
+
 - The design goal of `slbounce` is not to bypass or break Secure Launch, but rather to trigger Secure Launch under legal and trusted premises. It obtains EL2 without actually starting Windows and hands the established EL2 state over to Linux.</br>
 </br>
+
 - Secure Launch is designed to occur before the OS starts, making the EFI stage the only logical entry point. Specifically, the `ExitBootServices()` function, acting as the boundary between UEFI and the OS, becomes the most suitable interception point. slbounce loads as an EFI driver, and its actual workflow is as follows:
 
 1. `slbounce.efi` is loaded by the UEFI loader.
@@ -54,13 +61,16 @@ At this point, the system has completed the Secure Launch, but it is Linux that 
 
 After downloading, reboot into the `systemd-boot` loader and select "EFI Shell." You will enter the UEFI Shell. We need to find the ESP on the hard drive (e.g., `fs3`), then type `fs3:` and press Enter to enter the partition. You can type `ls` to view the contents.</br>
 </br>
+
 Find the previously copied `sltest.efi`, `slbounce.efi`, and `tcblaunch.exe` to begin testing.
 Type `sltest.efi tcblaunch.exe`. A log saying "Performing Secure Launch" will appear. If successful, a green rectangular box will be displayed at the top of the screen. Reboot afterwards.</br>
 </br>
 
+
 # Compiling the Kernel
 
 Since the stock Ubuntu kernel does not support the EL2 Exception Level, we need to compile our own. I used the `aarch64-laptop` kernel branch maintained by Linaro.</br>
+
 Use `git clone` to download the source code locally, then type `make defconfig qcom_laptops.config` to generate the kernel configuration. Follow this with `make -j12` to start compiling. The entire process took about 5 minutes (I timed it with my phone, including the kernel and module compilation), then type `sudo make modules_install install` to install the compiled kernel. During compilation, `-el2.dtb` device trees for all X Elite devices are generated; these are required for enabling Secure Launch. Next, configure the bootloader by adding an EL2 entry and specifying the corresponding device tree:</br>
 
 ```yaml
