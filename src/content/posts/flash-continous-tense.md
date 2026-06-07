@@ -9,6 +9,9 @@ draft: false
 lang: 'zh_TW'
 ---
 
+點此檢視[韓文版歌詞](https://blog.cloudflare88.eu.org/posts/ko/flash-continous-tence/)
+
+
 :::note
 本文包含部分受版權保護的內容，您在轉載本文章時，請不要包含這些內容。除非您已經事先申請，且版權所有者已同意授權。</br>
 受版權保護的內容：

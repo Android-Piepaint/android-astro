@@ -4,7 +4,7 @@ published: 2026-04-08
 description: Somethings we lose, something for shooting, broken codes in the dark.
 image: 'assets/macbook-tonga.png'
 tags: [Thoughts, Misc, ARM, FOSS, English]
-category: 'Linux'
+category: 'Linux & Linux related'
 draft: false
 lang: 'zh_TW'
 ---

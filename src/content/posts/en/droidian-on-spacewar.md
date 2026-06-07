@@ -4,7 +4,7 @@ published: 2025-10-21
 description: ''
 image: 'assets/droidian-plymonth.jpg'
 tags: [FOSS, Android, ARM, Flashing, English]
-category: 'Linux'
+category: 'Linux & Linux related'
 draft: false
 lang: 'zh_TW'
 ---
