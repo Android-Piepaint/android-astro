@@ -20,6 +20,12 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 6月7日
+
+Another Wow moment in my life. 昨天晚上跑了 `dnf update` 把核心連同 `linux-firmware` 升到最新版之後，之前幾乎廢掉的喇叭竟然可以工作了！而且沒有破音的問題，這應該是我第一次碰到有四個喇叭的筆電。雖然低音部分不如之前的 MacBook 有力，但只要可以放音樂就可以了。GitHub 上還有 Yoga Slim 7x 的 [Dolby 音效配置檔](https://github.com/taprobane99/Lenovo-Yoga-Slim-7x-Dolby-Linux-Audio)可以用。唯一的問題是 Suspend 再喚醒會導致筆電重開機。</br>
+</br>
+
+
 ## 6月6日
 
  - 我爲什麼會喜歡 Linux 手機和 Linux 裝置？大概是因爲只有 Linux 裝置才可以做到不經過 Google，不經過 Apple，不經過 Microsoft，不採用封閉商店，不採用商業帳號系統也可以讓個人持有通用計算裝置。</br>
