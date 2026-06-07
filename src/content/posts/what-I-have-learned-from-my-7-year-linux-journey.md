@@ -4,7 +4,7 @@ published: 2026-04-08
 description: 使用自由軟體，總是要失去什麼，也會得到什麼。
 image: 'assets/macbook-tonga.png'
 tags: [Thoughts, Misc, ARM, FOSS]
-category: 'Linux'
+category: 'Linux & Linux related'
 draft: false
 lang: 'zh_TW'
 ---
