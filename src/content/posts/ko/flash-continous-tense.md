@@ -1,5 +1,5 @@
 ---
-title: 플래싱(Flashing) 진행형(進行形) (Feat. Pakala Oryon) —— May'n의‘人生進行形(인생진행형)’를 FOSS가 패로디 한 버전
+title: 플래싱(Flashing) 진행형(進行形) (Feat. Purwa Oryon) —— May'n의‘人生進行形(인생진행형)’를 FOSS가 패로디 한 버전
 published: 2025-11-29
 description: 우리 함께 저 自由로운 곳으로 奔走해,私有 software와 "明日 再見"한 뒤 다시는 안 봐.
 image: 'assets/mtp8750-front-view.jpg'
