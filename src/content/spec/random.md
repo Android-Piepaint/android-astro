@@ -20,6 +20,24 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 6月8日
+
+<img src="/assets/remoteproc-extensions.png">
+
+ - 高通 Snapdragon 的遠端處理器雖然執行的是專有軟體，沒有人可以檢視原始碼，但是 Linux 的 `remoteproc` 核心模組還是會提供接口用於 userland 程式進行管理。於是我實作了一個 [GNOME 擴充程式](https://github.com/Android-Piepaint/gnome-shell-extension-qcom-remoteproc) 用於管理驍龍平臺的遠端處理器，所有執行主線核心的驍龍裝置都可以使用。就像 PineBook 那樣，關閉不需要的遠端處理器，保護使用者隱私。</br>
+</br>
+
+  - GNOME 50 的桌布設計非常不錯，終於在 Linux 上見到 Apple MacBook Pro 設計語言相似的桌布圖片了。</br>
+</br>
+
+ - > 우리 함께 저 自由 로운 곳으로 달려가,</br>
+   > 私有 소프와(software) "來日 봐"한 뒤 다시는 안 봐</br>
+   > 機器 原理 몰라도 상관없어, 그날만 記憶 해,</br>
+   > 아득한 記憶 속에, 當 찼던 그날의 實踐 을</br>
+
+   當初爲什麼會寫自由軟體相關的內容？或許是因爲早就討厭自己的裝置被各種專有軟體「摧殘」，討厭被強迫閱讀堪比《聖經》長度的「最終使用者許可協定」；想要奪回屬於自己的隱私和數位主權，或者僅僅是希望「與衆不同」...我似乎早就忘記了當初改用 Linux 和自由軟體的理由了，但是我相信，只有自由軟體才可以守護自己的隱私，才能行使自己的「數位主權」。也希望大家終有一天可以勇敢對束縛各位的專有軟體講出「圍墻庭園,安寧!(圍牆花園，再見!)」</br>
+    </br>
+    
 ## 6月7日
 
 Another Wow moment in my life. 昨天晚上跑了 `dnf update` 把核心連同 `linux-firmware` 升到最新版之後，之前幾乎廢掉的喇叭竟然可以工作了！而且沒有破音的問題，這應該是我第一次碰到有四個喇叭的筆電。雖然低音部分不如之前的 MacBook 有力，但只要可以放音樂就可以了。GitHub 上還有 Yoga Slim 7x 的 [Dolby 音效配置檔](https://github.com/taprobane99/Lenovo-Yoga-Slim-7x-Dolby-Linux-Audio)可以用。唯一的問題是 Suspend 再喚醒會導致筆電重開機。</br>
