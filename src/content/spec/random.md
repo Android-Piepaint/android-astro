@@ -22,7 +22,7 @@ lang: 'en'
 
 ## 6月10日
 
-Windows 26H1 系統的 `tcblaunch.exe` 會導致 `slbounce` 嘗試利用 EL2 等級時引發崩潰而重開機，如果改用 25H2 或更早以前的 `tcblaunch.exe` 就不會導致崩潰。好巧不巧，之前重灌 Fedora 的時候忘記存一份之前利用的 `tcblaunch.exe` 拷貝了，接下來幾個月我的筆電都不能使用 KVM 虛擬機來嘗試新的東西了...唉...... `:(` </br>
+Windows 26H1 系統的 `tcblaunch.exe` 會導致 `slbounce` 嘗試利用 EL2 等級時引發崩潰而重開機，如果改用 25H2 或更早以前的 `tcblaunch.exe` 就不會導致崩潰。好巧不巧，重灌 Fedora 的時候忘記存一份之前利用的 `tcblaunch.exe` 拷貝了，接下來幾個月我的筆電都不能使用 KVM 虛擬機來嘗試新的東西了...唉...... `:(` </br>
 </br>
 
 ## 6月9日

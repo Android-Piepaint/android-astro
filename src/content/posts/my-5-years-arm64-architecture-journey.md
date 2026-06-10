@@ -45,7 +45,6 @@ lang: 'zh_TW'
 
 小米平板5於個人而言，也是一個意義重大的裝置。在到手後一週就解鎖刷入了 Windows 11，當然，Windows 11 ARM 對我算不得什麼。我最喜歡的是它的 UEFI 引導程式，儘管高通在 Android 平臺對引導程式做了限制讓其只能引導 Linux 核心，但是開發 UEFI 的 Renegade 專案把UEFI僞造成 Linux 核心，藉由引導程式引導，多麼高明的手段！
 
-![Mi Pad 5 showing Project MU UEFI Firmware settings](assets/mipad.jpg)
 後期我又根據個人需要把小米平板5的主線核心進行了自訂，刪除了無用的驅動程式，也就是在那時，我也第一次學習了編譯和定製 Linux 核心。還安裝了 Arch Linux ARM，並且使用了常用的軟體，得益於先前在 Mac 上的經歷，這次的轉移輕鬆了不少。
 
 ## 分享教程，教與學一並存在着
@@ -58,7 +57,7 @@ lang: 'zh_TW'
 
 除了 Linux 之外，剩下的便是一些我目前不知道有什麼用的知識。這些東西大多與平臺高度相關，而且只能通過一些裝置和隨附 BSP 才能學習。比如高通平臺的協處理器在主線核心的初始化是通過一個叫 `remoteproc` 的進程來掛載相關韌體來完成的，例如 Wi-Fi 的初始化就是如此（只需要一個對應的韌體就可以了，而下游 Android 核心還需要三個守護進程才可以）；數據機必須先初始化才能使用 Wi-Fi、GPS等（不得不說，高通平臺的數據機隔離性非常糟糕！）；高通的 ADSP 無法在 EL2 模式執行，會導致音訊、USB 不可用；展迅平臺解鎖需要給 U-Boot 打補丁；如何通過 `slbounce` 讓受支援的處理器啓用 EL2 ；以及 libcamera 框架的使用，了解了攝像頭在 Linux 下的驅動流程與媒體管線是如何協作的。還有硬體看門狗的作用...雖然這些知識暫時還沒有明確的用途，但我相信它們會在未來的某個時刻派上用場。
 
-![My Snaptop UEFI setting](assets/snaptop.jpg)
+![My Laptop](assets/yoga-air-14s.jpg)
 
 ## 五年後的今天，我學會了什麼？
 
