@@ -2,7 +2,7 @@
 title: 當 Linux 遇上 Qualcomm X Elite —— Fedora 44 在 Lenovo YOGA Slim 7x 的體驗
 published: 2026-06-10
 description: 我或許是世界第一個在聯想 YOGA Slim 7x 驍龍筆電上安裝並測試 Linux 的用戶...
-image: 'assets/yoga-air-14s.jpg'
+image: 'assets/yoga-air-14s.png'
 tags: [Qualcomm, Laptop, ARM, Linux, Embed]
 category: 'Laptop'
 draft: false 
