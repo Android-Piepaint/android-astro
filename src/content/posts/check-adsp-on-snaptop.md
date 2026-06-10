@@ -2,7 +2,7 @@
 title: 如何檢定 Snapdragon 裝置遠端處理器的運轉情況，保證裝置功能正常工作
 published: 2026-06-06
 description: 給希望在驍龍平臺上體驗 mainline kernel 的使用者提供基礎的除錯知識。
-image: 'assets/virt-demo-host.png'
+image: 'assets/yoga-air-14s.jpg'
 tags: [FOSS, ARM, Qualcomm]
 category: 'Linux & Linux related'
 draft: false
