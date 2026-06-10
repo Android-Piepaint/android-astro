@@ -1,7 +1,7 @@
 ---
 title: 當 Linux 遇上 Qualcomm X Elite —— Fedora 44 在 Lenovo YOGA Slim 7x 的體驗
 published: 2026-06-10
-description: 我或許是世界第一個在聯想 YOGA Slim 7x 驍龍筆電上安裝並測試 Linux的用戶...
+description: 我或許是世界第一個在聯想 YOGA Slim 7x 驍龍筆電上安裝並測試 Linux 的用戶...
 image: 'assets/yoga-air-14s.jpg'
 tags: [Qualcomm, Laptop, ARM, Linux, Embed]
 category: 'Laptop'
@@ -24,7 +24,7 @@ lang: 'zh_TW'
 
 ## 安裝 Linux
 
-首先關閉 Windows 自帶的 Bitlocker 硬碟加密，然後重新啓動電腦，在開機時按 `F2`,以此進入 UEFI設定。選擇「安全」選項，之後關閉安全啓動，之後從瀏覽器檢索「Fedora」，下載 Fedora 44 映像檔開機，根據 [Fedora Wiki 的說法](https://fedoraproject.org/wiki/Snapdragon_WoA_Laptop_Install)，驍龍 X Elite 的筆電需要開機後手動修改 Live CD 的開機引數爲 `clk_ignore_unused pd_ignore_unused systemd.tpm2_wait=0 modprobe.blacklist=qcom_q6v5_pas` 才可以開機進入 Live CD。</br>
+首先關閉 Windows 自帶的 Bitlocker 硬碟加密，然後將筆電重開機，在開機時按 `F2`,以此進入 UEFI設定。選擇「安全」選項，之後關閉安全啓動，之後從瀏覽器檢索「Fedora」，下載 Fedora 44 映像檔開機，根據 [Fedora Wiki 的說法](https://fedoraproject.org/wiki/Snapdragon_WoA_Laptop_Install)，驍龍 X Elite 的筆電需要開機後手動修改 Live CD 的開機引數爲 `clk_ignore_unused pd_ignore_unused systemd.tpm2_wait=0 modprobe.blacklist=qcom_q6v5_pas` 才可以開機進入 Live CD。</br>
 
 ## 目前的問題
 
@@ -54,7 +54,6 @@ sudo dmesg | egrep -i "EL2|kvm|hypervisor|gunyah"
 ```
 
 不難看出，韌體將一部分記憶體保留給了 Gunyah（Qualcomm 自己的 EL2 Hypervisor）。如果想要跑 KVM 虛擬機，就需要加載 `slbounce` [EFI 驅動](https://blog.cloudflare88.eu.org/posts/alpine-on-kvm/)，從而讓 Linux 執行於 EL2 模式下。</br>
-</br>
 
 至於音訊...在跑過 `dnf update` 之後，發現音訊可以使用了。感謝增加這臺筆電支援的開發者們！</br>
 </br>
