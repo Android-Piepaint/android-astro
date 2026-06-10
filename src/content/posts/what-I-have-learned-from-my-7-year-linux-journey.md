@@ -96,7 +96,7 @@ Manjaro 的體驗，也算是為我之後的 Distro hoppin’ 做了基礎。
 
 ![](assets/droidian-phosh.jpg)
 
-至於「驍龍本」的到來，可以說是一次「意外」。因為一場大雨，我的 MacBook 因為保護不當導致熒幕進水，而不得不送修。在等待期間需要有新的筆電來滿足我的日常使用，又不想改用 X86 筆電，因為效能一如既往的弱！恰好想到之前在商店看到一臺[聯想的驍龍本](https://blog.cloudflare88.eu.org/posts/first-impression-with-xelite/)，為了測試高通驍龍 X Elite 晶片受主線核心的支援程度，我再一次說服家人給我買下了一臺。後期也這臺筆電上開展了許多實驗，比如採用[「Secure launch」](https://blog.cloudflare88.eu.org/posts/alpine-on-kvm/#%E6%BA%96%E5%82%99%E5%B7%A5%E4%BD%9C)讓 Linux 執行在 EL2 下從而可以[使用 KVM 虛擬機](https://blog.cloudflare88.eu.org/posts/alpine-on-kvm/)和[其它採用KVM的容器](https://blog.cloudflare88.eu.org/posts/windows-arm-on-docker/)。這篇部落格上，經過粗略計算，關於驍龍本的內容佔了四分之一。
+至於「驍龍本」的到來，可以說是一次「意外」。因為一場大雨，我的 MacBook 因為保護不當導致熒幕進水，而不得不送修。在等待期間需要有新的筆電來滿足我的日常使用，又不想改用 X86 筆電，因為效能一如既往的弱！恰好想到之前在商店看到一臺[ Lenovo 的驍龍本](https://blog.cloudflare88.eu.org/posts/first-impression-with-xelite/)，為了測試高通驍龍 X Elite 晶片受主線核心的支援程度，我再一次說服家人給我買下了一臺。後期也這臺筆電上開展了許多實驗，比如採用[「Secure launch」](https://blog.cloudflare88.eu.org/posts/alpine-on-kvm/#%E6%BA%96%E5%82%99%E5%B7%A5%E4%BD%9C)讓 Linux 執行在 EL2 下從而可以[使用 KVM 虛擬機](https://blog.cloudflare88.eu.org/posts/alpine-on-kvm/)和[其它採用KVM的容器](https://blog.cloudflare88.eu.org/posts/windows-arm-on-docker/)。這篇部落格上，經過粗略計算，關於驍龍本的內容佔了四分之一。
 
  <img src="/assets/yoga-vibe.png" >
 
