@@ -2,7 +2,7 @@
 title: Snaptop
 published: 2025-10-02
 description: Qfhg z mlinzo dliw wvurmrxzgrlm...
-image: 'assets/yoga-air-14s.jpg'
+image: 'assets/yoga-air-14s.png'
 tags: [Qualcomm, Dictionary]
 category: 'Misc'
 draft: false 

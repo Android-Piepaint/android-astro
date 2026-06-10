@@ -121,7 +121,6 @@ camera@36 {
 
 之後，編譯新的裝置樹，重新啓動核心，相機就工作了。
 
-![Working camera](assets/working-cam.jpg)
 
 ## 其它有意思的事情...
 
