@@ -20,6 +20,20 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 6月13日
+
+Yet another Wow moment in my life. 今天嘗試了之前提到的 `abl2efi` 的小工具改善 Linux 的開機速度，還從原始碼編譯了 `simpleinit` 基於 LVGL 的 UEFI 設定頁面用來實作 PC 上的 GUI 設定介面。一開始認為還需要用 Qualcomm 的測試用簽章給 `abl2efi.elf` 簽章驗證，在這裡停留許久。後來才想到這是原型機，直接用原始檔案覆寫裝置的 ABL 分割就可以開機了...幹。後來又把裝置 ABL 開機載入器抓出來放到 EFI 分割，發現也可以加載 ABL 並開機進入 Android！</br>
+</br>
+
+<img src="/assets/abl-test.jpg">
+
+<img src="/assets/abl-simpleinit.png">
+
+## 6月12日
+
+想要從 ARM 裝置的 UEFI 韌體抓取 ACPI table，可是裝置只有 Linux？那就通過 UEFI shell 的 `acpiview` 命令抓取吧！例如 `acpiview -d`就可以從韌體抓取給定的 ACPI table。</br>
+</br>
+
 ## 6月11日
 
  - 最好的事情是什麼？是希望有一天不用再去費盡心力，去 tweak 裝置上的 Linux 作業系統。Arm 裝置上的 Linux 系統要修補的地方實在是太多了...一般 x86 裝置上跑 Linux，除非硬體沒有 Linux 驅動，基本不需要調整或者修改核心。Arm 裝置雖然跑 Linux 的體驗遠遠好於 Windows，但是需要解決的問題太多。這點看一下 PostmarketOS Wiki 就知道了，受到支援的裝置裏，大部分裝置的相機硬體是無法使用的。而那些支援較好的功能，也只是「堪用」。就算硬體支援不錯，在日常使用總會遇到各種各樣的問題。</br>
@@ -34,7 +48,7 @@ lang: 'en'
 
 ## 6月10日
 
-Windows 26H1 系統的 `tcblaunch.exe` 會導致 `slbounce` 嘗試利用 EL2 等級時引發崩潰而重開機，如果改用 25H2 或更早以前的 `tcblaunch.exe` 就不會導致崩潰。好巧不巧，重灌 Fedora 的時候忘記存一份之前利用的 `tcblaunch.exe` 拷貝了，接下來幾個月我的筆電都不能使用 KVM 虛擬機來嘗試新的東西了...唉...... `:(` </br>
+Windows 11 26H1 系統的 `tcblaunch.exe` 會導致 `slbounce` 嘗試利用 EL2 等級時引發崩潰而重開機，如果改用 25H2 或更早以前的 `tcblaunch.exe` 就不會導致崩潰。好巧不巧，重灌 Fedora 的時候忘記存一份之前利用的 `tcblaunch.exe` 拷貝了，接下來幾個月我的筆電都不能使用 KVM 虛擬機來嘗試新的東西了...唉...... `:(` </br>
 </br>
 
 ## 6月9日
