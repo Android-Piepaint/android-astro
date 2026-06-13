@@ -9,7 +9,7 @@ draft: false
 lang: 'zh_TW'
 ---
 
-點此檢視[韓文版歌詞](https://blog.cloudflare88.eu.org/posts/ko/flash-continous-tence/)
+點此檢視[韓文版歌詞](https://blog.cloudflare88.eu.org/posts/ko/flash-continous-tence/) 和 [英文版歌詞](https://blog.cloudflare88.eu.org/posts/en/flash-continous-tense/)
 
 
 :::note
