@@ -1,6 +1,6 @@
 ---
 title: Flash Continuous Tense (Feat. Purwa Oryon) —— A FOSS parody of 人生進行形(Life Continuous Tense) by May'n
-published: 2025-11-29
+published: 2026-06-13
 description: The courage to change, the brave practice that paved the way.
 image: 'assets/mtp8750-front-view.jpg'
 tags: [FOSS, Lyric]
@@ -8,6 +8,18 @@ category: 'Music'
 draft: false
 lang: 'en'
 ---
+
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/Flash%20Continuous%20Tense%20(Feat.%20Purwa%20Oryon)%20%E2%80%94%E2%80%94%20A%20FOSS%20parody%20of%20%E4%BA%BA%E7%94%9F%E9%80%B2%E8%A1%8C%E5%BD%A2(Life%20Continuous%20Tense)%20by%20May'n%20.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/Flash%20Continuous%20Tense%20(Feat.%20Purwa%20Oryon)%20%E2%80%94%E2%80%94%20A%20FOSS%20parody%20of%20%E4%BA%BA%E7%94%9F%E9%80%B2%E8%A1%8C%E5%BD%A2(Life%20Continuous%20Tense)%20by%20May'n%20.ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n6GVaJL_eeY?si=T-7F7bfpk5GGeWWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # Part 1
 
