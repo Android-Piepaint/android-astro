@@ -25,7 +25,7 @@ lang: 'en'
 - 日常被歧視的一天。用 Librewolf 和 Claude 對話，沒過多久 RAM 利用就暴漲，反而 Helium 瀏覽器就沒有問題。</br>
 </br>
 
-- 剛剛寫了一首「Your Phone is Fused」，改自 Element Animation 的「Your Door Was Locked」 ，算是把我10年前想做的事「實作」了。至於歌詞內容...?是我客製化原型機韌體的事情。</br>
+- 剛剛寫了一首「[Your Phone is Fused](https://blog.cloudflare88.eu.org/posts/your-phone-fused/)」，改自 Element Animation 的「Your Door Was Locked」 ，算是把我10年前想做的事「實作」了。至於歌詞內容...?是我客製化原型機韌體的事情。</br>
 </br>
 
 
