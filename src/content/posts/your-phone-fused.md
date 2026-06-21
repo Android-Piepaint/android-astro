@@ -11,6 +11,11 @@ lang: 'en'
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z7JiPUinWgY?si=SS0jISyeYuHZ_l68" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/Your%20Phone%20is%20Fused%20--%20A%20FOSS%20Parody%20of%20Your%20Door%20Was%20Locked.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
 # Intro
 
 I'll show you a device that you hardly seen,</br>
