@@ -20,6 +20,10 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 6月24日
+
+靠北，沒想到 Armbian 的 `ibus-rime` 套件竟然只會安裝 `rime` 本身，其他的擴充輸入方式(地球拼音，注音之類)還需要手動安裝 `librime-data rime-data-luna-pinyin rime-data-bopomofo rime-data-cangjie5 rime-data-stroke rime-data-terra-pinyin` 這些套件才可以使用。不然就會噴「`missing input schema`」錯誤。爲什麼不能像 Arch Linux 或者 Fedora 那樣一併安裝呢？就連 Ubuntu 也會一併處理擴充套件啊...</br>
+
 ## 6月23日
 
 把「瀏覽器」看成「遊覽器」是怎樣...我還把「機器」叫成「氣機」呢，之前看錯了就一直用到現在？</br>
