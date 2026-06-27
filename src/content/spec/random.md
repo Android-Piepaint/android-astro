@@ -20,6 +20,31 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 6月27日
+
+高通晶片的主線核心真的非常有意思，SD 778G+ 的主線核心支援到了 7.1 ，而同樣是根據 778G+ 修改的 QCS6490 還停留在6.18...好在我的 Q6A 單板機被主線核心支援，直接下載 Linus 的原始碼，套用6.18的核心 `.config` 配置檔開始編譯就可以了。</br>
+</br>
+
+## 6月26日
+
+ - 我不明白爲什麼這個世界總是對自由軟體愛好者抱有偏見。就因爲拒用任何專有軟體，因此被扣上「崇洋媚外」的帽子...不只是任何中國產的手機和軟體我拒用，對於所謂「我喜歡」的歐美國家開發的軟體，只要是不開放原始碼的專有軟體我照樣拒用啊...我使用的社群媒體也主要以歐美的爲主，至少我不得不使用 App 來檢視內容的時候可以找到第三方開源的 App。而且不會有 ban 號的風險。至於國內...講錯了，是中國大陸的社群媒體，不是強迫下載 App，就是封鎖 Linux 使用者檢視，還有以「高風險」爲由封鎖使用者賬戶。目前我還保留有賬戶的僅有 Bilibili，知乎，Coolapk 三者。只是想說與大陸的同好和支援者們勉強保持聯繫，免得我部落格的內容被無良內容農場搬走...可他們卻因爲我的網站被封鎖而不知道內容來源爲何。大陸的社群媒體我都是低調的用，我不會把我的聯絡方式放在我的部落格紹介裏，說快來 Tap 我吧～ 這種行爲不就是在告訴網警趕快把我拉清單嗎...</br>
+ </br>
+ - Fedora 更新 7.1 核心之後 `dracut` 不會自動添加 `adsp_dtbs.elf` `cdsp_dtbs.elf` 到 `initramfs` 中，需要手動建立自訂安裝配置檔添加韌體路徑:
+  ```bash
+  # /etc/dracut.d.conf/qcom-firmware.conf
+  install_items+=" /lib/firmware/qcom/x1e80100/LENOVO/83ED/qcadsp8380.mbn "
+  install_items+=" /lib/firmware/qcom/x1e80100/LENOVO/83ED/qccdsp8380.mbn "
+  install_items+=" /usr/lib/firmware/qcom/x1e80100/LENOVO/83ED/adsp_dtbs.elf "
+  install_items+=" /usr/lib/firmware/qcom/x1e80100/LENOVO/83ED/cdsp_dtbs.elf "
+  ```
+  之後執行 `sudo dracut --force` 重開機就可以了。</br>
+  </br>
+
+## 6月25日
+
+本部落格網站的文章分類說明：所有與 FOSS 相關的文章(自由軟體紹介&日常活用等)全部放到「FOSS & FOSS related」，對於 Linux 相關(發行版紹介&使用&硬體除錯技巧等)也全部放到「Linux & Linux related」分類。至於 18+ 內容和政治內容，默認和其他 NSFW 內容放在一起。因爲權利是春藥，而且總會有思考不正常的人看到不同的觀點就會暴走，從而否定妳整個人格，還有妳所做過的一切。因此應該是不適合在工作場合檢視。</br>
+</br>
+
 ## 6月24日
 
 靠北，沒想到 Armbian 的 `ibus-rime` 套件竟然只會安裝 `rime` 本身，其他的擴充輸入方式(地球拼音，注音之類)還需要手動安裝 `librime-data rime-data-luna-pinyin rime-data-bopomofo rime-data-cangjie5 rime-data-stroke rime-data-terra-pinyin` 這些套件才可以使用。不然就會噴「`missing input schema`」錯誤。爲什麼不能像 Arch Linux 或者 Fedora 那樣一併安裝呢？就連 Ubuntu 也會一併處理擴充套件啊...</br>
