@@ -20,6 +20,24 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 6月30日
+
+最近模仿了 Tik Tok 和 YouTube 上流行的「歌詞影片」用 Kdenlive 自己實作了一個「刷機進行式」的歌詞影片，結果好像沒什麼人看？不過用 Yoga 筆電剪輯影片確實很不錯，1440P 解析度，60FPS 的影片跑8分鐘就可以了。給大家貼上我的影片鏈結，歡迎各位觀看我的「音樂鑑賞」影片！</br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LdJOz6o4obw?si=LHl-5feYIWuZD6MB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## 6月29日
+
+如果每個人都可以寬容之心看待周邊的人與物，我們就會發見更多美好，溫馨和感動；如果心中少一點猜忌，多一份真誠，關係就會變得和諧。</br>
+</br>
+
+
+## 6月28日
+
+高德地圖這種收集個人隱私的吸血鬼就應該滾出臺灣。</br>
+</br>
+
+
 ## 6月27日
 
 高通晶片的主線核心真的非常有意思，SD 778G+ 的主線核心支援到了 7.1 ，而同樣是根據 778G+ 修改的 QCS6490 還停留在6.18...好在我的 Q6A 單板機被主線核心支援，直接下載 Linus 的原始碼，套用6.18的核心 `.config` 配置檔開始編譯就可以了。</br>
