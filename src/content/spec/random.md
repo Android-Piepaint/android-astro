@@ -20,6 +20,24 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 7月4日
+
+> 專有軟體出發，美國 Google 公司</br>
+> 自1998年來，統治網路至今 </br>
+> 收集隱私好手，使用者苦不堪言</br>
+> 感謝 Google 大統領，我們的大統領 </br>
+> </br>
+私有소프 出發, 美國 Google 會社,</br>
+1998年以來 인터넷(Internet)을 統治해 (온),</br>
+프라이버시(privacy) 蒐集 名手, 苦痛받는 使用者들</br>
+고마 Google 大統領, 우리 大統領</br>
+</br>
+
+## 7月3日
+
+Linux 手機支援中文語音的地圖軟體是「PureMaps」，圖資採用 OpenstreetMap；在 Android 上，同樣支援中文語音的軟體是[「CoMaps」](https://f-droid.org/packages/app.comaps.fdroid/)，應用本身開放原始碼，還支援離線地圖，即使沒有網路也可存取圖資。比起訂閱制的「Magic Earth」，我更喜歡前者，誰知道「Magic Earth」會不會內建追蹤器呢？</br>
+</br>
+
 ## 7月2日
 
  - 感謝 Ivon 在他自己的部落格中添加了我部落格的鏈結！在很長一段時間裏，Ivon 的部落格都是我的常去之地，檢視 Ivon 寫的自由軟體相關的文章來尋找靈感。</br>
