@@ -22,7 +22,32 @@ lang: 'en'
 
 ## 7月6日
 
+Snapdragon 平臺的主線核心 `remoteproc` 驅動程式會在核心開機時重設遠端處理器的運作情況，當核心跑在 EL2 時嘗試啓用遠端處理器就會遇到 `-22 EINVAL` 錯誤。解決方式就是修改核心源碼中的 `qcom_q6v5_pas.c` [這一高通遠端處理器(Q6 DSP)的驅動程式原始碼](https://github.com/sppidy/linux/commit/434c518bbe754f3ba3dea4364e99ab44a224c453)，讓核心的 `qcom_q6v5_pas` 模組能夠「接管」(attech)被 Bootloader 或者其它開機載入程式預載入的遠端處理器:</br>
 
+```c
+rproc->has_iommu = of_property_present(pdev->dev.of_node, "iommus");
+	if (desc->auto_boot)
+		rproc->auto_boot = RPROC_AUTO_BOOT_RESTART_IF_FW_AVAILABLE;
+	else
+		rproc->auto_boot = RPROC_AUTO_BOOT_DISABLED;
+	rproc_coredump_set_elf_info(rproc, ELFCLASS32, EM_NONE);
+  ...
+  ...
+  /* 移除驅動對 remoteproc 沒有 start ops 就退出的檢查，即使遠端處理器沒有完全啓動也可以被核心初始化，而不是一定要從頭啓動 */
+  /*if (rproc->state == RPROC_OFFLINE && !ops->start) { */
+	/*	dev_err(&pdev->dev, "reset broken and remoteproc not running during boot, exiting\n"); */
+	/*	ret = 0; */
+	/*	goto deinit_q6v5; */
+	/*} */
+  qcom_q6v5_read_smp2p_state(&pas->q6v5);
+  qcom_add_glink_subdev(rproc, &pas->glink_subdev, desc->ssr_name);
+	qcom_add_smd_subdev(rproc, &pas->smd_subdev);
+	qcom_add_pdm_subdev(rproc, &pas->pdm_subdev);
+  ...
+```
+
+這個修改讓 kernel 能安全「late attach」，避免重啟或錯誤退出。</br>
+</br>
 
 ## 7月5日
 
