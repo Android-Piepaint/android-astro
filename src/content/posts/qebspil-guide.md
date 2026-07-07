@@ -336,7 +336,7 @@ rproc->has_iommu = of_property_present(pdev->dev.of_node, "iommus");
 ```
 
 :::tip
-關於 `id_aa64mmfr0.ecv=1` 的底層小常識:
+關於 `id_aa64mmfr0.ecv=1` 的底層小常識:</br>
 在驍龍平台（特別是 X Elite 等新一代晶片）上，日誌中提示的 `Broken CNTVOFF_EL2` 代表硬體虛擬化計時器存在某些已知的硬體設計缺陷（Bugs）。添加 `id_aa64mmfr0.ecv=1` 參數是為了強制修正 Enhanced Counter Virtualization (ECV) 的特性宣告，引導核心正確處理計時器偏移量，從而徹底解決 KVM 在啟動虛擬機時，因為計時器陷阱（Trapping）導致整個主機直接當機（Kernel Panic）的陳年頑疾。
 :::
 
