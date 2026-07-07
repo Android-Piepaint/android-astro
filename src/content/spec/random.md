@@ -20,6 +20,11 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 7月7日
+
+高通平臺的 ACPI 支援真的非常爛，除了 Windows 以外，幾乎沒有任何作業系統可以使用韌體提供的 ACPI 開機，FreeBSD 會直接 Kernel panic。OpenBSD 倒是可以順利開機，不過驅動支援應該是大問題。</br>
+</br>
+
 ## 7月6日
 
 Snapdragon 平臺的主線核心 `remoteproc` 驅動程式會在核心開機時重設遠端處理器的運作情況，當核心跑在 EL2 時嘗試啓用遠端處理器就會遇到 `-22 EINVAL` 錯誤。解決方式就是修改核心源碼中的 `qcom_q6v5_pas.c` [這一高通遠端處理器(Q6 DSP)的驅動程式原始碼](https://github.com/sppidy/linux/commit/434c518bbe754f3ba3dea4364e99ab44a224c453)，讓核心的 `qcom_q6v5_pas` 模組能夠「接管」(attech)被 Bootloader 或者其它開機載入程式預載入的遠端處理器:</br>
