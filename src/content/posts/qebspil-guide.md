@@ -2,7 +2,7 @@
 title: 即使核心跑在 EL2 也沒關係，照樣可以聽音樂和使用虛擬機～ 驍龍裝置使用 qebspil EFI 驅動程式，讓系統 UEFI 韌體載入遠端處理器保証裝置硬體功能運作
 published: 2026-07-06
 description: '' 
-image: 'assets/virt-demo-host.png'
+image: 'assets/qebspil-results.png'
 tags: [FOSS, Linux, ARM, Qualcomm, KVM]
 category: 'Linux & Linux related'
 draft: false
@@ -145,7 +145,7 @@ while ((node = fdt_next_node(dtb, node, NULL)) >= 0) {
 	if (pos == 0)
 		return EFI_NOT_FOUND;
 
-	WriteBackInvalidateDataCacheRange(metadata, MAX_METADATA_SIZE);
+	WriteBackInvalidateDataCacheRange(metadata, MAX_METADATA_SIZE);		// 透過 WriteBackInvalidateDataCacheRange() 確保資料完整寫入實體 RAM。
 	return EFI_SUCCESS;
 }
 ...
@@ -153,19 +153,6 @@ while ((node = fdt_next_node(dtb, node, NULL)) >= 0) {
 
  - `fw_prepare()`：分配 metadata 頁面與載入 ELF 資料。
  - `fw_load()`：將 `PT_LOAD` segments 複製到目標記憶體位址，並處理 cache 維護。
-```c
-EFI_STATUS fw_load_metadata(struct pil_fw *fw)
-{
-    ... 
-    for (Elf32_Half i = 0; i < ehdr->e_phnum; i++, phdr++) {
-        if (phdr->p_type != PT_NULL || phdr->p_filesz == 0)
-            continue;
-        ...
-        CopyMem(metadata + pos, fw->elf_data + phdr->p_offset, phdr->p_filesz);     
-    }
-    WriteBackInvalidateDataCacheRange(metadata, MAX_METADATA_SIZE);     // 透過 WriteBackInvalidateDataCacheRange() 確保資料完整寫入實體 RAM。
-}
-```
 
 
 ## 與 TZ/SCM 互動
@@ -316,3 +303,55 @@ rproc->has_iommu = of_property_present(pdev->dev.of_node, "iommus");
 # 套用變更
 
 安裝編譯的核心，重開機。通過 `dmesg` 檢視 ADSP 和 CDSP 相關的 log，應該會看到 `remoteproc: attached to adsp` 或類似的訊息。代表 Linux 成功接管了預先啓動的遠端處理器。如果想要使用虛擬機，需要向核心啓動引數添加 `id_aa64mmfr0.ecv=1` 引數來避免虛擬機導致裝置當機的問題。
+```yaml
+# dmesg | grep adsp
+[   11.689397] remoteproc remoteproc0: adsp is available
+[   11.694972] remoteproc remoteproc0: attaching to adsp
+[   11.717887] remoteproc remoteproc0: remote processor adsp is now attached
+[   11.845373] qcom,apr 6800000.remoteproc:glink-edge.adsp_apps.-1.-1: Adding APR/GPR dev: gprsvc:service:2:1
+[   11.860349] qcom,apr 6800000.remoteproc:glink-edge.adsp_apps.-1.-1: Adding APR/GPR dev: gprsvc:service:2:2
+```
+
+使用 `cat /sys/class/remoteproc/remoteproc0/state` 命令檢視，也會看到遠端處理器是「`attached`」狀態。如果裝置支援音訊的話，通過 `aplay -l` 命令也可以檢視出音訊裝置了。</br>
+至於硬體虛擬化是否啓用，通過 `ls /dev/kvm` 命令檢視就可以了，從 `dmesg` 檢視也會得到 KVM 和 GIC 相關的訊息：
+
+```yaml
+# dmesg | grep kvm
+[    0.068668] kvm [1]: nv: 570 coarse grained trap handlers
+[    0.068803] kvm [1]: nv: 710 fine grained trap handlers
+[    0.068882] kvm [1]: IPA Size Limit: 44 bits
+[    0.068893] kvm [1]: GICv4 support disabled
+[    0.068895] kvm [1]: GICv3: no GICV resource entry
+[    0.068898] kvm [1]: disabling GICv2 emulation
+[    0.068913] kvm [1]: GIC system register CPU interface enabled
+[    0.068919] kvm [1]: vgic interrupt IRQ9
+[    0.068943] kvm [1]: Broken CNTVOFF_EL2, trapping virtual timer
+[    0.068951] kvm [1]: VHE mode initialized successfully
+
+# dmesg | grep EL2
+[    0.000000] CPU features: detected: HCRX_EL2 register
+[    0.000000] CPU features: detected: Broken CNTVOFF_EL2
+[    0.011357] CPU: All CPU(s) started at EL2
+[    0.068943] kvm [1]: Broken CNTVOFF_EL2, trapping virtual timer
+```
+
+:::tip
+關於 `id_aa64mmfr0.ecv=1` 的底層小常識:
+在驍龍平台（特別是 X Elite 等新一代晶片）上，日誌中提示的 `Broken CNTVOFF_EL2` 代表硬體虛擬化計時器存在某些已知的硬體設計缺陷（Bugs）。添加 `id_aa64mmfr0.ecv=1` 參數是為了強制修正 Enhanced Counter Virtualization (ECV) 的特性宣告，引導核心正確處理計時器偏移量，從而徹底解決 KVM 在啟動虛擬機時，因為計時器陷阱（Trapping）導致整個主機直接當機（Kernel Panic）的陳年頑疾。
+:::
+
+透過 `qebspil` 驅動程式在引導階段的承上啟下，配合 Linux 核心的 Late Attach 補丁，我們成功在不破壞安全鏈的前提下，繞過了這些硬體層面的刻意限制。既可以利用「Secure Launch」讓核心跑在 EL2 便於存取硬體虛擬化功能，又可以保證依賴遠端處理器的大部分硬體功能正常運作。
+
+[^1]:[main.c - qebspil on GitHub](https://github.com/stephan-gh/qebspil/blob/main/src/main.c)
+
+[^2]:這一預設行爲可以在編譯時使用 `QEBSPIL_ALWAYS_START=1` 變數覆寫，無論 bootloader 裝載何種設備樹，總會在 late EBS 階段啓動裝置上的遠端處理器。
+
+[^3]:[fw.c - qebspil on GitHub](https://github.com/stephan-gh/qebspil/blob/main/src/fw.c)
+
+[^4]:[程式碼](https://github.com/stephan-gh/qebspil/blob/main/src/pil.c)中 `#define MAX_PIL_NUM		4` 對於變數 `MAX_PIL_NUM` 的定義限制的是系統中最多能枚舉多少個遠端處理器裝置（例如 SC8280XP 平臺有 ADSP、CDSP、WPSS、MPSS 遠端處理器，上限為4個）
+
+[^5]:[pil.c & scm.c - qebspil on GitHub](https://github.com/stephan-gh/qebspil/blob/main/src/pil.c)
+
+[^6]:[remoteproc: qcom_q6v5_pas: Attach running remoteproc if firmware is missing](https://github.com/sppidy/linux/commit/434c518bbe754f3ba3dea4364e99ab44a224c453)
+
+
