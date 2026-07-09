@@ -20,6 +20,16 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 7月9日
+
+GitHub 上有一個對 [Broadcom BCM4360 逆向工程的專案](https://github.com/kimptoc/bcm4360-re)，看完專案的 `README` 之後才知道，原來 `broadcom-wl` 模組是11年前的老舊驅動，是專有軟體，現在已經停止維護了(最後一次原始碼更新在2015年9月)，不但不與 Linux 安全系統不相容，還有二個安全漏洞沒有修補([CVE-2019-9502](https://nvd.nist.gov/vuln/detail/CVE-2019-9502)，[CVE-2019-9501](https://nvd.nist.gov/vuln/detail/CVE-2019-9501)) 讓我的裝置面臨安全風險...以前爲了使用 macOS 而安裝的 PCIE 無線網路卡，竟然會讓我的裝置陷入嚴重的安全問題(緩衝區溢位，是指標對程式設計缺陷，向程式輸入緩衝區寫入使之溢位的內容，從而破壞程式執行、趁著中斷之際並取得程式乃至系統的控制權，從而導致個人資訊洩露之類的問題)，讓我的個人隱私深陷危險之中...目前我已經停用了 `broadcom-wl` 核心模組，並從我的桌機拔掉了網路卡，後續會重灌 Arch Linux，避免再有漏洞被利用的可能！</br>
+</br>
+
+## 7月8日
+
+BCM4360 網路卡所使用的 `broadcom-wl` 核心模組在 7.0 以後的核心工作不穩定，解決的辦法是在核心 `cmdline` 添加 `ibt=off` 引數來避免核心模組 oops，同時讓妳的裝置面臨[安全風險](https://lwn.net/Articles/889475/)。另外 Broadcom BCM4360 晶片是唯一不受任何開源驅動程式支援的 Wi-Fi 晶片。</br>
+</br>
+
 ## 7月7日
 
 高通平臺的 ACPI 支援真的非常爛，除了 Windows 以外，幾乎沒有任何作業系統可以使用韌體提供的 ACPI 開機，FreeBSD 會直接 Kernel panic。OpenBSD 倒是可以順利開機，不過驅動支援應該是大問題。</br>
