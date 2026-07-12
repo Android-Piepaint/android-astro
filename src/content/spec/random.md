@@ -20,6 +20,22 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 7月12日
+
+Ivon 在自己的動態牆提到了我寫的 Snapdragon 平臺裝置開虛擬機的文章。只要是 Snapdragon 平臺的裝置，且韌體沒有封鎖 EL2 就可以開啓硬體自帶的虛擬化功能。只是執行「Secure Launch」 的 `tcblaunch.exe` 程式必須是 Windows 11 25H2 之前的，否則會導致裝置崩潰重開機。</br>
+另外，關於利用 `qebspil` 驅動程式來保証大部分硬體功能的[教學](https://blog.cloudflare88.eu.org/posts/qebspil-guide/)也寫好了，歡迎各位檢視！</br>
+</br>
+
+## 7月11日
+
+什麼？ 在 Minecraft 裏也可以跑 Wayland 合成器？至少 [Waylandcraft](https://github.com/EVV1E/waylandcraft/) Minecraft mod 的 `README.md` 檔案是這麼寫的。對於舊式 X11 Window 可以利用 `xwayland-satelite` 來保証 X11 程式正常執行。</br>
+</br>
+
+## 7月10日
+
+最近因爲無法存取某些服務，不得不再次架設被我棄用很久的 Windows 11 Docker 容器。不得不說，現在的 Windows 11 真的是 bloatware 大合集！系統介面總能在妳認爲合適的地方塞沒有用的廣告，自從成爲 AI slop 之後，就更加嚴重了，我的 Docker 容器常常數次失去回應...</br>
+</br>
+
 ## 7月9日
 
 GitHub 上有一個對 [Broadcom BCM4360 逆向工程的專案](https://github.com/kimptoc/bcm4360-re)，看完專案的 `README` 之後才知道，原來 `broadcom-wl` 模組是11年前的老舊驅動，是專有軟體，現在已經停止維護了(最後一次原始碼更新在2015年9月)，不但不與 Linux 安全系統不相容，還有二個安全漏洞沒有修補([CVE-2019-9502](https://nvd.nist.gov/vuln/detail/CVE-2019-9502)，[CVE-2019-9501](https://nvd.nist.gov/vuln/detail/CVE-2019-9501)) 讓我的裝置面臨安全風險...以前爲了使用 macOS 而安裝的 PCIE 無線網路卡，竟然會讓我的裝置陷入嚴重的安全問題(緩衝區溢位，是指標對程式設計缺陷，向程式輸入緩衝區寫入使之溢位的內容，從而破壞程式執行、趁著中斷之際並取得程式乃至系統的控制權，從而導致個人資訊洩露之類的問題)，讓我的個人隱私深陷危險之中...目前我已經停用了 `broadcom-wl` 核心模組，並從我的桌機拔掉了網路卡，後續會重灌 Arch Linux，避免再有漏洞被利用的可能！</br>
