@@ -20,6 +20,16 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 7月14日
+
+終於知道爲什麼 Q6A 單板機 Linux 支援那麼爛還有人買了，因爲大家買過來之後都跑去改裝 Windows 11 ARM！官方也有釋出驅動程式，除了內建的 Wi-Fi 不可以用，其它硬體都是正常的。Radxa 他們還發佈了最新採用 Snapdragon 8cx Gen3 (SC8280XP) 晶片的單板電腦，叫做 Radxa Dragon Q8B...我還認爲是 Allwinner `linux-sunxi` 社群裏跑主線 U-Boot 的那個「Q8 Tablet」呢...</br>
+</br>
+
+## 7月13日
+
+似乎 PostmarketOS `edge` 的音訊支援有問題，Nothing Phone 1 雖然有對應的 ALSA 配置檔，但是不能播放音樂和影片...不知道什麼時候可以修好。</br>
+</br>
+
 ## 7月12日
 
 Ivon 在自己的動態牆提到了我寫的 Snapdragon 平臺裝置開虛擬機的文章。只要是 Snapdragon 平臺的裝置，且韌體沒有封鎖 EL2 就可以開啓硬體自帶的虛擬化功能。只是執行「Secure Launch」 的 `tcblaunch.exe` 程式必須是 Windows 11 25H2 之前的，否則會導致裝置崩潰重開機。</br>
