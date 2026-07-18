@@ -20,6 +20,17 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 7月18日
+
+不知道爲什麼，似乎實時作業系統和微核心都有改造成 bootloader 的潛力，是因爲這些程式碼體積小，便於移植到不同硬體的緣故？比較典型的例子有基於 eCOS 開發的 Redboot，用 Little Kernel 開發的引導程式被廣泛應用在 Mediatek 晶片的手機上...</br>
+</br>
+
+## 7月17日
+
+ 「Its your favorite Android apps, but running directly on Linux userspace」，想要在 Linux 跑 Android app，只有設定 Waydroid 或者 Redroid Docker 容器，再在容器裏面跑 App。雖然不會有效能損失，但是容器裏的 App 不能方便的存取 Linux 使用者 `/home` 目錄下的資料。爲此 GitLab 上有人開發了 [Android translation layer](https://gitlab.com/android_translation_layer/android_translation_layer)，將 Android 系統的 ART 虛擬機移植到 Linux 上，使用者不需要安裝 App，直接用 `android-translation-layer [apk 檔名]` 指令跑 APK 檔就可以了。Android 應用會採用 GTK 3 框架渲染外觀介面。不過用到 Play Integrity 的應用應該是無法執行了。</br>
+ 目前 FlatHub 上有一個藉助此方案移植到 Linux 的 Android 應用：[NewPipe (Unofficial port)](https://flathub.org/en/apps/net.newpipe.NewPipe)
+ </br>
+
 ## 7月16日
 
 4F 6B 61 79 20 67 75 79 73 2C 20 49 20 6A 75 73 74 20 74 65 73 74 65 64 20 74 68 65 20 61 6C 6C 20 66 6F 75 72 74 68 20 65 79 65 73 20 72 65 6C 61 74 65 64 20 73 74 75 66 66 20 </br>
