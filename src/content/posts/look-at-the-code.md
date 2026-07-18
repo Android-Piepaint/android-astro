@@ -1,6 +1,6 @@
 ---
 title: Look at the Code -- A FOSS Parody of Look at the Sky by Porter Robinson
-published: 2025-10-16
+published: 2026-07-18
 description: Look at the Code, you're still here. You'll be alive next year. Tribute to my OnePlus 6T with postmarketOS.
 image: 'https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg'
 tags: [FOSS, Lyric]
@@ -22,14 +22,16 @@ lang: 'en'
 如有疑問，請洽版權所有者。
 :::
 
+(原文寫於2025年10月16日)
+
 ## Part 1
 
 It's a fate? </br>
 If it's not easy, then it must not be </br>
-At my age, I received my phone that is gradually out of date </br>
-But I trying to escape from walled-gardens, </br>
-Made by Android and iOS, </br>
-Now I'am trying, I just want time </br>
+At my age, An old phone’s slowly dying on me </br>
+But I’m breaking out these walled gardens, </br>
+Android’s walls and Apple's chains, </br>
+Now I’m trying, I just want time </br>
 
 ## Part 2
 
@@ -42,31 +44,37 @@ You'll be much better than </br>
 Loot at the code, you're still here, </br>
 You'll be alive next year, </br>
 I will port mainline goods, oh </br>
-Mainline goods </br>
+Mainline for you </br>
+
+Loot at the code, you're still here, </br>
+You'll be alive next year, </br>
+Linux and Docker on you, oh </br>
+Updates too </br>
 
 ## Part 4
 
 Are you close? </br>
-Shouldn't it come to you narutally? </br>
-And everyone says: </br>
-"You're losing your privacy for convience" </br>
+Shouldn’t freedom come naturally? </br>
+And everyone laughts: </br>
+"You’re killing convenience for privacy" </br>
 But then something must have urged me, </br>
-Moving to Open-source world, </br>
+To set this silicon free, </br>
 Now I'm sure, </br>
 I'm sure </br>
 
 ## Part 5
- Look at the code, you're still here, </br>
- You'll be alive next year, </br>
- I will port mainline goods, oh </br>
- Mainline goods </br>
- </br>
- Look at the code, you're still here, </br>
- You'll be alive next year, </br>
- I will port mainline goods, oh </br>
- Mainline goods </br>
 
- ## Part 6
+Loot at the code, you're still here, </br>
+You'll be alive next year, </br>
+I will port mainline goods, oh </br>
+Mainline for you </br>
+ </br>
+Loot at the code, you're still here, </br>
+You'll be alive next year, </br>
+Linux and Docker on you, oh </br>
+Updates too </br>
+
+## Part 6
 
 Restart again, You'll be much better then </br>
 </br>
@@ -81,17 +89,17 @@ Look at the code... </br>
 Look at the code, you're still here, </br>
 You'll be alive next year, </br>
 I will port mainline goods, oh </br>
-Mainline goods </br>
+Mainline for you </br>
+</br>
 
-</br>
-</br>
-</br>
+## Outro
+
 Look at the code, you're still here, </br>
 You'll be alive next year, </br>
 I will port mainline goods, oh </br>
-Mainline goods </br>
+Mainline for you </br>
 </br>
 Look at the code, you're still here, </br> 
 You'll be alive next year, </br>
-I will port Droidian for you, oh </br>
-Droidian for you </br>
+I will run Docker on you, oh </br>
+Minecraft too </br>
