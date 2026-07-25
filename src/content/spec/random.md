@@ -20,6 +20,22 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 7月25日
+
+現在玩 Minecraft 的時候我總會想：這是不是不道德？明明有更好的自由軟體替代品 Luanti 了...算了，只是一個遊戲，放鬆身心的程式就不要想太多了，在 `/etc/hosts` 檔案把 Microsoft 和 Mojang 的網域擋掉就好了...照這樣下去，可能以後自慰用的按摩棒如果跑的是專有的 RTOS 我也會拒絕使用，從而選擇自製吧...</br>
+</br>
+
+## 7月24日
+
+GNU/Android...不對，應該是 Google/Android，究竟與常見的 GNU/Linux 發行版相差多遠？先不講 Android 的核心與 upstream kernel 程式碼相差50~500萬行，即使像 AOSP on Mainline 直接用主線核心跑 Android 的做法也只是解決了核心老舊的問題。近些日子 Google 對 Android 的修改一直是去 GNU 化的，系統底層的組件使用 `busybox` 和自己的 `toybox`，所採用的 BSD 協議和 AOSP 採用的 Apache 協議一樣寬鬆。 GUI 方面，Android 採用的是 `surfaceflinger` ，與常見的 Wayland 和 X11 完全不相容。電腦上的應用如果不進行專門修改，很難在 Android 上執行。</br>
+至於硬體驅動，基本上都是專有軟體。這點看一下 PostmarketOS 或者 Mobian 的 Wiki 就知道了，目前沒有一臺 Android 裝置的功能在主線核心下是全部正常的。那些全部正常的裝置，使用起來還會遇到問題，例如相機只能使用部分鏡頭，缺失可用的圖像處理，從而讓畫面看着怪怪的。</br>
+</br>
+
+## 7月23日
+
+現在的 Brave 瀏覽器預設 Homepage 簡直要讓我的眼睛瞎掉！還是什麼都沒有的 Librewolf 瀏覽器主畫面好些。雖然很簡陋，但並不會影響我日常使用。</br>
+</br>
+
 ## 7月22日
 
 總覺得現在網頁內容提供商越來越可惡了。同樣的網址，用 Windows 裝置訪問完全沒有任何阻礙。至於用 Firefox 和 Linux？先完成人機驗証再講吧，甚至有些網站發現 UA 是 Linux 就不給訪問。政府網址？抱歉，請換用Internet Explorer / Netscape 之後再來試試吧。</br>
