@@ -51,7 +51,6 @@ lang: 'zh_TW'
 
 > Long since, I’ve been used to, the golden cage,</br>
 > Not even grasping, what “freedom” really means.</br>
-> Adopted from _Flash Continuous Tense (Feat. Purwa Oryon) —— A FOSS parody of 人生進行形(Life Continuous Tense) by May'n_ </br>
 
 
 即使可以解開 Bootloader，可以取得 Root 權限，仍然是不夠的。妳的裝置仍然被廠家控制着，原廠的系統軟體依然潛藏着不計其數的專有軟體，收集者妳的一切。</br>
