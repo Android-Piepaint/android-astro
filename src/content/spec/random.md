@@ -20,6 +20,35 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 7月30日
+
+我的 Q6A 單板機從睡眠中喚醒後，會遇到無法關機的問題。後來發現是因爲 kernel 無法向 RTC 覆寫新的變數導致的...所以核心的「It's now safe to power off the system.」的提示在哪裏？至少讓我知道是否可以安全地
+拔掉電源。`:P` 後來使用自行編譯的主線核心開機就可以了，不得不說單板機化的「Nothing Phone」使用體驗真的很好。</br>
+</br>
+
+## 7月29日
+
+[U-Boot acpi Command -- Das U-Boot Document](https://docs.u-boot-project.org/en/latest/usage/cmd/acpi.html) 如今 U-Boot 也支援 ACPI 了，只要有 ACPI tables，理論上可以執行任何相容 ACPI 的作業系統，例如 Windows 和 OpenBSD。我先前曾在 Yoga 筆電上安裝過 OpenBSD，利用韌體提供的 ACPI 啓動。一些 Snapdragon 裝置還可以把 XBL 或者 ABL 替換成 U-Boot 開機...那只要寫好相容的 ACPI table，編譯到 U-Boot 中，我的 PinePhone 也可以跑 OpenBSD 或者 Windows 10 IoT？考慮到 A64 晶片的效能，我想還是拿來跑 Linux 吧...</br>
+</br>
+
+## 7月28日
+
+ - 今天是 [Republic of FlashTeens](https://www.planetminecraft.com/project/my-first-minecraft-world-republic-of-flashteens/) Minecraft 地圖開發的第11週年！雖然我也是鐵道迷，但是我的建築和 FlashTeens 相比，顯得過於質朴實用了些。不過我的地圖是開放原始碼的，任何人都可以下載，修改和再分發，歡迎各位到[Planet Minecraft](https://www.planetminecraft.com/project/1-19-2-the-gnu-genshin-subway-project/)上下載我的地圖遊玩！</br>
+ </br>
+
+ - 嗯...我好像和遊戲世界脫軌了，問題是現在 Steam 上的遊戲，支援 Linux 的太少，一些遊戲雖然可以用 Proton 相容層玩，但是需要處理 anti-cheating 相關問題。還都是專有軟體，連 Minecraft 我都是抱着羞恥心來玩的，還怎麼敢玩其他的遊戲呢？</br>
+ </br>
+
+## 7月27日
+
+[Using CAPTCHA for Compromise: Hackers Flip the Script](https://reliaquest.com/blog/using-captcha-for-compromise/)爲了收集妳的個資，如今連 Google/ Cloudflare Captcha 都可以被仿造，從外觀來看，和正版的 Captcha 程式根本沒有什麼區別。唯一的區別在於按下「請驗証您是真人」後，會提示需要執行指令搞才可以完成驗証。當然驗証是肯定做不了的，只會下載大量的危險「間諜軟體」隨系統開機執行而啓動，在背景偷偷收集使用者的資料。這樣看來，瀏覽器的權限不能開放得太大，很容易會造成安全問題。</br>
+</br>
+
+## 7月26日
+
+以後應該減少「動態牆」的更新頻率了，畢竟每天記錄個人想法也是蠻累的。</br>
+</br>
+
 ## 7月25日
 
 現在玩 Minecraft 的時候我總會想：這是不是不道德？明明有更好的自由軟體替代品 Luanti 了...算了，只是一個遊戲，放鬆身心的程式就不要想太多了，在 `/etc/hosts` 檔案把 Microsoft 和 Mojang 的網域擋掉就好了...照這樣下去，可能以後自慰用的按摩棒如果跑的是專有的 RTOS 我也會拒絕使用，從而選擇自製吧...</br>
