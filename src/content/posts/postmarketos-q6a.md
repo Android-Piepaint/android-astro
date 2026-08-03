@@ -210,7 +210,7 @@ $ make -C /lib/modules/$(uname -r)/build M=$PWD modules_install
 ```
 
 安裝完成後，重開機，或者使用 `depmod -a` 命令套用核心模組變更。</br>
-之後，鍵入 `modprobe aic_load_fw aic8800_fdrv` 命令加載核心模組。如果發現網路卡依然不工作，檢視 `dmesg` 發現 aic_btusb` 模組噴出 `failed to open` 錯誤：
+之後，鍵入 `modprobe aic_load_fw aic8800_fdrv` 命令加載核心模組。如果發現網路卡依然不工作，檢視 `dmesg` 發現 `aic_btusb` 模組噴出 `failed to open` 錯誤：
 
 ```yaml
 [ 9.051106] aic_load_fw: loading out-of-tree module taints kernel.
