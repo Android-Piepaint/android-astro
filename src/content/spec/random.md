@@ -24,7 +24,7 @@ lang: 'en'
 
 <img src="/assets/pmos-wiki-q6a.png">
 
-[Radxa Dragon Q6A -- PostmarketOS Wiki](https://wiki.postmarketos.org/wiki/Radxa_Dragon_Q6A_(radxa-dragon-q6a))把如何編譯 `aic8800` 驅動的方法，來修復內建 WiFi 網路卡不可使用的問題寫到 PostmarketOS Wiki 上了，希望能夠幫助想要在 Q6A 上跑 PostmarketOS 的使用者/開發者！</br>
+[Radxa Dragon Q6A -- PostmarketOS Wiki](https://wiki.postmarketos.org/wiki/Radxa_Dragon_Q6A_(radxa-dragon-q6a)) 把如何編譯 `aic8800` 驅動的方法，來修復內建 WiFi 網路卡不可使用的問題寫到 PostmarketOS Wiki 上了，希望能夠幫助想要在 Q6A 上跑 PostmarketOS 的使用者/開發者！</br>
 </br>
 
 ## 8月2日
