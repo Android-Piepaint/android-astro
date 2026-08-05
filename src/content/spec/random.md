@@ -20,6 +20,25 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 8月5日
+
+原來 Microg 也可以通過 Play integrity 的驗証！只是...要 de-google 了，爲什麼還要在乎 Google 的服務呢？</br>
+</br>
+
+## 8月4日
+
+現在年輕人無法理解的8種事情：
+
+ - 軟磁碟；
+ - Linux TTY 控制臺；
+ - 在手機上藉助 UEFI 韌體跑 Linux 甚至於 Windows Arm；
+ - De-googled Android 裝置；
+ - Librewolf，Netscape，Internet Explorer；
+ - Mali on Intel x86 還有 ACPI tables；
+ - 在一般 x86 電腦跑 Hackintosh 黑蘋果；
+ - 「It's safe to poweroff the system now.」
+</br>
+
 ## 8月3日
 
 <img src="/assets/pmos-wiki-q6a.png">
