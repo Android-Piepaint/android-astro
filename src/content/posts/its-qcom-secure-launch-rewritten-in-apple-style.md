@@ -100,7 +100,7 @@ Apple 在 A18/M4 晶片上建立了一套與 ARM EL 模型概念上相似，但�
 :::
 ### `SYS_IMP_APL_SPRR_CONFIG_EL1`
 
-這個寄存器是 SPRR（Secure Page Table Restrictions）啟動的核心開關，但實際上它不只是 enable bit，而是：
+這個寄存器是 SPRR（Secure Page Table Restrictions）啟動的核心開關，但實際上牠不只是 enable bit，而是：
  - 控制 permission class mapping;
  - 決定 EL1 是否允許直接修改 page table;
  - 強制 W^X（Write XOR Execute）策略
@@ -210,7 +210,7 @@ _gxf_entry:
 
 XNU shim 完成了載入 Linux 核心的工作，真正重要的工作才剛剛開始。開機之後，除了 CPU，UART 工作以外，整臺筆電98％的硬體都不工作。因爲 Apple 晶片相對封閉，像是晶片 PCIe 匯流排和 USB 這些對日常使用影響比較大的功能還要逆向韌體才能寫對應的核心驅動程式。還需要解決繪圖卡的硬體加速，雖然 A18 Pro 晶片的效能即使跑採用 `llvmpipe` 的軟體渲染去執行 GUI 程式也不會像放投影片一樣，但是碰到某些對繪圖有要求的程式（GIMP，Kdenlive 之類），有內建繪圖卡硬體加速會比較好，畢竟 Apple 晶片的繪圖卡效能一直都不賴。</br>
 但是 Apple 總是想着「特立獨行」，從韌體到軟體從來不會按照 Arm 標準實作。在 Apple 平臺 bring up Linux 要比一般的 Arm 晶片 bring up 困難。</br>
-與一般認知不同，Linux 並不是一個「只要 CPU 能執行就可以啟動」的作業系統，它也不可以在烤麪包機上執行。對於 Arm AArch64 架構，Linux kernel 在進入點（entry point）時，對系統狀態有一組明確的前提條件：
+與一般認知不同，Linux 並不是一個「只要 CPU 能執行就可以啟動」的作業系統，牠也不可以在烤麪包機上執行。對於 Arm AArch64 架構，Linux kernel 在進入點（entry point）時，對系統狀態有一組明確的前提條件：
 
 > ...Linux 也有「系統要求」，只是這些要求多體現在硬體的底層，大多數人不會留意到而已。
 
@@ -228,7 +228,7 @@ XNU shim 完成了載入 Linux 核心的工作，真正重要的工作才剛剛�
  - 作業系統核心（EL1 / GL1）無法直接建立任意記憶體映射;
  - SPRR 會強制執行 W^X（Write XOR Execute）等安全策略;
 
-這使得 Linux kernel 在設計上「假設自己擁有完整記憶體控制權」的前提被打破。XNU shim 的角色因此不僅是啟動載入器，更需要作為一個頁表操作代理層（page table mediation layer），在 Linux 與 SPTM 之間轉譯記憶體管理操作。更具體地說，Linux 在啟動早期會自行建立新的 page tables，並切換 [TTBR寄存器](https://arm-software.github.io/CMSIS_5/Core_A/html/group__CMSIS__TTBR.html)來建立 kernel 的虛擬位址空間[^5]。然而，在 SPTM 的約束下，這類操作無法直接完成。換句話說，Linux 並不是單純「不能做這些操作」，而是它原本假設這些操作是本地且立即生效的（local and authoritative），這些操作幾乎適用於大多數 Arm 晶片 (例如 Snapdragon, Rockchip, Amlogic)。 但在 Apple 平臺上，這些操作變成了需要經過外部驗證的請求（validated operations）。</br>
+這使得 Linux kernel 在設計上「假設自己擁有完整記憶體控制權」的前提被打破。XNU shim 的角色因此不僅是啟動載入器，更需要作為一個頁表操作代理層（page table mediation layer），在 Linux 與 SPTM 之間轉譯記憶體管理操作。更具體地說，Linux 在啟動早期會自行建立新的 page tables，並切換 [TTBR寄存器](https://arm-software.github.io/CMSIS_5/Core_A/html/group__CMSIS__TTBR.html)來建立 kernel 的虛擬位址空間[^5]。然而，在 SPTM 的約束下，這類操作無法直接完成。換句話說，Linux 並不是單純「不能做這些操作」，而是牠原本假設這些操作是本地且立即生效的（local and authoritative），這些操作幾乎適用於大多數 Arm 晶片 (例如 Snapdragon, Rockchip, Amlogic)。 但在 Apple 平臺上，這些操作變成了需要經過外部驗證的請求（validated operations）。</br>
  - 直接寫入 TTBR 或修改 PTE 可能被硬體拒絕；
  - 建立暫時性的 RWX mapping（常見於 early boot）會違反 SPRR 策略；
  - 未經驗證的記憶體屬性變更可能導致 synchronous exception。
@@ -247,7 +247,7 @@ XNU shim 完成了載入 Linux 核心的工作，真正重要的工作才剛剛�
 >  -------- Adapted from _[MTP Trouble -- A FOSS parody of Trouble by Avicii](https://blog.cloudflare88.eu.org/posts/mtp-trouble/)_
 
 或許對多數人而言，這只是多了一個可以在 Mac 上使用 Linux 的選項，並沒有什麼可以使用的「商業價值」；但在更深的層面上，這意味著：即使在最封閉的系統之中，仍然存在著被理解、被重建，乃至被重新定義的可能。</br>
-現在，「Asahi Neo」專案已經走出了千里之遙。但這條路仍然漫長，而它也已經被證明是可以走通的。
+現在，「Asahi Neo」專案已經走出了千里之遙。但這條路仍然漫長，而牠也已經被證明是可以走通的。
 
 [^1]: 目前爲猜測，具體實作仍在逆向分析。
     

@@ -19,7 +19,7 @@ lang: 'zh_TW'
 當然，也不能講的如此刻板。畢竟黑蘋果社群裏也有一些開發者，他們研究 macOS 的組成，開發出不少 kext，讓大量非 Apple 官方認可甚至不被支援的硬體跑起來，亦有人開發 Clover 和 OpenCore 開機載入器用於研究 macOS 的機理。開發者們貢獻良多，沒準哪一天還真的可能會協助開源社群逆向出完全自由的 macOS 出來呢，例如 [ravynOS](https://github.com/ravynsoft/ravynos)就是採用 FreeBSD 爲基礎，混合 Darwin 核心所開發的相容 macOS 的作業系統，有點像 ReactOS 與 Windows 的關係。某種程度而言，黑蘋果社群就是推廣專有軟體和
 自由軟體的結合體。不過堅定應援專有軟體的內容佔了大多數。</br>
 </br>
-2020年，Apple 開始往 ARM 架構遷移，就像他們在十幾年前，從 PowerPC 遷移至 Intel X86 那樣，逐步放棄支援 X86 架構的電腦和裝置。且根據 [Apple 和其它媒體的報道](https://www.pcmag.com/news/apple-confirms-end-of-support-for-intel-macs-after-macos-tahoe) 來看，macOS 26 應該是最後支援 X86 晶片的版本，之後的普通 X86 電腦就沒法玩黑蘋果了，黑蘋果已經死透，至少妳沒有辦法安裝最新版的 macOS 了。雖然可以安裝舊版，但是主流軟體也會慢慢捨棄支援的。現階段開源社群逆向 Apple Silicon 平臺的成果，除了能夠跑 Asahi Linux，或者使用修改的 `m1n1` 來載入 UEFI 韌體[引導 Windows 作業系統](https://github.com/AppleWOA)（或者其它支援 ACPI 的作業系統）。目前還沒有可以把 macOS 執行在 ARM 裝置上。</br>
+2020年，Apple 開始往 ARM 架構遷移，就像他們在十幾年前，從 PowerPC 遷移至 Intel X86 那樣，逐步放棄支援 X86 架構的電腦和裝置。且根據 [Apple 和其牠媒體的報道](https://www.pcmag.com/news/apple-confirms-end-of-support-for-intel-macs-after-macos-tahoe) 來看，macOS 26 應該是最後支援 X86 晶片的版本，之後的普通 X86 電腦就沒法玩黑蘋果了，黑蘋果已經死透，至少妳沒有辦法安裝最新版的 macOS 了。雖然可以安裝舊版，但是主流軟體也會慢慢捨棄支援的。現階段開源社群逆向 Apple Silicon 平臺的成果，除了能夠跑 Asahi Linux，或者使用修改的 `m1n1` 來載入 UEFI 韌體[引導 Windows 作業系統](https://github.com/AppleWOA)（或者其牠支援 ACPI 的作業系統）。目前還沒有可以把 macOS 執行在 ARM 裝置上。</br>
 
 當然，Windows 比起 macOS 也好不到哪去。至少，這樣可以讓人徹底斷掉 Hackintosh 的念頭，20年以來，除去探究機理和開發 kext 的，黑蘋果本身就是給大公司當「舔穴者(bootlicker)」的行爲。</br>
 
@@ -32,7 +32,7 @@ lang: 'zh_TW'
 
 沒錯，就是著名的 [Don't steal Mac OS.kext](https://theapplewiki.com/wiki/Dont_Steal_Mac_OS.kext)。看看他們對自家軟體的智慧產權保護的多好呀！在非 Apple 認證的韌體執行 macOS 可是盜竊行爲呢，然後妳竟然會去應援這家公司的作業系統？！</br>
 
-然後我再來講使用者的心態，靠着破解大公司的商業軟體來滿足自己的虛榮心。macOS 是閉源軟體，更是間諜軟體。它雖然很優秀，但請不要忘記
+然後我再來講使用者的心態，靠着破解大公司的商業軟體來滿足自己的虛榮心。macOS 是閉源軟體，更是間諜軟體。牠雖然很優秀，但請不要忘記
 macOS 是竊取了 BSD 30年來革命果實的邪惡力量。這也怪 BSD，誰叫妳們不用更具有法律效益的 GPL，反而要使用[商業軟體友好，不講究開放原始碼和回饋上游的 BSD 協議](https://lukesmith.xyz/articles/why-i-use-the-gpl-and-not-cuck-licenses/)呢...</br>
 </br>
 套用《逆統戰》遊戲中的一句話：「娘係匹！BSD太過商業友好，看來我GPL協議必須出山！」</br>

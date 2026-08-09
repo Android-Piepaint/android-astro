@@ -9,11 +9,11 @@ draft: false
 lang: 'zh_TW'
 ---
 
-本文重點討論如何使用 Docker 架設 Windows 11 ARM 容器，將必須的 Windows 應用安裝於其中，防止隱私被收集。
+本文重點討論如何使用 Docker 架設 Windows 11 ARM 容器，將必須的 Windows 應用安裝於其中，防止隱私被蒐集。
 
 # 寫在前面
 
-原本以爲筆電上裝 Ubuntu 搭配 `box64` 轉譯執行 64位元 X86 應用應用程式就足夠了，在最近的幾天裏又想辦法用 `box64` 轉譯執行 Wine 跑部分 Windows 應用程式，但是有相當多的程式會開不起來。通過控制臺看log 也不知道如何除錯，但是！學校每次讓完成一些任務時提供的程式都是專有軟體，而且還只有 Windows 版...在2026年了，還在秉持「單一平臺」的開發理念簡直就是一種錯誤的想法！不過我不是開發者，不能要求廠家推出 Linux 版，更何況還是 ARM 筆電的 Linux 作業系統，只能想辦法去把這個應用跑起來。再者，在 Linux 上用 Wine 跑 Windows 程式本身就是政治不正確的行爲，有那麼多 Linux 原生的程式不用，卻偏偏想辦法跑 Windows 程式，這是不尊重自由軟體精神的表現。這樣在 Linux 上跑 Windows 程式的方法就只剩下了虛擬機和其它方法了。
+原本以爲筆電上裝 Ubuntu 搭配 `box64` 轉譯執行 64位元 X86 應用應用程式就足夠了，在最近的幾天裏又想辦法用 `box64` 轉譯執行 Wine 跑部分 Windows 應用程式，但是有相當多的程式會開不起來。通過控制臺看log 也不知道如何除錯，但是！學校每次讓完成一些任務時提供的程式都是專有軟體，而且還只有 Windows 版...在2026年了，還在秉持「單一平臺」的開發理念簡直就是一種錯誤的想法！不過我不是開發者，不能要求廠家推出 Linux 版，更何況還是 ARM 筆電的 Linux 作業系統，只能想辦法去把這個應用跑起來。再者，在 Linux 上用 Wine 跑 Windows 程式本身就是政治不正確的行爲，有那麼多 Linux 原生的程式不用，卻偏偏想辦法跑 Windows 程式，這是不尊重自由軟體精神的表現。這樣在 Linux 上跑 Windows 程式的方法就只剩下了虛擬機和其牠方法了。
 
 # 安裝 Docker
 
@@ -54,7 +54,7 @@ services:
     image: dockurr/windows
     container_name: windows
     environment:
-      VERSION: "11"  # 如果不想使用微軟官方的映像，可以改成其它WoA映像下載連結。
+      VERSION: "11"  # 如果不想使用微軟官方的映像，可以改成其牠WoA映像下載連結。
     devices:
       - /dev/kvm
       - /dev/net/tun
@@ -153,6 +153,6 @@ environment:
   KEYBOARD: "en-US"
 ```
 
-其它進階使用方式可在專案的 GitHub 原始碼的 `Readme` 中查看。
+其牠進階使用方式可在專案的 GitHub 原始碼的 `Readme` 中查看。
 
 [^1]:對於驍龍845等手機平臺的晶片，只有未開啓硬體安全啓動的裝置（原型機、測試機、部分零售機如 SHIFT6mq）且配置了支援 Secure Launch `devcfg` 配置的韌體才可以通過執行 Secure launch 使 HLOS（高階作業系統，諸如 Windows，Linux，ChromeOS等）核心執行於 EL2 異常層級下，並可以使用硬體虛擬化。

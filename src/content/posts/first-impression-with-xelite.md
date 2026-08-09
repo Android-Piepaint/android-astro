@@ -12,14 +12,14 @@ lang: 'zh_TW'
 
 ## 我爲什麼選擇 Qualcomm X Elite 筆電？
 
-我最早看到有關驍龍版筆電的消息是在2020年，第一次知道了 Windows還有 ARM 的版本。以及一系列關於 Windows on ARM 裝置的技術知識。一般手機改裝 Windows 作業系統的驅動程式，大多是由搭載 Windows ARM 的筆電，原型機等裝置的驅動程式提取並簡單修改而來的。我便在網路上檢索有關 Windows on ARM 的裝置，結果發現市面上竟然真的有這樣的筆電！它們採用高通驍龍SoC，使用 eMMC 或者 UFS 快閃記憶體作爲內置硬碟。並且支援硬體虛擬化，還內建數據機，方便在沒有無線網路的地方，使用行動數據來連接到網際網路。</br>
+我最早看到有關驍龍版筆電的消息是在2020年，第一次知道了 Windows還有 ARM 的版本。以及一系列關於 Windows on ARM 裝置的技術知識。一般手機改裝 Windows 作業系統的驅動程式，大多是由搭載 Windows ARM 的筆電，原型機等裝置的驅動程式提取並簡單修改而來的。我便在網路上檢索有關 Windows on ARM 的裝置，結果發現市面上竟然真的有這樣的筆電！牠們採用高通驍龍SoC，使用 eMMC 或者 UFS 快閃記憶體作爲內置硬碟。並且支援硬體虛擬化，還內建數據機，方便在沒有無線網路的地方，使用行動數據來連接到網際網路。</br>
 </br>
 另外驍龍筆電在 Linux 下的體驗是遠勝過 Windows on ARM 的，風扇比較安靜，幾乎不會有「開足馬力」的時候，可以使用KVM 和 Xen，因此可以滿足我所有的用途。</br>
 </br>
 
 ## 我對於「驍龍筆電」的印象
 
-我所購買的裝置是聯想的 YOGA Slim 7x。配備了一個解析度爲2944x1840的OLED屏幕，其重新整理頻率爲90Hz，支援觸控。以及驍龍 X Elite 晶片。筆電採用 32GB LPDDR5x 記憶體，1TB的 Samsung NVME高速固態硬碟。到手的時候，我發現它安裝的是 Windows 11 ARM 版，塞了不少 Lenovo 的 bloadware 進去。因爲現在主要 Linux 發行版套件庫已經收錄了驍龍 X Elite 的韌體，不需要再從 Windows 系統檔案提取，
+我所購買的裝置是聯想的 YOGA Slim 7x。配備了一個解析度爲2944x1840的OLED屏幕，其重新整理頻率爲90Hz，支援觸控。以及驍龍 X Elite 晶片。筆電採用 32GB LPDDR5x 記憶體，1TB的 Samsung NVME高速固態硬碟。到手的時候，我發現牠安裝的是 Windows 11 ARM 版，塞了不少 Lenovo 的 bloadware 進去。因爲現在主要 Linux 發行版套件庫已經收錄了驍龍 X Elite 的韌體，不需要再從 Windows 系統檔案提取，
 我選擇抹掉整張硬碟，僅安裝 Fedora Linux 作爲筆電的作業系統。</br>
 
 ## 安裝 Linux
@@ -71,7 +71,7 @@ Qualcomm Camera Subsystem (platform:acb6000.isp):
 ...
 ```
 
-那麼，相機可以使用嗎？答案是不能。使用 `qcam` 發現相機列表是空白的，其它軟體亦不能調用相機。通過核心日誌除錯發現了下面一條信息：
+那麼，相機可以使用嗎？答案是不能。使用 `qcam` 發現相機列表是空白的，其牠軟體亦不能調用相機。通過核心日誌除錯發現了下面一條信息：
 
 ```yaml
 [    5.108101] i2c-qcom-cci ac16000.cci: master 1 queue 0 timeout
@@ -89,7 +89,7 @@ Qualcomm Camera Subsystem (platform:acb6000.isp):
 		dovdd-supply = <&vreg_l4m_1p8>;
 ```
 
-根據從高通筆電中提取的 [AeoB 文件](https://github.com/alexVinarskis/qcom-aeob-dumps)來看，確認了這些參數是適用於[另一臺筆電（ThinkPad T14s）](https://github.com/alexVinarskis/qcom-aeob-dumps/blob/master/lenovo-thinkpad-t14s-g6/CAMF_RES_QRD.json#L117-L155)的，而 T14s 的參數又是基於 CRD 參考平臺修改而來的，因此它不能應用在 Yoga Slim 7x 上。不過有開發者給出了解決方法，需要定義新的電源調節器 `vreg_l7b_2p8` ，爲相機提供 2.8V 供電：
+根據從高通筆電中提取的 [AeoB 文件](https://github.com/alexVinarskis/qcom-aeob-dumps)來看，確認了這些參數是適用於[另一臺筆電（ThinkPad T14s）](https://github.com/alexVinarskis/qcom-aeob-dumps/blob/master/lenovo-thinkpad-t14s-g6/CAMF_RES_QRD.json#L117-L155)的，而 T14s 的參數又是基於 CRD 參考平臺修改而來的，因此牠不能應用在 Yoga Slim 7x 上。不過有開發者給出了解決方法，需要定義新的電源調節器 `vreg_l7b_2p8` ，爲相機提供 2.8V 供電：
 
 ```yaml
 vreg_l7b_2p8: ldo7 {
@@ -122,6 +122,6 @@ camera@36 {
 之後，編譯新的裝置樹，重新啓動核心，相機就工作了。
 
 
-## 其它有意思的事情...
+## 其牠有意思的事情...
 
 觀看 YouTube 1080P 影片，同時用終端機開 `htop` 檢視 CPU 使用情況，發現 CPU 佔用比較低。似乎使用了硬體播放器播放了影片？這似乎是我用過第一臺支援硬體解碼的 Arm 筆電。
