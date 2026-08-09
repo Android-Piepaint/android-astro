@@ -19,7 +19,7 @@ lang: 'zh_TW'
 
 # `qebspil` 紹介
 
-`qebspil`（Qualcomm Exit Boot Services Peripheral Image Loader）是由 Stephan 開發的一個 UEFI 驅動程式(UEFI boot driver)，在 UEFI EBS(`ExitBootServices()`) 階段之前（late boot 階段）啟動 Qualcomm 平台的遠端處理器(remote processors，如 ADSP/CDSP 之類)。 它讓 DSP 韌體能在作業系統無關的情況下早期載入，特別適合 EL2/虛擬化環境或不支援 DSP 啟動的 Linux 配置。</br>
+`qebspil`（Qualcomm Exit Boot Services Peripheral Image Loader）是由 Stephan 開發的一個 UEFI 驅動程式(UEFI boot driver)，在 UEFI EBS(`ExitBootServices()`) 階段之前（late boot 階段）啟動 Qualcomm 平台的遠端處理器(remote processors，如 ADSP/CDSP 之類)。 牠讓 DSP 韌體能在作業系統無關的情況下早期載入，特別適合 EL2/虛擬化環境或不支援 DSP 啟動的 Linux 配置。</br>
 
 ::github{repo="stephan-gh/qebspil"}
 
@@ -35,7 +35,7 @@ lang: 'zh_TW'
 
 ::github{repo="pbatard/UEFI-Shell"}
 
-如果妳使用的是 rEFInd 或者 `systemd-boot` 引導載入器，那麼它們會自動搜尋 UEFI shell 並將其添加到選單中，如果是 GRUB 使用者，可能還需要進行手動設定。</br>
+如果妳使用的是 rEFInd 或者 `systemd-boot` 引導載入器，那麼牠們會自動搜尋 UEFI shell 並將其添加到選單中，如果是 GRUB 使用者，可能還需要進行手動設定。</br>
 然後，到 GitHub 上搜尋[「qebspil」](https://github.com/stephan-gh/qebspil/)，然後下載 `qebspil.efi` EFI驅動程式，將其複製到 EFI系統分割中。。同時，需要將啟動遠端處理器（ADSP、CDSP 等）的韌體檔案複製到 ESP 的頂層 `/firmware/` 目錄下，不同晶片平臺需要的遠端處理器韌體不同。可以使用 `find /sys/firmware/devicetree -name firmware-name -exec cat {} + | xargs -0n1` 指令檢視需要複製的韌體，在 Yoga Slim 7x 筆電上，需要複製 `adsp_dtbs.elf` `cdsp_dtbs.elf` `qcadsp8380.mbn` `qccdsp8380.mbn` 四個啓動 ADSP，CDSP 的韌體。關於 `qebspil` EFI 驅動程式預先啓動遠端處理器的機理比較複雜，Piepaint 我根據自己的理解與檢索程式原始碼和相關資料之後，將實作流程寫在下面，供專業讀者和開發人員進行參考：</br>
 
 `qebspil` 的實作流程分爲五部分： `callback` 的建立與觸發；DTB 解析與 PIL 管理；韌體載入與準備；與 TZ/SCM 互動；與 Linux 核心的配合。</br>
@@ -63,7 +63,7 @@ return efi_dtb_changed();   // 立即執行一次
     ...
 ```
 
- - 同時，在 `efi_dtb_changed()` 內部會註冊一個 Late EBS（`ExitBootServices`）事件 `efi_late_ebs`。這是 `qebspil` 的精妙之處，它使用 EDK2 的內部機制讓該 callback 在極晚的 TPL 級別執行，確保在 UEFI 轉交控制權給 Linux 核心的最後一刻，才真正執行 `pil_finish_all()` 來啟動遠端處理器。
+ - 同時，在 `efi_dtb_changed()` 內部會註冊一個 Late EBS（`ExitBootServices`）事件 `efi_late_ebs`。這是 `qebspil` 的精妙之處，牠使用 EDK2 的內部機制讓該 callback 在極晚的 TPL 級別執行，確保在 UEFI 轉交控制權給 Linux 核心的最後一刻，才真正執行 `pil_finish_all()` 來啟動遠端處理器。
 
  ```c
 // event.c + main.c

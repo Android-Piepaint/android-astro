@@ -44,7 +44,7 @@ _（主機：嗯...唔...哈啊！要去了！...要去了...嗯...哈...**Kerne
 > Screw you, Crashdump! </br>
 > _--- Adopted from [Blow Your Fuses -- A FOSS Parody of You're Mine by DAGames](https://blog.cloudflare88.eu.org/posts/blow-your-fuses/) by EDKPiepaint_
 
-啊...久等了。看看 Linux 有哪些終端瀏覽器可以使用，這些瀏覽器可比主流的瀏覽器方案要簡單多了呢。這些文字瀏覽器不需要像是 X11, Wayland 之類任何顯示協定就可以工作，甚至妳在工作期間還可以偷偷開SSH來摸魚一下，它們的響應速度也很快，對於低階裝置和嵌入式裝置非常友好。不過妳在檢視或下載檔案時，可能還是需要圖形環境。</br>
+啊...久等了。看看 Linux 有哪些終端瀏覽器可以使用，這些瀏覽器可比主流的瀏覽器方案要簡單多了呢。這些文字瀏覽器不需要像是 X11, Wayland 之類任何顯示協定就可以工作，甚至妳在工作期間還可以偷偷開SSH來摸魚一下，牠們的響應速度也很快，對於低階裝置和嵌入式裝置非常友好。不過妳在檢視或下載檔案時，可能還是需要圖形環境。</br>
 文字瀏覽器在各大 Linux 發行版或者 FreeBSD 套件庫都有收，終端機的特色就是鍵盤操作，可不是用滑鼠點一點就可以上網了。如果妳會用 Vim 或是 EE 之類編輯器的話，相信妳只需要檢視每個程式的 `man page` 就能上網了。
 
 # EWW 和 Lynx
@@ -73,7 +73,7 @@ _（主機：嗯...唔...哈啊！要去了！...要去了...嗯...哈...**Kerne
 ![](assets/ehentai/cool.jpg)
 ![](assets/ehentai/dude.jpg)
 
-...如果看了還不加阻止的話，我的資證大概會被注銷吧...嗯，不管怎麼樣，想要看到這些東西的話，也要瀏覽器支援 WebGL（並非）且支援渲染圖片才可以啊。但是終端機沒有任何方法直接渲染圖片，所以看妳和別人愛愛——不是，是檢索其它嵌入式作業系統原始碼是不可能的啊。不過我們在像是 Docker 或者 Podman 容器中執行一個瀏覽器，用以保證基本的 CSS，JavaScript 和網頁排版正常，然後將畫面串流到終端機裏面，就可以解決這個問題了~ [Browsh](https://github.com/browsh-org/browsh) 就是這樣做的。不過這樣會在背景執行一個 FireFox 實例，這樣的RAM佔用與正常的 FireFox 沒有區別。
+...如果看了還不加阻止的話，我的資證大概會被注銷吧...嗯，不管怎麼樣，想要看到這些東西的話，也要瀏覽器支援 WebGL（並非）且支援渲染圖片才可以啊。但是終端機沒有任何方法直接渲染圖片，所以看妳和別人愛愛——不是，是檢索其牠嵌入式作業系統原始碼是不可能的啊。不過我們在像是 Docker 或者 Podman 容器中執行一個瀏覽器，用以保證基本的 CSS，JavaScript 和網頁排版正常，然後將畫面串流到終端機裏面，就可以解決這個問題了~ [Browsh](https://github.com/browsh-org/browsh) 就是這樣做的。不過這樣會在背景執行一個 FireFox 實例，這樣的RAM佔用與正常的 FireFox 沒有區別。
 
 ::github{repo="browsh-org/browsh"}
 
@@ -91,6 +91,6 @@ _（主機：嗯...唔...哈啊！要去了！...要去了...嗯...哈...**Kerne
 
 ![Qutebrowser showing Buildroot website](assets/qutebrowser.png)
 
-它採用 QtWebEngine 渲染網頁元素，載入完整網頁的話RAM佔用與一般 Chromium 瀏覽器無異（約2~4GB，內建 Adblocker 用於擋廣告）。所以這個比較適合用在硬體資源豐裕的嵌入式裝置上，比較適合用於控制中心、點餐機、和POS等類似用途裝置上，也能夠較爲方便地被編譯到 Buildroot，OpenEmbedded，Yocto 之類的嵌入式 Linux 或者其它基於BSD的嵌入式作業系統。
+牠採用 QtWebEngine 渲染網頁元素，載入完整網頁的話RAM佔用與一般 Chromium 瀏覽器無異（約2~4GB，內建 Adblocker 用於擋廣告）。所以這個比較適合用在硬體資源豐裕的嵌入式裝置上，比較適合用於控制中心、點餐機、和POS等類似用途裝置上，也能夠較爲方便地被編譯到 Buildroot，OpenEmbedded，Yocto 之類的嵌入式 Linux 或者其牠基於BSD的嵌入式作業系統。
 
 [^1]:至少使用 Linux 或者 BSD 的話...是不會被發現啦！畢竟沒有人會用 Linux 來辦公吧？

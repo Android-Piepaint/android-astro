@@ -55,12 +55,12 @@ git clone https://github.com/Xlie-Electronic-Customs/linux.git
 這是SM8750 MTP 原型機所必須的主線核心設定檔：
 
  - `CONFIG_FW_LOADER_COMPRESS`: 便於核心加載被壓縮的韌體檔案。
- - `CONFIG_DRM_EFIDRM` `CONFIG_FB_EFI`: 支援 EFI framebuffer 驅動。這是在高通的 Adreno 830 繪圖卡尚不被主線支援前，最保險的方法，但是GNOME等其它桌面將無法使用。
+ - `CONFIG_DRM_EFIDRM` `CONFIG_FB_EFI`: 支援 EFI framebuffer 驅動。這是在高通的 Adreno 830 繪圖卡尚不被主線支援前，最保險的方法，但是GNOME等其牠桌面將無法使用。
  - `CONFIG_VT`：提供TTY控制臺支援（如果妳使用下游 Android 核心）。
  - `CONFIG_EFI` ：支援 EFI 環境。因爲我們將要使用裝置自帶的UEFI韌體開機，爲後期使用`systemd-boot` 或 GRUB 進行引導開機。
  - `CONFIG_EFIVAR_FS`: 啓用 `efivar` 文件系統支援，這是由核心自動產生的文件系統，便於系統設定開機引導次序，添加或清除啓動項目，如果不啓用則`efibootmgr`無法檢視、修改引導次序。
  - `CONFIG_EFI_ARMSTUB_DTB_LOADER`：能夠通過開機載入器爲核心指定設備樹，從而覆寫韌體提供的設備樹，實現設備樹更新（通過 `systemd-boot` 的 `devicetree`引數 或 GRUB 中 `dtb=` 引數控制）。
- - `CONFIG_EFI_CAPSULE_LOADER`：爲核心打開 UEFI capsule loader 支援，便於使用者通過應用程式來更新裝置上的UEFI韌體和其它韌體。
+ - `CONFIG_EFI_CAPSULE_LOADER`：爲核心打開 UEFI capsule loader 支援，便於使用者通過應用程式來更新裝置上的UEFI韌體和其牠韌體。
  - `CONFIG_RTC_DRV_EFI`：添加UEFI時鐘。方便系統更新時間。
  - `CONFIG_DRM_PANEL_NOVATEK_NT37801`：打開 NT37801 熒幕支援。這是SM8750 MTP 和 QRD 原型機的顯示熒幕，採用 DSI 協定。 
 
@@ -135,7 +135,7 @@ Target = 0004.
 
 
 
-就像我早就提到過的：僅有CPU（包括DVFS），顯示（採用 EFI framebuffer），USB網路，音訊，內建UFS快閃記憶體，UART序列，基於GPIO的按鍵，ADSP，CDSP工作，其餘部分仍在嘗試修補中。至少和其它市面上常見的零售機相比，第一次嘗試開機就可以看到畫面（雖然是軟體渲染）也足夠開心了。之後如果把所有硬體的功能修補完成，就可以給 Armbian 上游提交PR，把自己的成果公佈出去讓別人下載，也算是自己從零實作了一個高效能「PinePhone Pro」吧，畢竟原版 Pinephone Pro 雖然改用 RK3399 晶片，效能也是弱弱的。
+就像我早就提到過的：僅有CPU（包括DVFS），顯示（採用 EFI framebuffer），USB網路，音訊，內建UFS快閃記憶體，UART序列，基於GPIO的按鍵，ADSP，CDSP工作，其餘部分仍在嘗試修補中。至少和其牠市面上常見的零售機相比，第一次嘗試開機就可以看到畫面（雖然是軟體渲染）也足夠開心了。之後如果把所有硬體的功能修補完成，就可以給 Armbian 上游提交PR，把自己的成果公佈出去讓別人下載，也算是自己從零實作了一個高效能「PinePhone Pro」吧，畢竟原版 Pinephone Pro 雖然改用 RK3399 晶片，效能也是弱弱的。
 
 [^1]:[Qualcomm Snapdragon 8 Elite - PostmarketOS Wiki](https://wiki.postmarketos.org/wiki/Qualcomm_Snapdragon_8_Elite_(SM8750))
 [^2]:[remoteproc: qcom: pas: Fixing region_assign_idx](https://github.com/Xlie-Electronic-Customs/linux/commit/ea4c3038c355839ab93caac87f0fa29b0fa91a49)

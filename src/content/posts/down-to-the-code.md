@@ -161,6 +161,6 @@ A developer, or a raider, now you should know</br>
 [^4]:高通驍龍 X Elite（先前叫做SC8380XP）的代號，其姓氏「Oryon」則是暗指高通的自研ARM處理器核心「Oryon」。
 [^5]:在計算機術語中，該詞通常用於指代使用者加入了某一個「空中編程」（OTA）頻道。
 [^6]:形容驍龍 X Elite 晶片在主線 Linux 核心下不穩定。
-[^7]:間諜軟體，指所有收集使用者隱私和資料的程式。常見的間諜軟體有 Android, Windows, ChromeOS等。
+[^7]:間諜軟體，指所有蒐集使用者隱私和資料的程式。常見的間諜軟體有 Android, Windows, ChromeOS等。
 [^8]:對於早期UNIX系統安裝軟體方式的形象描述。
 [^9]:原意爲「連環殺人犯」，但因爲「serial」一詞在計算機術語中也可以指代作業系統的「序列控制臺」，所以也可作「串口殺手」解。

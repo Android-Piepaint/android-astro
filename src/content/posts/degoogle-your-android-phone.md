@@ -27,13 +27,13 @@ Reddit有個[r/degoogle](https://www.reddit.com/r/degoogle/)板專門在討論�
 
 # 解鎖手機 & 刷機
 
-在中國大陸以外（現在連中國大陸的手機都內建了）的手機是多半裝有 [Google 服務](https://www.android.com/intl/zh-TW_tw/gms/)的，且很多 APP 都依賴它們，根本無法解除安裝。如果在內建 Google 服務的系統上強制反安裝 Google 程式，很有可能會讓作業系統出現問題，嚴重的可能會使裝置無法正常使用。因此最好把手機刷成偏原生風格的 Android 系統，例如 LineageOS 或者是 GrepheneOS，這類系統不會內建任何 Google 服務或者組件，想要 de-google 還是很方便的。另外想要 Root 也是非常容易的。</br>
+在中國大陸以外（現在連中國大陸的手機都內建了）的手機是多半裝有 [Google 服務](https://www.android.com/intl/zh-TW_tw/gms/)的，且很多 APP 都依賴牠們，根本無法解除安裝。如果在內建 Google 服務的系統上強制反安裝 Google 程式，很有可能會讓作業系統出現問題，嚴重的可能會使裝置無法正常使用。因此最好把手機刷成偏原生風格的 Android 系統，例如 LineageOS 或者是 GrepheneOS，這類系統不會內建任何 Google 服務或者組件，想要 de-google 還是很方便的。另外想要 Root 也是非常容易的。</br>
 
-我們需要停止使用 Google 服務，但是大多數應用都依賴 Google 服務，甚至有些應用偵測到沒有 Google 服務甚至就不給執行。這時候就要通過「microG」這個開源的替代品來取代專有的 Google Play 服務。它可以將 Google 服務所收集的資料最小化，同時還可以保證依賴 GMS 的程式正常執行。
+我們需要停止使用 Google 服務，但是大多數應用都依賴 Google 服務，甚至有些應用偵測到沒有 Google 服務甚至就不給執行。這時候就要通過「microG」這個開源的替代品來取代專有的 Google Play 服務。牠可以將 Google 服務所蒐集的資料最小化，同時還可以保證依賴 GMS 的程式正常執行。
 
 ::github{repo="microg/GmsCore"}
 
-去 Google 化自然是拒絕使用 Google Play 的，但是妳總得需要一個圖形化應用商店吧？當然妳可以像我一樣，通過修改 Android 系統分割來爲 Android 添加一個套件管理器（比如 `opkg` `apk` 等等，讓它看起來更像一個嵌入式 Linux 作業系統）。只是這樣比較複雜，得需要解決根目錄唯讀和 SELinux 問題。因此本文將介紹使用僅包含自由軟體的「F-Droid」（的替代「Neo Store」），以及 「Aurora Store」 來取代 Google Play。</br>
+去 Google 化自然是拒絕使用 Google Play 的，但是妳總得需要一個圖形化應用商店吧？當然妳可以像我一樣，通過修改 Android 系統分割來爲 Android 添加一個套件管理器（比如 `opkg` `apk` 等等，讓牠看起來更像一個嵌入式 Linux 作業系統）。只是這樣比較複雜，得需要解決根目錄唯讀和 SELinux 問題。因此本文將介紹使用僅包含自由軟體的「F-Droid」（的替代「Neo Store」），以及 「Aurora Store」 來取代 Google Play。</br>
 
 我使用的手機是高通於2024年「發佈」的[驍龍 8 Elite MTP原型機](https://blog.cloudflare88.eu.org/posts/sm8750-mtp-review/)，雖然是一臺僅面向開發人員和OEM的測試機[^1]，但也可以用於軟體開發和除錯。雖然高通的「原廠」系統本身就接近原生
 Android 了，但還是內建了高通的私貨，有大量測試軟體。在這裏我選擇乾淨一點，直接將手機刷成 LineageOS。原因無他，就 LineageOS 支援的手機最多，預設的情況下不會內建 Google 框架，可以自由選擇是否安裝。</br>

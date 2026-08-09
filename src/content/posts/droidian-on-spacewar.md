@@ -14,7 +14,7 @@ lang: 'zh_TW'
 ## Droidian 介紹
 
 Droidian 是一個基於 Debian 的 Testing 分支開發的行動裝置作業系統，目的在於將 Android 手機的系統改裝爲 Debian 系統，讓 Android 手機可以像一般 Linux 電腦一樣，享受 Debian 的各種好處。</br>
-由於 Android 對 Linux 核心和文件系統做出了大量修改（例如刪除了 Linux 中常見的 X 視窗系統和 Wayland，亦不支援支撐大多數 Linux 程式所需的 Glib 或 musl C函式庫），使得市面上的絕大多數 Android 手機移植 Linux 系統變得疑難重重。因此，Droidian 專案的產生，便是解決這個問題而來的：它採用 [Halium](https://halium.org/) 和 libhybris，把 Android 的 bionic 與普通 Linux 的 Glibc 的C函式庫進行對應，並且相容 Android 中的 HAL 和硬體驅動程式，以此來降低移植難度。如果妳的手機出廠預載 Android 9 及以上系統，Droidian 還可以通過 GSI 的方式移植，只需重新編譯核心即可。</br>
+由於 Android 對 Linux 核心和文件系統做出了大量修改（例如刪除了 Linux 中常見的 X 視窗系統和 Wayland，亦不支援支撐大多數 Linux 程式所需的 Glib 或 musl C函式庫），使得市面上的絕大多數 Android 手機移植 Linux 系統變得疑難重重。因此，Droidian 專案的產生，便是解決這個問題而來的：牠採用 [Halium](https://halium.org/) 和 libhybris，把 Android 的 bionic 與普通 Linux 的 Glibc 的C函式庫進行對應，並且相容 Android 中的 HAL 和硬體驅動程式，以此來降低移植難度。如果妳的手機出廠預載 Android 9 及以上系統，Droidian 還可以通過 GSI 的方式移植，只需重新編譯核心即可。</br>
 
 ## 安裝 Droidian
 
@@ -340,16 +340,16 @@ echo "You may now optionally re-lock the bootloader if you haven't disabled andr
 
 ![Fingerprint unlocking in Droidian](assets/droidian-fingerprint.jpg)
 
-- 因爲是基於原廠核心修改，加之 Halium 與 libhybris 的採用，數據機的韌體實現方式也不同了。它被一個叫“ofono”的軟體棧替代，而不是主線核心中掛載數據機韌體啓動數據機的方案，與此同時，數據機的廠商也變成了“binder”，而不是“Qualcomm Incomprated”。不過，妳依然可以撥打電話，與朋友發短訊聊天：
+- 因爲是基於原廠核心修改，加之 Halium 與 libhybris 的採用，數據機的韌體實現方式也不同了。牠被一個叫“ofono”的軟體棧替代，而不是主線核心中掛載數據機韌體啓動數據機的方案，與此同時，數據機的廠商也變成了“binder”，而不是“Qualcomm Incomprated”。不過，妳依然可以撥打電話，與朋友發短訊聊天：
 
 ![modem details in droidian](assets/droidian-modem.jpg)
 
 唯一的問題是揚聲器的聲音非常響亮，而音量調節是沒有用的，只有最大和靜音兩個選擇。
 
 ## Waydroid 與應用程式相容性
-根據 Halium 的編譯指南所寫，我們最終編譯出來的核心，是可以相容LXC容器的。而Waydroid則是把 Android 包裝到 LXC 容器中。讓 Android 幾乎以無效能損失的方式執行在 Linux 系統上。Droidian 將 Waydroid 的選項整合到了系統設定裏，方便普通使用者管理。不過我還是通過`sudo apt install waydroid` 來安裝了，因爲命令非常直接明了。而且我早就有 Waydroid 的使用經驗，那幾條命令我也早就熟記於心。當然使用體驗比主線核心相去不遠，我仍然可以在 Linux 桌面環境下運行原生的 Android 應用，例如 Telegram、Signal、甚至是 Google Maps。實際測試後發現，Waydroid 的啓動速度非常快，應用的運行也相當流暢，幾乎與原廠無異。而且把 Android 應用放在 Waydroid 中還比較安全，因爲容器裏的應用無法訪問外部的文件，此外也可以有效遏制不少應用開機自啓動的問題，不只是拖累系統執行效能，也可能會在背景收集使用者資料，亦或是幹些不明所以的勾當。這都是在普通 Android 機做不到的。
+根據 Halium 的編譯指南所寫，我們最終編譯出來的核心，是可以相容LXC容器的。而Waydroid則是把 Android 包裝到 LXC 容器中。讓 Android 幾乎以無效能損失的方式執行在 Linux 系統上。Droidian 將 Waydroid 的選項整合到了系統設定裏，方便普通使用者管理。不過我還是通過`sudo apt install waydroid` 來安裝了，因爲命令非常直接明了。而且我早就有 Waydroid 的使用經驗，那幾條命令我也早就熟記於心。當然使用體驗比主線核心相去不遠，我仍然可以在 Linux 桌面環境下運行原生的 Android 應用，例如 Telegram、Signal、甚至是 Google Maps。實際測試後發現，Waydroid 的啓動速度非常快，應用的運行也相當流暢，幾乎與原廠無異。而且把 Android 應用放在 Waydroid 中還比較安全，因爲容器裏的應用無法訪問外部的文件，此外也可以有效遏制不少應用開機自啓動的問題，不只是拖累系統執行效能，也可能會在背景蒐集使用者資料，亦或是幹些不明所以的勾當。這都是在普通 Android 機做不到的。
 
 ## 總結
 
-Droidian 在 Nothing Phone 1 上的移植體驗讓我看見了「Android 與 Linux 能夠真正融合」的可能。雖然目前仍存在許多小問題，但它已經證明：即便在封閉的 Android 裝置上，我們仍能擁抱一個真正自由的 Linux 桌面。但它同樣讓我明白了 Android 手機與 Linux 手機的差異： Android 核心落後於主線核心至少5年，大量上游的修補無法及時應用於 Android，使 Android 裝置面臨着安全問題。此外，裝置廠商對於核心的大量修改，使得 Android 裝置移植主線 Linux 核心非常困難。主線核心對於硬體的實現，往往需要核心開發者花費幾個月甚至幾年時間才能做好。曾經有人拿 Pinephone 與 一加6T的主線核心原始碼做過對比，結果是 Pinephone 的主線核心與上游相差50萬行代碼，而後者則相差500萬行代碼。這個差距正是目前 Android 裝置在自由軟體世界中難以完全融入的現實寫照。這也是 Droidian 和 Halium 教給我的，最爲生動的一課，它不是教科書，卻勝似教科書。而最可貴的一點是：這節課必須由妳親自完成，對照文檔從無到有，一步步修復、除錯甚至於重新實現手機的所有功能。</br>
-這種學習,不是速成的知識輸入，而是緩慢而紮實的理解；它會讓妳更尊重硬體、理解驅動、體會抽象核心與具體裝置之間那條看不見的拉鋸線，它也會讓妳對於 Linux，乃至整個 UNIX 世界有着比以往更加深刻的認識。它也會讓妳對於自由軟體、開源社群、開放文化有著更深刻的理解。完成它的報酬或許不是獎盃或者金錢，也可能不會有任何商業價值。但它會是一段值得珍惜的歷程，一個妳永遠都不會忘記的經驗。是能讓一台手機在自由軟體下運作的成就感，更是妳對一個開源生態貢獻的一小塊基石——雖小，卻能被後來者踏上，繼續向前。
+Droidian 在 Nothing Phone 1 上的移植體驗讓我看見了「Android 與 Linux 能夠真正融合」的可能。雖然目前仍存在許多小問題，但牠已經證明：即便在封閉的 Android 裝置上，我們仍能擁抱一個真正自由的 Linux 桌面。但牠同樣讓我明白了 Android 手機與 Linux 手機的差異： Android 核心落後於主線核心至少5年，大量上游的修補無法及時應用於 Android，使 Android 裝置面臨着安全問題。此外，裝置廠商對於核心的大量修改，使得 Android 裝置移植主線 Linux 核心非常困難。主線核心對於硬體的實現，往往需要核心開發者花費幾個月甚至幾年時間才能做好。曾經有人拿 Pinephone 與 一加6T的主線核心原始碼做過對比，結果是 Pinephone 的主線核心與上游相差50萬行代碼，而後者則相差500萬行代碼。這個差距正是目前 Android 裝置在自由軟體世界中難以完全融入的現實寫照。這也是 Droidian 和 Halium 教給我的，最爲生動的一課，牠不是教科書，卻勝似教科書。而最可貴的一點是：這節課必須由妳親自完成，對照文檔從無到有，一步步修復、除錯甚至於重新實現手機的所有功能。</br>
+這種學習,不是速成的知識輸入，而是緩慢而紮實的理解；牠會讓妳更尊重硬體、理解驅動、體會抽象核心與具體裝置之間那條看不見的拉鋸線，牠也會讓妳對於 Linux，乃至整個 UNIX 世界有着比以往更加深刻的認識。牠也會讓妳對於自由軟體、開源社群、開放文化有著更深刻的理解。完成牠的報酬或許不是獎盃或者金錢，也可能不會有任何商業價值。但牠會是一段值得珍惜的歷程，一個妳永遠都不會忘記的經驗。是能讓一台手機在自由軟體下運作的成就感，更是妳對一個開源生態貢獻的一小塊基石——雖小，卻能被後來者踏上，繼續向前。

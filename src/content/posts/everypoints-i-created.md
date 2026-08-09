@@ -41,7 +41,7 @@ lang: 'zh_TW'
 想要精確，（GPS）記錄器不可少[^2] </br>
 </br>
 潮起，潮落；日出，日落 </br>
-一處又一處，收集數據，創建標記；</br>
+一處又一處，蒐集數據，創建標記；</br>
 這便是我們（的）工作全部 </br>
 </br>
 （自）創立之日（起），使用人數連年攀升 </br>
@@ -150,4 +150,4 @@ I can't wait to share it with you. </br>
 
 [^1]:OpenstreetMap 的 Logo 就是一個放大鏡和一個地圖。
 [^2]:GPS 全名 Global Positioning System，是一種協定位技術，用於測量地球上任何一點的緯度、經度。使用 GPS 記錄器可以提高地點的精確度，但並非必要。
-[^3]:作者 Lahaina 原話：對於 Google 地圖和 Apple Maps 被禁止的國家或地區，讀者可以把它對應所在地區的地圖服務。
+[^3]:作者 Lahaina 原話：對於 Google 地圖和 Apple Maps 被禁止的國家或地區，讀者可以把牠對應所在地區的地圖服務。

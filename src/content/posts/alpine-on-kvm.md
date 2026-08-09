@@ -13,7 +13,7 @@ lang: 'zh_TW'
 # 一切的開端
 
 自從我將我的主力筆電從 MacBook Air 換成這臺 Lenovo Yoga Air 14s 之後，我對於驍龍 X Elite 的好感也逐漸上升。不只是震驚於12顆效能強勁的Oryon CPU 核心和32GB的記憶體，使得我無論是應付日常事物，亦或是嵌入式Linux開發都變得綽綽有餘。但是，就像其他任何筆電一樣，這臺 Yoga Air 14s 也有自己的缺點。</br>
-它默認採用的是 Windows 11 ARM 作業系統，而且還預載的是 Home Edition，與完整版的 Windows 11 相比缺少了 Hyper-V虛擬機支援。我只好備份了有用的資料後，抹掉整個硬碟重新安裝了 Windows 11 Pro，這次在「可選功能」中總算有了「Hyper-V」選項，我便打開了相關功能，然後重開機，下載了 Debian 13 的ARM 安裝映像檔。嘗試啓用虛擬機，然而虛擬機卻卡住了，無論怎麼修改虛擬機設定檔都無法進入 Debian 的安裝程式。加之 Windows 作業系統是出了名的「間諜軟體」，我可不想讓 Microsoft 監控我！所以我又安裝了目前唯一多數硬體工作正常的 Ubuntu 作業系統。但是 KVM 的功能需要自己手動配置。</br>
+牠默認採用的是 Windows 11 ARM 作業系統，而且還預載的是 Home Edition，與完整版的 Windows 11 相比缺少了 Hyper-V虛擬機支援。我只好備份了有用的資料後，抹掉整個硬碟重新安裝了 Windows 11 Pro，這次在「可選功能」中總算有了「Hyper-V」選項，我便打開了相關功能，然後重開機，下載了 Debian 13 的ARM 安裝映像檔。嘗試啓用虛擬機，然而虛擬機卻卡住了，無論怎麼修改虛擬機設定檔都無法進入 Debian 的安裝程式。加之 Windows 作業系統是出了名的「間諜軟體」，我可不想讓 Microsoft 監控我！所以我又安裝了目前唯一多數硬體工作正常的 Ubuntu 作業系統。但是 KVM 的功能需要自己手動配置。</br>
 
 ![](assets/final-result.png)
 
@@ -23,7 +23,7 @@ lang: 'zh_TW'
 
 ::github{repo="pbatard/UEFI-Shell"}
 
-如果妳使用的是 rEFInd 或者 `systemd-boot` 引導載入器，那麼它們會自動搜尋 UEFI shell 並將其添加到選單中，如果是 GRUB 使用者，可能還需要進行手動設定。</br>
+如果妳使用的是 rEFInd 或者 `systemd-boot` 引導載入器，那麼牠們會自動搜尋 UEFI shell 並將其添加到選單中，如果是 GRUB 使用者，可能還需要進行手動設定。</br>
 然後，到 GitHub 上搜尋[「slbounce」](https://github.com/TravMurav/slbounce)，然後下載 `slbounce.efi` 和 `sltest.efi` 兩個EFI應用程式，將其複製到 EFI系統分割中。之後我們需要從 Windows 中複製 `tcblaunch.exe`，可以從正常的系統中複製，也可以從其他地方獲取。至於 `tcblaunch.exe` 則是我們要後續執行「安全啓動」（Secure Launch，高通 Windows 平臺中，作業系統核心將自身從默認的EL1異常層級提升到EL2層級執行的過程）所需要的關鍵「鑰匙」。其原理過於複雜，對於絕大多數使用者可能難以理解，所以我將其根據我的理解寫於下面，供專業讀者進行參考：
 
 - 現代的 Windows on ARM（WoA）裝置默認使用 Hyper-V 提供部分虛擬化功能（例如：Windows Subsys. for Linux (WSL), Windows Sandbox, Windows Subsystem for Android (WSA) 以及 Docker 之類），其虛擬機管理員總是以EL2異常層級執行。這與作業系統核心在EL1異常層級執行，和應用程式在EL0異常層級執行所不同。因爲 ARM 提出的 [ARM Base Root Requirements](https://developer.arm.com/documentation/den0044/latest) 規範強制要求，UEFI韌體必須執行在 EL2異常層級下，以准許安裝或配置虛擬機或者支援虛擬化感知的作業系統；
@@ -188,4 +188,4 @@ ykia ALL=(ALL:ALL) ALL
 
 ![](assets/adreno-3d-accelerate.png)
 
-[^1]: 唯一的例外是 ChromeOS 平臺(LC)，它採用 ARM 的 Trusted Firmware (TF-A)，而不是高通專有的引導流程，默認允許作業系統以 EL2異常層級啓動。
+[^1]: 唯一的例外是 ChromeOS 平臺(LC)，牠採用 ARM 的 Trusted Firmware (TF-A)，而不是高通專有的引導流程，默認允許作業系統以 EL2異常層級啓動。

@@ -53,7 +53,7 @@ lang: 'zh_TW'
 > Not even grasping, what “freedom” really means.</br>
 
 
-即使可以解開 Bootloader，可以取得 Root 權限，仍然是不夠的。妳的裝置仍然被廠家控制着，原廠的系統軟體依然潛藏着不計其數的專有軟體，收集者妳的一切。</br>
+即使可以解開 Bootloader，可以取得 Root 權限，仍然是不夠的。妳的裝置仍然被廠家控制着，原廠的系統軟體依然潛藏着不計其數的專有軟體，蒐集者妳的一切。</br>
 
 原廠家必須按照 GPL v2 協定把裝置的 Linux 核心原始碼公開，提供完整的 source tree 和 Firmware blobs。確保使用者可以自行編譯出可用的作業系統，很多廠商至今仍只公開「部分」原始碼，或公開後卻故意缺漏關鍵 patch，導致社群無法建置可開機的核心。其他三方 ROM 開發，例如 Lineage OS，crDroid 之類，就是要利用原廠的核心和韌體檔案，才可以製作出來一般使用者可以日常使用的 ROM。 </br>
 雖然會受到晶片廠家的 BSP 限制，但是一般廠家能提供5年以上系統和安全性修補程式更新是最好。還有優秀的加密措施，例如 Snapdragon 筆電上的 TPM，可以被利用產生隨機金鑰，配合 LUKS 加密硬碟防止資料被竊取。或是利用 EL2 來跑虛擬機，做到安全隔離也不錯。</br>
@@ -67,4 +67,4 @@ Locked Bootloader 並非是不好的，但是金鑰不能只給廠商握著。�
 > Proprietary software that we waved final “Goodbye” and we will never meet.</br>
 
 
-解鎖 Bootloader 從來不是終點。它只是證明：這台裝置還有機會屬於妳，而不是永遠屬於廠商。</br>
+解鎖 Bootloader 從來不是終點。牠只是證明：這台裝置還有機會屬於妳，而不是永遠屬於廠商。</br>
