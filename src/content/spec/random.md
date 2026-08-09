@@ -20,24 +20,7 @@ lang: 'en'
 
 # 2026 年動態牆
 
-## 8月5日
 
-原來 Microg 也可以通過 Play integrity 的驗証！只是...要 de-google 了，爲什麼還要在乎 Google 的服務呢？</br>
-</br>
-
-## 8月4日
-
-現在年輕人無法理解的8種事情：
-
- - 軟磁碟；
- - Linux TTY 控制臺；
- - 在手機上藉助 UEFI 韌體跑 Linux 甚至於 Windows Arm；
- - De-googled Android 裝置；
- - Librewolf，Netscape，Internet Explorer；
- - Mali on Intel x86 還有 ACPI tables；
- - 在一般 x86 電腦跑 Hackintosh 黑蘋果；
- - 「It's safe to poweroff the system now.」
-</br>
 
 ## 8月9日
 
@@ -56,7 +39,10 @@ lang: 'en'
 
 ## 8月7日
 
-幹，昨天 Pixel 7 Pro 在更新 crDroid Augest update 後，手機出現鎖定熒幕就軟重啓的問題，反覆排查自己所使用的 KernelSU 和 Vector LSPosed (我不使用封閉原始碼的 LSPosed)模組後無果，只得重新刷機。非常奇怪的是重新刷機再安裝同樣的模組後，手機沒有任何問題，也不會軟重啓...</br>
+ - 幹，昨天 Pixel 7 Pro 在更新 crDroid Augest update 後，手機出現鎖定熒幕就軟重啓的問題，反覆排查自己所使用的 KernelSU 和 Vector LSPosed (我不使用封閉原始碼的 LSPosed)模組後無果，只得重新刷機。非常奇怪的是重新刷機再安裝同樣的模組後，手機沒有任何問題，也不會軟重啓...</br>
+</br>
+
+ - 嗯，Action Retro 爲了讓舊時代的硬體也可以日常上網瀏覽，特地自架了 FrogFind 檢索引擎。在我10年前的 Surface Pro 5 和 Surface RT 上簡單使用了一下，效果還可以。配合 midori 瀏覽器上網，記憶體佔用只有1.25GB。對了，如果裝置太新，FrogFind 會不給用。修改瀏覽器的 User Agent 就可以了。</br>
 </br>
 
 ## 8月6日
@@ -66,15 +52,24 @@ lang: 'en'
 我沒有「自視清高」的意思，只是覺得自己除了研究自由軟體之外並無任何專長而已。</br>
 </br>
 
-
 ## 8月5日
 
-嗯，Action Retro 爲了讓舊時代的硬體也可以日常上網瀏覽，特地自架了 FrogFind 檢索引擎。在我10年前的 Surface Pro 5 和 Surface RT 上簡單使用了一下，效果還可以。配合 midori 瀏覽器上網，記憶體佔用只有1.25GB。對了，如果裝置太新，FrogFind 會不給用。修改瀏覽器的 User Agent 就可以了。</br>
+原來 Microg 也可以通過 Play integrity 的驗証！只是...要 de-google 了，爲什麼還要在乎 Google 的服務呢？</br>
 </br>
+
 
 ## 8月4日
 
-如果有 Root 權限管理程式的 icon 對妳講「雜魚，雜魚」的話，妳是否可以接受？或許動漫並不是一個適合全年齡人群觀看的節目。如果這是對那些偵測到 Root 就不給用的應用講的呢？那就很棒了。</br>
+現在年輕人無法理解的8種事情：
+
+ - 軟磁碟；
+ - Linux TTY 控制臺；
+ - 在手機上藉助 UEFI 韌體跑 Linux 甚至於 Windows Arm；
+ - De-googled Android 裝置；
+ - Librewolf，Netscape，Internet Explorer；
+ - Mali on Intel x86 還有 ACPI tables；
+ - 在一般 x86 電腦跑 Hackintosh 黑蘋果；
+ - 「It's safe to poweroff the system now.」
 </br>
 
 ## 8月3日
