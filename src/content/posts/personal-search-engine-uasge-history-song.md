@@ -9,6 +9,17 @@ draft: false
 lang: 'en'
 ---
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%E5%80%8B%E4%BA%BA%E6%AD%B7%E4%BB%A3%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E4%BD%BF%E7%94%A8%E6%AD%B7%E7%A8%8B%E4%B9%8B%E6%AD%8C%20(Remix).mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%E5%80%8B%E4%BA%BA%E6%AD%B7%E4%BB%A3%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E4%BD%BF%E7%94%A8%E6%AD%B7%E7%A8%8B%E4%B9%8B%E6%AD%8C.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3jr283nGAjs?si=W5234I_xRIHHBUF0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
