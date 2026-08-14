@@ -23,6 +23,7 @@ lang: 'en'
 ## 8月14日
 
 如果說 Minecraft 可以在馬鈴薯電腦跑，那麼 [Luanti 在地瓜葉電腦上也可以跑](https://ivonblog.com/posts/luanti-vs-minecraft-on-low-end-pc/)。爲此我找出一臺 2014年的 iEi 工業電腦，改裝 Arch Linux。不得不說在4GB 記憶體，3代 Pentium CPU 上玩 Luanti 也可以跑到60FPS，而 Minecraft 只可以跑到30FPS。</br>
+</br>
 
 ## 8月13日
 
