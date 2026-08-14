@@ -22,7 +22,7 @@ lang: 'zh_TW'
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3jr283nGAjs?si=W5234I_xRIHHBUF0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-點擊[這裏]()檢視韓語版歌詞。</br>
+點擊[這裏](https://blog.cloudflare88.eu.org/posts/ko/personal-search-usage-history-song/)檢視韓語版歌詞。</br>
 
 # Intro
 
