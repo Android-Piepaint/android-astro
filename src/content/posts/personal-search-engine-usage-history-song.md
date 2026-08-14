@@ -6,7 +6,7 @@ image: 'assets/mtp8750-front-view.jpg'
 tags: [FOSS, Lyric]
 category: 'Music'
 draft: false
-lang: 'en'
+lang: 'zh_TW'
 ---
 
 <audio controls>
@@ -22,6 +22,7 @@ lang: 'en'
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3jr283nGAjs?si=W5234I_xRIHHBUF0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+點擊[這裏]()檢視韓語版歌詞。</br>
 
 # Intro
 
@@ -36,7 +37,10 @@ lang: 'en'
 華文搜尋第一，(我們)臺灣蕃薯藤 </br>
 1995 年成立，服務(使用者)至今 </br>
 即使政治色彩濃厚，「第一」不可否 </br>
-感謝 Yam 大統領，我們的大統領 </br>
+感謝 Yam 大統領，我們的大統領* </br>
+</br>
+
+> _*大統領：總統。因爲搜尋引擎在如今全球資訊網中有重要地位，借用此名詞。_</br>
 </br>
 
 # Part 2
@@ -71,7 +75,7 @@ lang: 'en'
 感謝 FrogFind 大統領，我們的大統領 </br>
 </br>
 
-_*趣味：興味，興趣愛好_ </br>
+> _*趣味：興味，興趣愛好_ </br>
 </br>
 
 # Part 6
