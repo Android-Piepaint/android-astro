@@ -20,6 +20,52 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 8月20日
+
+今天完成了鐵路 Niri 站(尼利驛/尼利站)的重建工作。和先前的車站設計不同，現在 Niri 站的車站佈局改爲「2地面月臺 + 2地下月臺」的設計，把拿維鐵路的既有普速線路和新建設的高速鐵路分開，減少了建築時間，也可以承接更大的客流量。同時，Niri 也是我最喜歡的 Window manager，不僅支援 Wayland，還支援客製化，允許使用者按照個人使用習慣組裝桌面元件。</br>
+
+<img src="/assets/minecraft-niri.png" >
+
+<img src="/assets/minecraft-niri-upper.png" >
+
+<img src="/assets/minecraft-niri-under.png" >
+
+<img src="/assets/minecraft-niri-outbound.png" >
+
+</br>
+
+## 8月19日
+
+Minecraft 中，有不少講究擬真的建築師會在鐵路上方修建高架電車線，學着現實中的鐵路一樣，修上電杆和懸吊，用線或者其它方塊鏈接，作爲一種「裝飾用結構」...那麼要通過什麼裝置取電來保証礦車運行？Vanlia Minecraft 顯然不可能存在類似「集電弓」的裝置，因此充當集電弓的裝置只能是玩家本身。由此看來 Minecraft 的 Steve 和 Alex 真的是超人呀，能夠承受 25 千伏工頻交流電流經身體而不會有任何反應...</br>
+</br>
+就像下面的圖片一樣(雖然並沒有站在軌道上)，通過 Plana (我把 Alex 的模型替換成了蔚藍檔案的「Plana」)的裝飾物和 Halo 取電，然後經身體流到礦車的電機去。</br>
+
+<img src="/assets/minecraft-lol.png" >
+
+</br>
+
+## 8月18日
+
+在 Pixel 7 Pro 上嘗試了 DroidVM 這個專爲高通手機開發的虛擬機 App，雖然沒有高通的 Gunyah Hypervisior 支援，但是 pKVM 還可以使用。只是...不知道是不是開發者的問題，明明 App 偵測到裝置不支援 Gunyah Hypervisior，僅能用 KVM，但是使用 QEMU 開虛擬機時，log 中會發現 `qemu-system-aarch64` 嘗試利用 Gunyah 而出現錯誤的問題。</br>
+</br>
+
+## 8月17日
+
+(似乎是)比較順利的 Linux porting？從 Arch Linux ARM 網站下載了一份 64 位元 Arm 架構的 rootfs，解壓縮到建立好分割的 eMMC 快閃記憶體上，再編譯一份 sc7280 晶片專用的 mainline kernel，產生 `initramfs` 映像檔就可以開機了。除了內建的 FCU760K 的 USB Wi-Fi 網路卡需要 out of tree 核心模組才可以驅動，其他硬體都有完好的支援。</br>
+</br>
+唯一的問題是我的 Minecraft 遊戲存檔沒有備份，結果我兩個月的鐵路建設全部需要重建了... `:(` </br>
+</br>
+
+## 8月16日
+
+KDE Plasma 現在可以支援使用 Unifiedpush 作爲應用程式的通知傳送服務後端，手機上的 Plasma Mobile 也可以。原來爲 Android 裝置開發的 FCM Push 自由軟體替代品也可以運用在 Linux 電腦上啊... 不知道 GNOME 什麼時候加入支援呢？</br>
+</br>
+
+## 8月15日
+
+似乎不少手機使用者認爲只有電腦才可以方便的改裝作業系統。包括一些教師也是這麼認爲的，很多人認爲手機只能夠跑廠家自己客製化的韌體。于是當我講我可以在手機上跑 mainline kernel 並用牠寫了不少文章的時候，總會有人出來笑話我，直到我把改裝了 PostmarketOS 的 Nothing Phone 砸到他們臉上之後才不情願的相信。</br>
+</br>
+
 ## 8月14日
 
 如果說 Minecraft 可以在馬鈴薯電腦跑，那麼 [Luanti 在地瓜葉電腦上也可以跑](https://ivonblog.com/posts/luanti-vs-minecraft-on-low-end-pc/)。爲此我找出一臺 2014年的 iEi 工業電腦，改裝 Arch Linux。不得不說在4GB 記憶體，3代 Pentium CPU 上玩 Luanti 也可以跑到60FPS，而 Minecraft 只可以跑到30FPS。</br>
