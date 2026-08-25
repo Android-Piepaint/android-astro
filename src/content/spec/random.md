@@ -20,6 +20,61 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 8月25日
+
+生日祝賀합니다. 今天是 Linux 核心的第35個生日，從1991年赫爾辛基大學寄出的電郵開始，這個當年只是被認爲「個人愛好」的「Minix clone」不斷被世界各地的開發者發展改善。從最初的 386 到現在的 Arm, RISC-V, MIPS... 不同的硬體架構，多樣的發行版，使得 Linux 可以在伺服器，個人電腦，嵌入式裝置等領域發揮作用。</br>
+
+> I'm Linux booted up from soild-state drive </br>
+> Powering whole city, the lights are so pretty from up here </br>
+
+Linux 是開源軟體，是我踏入「自由軟體」大門的第一步。也是我之後發見並將之運用於日常生活的基盤。只有 Linux 和自由軟體，才可以做到「捍衛隱私的夢想，數位人權得到保障」。</br>
+</br>
+
+## 8月24日
+
+ - 除了 Qualcomm 以外，還有哪家晶片對 KVM 虛擬機支援友好呢？經過爬文之後，結果非常可笑：我一直有個資隱憂的中國製晶片(Rockchip, Allwinner...)反而是 KVM 支援最好的晶片廠家！韌體默認執行在 EL2，也不會有像 Google, Qualcomm, Mediatek 之類的種種限制。</br>
+ </br>
+
+ - Reddit 上有人把 Android 取得 root 權限叫做「越獄」，真是可悲。Root 本來就是 Android 中自然存在的部分，根本不需要像 iOS 那樣「幾經波折」...不過 iOS 越獄確實會讓妳存取系統的 root 用戶。</br>
+ </br>
+
+ - 很多 Xiaomi, Samsung 使用者都會宣傳自己的手機外觀，CP值多麼高，但是他們卻無法解開自己手機的 Bootloader...自己的手機，最後只能受到廠家控制，真是可悲啊...不對，應該是「咎由自取」。明明是自己花錢買了「手銬」，自己戴上並「蔚爲風尚」，怎麼能說「可悲」呢？</br>
+ </br>
+
+
+## 8月23日
+
+別人問我：妳最早接觸的 Linux 上的套件管理員是什麼？</br>
+</br>
+
+應該是 `apt` 和 `dpkg`。只是和所有使用 Linux 的人不一樣，這二個套件管理員最初是在越獄後的 iPhone 6s Plus 上學習用法的。畢竟 iOS 和 macOS 的套件管理員都是 `apt` `dpkg` (不知道爲什麼，Apple 的系統要用 Debian 的套件管理員，套件也要打包成 `.dpkg` )，還有 Cydia，Zebra 這樣的 App 作爲 GUI 前端，對於新手而言易於上手。後來在桌機上也使用過一段時間 Debian。可是在 iPhone 上的嘗試反而讓我有學習 Linux 的想法。
+</br> 
+
+## 8月22日
+
+行動數據和撥接上網的區別在哪裏？需要修改的配置檔案不同。撥接上網需要提供可用電話號碼和使用者資訊，而行動數據只需要使用 ISP 提供的 APN 檔就可以使用，不需要編寫[指令稿](https://docstore.mik.ua/orelly/linux/run/ch15_02.htm)來完成撥接：
+
+```bash
+#!/bin/sh 
+# my-chat-script: a program for dialing up your ISP 
+exec chat -v \ 
+'' ATZ \ 
+OK ATDT555-1212 \
+ CONNECT '' \ 
+ login: mdw \ 
+ password: my-password 
+ ```
+</br>
+
+只是現在手機內建的數據機通常採用專有的協定，而不會提供 UART 給使用者，想要使用 `AT` 命令也變得困難了...</br>
+</br>
+
+
+## 8月21日
+
+[Dial-up simulator](https://manticore.nz/dial-up-simulator)雖然現在智慧手機內建的數據機與20年前上網用的數據機工作機理並沒有顯著區別，也都可以使用常見的 `AT` 命令語進行韌體設定。理論上可以藉由 ISP 提供的網路進行撥號連接，只是因爲年代久遠，已經沒有 ISP 提供撥號連線服務了。這個軟體就可以用來模擬90年代的撥接音，讓妳重新回到過去「無憂無慮的時光」...</br>
+</br>
+
 ## 8月20日
 
 今天完成了鐵路 Niri 站(尼利驛/尼利站)的重建工作。和先前的車站設計不同，現在 Niri 站的車站佈局改爲「2地面月臺 + 2地下月臺」的設計，把拿維鐵路的既有普速線路和新建設的高速鐵路分開，減少了建築時間，也可以承接更大的客流量。同時，Niri 也是我最喜歡的 Window manager，不僅支援 Wayland，還支援客製化，允許使用者按照個人使用習慣組裝桌面元件。</br>
