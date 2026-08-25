@@ -1,5 +1,5 @@
 ---
-title: 即使核心跑在 EL2 也沒關係，照樣可以聽音樂和使用虛擬機～ 驍龍裝置使用 qebspil EFI 驅動程式，讓系統 UEFI 韌體載入遠端處理器保証裝置硬體功能運作
+title: 即使核心跑在 EL2 也沒關係，照樣可以聽音樂和使用虛擬機～ Snapdragon 裝置使用 qebspil EFI 驅動程式，讓系統 UEFI 韌體載入遠端處理器保証裝置硬體功能運作
 published: 2026-07-06
 description: '' 
 image: 'assets/qebspil-results.png'
