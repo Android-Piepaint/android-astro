@@ -20,6 +20,33 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 8月28日
+
+ - [追求不吃記憶體的瀏覽器是不現實的指標 -- Ivon 的部落格](https://ivonblog.com/posts/using-lightweight-browser-is-impossible/)現代瀏覽器的任務已經不僅僅是檢視網頁和 HTML 檔案這麼簡單了。爲了防止惡意網站竊取使用者個資，瀏覽器普遍採用 sandbox 機制，把每一個行程沙盒化，還要處理瀏覽器的擴充程式；爲了讓網頁實現各種功能甚至充當統合開發環境*的能力，又引入了 WebAssembly(在瀏覽器跑C寫的程式)，WebGPU 等技術，需要的硬體資源自然就會增加。當然可以改用諸如 midori, dillo 這種針對低階老舊硬體設計的瀏覽器，但是牠們不支援現代瀏覽器的一些技術，例如常見的 Javascript。會導致部分網站無法正常運作。</br>
+
+  > _*:統合開發環境(통화개발환경)，[「整合開發環境(IDE)」](https://zh.wikipedia.org/zh-tw/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)的韓語表述。是一種輔助程式開發人員開發軟體的應用軟體，在開發工具內部就可以輔助編寫原始碼文字、並編譯打包成為可用的程式，IDE 通常包括程式語言編輯器，自動構建工具，還包括除錯器。_ </br>
+
+ </br>
+
+ - Arm 筆電一定要比常用 x86 筆電要更安全嗎？資安中有諸如「Spectre」「Meltdown」的安全漏洞。後者可以在任何基於 P6 微架構的 Intel 處理器或者部分 Arm 晶片上得到利用，而前者則針對幾乎所有的處理器。2000年之後出產的晶片，爲了改善程式執行效率，處理器引入了「推測執行(Speculative execution)」功能，在處理器系統資源過剩的情況下並列處理其他任務，提高整體效能。但也爲之後利用這一特點而進行惡意行爲的「Spectre」之類漏洞的開發提供可乘之機。</br>
+ 現在的 Arm 筆電依然會遭到「Spectre」之類採用推測執行方式的旁路攻擊漏洞影響，因此答案顯然是否定的——Arm 筆電並不天然地比 x86 筆電更安全。事實上，晶片安全與否的關鍵不在於指令集架構（ISA）是 Arm 還是 x86，而是在於微架構設計（Microarchitecture）與安全防禦機制的演進。評估一部筆電的安全與否，不應單憑「Arm」或「x86」的標籤來劃分。 現代高效能 Arm 筆電與 x86 筆電站在同一條資安戰線上——唯有持續的微碼更新、完善的作業系統防禦機制以及使用者良好的安全習慣，才是確保系統安全無虞的根本之道。</br>
+ </br>
+
+<img src="/assets/lscpu-results.png" >
+
+想要檢視妳的裝置上存在的硬體安全漏洞和作業系統的修補手段，只需要在終端機鍵入 `lscpu` 命令語，看看硬體安全漏洞「Vulnerablities」 一行，牠顯示妳的 CPU 對於各種著名的「推測執行（Speculative Execution）」側信道攻擊漏洞的免疫狀態或補丁套用情況。</br>
+</br>
+
+## 8月27日
+
+由於我實在是沒有精力繼續維持動態牆的更新，並保證部落格的文章準確度和質量，從 2026年8月28日 起，動態牆的 commit 頻率變更爲每週更新一次。</br>
+</br>
+
+## 8月26日
+
+Lenovo Yoga Slim 7x 筆電內建的 Quectel NCM825A Wi-Fi 網路卡可以利用 mainline kernel 的 `ath12k` 核心模組使用監聽模式(monitor mode)，不會導致當機進入 Crashdump。</br>
+</br>
+
 ## 8月25日
 
 生日祝賀합니다. 今天是 Linux 核心的第35個生日，從1991年赫爾辛基大學寄出的電郵開始，這個當年只是被認爲「個人愛好」的「Minix clone」不斷被世界各地的開發者發展改善。從最初的 386 到現在的 Arm, RISC-V, MIPS... 不同的硬體架構，多樣的發行版，使得 Linux 可以在伺服器，個人電腦，嵌入式裝置等領域發揮作用。</br>
@@ -156,7 +183,7 @@ Samsung 在中國的銷量非常慘淡，但依舊是 Android 旗艦的王。說
 
 ## 8月8日
 
-[No abortions this time, sensei!](https://gelbooru.com/index.php?page=post&s=view&id=14039086&tags=abortion+) ...And guess that's why `zygote` will crash every time and causing my phone "soft reboots" itself, huh? </br>
+[No abortions this time, sensei !](https://gelbooru.com/index.php?page=post&s=view&id=14039086&tags=abortion+) ...And guess that's why `zygote` will crash every time and causing my phone "soft reboots" itself, huh? </br>
 </br>
 笑話解析：「abort」有「終止」「墮胎」兩個意思，「zygote」是 Android 系統中一個重要的進程，使用者的每一個應用都是 `zygote` 的 `fork()`，`zygote` 意外終止會導致手機「軟重啓」。「zygote」 在英語中是「受精卵」的意思。</br>
 </br>
