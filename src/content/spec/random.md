@@ -20,6 +20,11 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 9月4日
+
+[Use old phone as a second display: USB GUD with postmarketOS](https://gist.github.com/ZenithalHourlyRate/220186818bae434386e80c62ee1bc7bc) 藉助 Linux 的 `functionfs` 和 USB Gadget 技術，可以讓任何不支援硬體視訊輸出的 Linux 裝置(Modem, 路由器之類)通過 USB 方式實時的將裝置畫面傳送到另一臺支援視訊輸出的裝置，例如筆電或者 Linux 智慧型手機。如果使用 USB IP 技術還可以實現遠端桌面功能。這就像常見的 Remote desktop 或者 Moonlight 串流一樣，只要裝置支援 USB 就可以使用。</br>
+</br>
+
 ## 8月28日
 
  - [追求不吃記憶體的瀏覽器是不現實的指標 -- Ivon 的部落格](https://ivonblog.com/posts/using-lightweight-browser-is-impossible/)現代瀏覽器的任務已經不僅僅是檢視網頁和 HTML 檔案這麼簡單了。爲了防止惡意網站竊取使用者個資，瀏覽器普遍採用 sandbox 機制，把每一個行程沙盒化，還要處理瀏覽器的擴充程式；爲了讓網頁實現各種功能甚至充當統合開發環境*的能力，又引入了 WebAssembly(在瀏覽器跑C寫的程式)，WebGPU 等技術，需要的硬體資源自然就會增加。當然可以改用諸如 midori, dillo 這種針對低階老舊硬體設計的瀏覽器，但是牠們不支援現代瀏覽器的一些技術，例如常見的 Javascript。會導致部分網站無法正常運作。</br>
