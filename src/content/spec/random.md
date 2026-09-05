@@ -20,6 +20,11 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 9月5日
+
+很多老一代的電腦使用者不知道使用鍵盤打英文時，只需按住 Shift 鍵再按對應的字母就可以打大寫字母...非要一遍一遍地按那個沒有什麼用的 Caps Lock 按鈕，降低打字效率...就像使用瀏覽器一樣，不知道地址欄就可以自動使用搜尋引擎檢索，非要看到 Google 的畫面出現才去檢索。</br>
+</br>
+
 ## 9月4日
 
 [Use old phone as a second display: USB GUD with postmarketOS](https://gist.github.com/ZenithalHourlyRate/220186818bae434386e80c62ee1bc7bc) 藉助 Linux 的 `functionfs` 和 USB Gadget 技術，可以讓任何不支援硬體視訊輸出的 Linux 裝置(Modem, 路由器之類)通過 USB 方式實時的將裝置畫面傳送到另一臺支援視訊輸出的裝置，例如筆電或者 Linux 智慧型手機。如果使用 USB IP 技術還可以實現遠端桌面功能。這就像常見的 Remote desktop 或者 Moonlight 串流一樣，只要裝置支援 USB 就可以使用。</br>
