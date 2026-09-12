@@ -118,8 +118,8 @@ Partition Table: gpt
 Disk Flags: 
 
 Number  Start   End    Size    File system     Name  Flags
- 1      1049kB  538MB  537MB   fat32                 
- 2      538MB   991GB  999GB   ext4
+ 1      1049kB  512MB  511MB   fat32                 
+ 2      512MB   999GB  999GB   ext4
 
 ```
 
