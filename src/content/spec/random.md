@@ -20,9 +20,16 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 9月12日
+
+[Apple iPhone X -- PostmarketOS Wiki](https://wiki.postmarketos.org/wiki/Apple_iPhone_X_(Global)_(apple-d22)) 現在妳可以直接將 PostmarketOS 安裝到手機內建的 NVME SSD 上，如果日後想使用
+ Linux，還可以藉助  `idevicerestore` 重刷 iOS 就可以了。</br>
+ </br>
+
 ## 9月11日
 
-[Sxmo: Simple X Mobile](https://sxmo.org/) 在手機/平板電腦上使用 Sway WM 是什麼體驗？
+[Sxmo: Simple X Mobile](https://sxmo.org/) 在手機/平板電腦上使用 Sway WM 是什麼體驗？所有的功能都要通過指令稿完成，可以自由組裝桌面元件...在這裡，SSH 是一等公民，通過 SSH 來給妳的好友傳送簡訊！</br>
+</br>
 
 ## 9月5日
 
