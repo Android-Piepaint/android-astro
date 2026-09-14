@@ -20,6 +20,17 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 9月12日
+
+[Apple iPhone X -- PostmarketOS Wiki](https://wiki.postmarketos.org/wiki/Apple_iPhone_X_(Global)_(apple-d22)) 現在妳可以直接將 PostmarketOS 安裝到手機內建的 NVME SSD 上，如果日後想使用
+ Linux，還可以藉助  `idevicerestore` 重刷 iOS 就可以了。</br>
+ </br>
+
+## 9月11日
+
+[Sxmo: Simple X Mobile](https://sxmo.org/) 在手機/平板電腦上使用 Sway WM 是什麼體驗？所有的功能都要通過指令稿完成，可以自由組裝桌面元件...在這裡，SSH 是一等公民，通過 SSH 來給妳的好友傳送簡訊！</br>
+</br>
+
 ## 9月5日
 
 很多老一代的電腦使用者不知道使用鍵盤打英文時，只需按住 Shift 鍵再按對應的字母就可以打大寫字母...非要一遍一遍地按那個沒有什麼用的 Caps Lock 按鈕，降低打字效率...就像使用瀏覽器一樣，不知道地址欄就可以自動使用搜尋引擎檢索，非要看到 Google 的畫面出現才去檢索。</br>
