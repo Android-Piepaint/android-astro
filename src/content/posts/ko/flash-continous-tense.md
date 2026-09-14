@@ -1,7 +1,7 @@
 ---
 title: 플래싱(Flashing)進行形(진행형) (Feat. Purwa Oryon) —— May'n의‘人生進行形(인생진행형)’올 FOSS가 패러디 한 버전
 published: 2025-11-29
-description: 우리 함께 저 自由로운 곳으로 奔走해,私有 software와 "明日 再見"한 뒤 다시는 안 봐.
+description: 우리 함께 저 自由로운 곳으로 奔走해,私有소프 와 "明日 봐"한 뒤 다시는 안 봐.
 image: 'assets/mtp8750-front-view.jpg'
 tags: [FOSS, Lyric, Korean]
 category: 'Music'
@@ -10,7 +10,7 @@ lang: 'zh_TW'
 ---
 
 <audio controls>
-  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%ED%94%8C%EB%9E%98%EC%8B%B1(Flashing)%20%EC%A7%84%ED%96%89%ED%98%95(%E9%80%B2%E8%A1%8C%E5%BD%A2).mp3" type="audio/mpeg">
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%E5%88%B7%E6%A9%9F%E9%80%B2%E8%A1%8C%E6%99%82%E2%80%94%E6%A0%B9%E6%93%9AMay'n%20%E7%9A%84%E3%80%8C%E4%BA%BA%E7%94%9F%E9%80%B2%E8%A1%8C%E5%BD%A2%E3%80%8D%E6%94%B9%E7%B7%A8.ogg" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
