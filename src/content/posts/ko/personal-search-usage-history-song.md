@@ -1,5 +1,5 @@
 ---
-title: 個人과 歷代檢索엔진 使用歷史노래(Feat. Hana Oryon) -- 「우리나라 大統領」 大韓民國과 歷代 大統領노래 을 FOSS가 패러디 한 버전 
+title: 個人的 歷代檢索엔진 使用歷史송(Feat. Hana Oryon) -- 「우리나라 大統領」 大韓民國의 歷代 大統領노래 을 FOSS가 패러디 한 버전 
 published: 2026-08-10
 description: ''
 image: 'assets/mtp8750-front-view.jpg'
@@ -66,7 +66,7 @@ lang: 'ko'
 
 普通(보통) 愛好者(애호자) 趣味(취미), FrogFind 檢索(검색) </br>
 2023年(년) 成立(성립), 빈티지(Vintage) 機器(기기) 專用(전용)</br>
-디자인(Design) 單純(단순)해도 인터넷(Internet) 가능 </br>
+디자인(Design) 單純(단순)해도 인터넷(Internet) 可能(가능) </br>
 感謝(감사) Frogfind 大統領(대통령), 우리 大統領(대통령)</br>
 </br>
 

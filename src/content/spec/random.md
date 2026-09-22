@@ -20,6 +20,19 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 9月19日
+
+ - Wow，Suno AI 的新版 6.1 model 對於歌曲的節奏，音韻的辨識和處理有了不小進步。這一點在製作歌曲的 AI Cover 時會比較明顯，對於主體旋律明顯比舊版 model 要好了。</br>
+</br>
+
+ - 奇怪的韓國語音讀大會：灣子路(만자로,羅馬音: Manjaro)，臺飛岸(대비안,羅馬音：Daebian)，雅志(아지,羅馬音：Arci)。妳是否已經發現了什麼？...不要懷疑自己的韓國語發音。</br>
+ </br>
+
+## 9月18日
+
+如果 Linux 發行版有「最不可思議金氏世界紀錄」的評級，第一名應該頒給 PostmarketOS 和所有牠的 porter 們。如今 PostmarketOS 所支援的硬體不僅包括一衆 Android 手機，平板電腦，單板電腦，筆電，甚至連路由器和智慧電視都可以跑 mainline kernel 和 Linux；第二名才是 Gentoo，因爲基於原始碼的發行版只要有原始碼和對應架構的編譯套件就可以在任何 CPU 架構的硬體上執行，例如 MIPS 和 RISCV。</br>
+</br>
+
 ## 9月12日
 
 [Apple iPhone X -- PostmarketOS Wiki](https://wiki.postmarketos.org/wiki/Apple_iPhone_X_(Global)_(apple-d22)) 現在妳可以直接將 PostmarketOS 安裝到手機內建的 NVME SSD 上，如果日後想使用
