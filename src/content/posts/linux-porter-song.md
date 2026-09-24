@@ -1,5 +1,5 @@
 ---
-title: 辛苦了，開發者 (Feat. Hana Oryon) -- 根據 아주작은 애국심 的 「大統領들에 對한 感謝송」 FOSS 改編
+title: 辛苦了，開發者 -- 根據 아주작은 애국심 的 「大統領들에 對한 感謝송」 FOSS 改編
 published: 2026-09-24
 description: ''
 image: 'assets/mtp8750-front-view.jpg'
@@ -8,7 +8,6 @@ category: 'Music'
 draft: false
 lang: 'zh_TW'
 ---
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0lgI_KMLIi0?si=HPaAvm9T796QdDTT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # Part 1
@@ -55,9 +54,13 @@ lang: 'zh_TW'
 </br>
 
 _No matter if it's phone, smartwatch or PC,_ </br>
-_Whether it's UNIX or BSD_ </br>
+_(無論是智慧型手機,手錶,還是電腦)_</br>
+_Whether it's (commercial) UNIX or BSD_ </br>
+_(亦無論跑的是(商業) UNIX 還是 BSD 作業系統)_</br>
 _We're the ones who refused to keel down, you'll see_ </br>
+_(我們是那些拒絕向專有軟體屈服的人)_</br>
 
+在繁雜的程式碼中孤獨前行, </br>
 歲月會證明這些貢獻的價值 </br>
 </br>
 
@@ -72,8 +75,8 @@ _We're the ones who refused to keel down, you'll see_ </br>
 # Chorus
 
 萬分感謝，工作辛苦了 </br>
-默默扛起自由軟體重擔的肩膀, </br> 
-讓我們能夠攜手築造, </br> 
+默默扛起自由軟體重擔的肩膀, </br>
+讓我們能夠攜手築造, </br>
 更加美好的數位未來
 </br>
 
@@ -81,12 +84,12 @@ _We're the ones who refused to keel down, you'll see_ </br>
 
 不論是今天，還是明天 </br>
 我們都會深深銘記 </br>
-感謝你們出自真心的付出 </br> 
+感謝妳們出自真心的付出 </br>
 萬分感謝，感激不盡 </br>
 </br>
 
 萬分感謝，工作辛苦了 </br>
-默默扛起自由軟體重擔的肩膀 </br> 
+默默扛起自由軟體重擔的肩膀 </br>
 讓我們能夠攜手守護, </br>
 更加完整的數位主權 </br>
 </br>
@@ -95,6 +98,6 @@ _We're the ones who refused to keel down, you'll see_ </br>
 
 不論是今天，還是明天 </br>
 我們都會深深銘記 </br>
-感謝你們出自真心的付出 </br> 
+感謝妳們出自真心的付出 </br>
 開發者，工作辛苦了 </br>
 </br>
