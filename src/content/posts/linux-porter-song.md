@@ -54,9 +54,9 @@ lang: 'zh_TW'
 都在構築更開放的明天 </br>
 </br>
 
-_No matter it's phone, smartwatch or PC,_ </br>
-_No matter it's UNIX or BSD_ </br>
-_We're the one who refused to keel down_ </br>
+_No matter if it's phone, smartwatch or PC,_ </br>
+_Whether it's UNIX or BSD_ </br>
+_We're the ones who refused to keel down, you'll see_ </br>
 
 歲月會證明這些貢獻的價值 </br>
 </br>
