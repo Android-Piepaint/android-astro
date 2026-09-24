@@ -1,5 +1,5 @@
 ---
-title: 辛苦了，開發者 -- 根據 아주작은 애국심 的 「大統領들에 對한 感謝송」 FOSS 改編
+title: 辛苦了，開發者(Feat. EDKPiepaint & Hana Oryon) -- 根據 아주작은 애국심 的 「大統領들에 對한 感謝송」 FOSS 改編
 published: 2026-09-24
 description: ''
 image: 'assets/mtp8750-front-view.jpg'
@@ -26,7 +26,7 @@ lang: 'zh_TW'
 # Pre-chorus
 
 十分感謝，我感激不盡 </br>
-爲了自由軟體的未來而努力工作 </br>
+爲了自由軟體的未來而努力(工作) </br>
 不辭辛苦，逆向各種硬體 </br>
 只爲了使用者的「自由」</br>
 </br>
@@ -60,8 +60,8 @@ _(亦無論跑的是(商業) UNIX 還是 BSD 作業系統)_</br>
 _We're the ones who refused to keel down, you'll see_ </br>
 _(我們是那些拒絕向專有軟體屈服的人)_</br>
 
-在繁雜的程式碼中孤獨前行, </br>
-歲月會證明這些貢獻的價值 </br>
+(在繁雜的程式碼中孤獨前行, )</br>
+(歲月會證明這些貢獻的價值) </br>
 </br>
 
 # Pre-chorus
