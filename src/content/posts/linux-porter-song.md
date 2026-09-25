@@ -8,7 +8,13 @@ category: 'Music'
 draft: false
 lang: 'zh_TW'
 ---
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0lgI_KMLIi0?si=HPaAvm9T796QdDTT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%E5%88%B7%E6%A9%9F%E9%80%B2%E8%A1%8C%E6%99%82%E2%80%94%E6%A0%B9%E6%93%9AMay'n%20%E7%9A%84%E3%80%8C%E4%BA%BA%E7%94%9F%E9%80%B2%E8%A1%8C%E5%BD%A2%E3%80%8D%E6%94%B9%E7%B7%A8.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<iframe width="560" height="315" src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%E8%BE%9B%E8%8B%A6%E4%BA%86%EF%BC%8C%E9%96%8B%E7%99%BC%E8%80%85.mp3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # Part 1
 
