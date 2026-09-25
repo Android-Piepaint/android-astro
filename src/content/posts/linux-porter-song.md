@@ -1,5 +1,5 @@
 ---
-title: 辛苦了，開發者(Feat. EDKPiepaint & Hana Oryon) -- 根據 아주작은 애국심 的 「大統領들에 對한 感謝송」 FOSS 改編
+title: 辛苦了，開發者(Feat. EDKPiepaint & Hana Oryon) -- 根據 아주작은 애국심 的 「大統領들에 對한 感謝頌」 FOSS 改編
 published: 2026-09-24
 description: ''
 image: 'assets/mtp8750-front-view.jpg'
