@@ -8,7 +8,7 @@ import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
 	title: "EDK Piepaint's Personal Collections -- EDK Piepaint 的個人所藏",
-	subtitle: "Powered by QTI SM8750 MTP (SM8750 MTP 개발 플랫폼)",
+	subtitle: "Powered by QTI SM8750 MTP (SM8750 MTP 開發用 플랫폼)",
 	lang: "en",// 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
@@ -48,11 +48,7 @@ export const navBarConfig: NavBarConfig = {
 			url: "/ublog", // Internal links should not include the base path, as it is automatically added
 			external: false, // Show an external link icon and will open in a new tab
 		},
-		{
-			name: "My Projects",
-			url: "https://linux-on-nabu.gitbook.io/linux-for-mi-pad-5", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
+		
 	],
 };
 
