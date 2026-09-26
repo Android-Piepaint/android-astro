@@ -1,5 +1,5 @@
 ---
-title: 個人的 歷代檢索엔진 使用歷史송(Feat. Hana Oryon) -- 「우리나라 大統領」 大韓民國의 歷代 大統領노래 을 FOSS가 패러디 한 버전 
+title: 個人的 歷代檢索엔진 使用歷史頌(Feat. Hana Oryon) -- 「우리나라 大統領」 大韓民國의 歷代 大統領노래 을 FOSS가 패러디 한 버전 
 published: 2026-08-10
 description: ''
 image: 'assets/mtp8750-front-view.jpg'
