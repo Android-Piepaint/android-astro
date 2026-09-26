@@ -1,5 +1,5 @@
 ---
-title: 수고하신，開發者(Feat. EDKPiepaint & Hana Oryon) -- 아주작은 애국심 의 「大統領들에 對한 感謝頌」 을 FOSS가 패러디 한 버전 
+title: 수고하신，開發者(Feat. EDKPiepaint & Hamoa Oryon) -- 아주작은 애국심 의 「大統領들에 對한 感謝頌」 을 FOSS가 패러디 한 버전 
 published: 2026-09-26
 description: ''
 image: 'assets/mtp8750-front-view.jpg'
@@ -60,6 +60,9 @@ _Whether it's (commercial) UNIX or BSD_ </br>
 _(유닉스(UNIX)이든 BSD 시스템(System)이든 간에)_</br>
 _We're the ones who refused to keel down, you'll see_ </br>
 _(屈服(굴복)을 拒否(거부)한 건 바로 우리들이야)_</br>
+</br>
+
+(歲月(세월)이 그 價値(가치)를 證明(증명)해 줄 거야)</br>
 </br>
 
 # Pre-chorus
