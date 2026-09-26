@@ -9,7 +9,15 @@ draft: false
 lang: 'ko'
 ---
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%EC%88%98%EA%B3%A0%ED%95%98%EC%8B%A0%EF%BC%8C%E9%96%8B%E7%99%BC%E8%80%85.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%EB%AC%B4%EA%B1%B0%EC%9A%B4-%EC%B1%85%EC%9E%84%EC%9D%84-%EC%96%B4%EA%B9%A8%EC%97%90-%EB%A9%94%EA%B3%A0.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0lgI_KMLIi0?si=1OP9E8sm3HrHXuns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -85,7 +93,7 @@ _(屈服(굴복)을 拒否(거부)한 건 바로 우리들이야)_</br>
 
 오늘도, 來日(내일)도 </br>
 우리는 記憶(기억)할 거예요 </br> 
-眞心(진심)으로 세상을 바꾼, </br> 
+眞心(진심)으로 世上(세상)을 바꾼, </br> 
 그 마음에 感謝(감사)합니다 </br>
 </br>
 
@@ -100,5 +108,5 @@ _(屈服(굴복)을 拒否(거부)한 건 바로 우리들이야)_</br>
 오늘도, 來日(내일)도 </br>
 우리는 記憶(기억)할 거예요 </br> 
 眞心(진심)으로 세상을 바꾼, </br> 
-開發者(개발자), 수고합니다 </br>
+開發者(개발자), 수고/感謝(감사)합니다 </br>
 </br>
