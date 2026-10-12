@@ -2,7 +2,7 @@
 title: 讓筆電觸控板機能多樣化——使用 Edgepad 自訂 Linux 筆電觸摸板邊緣手勢
 published: 2026-10-12
 description: 使用 Edgepad 客製觸摸板的手勢動作，媲美 macOS 的使用體驗！
-image: 'assets/edgepad-demo.gif'
+image: 'assets/qebspil-results.png'
 tags: [FOSS, Linux]
 category: 'Linux & Linux related'
 draft: false
