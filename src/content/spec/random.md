@@ -20,6 +20,26 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 10月23日
+
+<img src="/assets/mtp8750-arch-arm.jpg" width="50%" >
+
+<iframe width="560" height="315" src="https://youtube.com/embed/qCdfyHaDGSE?si=3CUOrSZoYSEL3zYe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[Arch Linux ARM for Qualcomm SM8750 MTP Development Kit](https://codeberg.org/EDKPiepaint/sm8750-mtp_alarm) 現在 SM8750 MTP 原型機的主線核心已經有了 NT37801 熒幕和 Adreno 830 GPU 的支援,雖然 freedreno driver 目前並未加入 Adreno 830 GPU 支援的程式碼(`dmesg` 顯示'unknown GPU revision')，但依然可以啓動，並且可以登入 GNOME 桌面。好在 SM8750 CPU 效能足矣，即使用 `llvmpipe` 跑軟體渲染也不會導致畫面慢到像是在放投影片。</br>
+至於以後的工作...目前還有 touchscreen，電池，睡眠(Suspend)等不工作，還需要進一步修補。在此期間，歡迎各位檢視我的 Codeberg 專案！完成 touchscreen bring-up 之後會釋出映像檔供大家安裝使用的！</br>
+</br>
+
+## 10月22日
+
+祕境車站被標記在地圖上那就不能叫祕境車站了。不過有些車站即使被標記，也少有人去探索，因此這些車站常常成爲我拍攝部落格頭圖的地方(雖然部落格的頁首 banner 是4年前在海邊拍的，至今都沒有更換過...)。</br>
+</br>
+
+## 10月21日
+
+現在 Arm64 裝置也可以有機會跑 macOS了。[UniXNU](https://unixnu.com/)通過使用標準UEFI韌體引導 Apple 的 Darwin 核心，只要裝置採用 UEFI 韌體開機，以及合適的 ADT 設備樹(用於開機的設備樹，類似於 Linux 的 DTB)就可以跑 iOS 和 macOS。根據作者的進度來看，目前高通裝置的 GPU 驅動已有進展。看來黑蘋果社群很快將會迎來第二春的。</br>
+</br>
+
 ## 9月28日
 
 [PostmarketOS 在昨天宣佈改用新的「NuraOS」做爲他們全新的專案名](https://nura.eco/blog/2026/09/27/nura-rename/)，根據 Postmarket...不對，應該是 NuraOS 部落格的紹介，「Nura」一詞來自[「Nuraghe(中文譯作努拉吉)」](https://zh.wikipedia.org/zh-tw/%E5%8A%AA%E6%8B%89%E5%90%89)，是位於意大利的古蹟。用石塊壘成的平頂圓錐狀建築形制，作爲紀念碑或用於宗教用途。由史前時代撒丁島上的努拉吉人所建，隸屬於努拉吉文化，並僅存於撒丁島地區，目前約有超過7000座。絕大多數努拉吉依然屹立不倒至今，就像 PostmarketOS 一樣，從2016年專案建立到現在仍然具有活躍力。也成爲了無數舊手機，單板機以及筆電的「第二選擇」，即使廠家早就停止支援裝置，在開發者的努力和自由軟體的幫助下，依然可以執行最新的軟體和 mainline kernel，同時可以實現更多的用途。</br>
