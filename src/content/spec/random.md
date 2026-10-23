@@ -20,6 +20,21 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 10月23日
+
+<img src="/assets/mtp8750-arch-arm.jpg" width="50%" >
+
+<iframe width="560" height="315" src="https://youtube.com/embed/qCdfyHaDGSE?si=3CUOrSZoYSEL3zYe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[Arch Linux ARM for Qualcomm SM8750 MTP Development Kit](https://codeberg.org/EDKPiepaint/sm8750-mtp_alarm) 現在 SM8750 MTP 原型機的主線核心已經有了 NT37801 熒幕和 Adreno 830 GPU 的支援,雖然 freedreno driver 目前並未加入 Adreno 830 GPU 支援的程式碼(`dmesg` 顯示'unknown GPU revision')，但依然可以啓動，並且可以登入 GNOME 桌面。好在 SM8750 CPU 效能足矣，即使用 `llvmpipe` 跑軟體渲染也不會導致畫面慢到像是在放投影片。</br>
+至於以後的工作...目前還有 touchscreen，電池，睡眠(Suspend)等不工作，還需要進一步修補。在此期間，歡迎各位檢視我的 Codeberg 專案！完成 touchscreen bring-up 之後會釋出映像檔供大家安裝使用的！</br>
+</br>
+
+## 10月22日
+
+祕境車站被標記在地圖上那就不能叫祕境車站了。不過有些車站即使被標記，也少有人去探索，因此這些車站常常成爲我拍攝部落格頭圖的地方(雖然部落格的頁首 banner 是4年前在海邊拍的，至今都沒有更換過...)。</br>
+</br>
+
 ## 10月21日
 
 現在 Arm64 裝置也可以有機會跑 macOS了。[UniXNU](https://unixnu.com/)通過使用標準UEFI韌體引導 Apple 的 Darwin 核心，只要裝置採用 UEFI 韌體開機，以及合適的 ADT 設備樹(用於開機的設備樹，類似於 Linux 的 DTB)就可以跑 iOS 和 macOS。根據作者的進度來看，目前高通裝置的 GPU 驅動已有進展。看來黑蘋果社群很快將會迎來第二春的。</br>
