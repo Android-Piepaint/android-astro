@@ -20,6 +20,26 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 10月24日
+
+So many nights, awake from dream </br>
+I won't believe that I already worked so far </br>
+Look at the code, you're my star </br>
+Want to say that I've learned so much thing </br>
+My big screens, my dev boards </br>
+My prototypes and everything I've owned </br>
+One more patch, one more fixup </br>
+But you know what? Darling wait for me I'll be back </br>
+
+> 上述歌詞改編自 Younetro & Alex Skrindo 的 I Will Be Back。 </br>
+
+- 現在 SM8750 MTP 的[熒幕觸控](https://codeberg.org/EDKPiepaint/sm8750-mtp_alarm/src/branch/main/Patches/0001-arm64-dts-qcom-sm8750-mtp-Enable-STM-FTS5-touchscreen.patch)可以在 mainline kernel 正常工作了，但是不知道是不是沒有 GPU 硬體加速或者 I²C 速度不正確的原因，熒幕反應並不順暢，回應時延高得連最基本的 double tap 手勢都做不到，還需要進一步改善...</br>
+</br>
+
+- [Compose key -- Wikipidia](https://en.wikipedia.org/wiki/Compose_key) 原來「組合鍵」是用於鍵入特殊字元的按鍵啊...不過爲了和日常生活中使用的諸如「`Control-C`」 「`Super+ `Page up`」 這類組合鍵(Keyboard shortcuts)區別，「Compose key」 又有一個別稱叫「Dead key」(死鍵)。和 `Shift`, `Control` 這類修飾鍵不同，組合鍵不需要一直按住，只需要按一次，然後輔以其它鍵就可以鍵入額外字元。例如想要鍵入上面出現的「²」，就需要按一下組合鍵，然後按住 Shift 鍵入「`^`」，最後再鍵入 `2` 就可以了。組合鍵並不會輸出一個完整的字母，而是改變下一個按下的鍵的輸出結果。例如使用組合鍵，「`o`」，「`c`」 就可以鍵入「©」。</br>
+在 Linux 上，可以自定義「Compose key」的按鍵綁定。目前 GNOME 和 KDE 等桌面環境和 WM 都支援修改「Compose key」的綁定鍵。例如現在筆電上安裝 Linux 後最沒有用途的「Copliot key」。</br>
+</br>
+
 ## 10月23日
 
 <img src="/assets/mtp8750-arch-arm.jpg" width="50%" >
