@@ -30,10 +30,11 @@ It isn't a place just for sharing the information of Free and Open source softwa
 # 自己紹介 (韓國語)
 安寧하세요! 지금 보고 계신 페이지는 'EDK Piepaint's Personal Collections', EDK 파이페인트(EDK Piepaint)의 個人所藏(개인소장)블로그 입니다.</br>
 
-이 블로그는 Astro Framework 를 基盤으로 제작되었으며, 現在 底意(저의) Qualcomm SM8750 MTP 開發(개발) 플랫폼(Platform)(프로토타입,prototype) 裝備(장비)에서 直接 호스팅(Host)되어 運營(운영)되고 있습니다.</br>
+이 블로그는 Astro Framework 를 基盤으로 제작되었으며, 現在 底意(저의) Qualcomm SM8750 MTP 開發 플랫폼(Platform)(프로토타입,prototype)裝置에서 直接 호스팅(Hosting)되어 運營(운영)되고 있습니다.</br>
 
-이곳은 單純(단순)히 오픈소스 소프트웨어나(Open source software) 興味(흥미)로운 하드웨어(Hardware)(엔지니어링 샘플(sample), 單板機(단판기), 各種 Android 機器 等)에 對한 情報(정보)를 共有(공유)하는 空間(공간)을 넘어, 底意(저의) 個人的인 思考 (사고)과 哲學(철학)을 담아내는 所重(소중)한 記錄(기록) 貯藏所(저장소)이기도 합니다.</br>
+이곳은 單純(단순)히 自由 소프트웨어나(software) 興味(흥미)로운 하드웨어(Hardware)(엔지니어링 샘플(sample), 單板機, 各種 Android 機器 等)에 對한 情報를 共有하는 空間을 넘어, 底意(저의) 個人的인 思考과 哲學(철학)을 담아내는 所重(소중)한 記錄(기록) 貯藏所(저장소)이기도 합니다.</br>
 
-여기에서 여러분은 自由 소프트웨어(Free Software,FLOSS)를 實際 環境(실제 환경)에서 使用해 본 生生한 後記(후기)와, 이를 日常生活(일상생활)에 어떻게 接木(접목)하고 活用할 수 있는지에 대한 多樣한 可能性(가능성)을 發見하실 수 있을 것입니다. 參考(참고)로, 블로그의 主要 콘텐츠(Contents)는 中國語로 作成(작성)되어 있습니다.
-## 사용 중(使用 中)인 테마 (Theme)
+여기에서 여러분은 自由 소프트웨어(Free Software,FLOSS)를 實際環境(실제 환경)에서 使用해 본 生生한 後記와, 이를 日常生活에 어떻게 接木(접목)하고 活用할 수 있는지에 對한 多樣한 可能性을 發見하실 수 있을 것입니다. 參考로, 블로그의 主要內容는 中國語로 作成되어 있습니다.
+
+## 使用中인 畵面 테마 (Theme)
 ::github{repo="saicaca/fuwari"}
