@@ -22,7 +22,7 @@
 ## 🚀 使用하는 方法
 
 1. 이 템플릿에서 [새 貯藏所를 生成](https://github.com/saicaca/fuwari/generate)하거나 이 貯藏所를 포크하세요.
-2. 블로그를 로컬에서 編輯하려면 貯藏所를 複製하고 `pnpm install` 및 `pnpm add sharp`를 實行하여 종속성을 設置하세요.  
+2. 블로그를 로컬에서 編輯하려면 貯藏所를 複製하고 `pnpm install` 및 `pnpm add sharp`를 實行하여 從屬性을 設置하세요.  
    - 아직 [pnpm](https://pnpm.io)을 設置하지 않았다면 `npm install -g pnpm`을 實行하여 [pnpm](https://pnpm.io)을 設置하세요.
 3. 블로그를 使用者 定義하려면 `src/config.ts` 構成 파일을 編輯하세요.
 4. `pnpm new-post <filename>`을 實行하여 새 揭示物을 만들고 `src/content/posts/`에서 編輯하세요.
@@ -44,11 +44,11 @@ draft: false
 
 ## 🧞 命令語
 
-다음 命令語는 프로젝트 최상단, 端末機에서 入力합니다:
+다음 命令語는 프로젝트 最上端, 端末機에서 入力합니다:
 
 | Command                             | Action                                           |
 |:------------------------------------|:-------------------------------------------------|
-| `pnpm install` AND `pnpm add sharp` | 종속성을 設置합니다.                            |
+| `pnpm install` AND `pnpm add sharp` | 從屬性을 設置합니다.                            |
 | `pnpm dev`                          | `localhost:4321`에서 로컬 開發 서버를 始作합니다.      |
 | `pnpm build`                        | `./dist/`에 프로덕션 사이트를 構築합니다.         |
 | `pnpm preview`                      | 配布하기 前에 로컬에서 빌드 미리보기     |

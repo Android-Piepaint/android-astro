@@ -56,6 +56,8 @@ const languages = [
             return (
                 <a
                     href={targetUrl}
+                    data-lang={lang.code}
+                    data-is-post={pureSlug ? "1" : ""}
                     data-swup-preload
                     class={`flex items-center gap-3 px-4 py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap ${
                         isCurrent 
@@ -78,43 +80,74 @@ const languages = [
         class="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md text-[var(--primary)] shadow-md transition-all duration-300 hover:scale-105 active:scale-95"
     >
         <Icon name="material-symbols:translate-rounded" class="text-[1.4rem]"></Icon>
-        <span class="absolute -bottom-1 -right-1 flex h-4 px-1 items-center justify-center rounded bg-[var(--primary)] text-[8px] font-bold text-white uppercase tracking-tight shadow-sm">
+        <span
+        id="lang-badge" 
+        class="absolute -bottom-1 -right-1 flex h-4 px-1 items-center justify-center rounded bg-[var(--primary)] text-[8px] font-bold text-white uppercase tracking-tight shadow-sm">
             {currentLang === 'zh-TW' ? 'ZH' : currentLang.toUpperCase()}
         </span>
     </button>
 </div>
 
 <script>
-    function initLanguagePicker() {
-        const container = document.getElementById('lang-picker-container');
-        const mainBtn = document.getElementById('lang-main-btn');
-        const panel = document.getElementById('lang-list-panel');
+    import { applyLang, getSavedLang } from "../utils/site-lang";
 
-        if (!mainBtn || !panel || !container) return;
+    const badgeText = (l: string) => (l === "zh-TW" ? "ZH" : l.toUpperCase());
 
-        // 點擊按鈕切換面板狀態
-        mainBtn.addEventListener('click', (e) => {
+    function highlight(lang: string) {
+        document.querySelectorAll<HTMLElement>("#lang-list-panel a[data-lang]").forEach((a) => {
+            const on = a.dataset.lang === lang;
+            a.classList.toggle("bg-[var(--primary)]", on);
+            a.classList.toggle("text-white", on);
+        });
+        const badge = document.getElementById("lang-badge");
+        if (badge) badge.textContent = badgeText(lang);
+    }
+
+    function applySaved() {
+        const saved = getSavedLang();
+        if (saved) { applyLang(saved, false); highlight(saved); }
+    }
+
+    function bindPicker() {
+        const container = document.getElementById("lang-picker-container");
+        const mainBtn = document.getElementById("lang-main-btn");
+        const panel = document.getElementById("lang-list-panel");
+        if (!container || !mainBtn || !panel || container.dataset.bound) return;
+        container.dataset.bound = "1";
+
+        const close = () => {
+            panel.classList.add("opacity-0", "pointer-events-none", "translate-y-2");
+            mainBtn.classList.remove("rotate-12");
+        };
+
+        mainBtn.addEventListener("click", (e) => {
             e.stopPropagation();
-            panel.classList.toggle('opacity-0');
-            panel.classList.toggle('pointer-events-none');
-            panel.classList.toggle('translate-y-2');
-            mainBtn.classList.toggle('rotate-12');
+            panel.classList.toggle("opacity-0");
+            panel.classList.toggle("pointer-events-none");
+            panel.classList.toggle("translate-y-2");
+            mainBtn.classList.toggle("rotate-12");
+        });
+        document.addEventListener("click", (e) => {
+            if (!container.contains(e.target as Node)) close();
         });
 
-        // 點擊外部任何地方時，自動收合選單
-        document.addEventListener('click', (e) => {
-            if (!container.contains(e.target as Node)) {
-                panel.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
-                mainBtn.classList.remove('rotate-12');
-            }
+        panel.querySelectorAll<HTMLAnchorElement>("a[data-lang]").forEach((a) => {
+            a.addEventListener("click", (e) => {
+                const lang = a.dataset.lang!;
+                applyLang(lang);
+                highlight(lang);
+                close();
+                // Not on an article: stay on the page, only the UI language changes.
+                // On an article: let the link navigate to the translated article.
+                if (!a.dataset.isPost) e.preventDefault();
+            });
         });
     }
 
-    // 初次頁面渲染時初始化
-    initLanguagePicker();
+    bindPicker();
+    applySaved();
 
-    // 監聽 Swup 轉場，在內容被替換後重新綁定事件，防止切換頁面後點擊失效
-    document.addEventListener('swup:enable', () => {
-        window.swup.hooks.on('content:replace', initLanguagePicker);
-    });
+    const hook = () => window.swup.hooks.on("content:replace", applySaved);
+    if ((window as any).swup) hook();
+    else document.addEventListener("swup:enable", hook);
 </script>

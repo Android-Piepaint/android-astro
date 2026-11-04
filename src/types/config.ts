@@ -1,4 +1,6 @@
 import type { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants";
+import type I18nKey from "../i18n/i18nKey";
+
 
 export type SiteConfig = {
 	title: string;
@@ -44,6 +46,7 @@ export type NavBarLink = {
 	name: string;
 	url: string;
 	external?: boolean;
+	i18nKey?: I18nKey;
 };
 
 export type NavBarConfig = {

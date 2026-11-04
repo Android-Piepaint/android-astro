@@ -4,6 +4,8 @@ import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import { formatDateToYYYYMMDD, formatDateMinguo } from "../utils/date-utils";
 import { url } from "../utils/url-utils";
+import T from "./misc/T.astro";
+
 
 interface Props {
 	class: string;
@@ -59,7 +61,7 @@ const className = Astro.props.class;
             <a href={url(`/archive/category/${category || 'uncategorized'}/`)} aria-label=`View all posts in the ${category} category`
                class="link-lg transition text-50 text-sm font-medium
                             hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap">
-                {category || i18n(I18nKey.uncategorized)}
+                {category || <T name={I18nKey.uncategorized} />}
             </a>
         </div>
     </div>
@@ -79,7 +81,7 @@ const className = Astro.props.class;
                     {tag}
                 </a>
             ))}
-            {!(tags && tags.length > 0) && <div class="transition text-50 text-sm font-medium">{i18n(I18nKey.noTags)}</div>}
+            {!(tags && tags.length > 0) && <div class="transition text-50 text-sm font-medium"><T name={I18nKey.noTags} /></div>}
         </div>
     </div>
 </div>

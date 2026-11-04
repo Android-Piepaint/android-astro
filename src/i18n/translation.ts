@@ -31,7 +31,7 @@ const map: { [key: string]: Translation } = {
 };
 
 export function getTranslation(lang: string): Translation {
-	return map[lang.toLowerCase()] || defaultTranslation;
+	return map[lang.toLowerCase().replace("-", "_")] || defaultTranslation;
 }
 
 export function i18n(key: I18nKey): string {
