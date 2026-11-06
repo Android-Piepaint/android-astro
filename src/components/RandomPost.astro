@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import I18nKey from "../i18n/i18nKey";
+import T from "./misc/T.astro";
+
+const posts = await getCollection("posts", ({ data }) =>
+  import.meta.env.PROD ? data.draft !== true : true
+);
+const urls = posts.map((p) => {
+  // Astro 5 content layer: id (e.g. "en/my-post"); legacy collections: slug
+  const slug = p.slug ?? p.id.replace(/\.mdx?$/, "");
+  return `/posts/${slug}/`;
+});
+---
+
+<button
+  type="button"
+  data-random-post
+  data-urls={JSON.stringify(urls)}
+  class="btn-plain scale-animation rounded-lg h-11 font-bold px-3 shrink-0 active:scale-95"
+>
+  <div class="flex items-center whitespace-nowrap">
+    <T name={I18nKey.randomPost} />
+  </div>
+</button>
+
+<script>
+  // Same rule for the label and the random pick: language comes from the URL
+  const currentLang = () => {
+    const p = location.pathname;
+    if (p.startsWith("/posts/en/")) return "en";
+    if (p.startsWith("/posts/ko/")) return "ko";
+    return "zh-TW";
+  };
+
+  const updateLabels = () => {
+    document.querySelectorAll<HTMLElement>("[data-random-post]").forEach((btn) => {
+      const labels = JSON.parse(btn.dataset.labels ?? "{}");
+      const text = labels[currentLang()] ?? labels.en;
+      const el = btn.querySelector("[data-random-label]");
+      if (el) el.textContent = text;
+      btn.setAttribute("aria-label", text);
+    });
+  };
+
+  updateLabels();
+  // Re-run after Swup page transitions (the navbar isn't replaced, but the language can change)
+  const hookSwup = () => (window as any).swup?.hooks?.on("page:view", updateLabels);
+  if ((window as any).swup) hookSwup();
+  else document.addEventListener("swup:enable", hookSwup);
+  window.addEventListener("popstate", updateLabels);
+
+  document.addEventListener("click", (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLElement>("[data-random-post]");
+    if (!btn) return;
+
+    const all: string[] = JSON.parse(btn.dataset.urls ?? "[]");
+    const path = location.pathname;
+    const lang = currentLang();
+    const inLang = (u: string) =>
+      lang === "zh-TW"
+        ? !u.startsWith("/posts/en/") && !u.startsWith("/posts/ko/")
+        : u.startsWith(`/posts/${lang}/`);
+
+const pool = all.filter(
+  (u) => !u.includes("undefined") && inLang(u) && u !== path && u + "/" !== path
+);    if (!pool.length) return;
+
+    const target = pool[Math.floor(Math.random() * pool.length)];
+    (window as any).swup?.navigate
+      ? (window as any).swup.navigate(target)
+      : (location.href = target);
+  });
+</script>

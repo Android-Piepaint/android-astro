@@ -15,6 +15,7 @@ enum I18nKey {
 	noTags = "noTags",
 
 	wordCount = "wordCount",
+	randomPost = "randomPost",
 	wordsCount = "wordsCount",
 	minuteCount = "minuteCount",
 	minutesCount = "minutesCount",

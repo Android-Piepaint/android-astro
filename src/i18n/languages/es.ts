@@ -5,7 +5,7 @@ export const es: Translation = {
 	[Key.home]: "Inicio",
 	[Key.about]: "Sobre mí",
 	[Key.archive]: "Archivo",
-	[Key.search]: "Buscar",
+	[Key.search]: "Buscar...",
 
 	[Key.tags]: "Etiquetas",
 	[Key.categories]: "Categorías",
@@ -23,6 +23,7 @@ export const es: Translation = {
 	[Key.minutesCount]: "minutos",
 	[Key.postCount]: "publicación",
 	[Key.postsCount]: "publicaciones",
+	[Key.randomPost]: "Artículo aleatorio",
 
 	[Key.themeColor]: "Color del tema",
 

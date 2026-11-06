@@ -5,7 +5,7 @@ export const zh_CN: Translation = {
 	[Key.home]: "主页",
 	[Key.about]: "关于",
 	[Key.archive]: "归档",
-	[Key.search]: "搜索",
+	[Key.search]: "搜索...",
 
 	[Key.tags]: "标签",
 	[Key.categories]: "分类",
@@ -34,5 +34,6 @@ export const zh_CN: Translation = {
 
 	[Key.author]: "作者",
 	[Key.publishedAt]: "发布于",
+	[Key.randomPost]: "随机文章",
 	[Key.license]: "许可协议",
 };

@@ -35,6 +35,12 @@ export function getTranslation(lang: string): Translation {
 }
 
 export function i18n(key: I18nKey): string {
-	const lang = siteConfig.lang || "en";
+//	const lang = siteConfig.lang || "en";
+	let lang = siteConfig.lang || "en";
+	if (typeof window !== "undefined") {
+		try {
+			lang = localStorage.getItem("site-lang") || lang;
+		} catch {}
+	}
 	return getTranslation(lang)[key];
 }

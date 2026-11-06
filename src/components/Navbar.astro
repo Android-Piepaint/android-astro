@@ -7,6 +7,7 @@ import { url } from "../utils/url-utils";
 import LightDarkSwitch from "./LightDarkSwitch.svelte";
 import Search from "./Search.svelte";
 import LanguagePicker from './LanguagePicker.astro';
+import RandomPost from "./RandomPost.astro";
 import I18nKey from "../i18n/i18nKey"
 import DisplaySettings from "./widget/DisplaySettings.svelte";
 import NavMenuPanel from "./widget/NavMenuPanel.astro";
@@ -25,6 +26,9 @@ let links: NavBarLink[] = navBarConfig.links
 	)
 	.map((l) => ({ ...l, i18nKey: l.i18nKey ?? keyByUrl[l.url] }));
 ---
+
+
+
 <div id="navbar" class="z-50 onload-animation">
     <div class:list={[
     className,
@@ -40,18 +44,21 @@ let links: NavBarLink[] = navBarConfig.links
     </div>
 </a>
 
+
+
 <div class="hidden md:flex flex-1 justify-end px-2 min-w-0 overflow-hidden">
-        {links.map((l) => {
-        return (
+    <div class="flex mr-auto">
+        {links.map((l) => (
             <a aria-label={l.name} href={l.external ? l.url : url(l.url)} target={l.external ? "_blank" : null}
-               class="btn-plain scale-animation rounded-lg h-11 font-bold px-2 active:scale-95 shrink-0">
+               class="btn-plain scale-animation rounded-lg h-11 font-bold px-3 active:scale-95 shrink-0">
                 <div class="flex items-center whitespace-nowrap">
                     {l.i18nKey ? <T name={l.i18nKey} /> : l.name}
                     {l.external && <Icon name="fa6-solid:arrow-up-right-from-square" class="text-[0.875rem] transition -translate-y-[1px] ml-1 text-black/[0.2] dark:text-white/[0.2]"></Icon>}
                 </div>
             </a>
-        );
-    })}
+        ))}
+        <RandomPost />
+    </div>
 
         <div class="flex">
             <!--<SearchPanel client:load>-->
@@ -71,6 +78,7 @@ let links: NavBarLink[] = navBarConfig.links
     </div>
 </div>
 </div>
+
 
 <script>
 function switchTheme() {
@@ -127,3 +135,4 @@ async function loadPagefind() {
 }
 loadPagefind()
 </script>}
+

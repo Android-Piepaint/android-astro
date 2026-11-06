@@ -9,12 +9,22 @@ draft: false
 lang: 'en'
 ---
 
-
+此處曾有文書存在，然今則空虛矣。</br>
+或為 已刪之 文書，或為 已移之 頁面。</br>
+無論 如何，現在 皆已 消失無蹤。</br>
+</br>
 There was something that used to exist here, but it's empty now.</br>
 Maybe it was a blog post that was deleted, or maybe it was a page that was moved to another location.</br>
 Either way, it's gone now.</br>
 </br>
-`:(`</br>
+예전에는 이곳에 무언가가 있었지만, 지금은 비어 있습니다.</br>
+削除된 블로그(Blog) 文書이었을지도, 其他 場所로 移動한 페이지(Page)이었을지도 모른다.</br>
+어찌 되었든，現在는 消失되어 버렸다.</br>
+</br>
+
+`:(`
+
+</br>
 </br>
 </br>
 </br>

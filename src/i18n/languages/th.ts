@@ -5,7 +5,7 @@ export const th: Translation = {
 	[Key.home]: "หน้าแรก",
 	[Key.about]: "เกี่ยวกับ",
 	[Key.archive]: "คลัง",
-	[Key.search]: "ค้นหา",
+	[Key.search]: "ค้นหา...",
 
 	[Key.tags]: "ป้ายกำกับ",
 	[Key.categories]: "หมวดหมู่",
@@ -29,6 +29,7 @@ export const th: Translation = {
 	[Key.lightMode]: "สว่าง",
 	[Key.darkMode]: "มืด",
 	[Key.systemMode]: "ตามระบบ",
+	[Key.randomPost]: "บทความสุ่ม",
 
 	[Key.more]: "ดูเพิ่ม",
 

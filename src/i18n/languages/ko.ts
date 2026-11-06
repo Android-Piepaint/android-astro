@@ -5,7 +5,7 @@ export const ko: Translation = {
 	[Key.home]: "大門",
 	[Key.about]: "紹介",
 	[Key.archive]: "保管所",
-	[Key.search]: "檢索",
+	[Key.search]: "檢索(검색)...",
 
 	[Key.tags]: "標示",
 	[Key.categories]: "分類",
@@ -29,6 +29,7 @@ export const ko: Translation = {
 	[Key.lightMode]: "밝은 모드",
 	[Key.darkMode]: "어두운 모드",
 	[Key.systemMode]: "시스템 모드",
+	[Key.randomPost]: "任意文書",
 
 	[Key.more]: "더 보기",
 

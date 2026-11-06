@@ -5,7 +5,7 @@ export const ja: Translation = {
 	[Key.home]: "Home",
 	[Key.about]: "About",
 	[Key.archive]: "Archive",
-	[Key.search]: "検索",
+	[Key.search]: "検索...",
 
 	[Key.tags]: "タグ",
 	[Key.categories]: "カテゴリ",
@@ -33,6 +33,7 @@ export const ja: Translation = {
 	[Key.more]: "もっと",
 
 	[Key.author]: "作者",
+	[Key.randomPost]: "ランダム記事",
 	[Key.publishedAt]: "公開日",
 	[Key.license]: "ライセンス",
 };
