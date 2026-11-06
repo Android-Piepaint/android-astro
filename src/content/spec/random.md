@@ -20,6 +20,11 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 11月6日
+
+Android 17 的存儲空間計量方式似乎有問題。Android 14 以前，使用者儲存空間的大小取決於 `userdata` 分割的大小，但是 Android 17 開始，手機儲存空間的容量判斷應該是改爲直接通過 `sysfs` 讀取本機 UFS 快閃記憶體的容量。因此如果後期因爲改裝 Linux 或者其他系統而調整了 `userdata` 分割的大小的，就會出現剩餘容量顯示錯誤的情況。例如通過 `gdisk` 將 `userdata` 改爲64GB，之後重開機在系統設定中就會看到「51% used -- 65.28GB free」的提示。以及 Android 系統「佔用64GB」的景象。但是 `df -h` 命令會顯示正確的容量。</br>
+</br>
+
 ## 11月5日
 
 Pantyhose 是連褲襪，那 firehose 是什麼呢？也是連褲襪的一種？這樣看來每次用 EDL 刷 Snapdragon 裝置的時候也要不可避免的同「襪子」打交道了，這種「襪子」甚至會熔燬妳裝置的CPU...先是有名的「programming socks」，再是「firehose」...程式開發者的笑話真的不勝枚舉啊！ `xD` </br>
