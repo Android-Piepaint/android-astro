@@ -2,52 +2,159 @@
 ---
 <div id="giscus-container"></div>
 
+<style is:global>
+  #giscus-toggle {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 5.25rem;
+    z-index: 100;
+    height: 3rem;
+    padding: 0 0.9rem;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--float-panel-bg, rgba(255, 255, 255, 0.85));
+    color: var(--primary, #5b9bd5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.15s;
+  }
+  #giscus-toggle:hover { transform: scale(1.05); }
+  #giscus-toggle svg { flex-shrink: 0; }
+  #giscus-toggle .slash { display: none; }
+  #giscus-toggle.is-off .slash { display: block; }
+  #giscus-toggle.is-off { opacity: 0.7; }
+  .dark #giscus-toggle { border-color: rgba(255, 255, 255, 0.1); }
+</style>
+
 <script>
-  // giscus supports these; fall back to English otherwise
+  const KEY = "giscus-enabled";
+
   const LANG_MAP: Record<string, string> = {
-    "zh-TW": "zh-TW", zh_TW: "zh-TW",
-    "zh-CN": "zh-CN", zh_CN: "zh-CN",
+    "zh-TW": "zh-TW", "zh-CN": "zh-CN", zh_CN: "zh-CN",
     en: "en", ko: "ko", ja: "ja", es: "es",
   };
 
-  function getLang() {
-    const m = location.pathname.match(/^\/posts\/(en|ko|ja|es|th|zh_CN)\//);
-    return m ? m[1] : "en";
+  const LABELS: Record<string, { hide: string; show: string }> = {
+    "zh-TW": { hide: "隱藏留言板", show: "顯示留言板" },
+    zh_CN: { hide: "隐藏评论", show: "显示评论" },
+    en: { hide: "Hide comments", show: "Show comments" },
+    ko: { hide: "論評 擴張하기", show: "論評 보기" },
+    ja: { hide: "コメントを非表示", show: "コメントを表示" },
+    es: { hide: "Ocultar comentarios", show: "Mostrar comentarios" },
+    th: { hide: "ซ่อนความคิดเห็น", show: "แสดงความคิดเห็น" },
+  };
+
+  const LANG_RE = /^\/posts\/(en|ko|ja|es|th|zh_CN)\//;
+
+  const norm = (l: string) => {
+  const v = l.replace("_", "-");
+  if (/^zh-(tw|hk|hant)/i.test(v)) return "zh-TW";
+  if (/^zh/i.test(v)) return "zh_CN";
+  return v.split("-")[0].toLowerCase(); // en, ko, ja, es, th
+};
+
+const getLang = () => {
+  // 1. language stored by the picker (edit the key names to match yours)
+  try {
+    for (const k of ["lang", "language", "locale", "ui-lang", "site-lang"]) {
+      const v = localStorage.getItem(k);
+      if (v) return norm(v);
+    }
+  } catch {}
+  // 2. <html lang="..."> set by the picker or the layout
+  const htmlLang = document.documentElement.lang;
+  if (htmlLang) return norm(htmlLang);
+  // 3. language in the URL
+  const m = location.pathname.match(LANG_RE);
+  return m ? m[1] : "en";
+};
+  const getTerm = () => location.pathname.replace(LANG_RE, "/posts/");
+  const getTheme = () =>
+    document.documentElement.classList.contains("dark") ? "dark" : "light";
+
+  const isEnabled = () => {
+    try { return localStorage.getItem(KEY) !== "off"; } catch { return true; }
+  };
+  const setEnabled = (v: boolean) => {
+    try { localStorage.setItem(KEY, v ? "on" : "off"); } catch {}
+  };
+
+  function ensureButton(): HTMLButtonElement {
+    let btn = document.getElementById("giscus-toggle") as HTMLButtonElement | null;
+    if (btn) return btn;
+
+    btn = document.createElement("button");
+    btn.id = "giscus-toggle";
+    btn.type = "button";
+    btn.innerHTML = `
+      <span class="label"></span>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <line class="slash" x1="3" y1="3" x2="21" y2="21" />
+      </svg>`;
+    btn.addEventListener("click", () => {
+      setEnabled(!isEnabled());
+      render();
+    });
+    document.body.appendChild(btn); // outside any transformed container
+    return btn;
   }
 
-  // Strip the language prefix so all translations share ONE comment thread
-  function getTerm() {
-    return location.pathname.replace(/^\/posts\/(en|ko|ja|es|th|zh_CN)\//, "/posts/");
-  }
-
-  function getTheme() {
-    return document.documentElement.classList.contains("dark") ? "dark" : "light";
-  }
-
-  function loadGiscus() {
-    const container = document.getElementById("giscus-container");
-    if (!container) return;
+  function loadGiscus(container: HTMLElement) {
     container.innerHTML = "";
-
     const s = document.createElement("script");
-s.src = "https://giscus.app/client.js";
-s.setAttribute("data-repo", "Android-Piepaint/android-astro");
-s.setAttribute("data-repo-id", "R_kgDOOeXhmw");
-s.setAttribute("data-category", "General");
-s.setAttribute("data-category-id", "DIC_kwDOOeXhm84DKoi3");
-s.setAttribute("data-mapping", "title");
-s.setAttribute("data-term", getTerm());
-s.setAttribute("data-reactions-enabled", "1");
-s.setAttribute("data-input-position", "bottom");
-s.setAttribute("data-theme", getTheme());
-s.setAttribute("data-lang", LANG_MAP[getLang()] ?? "en");
-s.setAttribute("data-loading", "lazy");
-s.crossOrigin = "anonymous";
-s.async = true;
-container.appendChild(s);
+    s.src = "https://giscus.app/client.js";
+    s.setAttribute("data-repo", "Android-Piepaint/android-astro");
+    s.setAttribute("data-repo-id", "R_kgDOOeXhmw");
+    s.setAttribute("data-category", "General");
+    s.setAttribute("data-category-id", "DIC_kwDOOeXhm84DKoi3");
+    s.setAttribute("data-mapping", "title");
+    s.setAttribute("data-term", getTerm());
+    s.setAttribute("data-reactions-enabled", "1");
+    s.setAttribute("data-input-position", "bottom");
+    s.setAttribute("data-theme", getTheme());
+    s.setAttribute("data-lang", LANG_MAP[getLang()] ?? "en");
+    s.setAttribute("data-loading", "lazy");
+    s.crossOrigin = "anonymous";
+    s.async = true;
+    container.appendChild(s);
+    container.dataset.loaded = "1";
   }
 
-  // Keep giscus in sync with your dark/light toggle
+   function render() {
+    const btn = ensureButton();
+    const container = document.getElementById("giscus-container");
+
+    // No comment area on this page (e.g. home page): hide the button
+    if (!container) {
+      btn.style.display = "none";
+      return;
+    }
+    btn.style.display = "";
+
+    const on = isEnabled();
+    const t = LABELS[getLang()] ?? LABELS.en;
+    const label = on ? t.hide : t.show;
+
+    const labelEl = btn.querySelector(".label");
+    if (labelEl) labelEl.textContent = label;
+    btn.title = label;
+    btn.setAttribute("aria-label", label);
+    btn.setAttribute("aria-pressed", String(on));
+    btn.classList.toggle("is-off", !on);
+
+    container.style.display = on ? "" : "none";
+    if (on && !container.dataset.loaded) loadGiscus(container);
+  }
+
   new MutationObserver(() => {
     const iframe = document.querySelector<HTMLIFrameElement>("iframe.giscus-frame");
     iframe?.contentWindow?.postMessage(
@@ -56,9 +163,8 @@ container.appendChild(s);
     );
   }).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
-  loadGiscus();
+  render();
 
-  // Swup swaps the page without a reload, so reload giscus after each navigation
-  const hook = () => (window as any).swup?.hooks.on("page:view", loadGiscus);
+  const hook = () => (window as any).swup?.hooks.on("page:view", render);
   (window as any).swup ? hook() : document.addEventListener("swup:enable", hook);
 </script>
