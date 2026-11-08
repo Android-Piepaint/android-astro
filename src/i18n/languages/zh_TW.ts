@@ -30,7 +30,7 @@ export const zh_TW: Translation = {
 	[Key.darkMode]: "暗色",
 	[Key.systemMode]: "跟隨系統",
 	[Key.randomPost]: "隨機文章",
-	[Key.Leecense]: "李!協議", 
+	[Key.Leecense]: "許李!協議", 
 
 	[Key.more]: "更多",
 
