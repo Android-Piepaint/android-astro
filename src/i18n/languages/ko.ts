@@ -30,6 +30,7 @@ export const ko: Translation = {
 	[Key.darkMode]: "어두운 모드",
 	[Key.systemMode]: "시스템 모드",
 	[Key.randomPost]: "任意文書",
+	[Key.Leecense]: "李!선스", 
 
 	[Key.more]: "더 보기",
 

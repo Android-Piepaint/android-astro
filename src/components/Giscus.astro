@@ -1,0 +1,64 @@
+---
+---
+<div id="giscus-container"></div>
+
+<script>
+  // giscus supports these; fall back to English otherwise
+  const LANG_MAP: Record<string, string> = {
+    "zh-TW": "zh-TW", zh_TW: "zh-TW",
+    "zh-CN": "zh-CN", zh_CN: "zh-CN",
+    en: "en", ko: "ko", ja: "ja", es: "es",
+  };
+
+  function getLang() {
+    const m = location.pathname.match(/^\/posts\/(en|ko|ja|es|th|zh_CN)\//);
+    return m ? m[1] : "en";
+  }
+
+  // Strip the language prefix so all translations share ONE comment thread
+  function getTerm() {
+    return location.pathname.replace(/^\/posts\/(en|ko|ja|es|th|zh_CN)\//, "/posts/");
+  }
+
+  function getTheme() {
+    return document.documentElement.classList.contains("dark") ? "dark" : "light";
+  }
+
+  function loadGiscus() {
+    const container = document.getElementById("giscus-container");
+    if (!container) return;
+    container.innerHTML = "";
+
+    const s = document.createElement("script");
+s.src = "https://giscus.app/client.js";
+s.setAttribute("data-repo", "Android-Piepaint/android-astro");
+s.setAttribute("data-repo-id", "R_kgDOOeXhmw");
+s.setAttribute("data-category", "General");
+s.setAttribute("data-category-id", "DIC_kwDOOeXhm84DKoi3");
+s.setAttribute("data-mapping", "title");
+s.setAttribute("data-term", getTerm());
+s.setAttribute("data-reactions-enabled", "1");
+s.setAttribute("data-input-position", "bottom");
+s.setAttribute("data-theme", getTheme());
+s.setAttribute("data-lang", LANG_MAP[getLang()] ?? "en");
+s.setAttribute("data-loading", "lazy");
+s.crossOrigin = "anonymous";
+s.async = true;
+container.appendChild(s);
+  }
+
+  // Keep giscus in sync with your dark/light toggle
+  new MutationObserver(() => {
+    const iframe = document.querySelector<HTMLIFrameElement>("iframe.giscus-frame");
+    iframe?.contentWindow?.postMessage(
+      { giscus: { setConfig: { theme: getTheme() } } },
+      "https://giscus.app"
+    );
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+  loadGiscus();
+
+  // Swup swaps the page without a reload, so reload giscus after each navigation
+  const hook = () => (window as any).swup?.hooks.on("page:view", loadGiscus);
+  (window as any).swup ? hook() : document.addEventListener("swup:enable", hook);
+</script>

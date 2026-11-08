@@ -16,6 +16,7 @@ enum I18nKey {
 
 	wordCount = "wordCount",
 	randomPost = "randomPost",
+	Leecense = "Leecense",
 	wordsCount = "wordsCount",
 	minuteCount = "minuteCount",
 	minutesCount = "minutesCount",

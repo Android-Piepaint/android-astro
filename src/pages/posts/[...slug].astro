@@ -1,7 +1,7 @@
 ---
 import path from "node:path";
 import { getCollection, render } from "astro:content";
-import { render } from "astro:content";
+//import { render } from "astro:content";
 import License from "@components/misc/License.astro";
 import Markdown from "@components/misc/Markdown.astro";
 import I18nKey from "@i18n/i18nKey";
@@ -15,6 +15,7 @@ import PostMetadata from "../../components/PostMeta.astro";
 import T from "../../components/misc/T.astro";
 import ImageWrapper from "../../components/misc/ImageWrapper.astro";
 import { profileConfig, siteConfig } from "../../config";
+import Giscus from "@components/Giscus.astro";
 import { formatDateMinguo, formatDateToYYYYMMDD } from "../../utils/date-utils";
 
 export async function getStaticPaths() {
@@ -143,4 +144,5 @@ const jsonLd = {
         </a>
     </div>
 
+    <Giscus />
 </MainGridLayout>
