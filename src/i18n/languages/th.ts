@@ -32,6 +32,10 @@ export const th: Translation = {
 	[Key.randomPost]: "บทความสุ่ม",
 
 	[Key.more]: "ดูเพิ่ม",
+	[Key.gallery]: "แกลเลอรี",
+	[Key.galleryDescription]: "รูปภาพที่ฉันถ่ายและรวบรวมไว้",
+	[Key.gallerySortNewest]: "ใหม่สุดก่อน",
+	[Key.gallerySortOldest]: "เก่าสุดก่อน",
 
 	[Key.author]: "ผู้เขียน",
 	[Key.publishedAt]: "เผยแพร่เมื่อ",

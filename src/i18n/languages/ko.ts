@@ -31,12 +31,12 @@ export const ko: Translation = {
 	[Key.systemMode]: "시스템 모드",
 	[Key.randomPost]: "任意文書",
 	[Key.Leecense]: "李!선스", 
-	[Key.gallerySortNewest]: "새로운 順",
-	[Key.gallerySortOldest]: "오래된 順",
+	[Key.gallerySortNewest]: "最新順",
+	[Key.gallerySortOldest]: "오래된順",
 
 	[Key.more]: "더 보기",
 	[Key.gallery]: "寫眞集",
-	[Key.galleryDescription]: "個人的 作品들",
+	[Key.galleryDescription]: "個人는 찍고 모은 寫眞들입니다.",
 
 	[Key.author]: "著者",
 	[Key.publishedAt]: "公開日",

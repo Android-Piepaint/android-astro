@@ -31,6 +31,10 @@ export const ja: Translation = {
 	[Key.systemMode]: "システム",
 
 	[Key.more]: "もっと",
+	[Key.gallery]: "ギャラリー",
+	[Key.galleryDescription]: "撮影・収集した写真です。",
+	[Key.gallerySortNewest]: "新しい順",
+	[Key.gallerySortOldest]: "古い順",
 
 	[Key.author]: "作者",
 	[Key.randomPost]: "ランダム記事",

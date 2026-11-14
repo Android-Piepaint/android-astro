@@ -32,6 +32,10 @@ export const es: Translation = {
 	[Key.systemMode]: "Sistema",
 
 	[Key.more]: "Más",
+	[Key.gallery]: "Galería",
+	[Key.galleryDescription]: "Imágenes que he tomado y recopilado.",
+	[Key.gallerySortNewest]: "Más recientes primero",
+	[Key.gallerySortOldest]: "Más antiguas primero",
 
 	[Key.author]: "Autor",
 	[Key.publishedAt]: "Publicado el",
