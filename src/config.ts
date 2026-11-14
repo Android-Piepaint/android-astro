@@ -16,12 +16,12 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: true,
-		src: "https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		src: "https://github.com/Android-Piepaint/android-piepaint.github.io/blob/main/mtp8750-linux2.jpg?raw=true", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: true, // Display the credit text of the banner image
-			text: "Shot by EDKPiepaint", // Credit text to be displayed
-			url: "https://raw.githubusercontent.com/Android-Piepaint/android-piepaint.github.io/refs/heads/main/2b54d41dfed991fc2e27a7470612de8a.jpeg", // (Optional) URL link to the original artwork or artist's page
+			text: "Shot by EDKPiepaint using his Pixel 7", // Credit text to be displayed
+			url: "https://github.com/Android-Piepaint/android-piepaint.github.io/blob/main/mtp8750-linux2.jpg?raw=true", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
 	toc: {
