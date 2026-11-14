@@ -31,6 +31,10 @@ export const zh_TW: Translation = {
 	[Key.systemMode]: "跟隨系統",
 	[Key.randomPost]: "隨機文章",
 	[Key.Leecense]: "許李!協議", 
+	[Key.gallery]: "相簿",
+	[Key.gallerySortNewest]: "最新",
+	[Key.gallerySortOldest]: "最舊",
+	[Key.galleryDescription]: "我創作的作品",
 
 	[Key.more]: "更多",
 

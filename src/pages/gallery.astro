@@ -1,0 +1,111 @@
+---
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+import { Image } from "astro:assets";
+import { gallery } from "../data/gallery";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+
+const modules = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/gallery/*.{jpg,jpeg,png,webp,avif}",
+  { eager: true }
+);
+
+// Newest first by default; the button on the page can flip the order.
+const items = gallery
+  .map((item) => ({
+    ...item,
+    img: modules[`../assets/gallery/${item.file}`]?.default,
+  }))
+  .filter((item) => item.img)
+  .sort((a, b) => b.date.localeCompare(a.date));
+
+const fmt = (d: string) =>
+  new Date(d).toLocaleDateString("en-CA", { timeZone: "UTC" }); // 2026-11-10
+---
+
+<MainGridLayout title={i18n(I18nKey.gallery)}>
+  <div class="card-base p-6 onload-animation">
+    <h1 class="text-3xl font-bold text-90 mb-2">{i18n(I18nKey.gallery)}</h1>
+    <p class="text-50 mb-4">{i18n(I18nKey.galleryDescription)}</p>
+
+    <div class="mb-6">
+      <button
+        type="button"
+        class="btn-regular rounded-lg px-3 h-9 text-sm"
+        data-gallery-sort
+        data-order="desc"
+        data-label-desc={i18n(I18nKey.gallerySortNewest)}
+        data-label-asc={i18n(I18nKey.gallerySortOldest)}
+      >
+        {i18n(I18nKey.gallerySortNewest)}
+      </button>
+    </div>
+
+    <div class="gallery-wall">
+      {items.map((item) => (
+        <figure class="gallery-item" data-date={item.date}>
+          <a href={item.img.src} data-gallery>
+            <Image src={item.img} alt={item.caption} width={700} loading="lazy" />
+          </a>
+          <figcaption>
+            <time datetime={item.date} class="text-50">{fmt(item.date)}</time>
+            <span class="text-75">{item.caption}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</MainGridLayout>
+
+<style>
+  .gallery-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    align-items: start;
+  }
+  .gallery-item {
+    margin: 0;
+  }
+  .gallery-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    display: block;
+  }
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    padding: 0.5rem 0.25rem 0;
+    font-size: 0.875rem;
+  }
+  figcaption time {
+    font-size: 0.75rem;
+  }
+</style>
+
+<script>
+  // Delegated on document so it keeps working after Swup page swaps.
+  document.addEventListener("click", (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(
+      "[data-gallery-sort]"
+    );
+    if (!btn) return;
+    const wall = document.querySelector<HTMLElement>(".gallery-wall");
+    if (!wall) return;
+
+    const next = btn.dataset.order === "desc" ? "asc" : "desc";
+    btn.dataset.order = next;
+    btn.textContent =
+      (next === "desc" ? btn.dataset.labelDesc : btn.dataset.labelAsc) ?? "";
+
+    const figs = Array.from(wall.children) as HTMLElement[];
+    figs.sort((a, b) => {
+      const c = (a.dataset.date ?? "").localeCompare(b.dataset.date ?? "");
+      return next === "asc" ? c : -c;
+    });
+    figs.forEach((f) => wall.appendChild(f));
+  });
+</script>

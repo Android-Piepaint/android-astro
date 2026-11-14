@@ -20,7 +20,7 @@ export const siteConfig: SiteConfig = {
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: true, // Display the credit text of the banner image
-			text: "Shot by EDKPiepaint using his Pixel 7", // Credit text to be displayed
+			text: "Shot by EDKPiepaint", // Credit text to be displayed
 			url: "https://github.com/Android-Piepaint/android-piepaint.github.io/blob/main/mtp8750-linux2.jpg?raw=true", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
@@ -66,11 +66,6 @@ export const profileConfig: ProfileConfig = {
 			url: "https://x.com/FTMC728",
 		},
 		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
-		},
-		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/Android-Piepaint",
@@ -79,6 +74,11 @@ export const profileConfig: ProfileConfig = {
 			name: "RSS Atom Feed",
 			icon: "fa6-solid:square-rss",
 			url: "https://blog.cloudflare88.eu.org/rss.xml",
+		},
+		{ 	
+			name: "Gallery", 
+			icon: "fa6-regular:images", 
+			url: "/gallery/",
 		},
 	],
 };

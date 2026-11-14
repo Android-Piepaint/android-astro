@@ -30,6 +30,10 @@ export const zh_CN: Translation = {
 	[Key.darkMode]: "暗色",
 	[Key.systemMode]: "跟随系统",
 	[Key.Leecense]: "李!선스", 
+	[Key.gallery]: "相簿",
+	[Key.gallerySortNewest]: "最新",
+	[Key.gallerySortOldest]: "最舊",
+	[Key.galleryDescription]: "我創作的作品",
 
 	[Key.more]: "更多",
 

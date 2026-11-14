@@ -34,6 +34,10 @@ enum I18nKey {
 	author = "author",
 	publishedAt = "publishedAt",
 	license = "license",
+	gallery = "gallery",
+	gallerySortNewest = "gallerySortNewest",
+	gallerySortOldest = "gallerySortOldest",
+	galleryDescription = "galleryDescription",
 }
 
 export default I18nKey;

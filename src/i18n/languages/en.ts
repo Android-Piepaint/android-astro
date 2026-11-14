@@ -32,6 +32,10 @@ export const en: Translation = {
 
 	[Key.more]: "More",
 	[Key.Leecense]: "Leecense", 
+	[Key.gallery]: "Gallery",
+	[Key.gallerySortNewest]: "Newest first",
+	[Key.gallerySortOldest]: "Oldest first",
+	[Key.galleryDescription]: "Pictures I've taken and collected.",
 
 	[Key.author]: "Author",
 	[Key.publishedAt]: "Published at",
