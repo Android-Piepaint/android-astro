@@ -10,7 +10,7 @@ lang: 'en'
 
 # 動態牆
 
-<img src="/assets/mtp8750-front-view-2.png" >
+<img src="/assets/mtp8750-linux.png" >
 
 這是我用於記錄簡單想法的地方，與首頁的長篇文章不同，這裏的部分內容可能會成爲新的文章。</br>
 </br>
