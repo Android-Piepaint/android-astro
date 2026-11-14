@@ -120,6 +120,7 @@ export default defineConfig({
 		exclude: ["@iconify/svelte"],
 	},
 	build: {
+		cssMinify: "esbuild",
 		rollupOptions: {
 			onwarn(warning, warn) {
 				// temporarily suppress this warning
