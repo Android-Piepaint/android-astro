@@ -9,6 +9,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeComponents from "rehype-components"; /* Render the custom directive content */
 import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
+import { unified } from "@astrojs/markdown-remark";
 import remarkDirective from "remark-directive"; /* Handle directives */
 import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 import remarkMath from "remark-math";
@@ -25,7 +26,7 @@ export default defineConfig({
 	base: "/",
 	trailingSlash: "always",
 	i18n: {
-        defaultLocale: "zh-TW",               // 預設語系（例如：中文）
+        defaultLocale: "en",               // 預設語系（例如：中文）
         locales: ["zh-TW", "en", "ko"],             // 所有支援的語系清單
         routing: {
             prefixDefaultLocale: false,    // false 代表預設語系的網址不用加前綴（如：/about/）
@@ -69,6 +70,7 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
+	processor: unified({
 		remarkPlugins: [
 			remarkMath,
 			remarkReadingTime,
@@ -98,9 +100,7 @@ export default defineConfig({
 				rehypeAutolinkHeadings,
 				{
 					behavior: "append",
-					properties: {
-						className: ["anchor"],
-					},
+					properties: { className: ["anchor"] },
 					content: {
 						type: "element",
 						tagName: "span",
@@ -108,17 +108,13 @@ export default defineConfig({
 							className: ["anchor-icon"],
 							"data-pagefind-ignore": true,
 						},
-						children: [
-							{
-								type: "text",
-								value: "#",
-							},
-						],
+						children: [{ type: "text", value: "#" }],
 					},
 				},
 			],
 		],
-	},
+	}),
+},
 	vite: {
 	optimizeDeps: {
 		exclude: ["@iconify/svelte"],
