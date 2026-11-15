@@ -122,7 +122,7 @@ Pantyhose 是連褲襪，那 firehose 是什麼呢？也是連褲襪的一種？
 
 ## 11月2日
 
-隨着 AI & LLM 的高速發展和大流行，各種各樣的專案也就像雨後春筍一樣，湧現在我們的眼中。眼看各 porter 發動神力將 iOS 移植到 Android 裝置，macOS 跑在 Snapdragon 筆電上，NuraOS(曾用名:PostmarketOS)專案卻[禁止人們使用 AI 輔助](https://docs.nura.eco/policies-and-processes/development/ai-policy.html)移植 Linux，如果使用 AI 輔助的裝置 port 將不准許合併至 upstream repository。一些程式碼存儲庫，例如 Codeberg 也限制使用 LLM 維護專案。按理說使用 LLM 幫助可以推動 mainline kernel 支援更多裝置...或許是對可維護性有隱憂？話說 Google Pixel 中支援最好的竟然是 [Pixel 9 XL](https://wiki.nura.eco/wiki/Google_Pixel_9_Pro_XL_%28google-komodo%29)，除了相機無法使用，其餘功能都是完好的。當然，Tensor G4 晶片本就被 mainline 支援。</br>
+隨着 AI & LLM 的高速發展和大流行，各種各樣的專案也就像雨後春筍一樣，湧現在我們的眼中。眼看各 porter 發動神力將 iOS 移植到 Android 裝置，macOS 跑在 Snapdragon 筆電上，NuraOS(曾用名: PostmarketOS)專案卻[禁止人們使用 AI 輔助](https://docs.nura.eco/policies-and-processes/development/ai-policy.html)移植 Linux，如果使用 AI 輔助的裝置 port 將不准許合併至 upstream repository。一些程式碼存儲庫，例如 Codeberg 也限制使用 LLM 維護專案。按理說使用 LLM 幫助可以推動 mainline kernel 支援更多裝置...或許是對可維護性有隱憂？話說 Google Pixel 中支援最好的竟然是 [Pixel 9 XL](https://wiki.nura.eco/wiki/Google_Pixel_9_Pro_XL_%28google-komodo%29)，除了相機無法使用，其餘功能都是完好的。當然，Tensor G4 晶片本就被 mainline 支援。</br>
 </br>
 
 ## 11月1日
