@@ -20,6 +20,25 @@ lang: 'en'
 
 # 2026 年動態牆
 
+## 11月18日
+
+「Pointy ears(尖耳朵)」也叫「elf ears」「gnome ears」(中文世界也翻譯爲「精靈耳」)，是指耳廓頂端呈現明顯尖銳、向上延伸形狀的耳朵特徵。在流行文化中常常是敏銳和魔法天賦的象徵。......所以「蔚藍檔案」裡的「琳會長*」會使用何種作業系統來處理聯邦學生會的日常事務呢？應該是 Linux 或者 BSD 吧，因爲它們的可執行檔案類型都是 [ELF 檔**](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)，亦都支援使用 GNOME 桌面作爲一種 GUI 介面。</br>
+
+> _*: 是遊戲「蔚藍檔案」中的不可遊玩角色[「七神 リン」(羅馬音:Nanagami Rin)](https://bluearchive.wiki/wiki/Rin)的昵稱。Rin 的角色設計中就有非常經典的「尖耳朵」形象。_</br>
+
+> _**:是英語「可執行可鏈接」(**E**xecutable and **L**inkable **F**ormat)的單字縮寫。ELF 檔是一種可執行檔案的標準格式，具有可延伸，跨平臺的特性。除了常見的 Linux 電腦上的 App 以外，許多智慧型手機和嵌入式裝置的 bootloader 也是 ELF 檔。例如 Little kernel(LK)，Das U-Boot, Qualcomm 平臺的 SBL，PBL，ABL(僅限 MSM8998 等採用 UEFI 韌體的平臺以前)開機韌體都是 ELF 檔案。_</br>
+</br>
+
+## 11月17日
+
+祝賀本部落格訪問人數再次創造新紀錄，訪問人數達到390名。還有一位來自北韓的瀏覽者。</br>
+</br>
+
+## 11月16日
+
+[DoodleBook](https://github.com/PanOptikuum/DoodlebookOS)是一個 KDE Plasma 的自訂桌面主題，哪怕使用者不想藉助 [gbOSx86](https://gbos86.com/download)之類的專案來改裝筆電作業系統也可以還原 Android 17 的桌面體驗。</br>
+</br>
+
 ## 11月15日
 
  - 如果一開放原始碼的軟體須依靠專有的，封閉原始碼的服務或組件方可運作，則其與專有軟體無異，亦是幫助專有軟體開發者掠奪使用者個資的「兇手」。</br>
