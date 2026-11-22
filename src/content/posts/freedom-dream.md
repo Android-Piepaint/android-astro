@@ -9,6 +9,11 @@ draft: false
 lang: 'zh_TW'
 ---
 
+<audio controls>
+  <source src="https://github.com/Android-Piepaint/android-astro-files/raw/refs/heads/main/%E8%87%AA%E7%94%B1%E7%9A%84%E8%BF%B4%E9%9F%BF(Feat.%20Purwa%20Oryon)%20--%20%E6%A0%B9%E6%93%9A%20ChiliChill%20%E7%9A%84%E3%80%8C%E6%88%91%E4%B8%8D%E6%9B%BE%E5%BF%98%E8%A8%98%E3%80%8DFOSS%20%E6%94%B9%E7%B7%A8%20-%20usesuno.com.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
 # Intro
 
 我的什亭箱，</br>
