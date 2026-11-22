@@ -2,7 +2,7 @@
 title: 留意事項 -- 如何正確的引用本部落格所寫之文書
 published: 2026-11-19
 description: 因個人部落格所載之文書被「內容農場」及類似自動化程式大量盜取，更有甚者還進行牟利，故作本引用準則一篇。
-image: "minecraft-niri.png"
+image: 'assets/minecraft-niri.png'
 tags: ["License", "Blogging", "Sharing"]
 category: Guides
 draft: false
@@ -42,7 +42,7 @@ CC BY-NC-SA 4.0，又名「創用CC 姓名標示─非商業性─相同方式�
 若僅於己文中提及某篇文書之觀點，而未重製其受著作權保護之內容，可列明著者，文書名稱，刊載日期及原文網址，以便讀者查考。</br>
 
 ```text
-著者：EDKPiepaint
+著作者：EDKPiepaint
 文書：〈文書標題〉
 刊載於：EDKPiepaint's Personal Collections -- EDKPiepaint 的個人所藏
 原文網址：https://blog.cloudflare88.eu.org/article
@@ -70,7 +70,7 @@ CC BY-NC-SA 4.0，又名「創用CC 姓名標示─非商業性─相同方式�
 
 ```text
 原著名稱：〈文書標題〉
-**原著者：**EDKPiepaint
+**著作者：**EDKPiepaint
 文書出處：EDKPiepaint's Personal Collections -- EDKPiepaint 的個人所藏
 原著授權：CC BY-NC-SA 4.0 國際
 **使用方式：**翻譯／節錄／改寫／轉載（擇其適用者）
