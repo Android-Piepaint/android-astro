@@ -3,8 +3,8 @@ title: 小如簽章卡 --- Radxa Dragon Q6A 單板機紹介
 published: 2026-04-29
 description: ''
 image: 'assets/q6a-chip-view.jpg'
-tags: [Qualcomm, ARM, FOSS, Review]
-category: 'Single-board'
+tags: [Qualcomm, SBC, ARM, FOSS, Review]
+category: 'Single-board Computer releated'
 draft: false
 lang: 'zh_TW'
 ---
@@ -181,12 +181,12 @@ NUMA:
 
 ![Q6a unixbench result](assets/q6a-bench-result.png)
 
-這個分數比 Rasperry Pi 5 的效能要好（3594 分），但明顯不如 Oneplus 6T（6030 分）。如果用 Android 手機處理器比較，大致相當於2025年中階 Android 手機水平。按理說QCS6490 CPU 效能不應該如此差勁呀，是因為我使用記憶卡開機的緣故？等之後給我的單板機加裝SSD再試試看。</br>
+這個分數比 Raspberry Pi 5 的效能要好（3594 分），但明顯不如 Oneplus 6T（6030 分）。如果用 Android 手機處理器比較，大致相當於2025年中階 Android 手機水平。按理說QCS6490 CPU 效能不應該如此差勁呀，是因為我使用記憶卡開機的緣故？等之後給我的單板機加裝SSD再試試看。</br>
 接下來是 `7zip` 壓縮效能測試（不使用散熱裝置，使用記憶卡開機），總分20157 MIPS。
 
 ![7zip benchmarking result](assets/q6a-7zip-bench-result.png)
 
-Q6A 和我的 Nothing Phone 1（19062 MIPS）效能大致相同，依舊要優於 Rasperry Pi 5（13263 MIPS）</br>
+Q6A 和我的 Nothing Phone 1（19062 MIPS）效能大致相同，依舊要優於 Raspberry Pi 5（13263 MIPS）</br>
 在核心編譯方面，使用[同樣的 SM8750 主線核心原始碼](https://github.com/Xlie-Electronic-Customs/linux)，從原始碼編譯核心，Q6A 用了15分鐘，Rock 5B 用了32分鐘。作為對比用的驍龍筆電則需要大概5分鐘。
 </br>
 另外，晶片內建的 Adreno 643 繪圖卡可以通過 `freedreno` 核心模組被主線核心支援。有 GPU 加速的話，播放影片和玩遊戲都不是問題。然而因為主線核心缺乏硬體解碼器的支援，這臺 Q6A 單板機完全無法播放 4K YouTube 影片，使用 `htop` 檢視 CPU 利用率偏高。在沒有風扇的情況下，核心溫度可能會飆到90度。
