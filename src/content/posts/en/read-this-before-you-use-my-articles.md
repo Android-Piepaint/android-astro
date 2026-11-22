@@ -2,7 +2,7 @@
 title: A Guide to Properly Citing and Reusing Personal Blog Articles
 published: 2026-11-19
 description: ''
-image: "./cover.jpeg"
+image: "minecraft-niri.png"
 tags: ["License", "Blogging", "Sharing"]
 category: Guides
 draft: false
