@@ -2,7 +2,7 @@
 title: 留意事項 -- 如何正確的引用本部落格所寫之文書
 published: 2026-11-19
 description: 因個人部落格所載之文書被「內容農場」及類似自動化程式大量盜取，更有甚者還進行牟利，故作本引用準則一篇。
-image: 'assets/minecraft-niri.png'
+image: './minecraft-niri.png'
 tags: ["License", "Blogging", "Sharing"]
 category: Guides
 draft: false
