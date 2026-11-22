@@ -78,7 +78,7 @@ Piepaint 用自己目前使用的 Radxa Dragon Q6A 開發板和正在移植 main
 
 QCS6490 已經具有相當不錯的 Upstream Linux Kernel 支援，[Radxa Dragon Q6A 的專用 Device Tree](https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/qcom/qcs6490-radxa-dragon-q6a.dts) 也已進入 Linux 主線。這讓開發者有機會直接使用 Mainline Kernel 進行系統移植，而不必完全依賴廠商提供的 downstream kernel。不過，部分專用硬體及協處理器仍可能需要額外的 Firmware 或廠商驅動程式。</br>
 
-> _\*\*: 需要注意的是，UEFI 並不一定使用 ACPI 描述硬體。在 ARM64 嵌入式平臺上，也經常使用 Device Tree（DTB）向 Linux Kernel 傳遞硬體資訊。不同 UEFI 平臺的實作方式也可能有所不同，包含的組件也可能各異。例如 LA 平臺的 UEFI 沒有 ACPI tables 和 SMBIOS，亦不支援修改開機引導順序。更沒有提供一般 PC UEFI Setup 中常見的開機順序修改介面。_
+> _\*\*: 需要注意的是，UEFI 並不一定使用 ACPI 描述硬體。在 ARM64 嵌入式平臺上，也經常使用 Device Tree（DTB）向 Linux Kernel 傳遞硬體資訊。不同 UEFI 平臺的實作方式也可能有所不同，包含的組件也可能各異。例如 LA 平臺的 UEFI 沒有 ACPI tables 和 SMBIOS，亦沒有提供一般 PC UEFI Setup 中常見的開機順序修改介面。可以通過覆寫 `uefivarstore` 分割的內容來調整開機次序。_
 
 ## 行動裝置開發的「源泉」：SM8750 MTP 原型機
 
@@ -94,7 +94,7 @@ SM8750 MTP 是 Qualcomm 行動 SoC 的工程驗證平台，主要面向 OEM，OD
 - 記憶體：16GB LPDDR5X，對於 Linux Kernel 和 Buildroot 等大型專案的編譯相當有幫助。較大的記憶體容量允許系統同時執行更多 Compiler Jobs，減少因記憶體不足而使用 Swap 的情況。在效能要求較低的日常使用中，則可以同時使用更多程式，降低因記憶體不足而觸發 OOM Killer 的機率。
 - 512GB UFS 4.0：UFS 這類使用 SCSI 命令集進行儲存裝置通訊的快閃記憶體能夠顯著改善原型機的 I/O 效能，提升開機速度。其存取速度已經可以同 SATA3.0 或者 NVMe SSD 相比擬。實際使用時，較快的儲存裝置可以改善系統開機，應用程式載入，大型檔案讀寫，以及 IDE 等開發工具的啟動體驗。
 - 多機能 Type-C USB 3.0：高速 USB Type-C 介面可用於連接各種外部設備，例如 USB Hub，外接儲存裝置，鍵盤和滑鼠。同時支援 DisplayPort Alt Mode，還可以搭配支援影像輸出的 USB-C Dock 或轉接器，將 MTP 連接到外接顯示器。
-- LA 平臺^ UEFI韌體：採用 EDK II 的 UEFI 實作，包含常見的 Boot Services，Runtime Services，Variable Services 等標準化服務，但是沒有 ACPI 支援，也沒有 SMBIOS。亦無法調整開機次序。僅提供純文字介面的 BDS Menu 供使用者設定 UEFI 韌體。
+- LA 平臺^ UEFI韌體：採用 EDK II 的 UEFI 實作，包含常見的 Boot Services，Runtime Services，Variable Services 等標準化服務，但是沒有 ACPI 支援，也沒有 SMBIOS。僅提供純文字介面的 BDS Menu 供使用者設定 UEFI 韌體。可以通過覆寫 `uefivarstore` 分割的內容來調整開機次序。
 - 1440 × 3120 解析度，最高 120Hz 更新率的 OLED 顯示面板：OLED 採用像素自發光技術，具有高對比度，純黑顯示及較好的色彩表現。由於每個像素可以獨立控制發光，顯示大量黑色內容時可能比傳統 LCD 更省電，但實際功耗仍取決於亮度、畫面內容及更新率。
 - Dual SIM support, 5G 數據機：整合 Snapdragon X80 5G Modem-RF，支援 5G NR 等行動網路技術。相較於一般 SBC，行動 SoC 工程平台最大的特色之一，就是可以直接研究 Modem，RF，SIM 和行動網路相關子系統。實際可用的頻段和雙 SIM 功能仍取決於 MTP 的 RF 硬體配置，天線，SIM 介面及韌體。5G 數據機還可以讓使用者隨時隨地存取高速的網際網路連線，即使沒有 Wi-Fi，乙太網路也無妨。
 - 支援外置 SD 卡: 提供外部 SD 卡儲存介面，可用於擴充容量，存放測試資料及建立獨立的測試系統。方便測試不同的 Linux Distribution 或 Kernel。</br>
