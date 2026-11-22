@@ -8,7 +8,7 @@ category: Guides
 draft: false
 ---
 
-請按此檢視英語和韓國語版本。</br>
+請按此檢視[英語](https://blog.cloudflare88.eu.org/posts/en/read-this-before-you-use-my-articles/)和[韓國語](https://blog.cloudflare88.eu.org/posts/ko/read-this-before-you-use-my-articles/)版本。</br>
 
 因個人部落格所載之文書被「內容農場」及類似自動化程式大量盜取，更有甚者還進行有償牟利，故作本引用準則一篇。</br>
 
