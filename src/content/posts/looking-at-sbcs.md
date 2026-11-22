@@ -2,7 +2,7 @@
 title: 一切奇蹟的始發點 —— 文書一篇，單板機的全部盡覽無遺
 published: 2026-11-19
 description: 妳有沒有試過用一台小小的板子，跑 Linux 或 BSD，還能同時經營自己的部落格、做 AI 推論，甚至玩 Minecraft？
-image: 'assets/mtp8750.jpg'
+image: 'assets/mtp8750-linux3.jpg'
 tags: [SBC, ARM, FOSS, Review]
 category: 'Single-board Computer releated'
 draft: false
