@@ -8,6 +8,12 @@ category: 'Single-board Computer releated'
 draft: false
 lang: 'zh_TW'
 ---
+
+:::note
+建議配合下面音樂瀏覽，效果更佳：
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Wljb8oJGx4g?si=ejwoQ82jxADsOudz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+:::
+
 妳有沒有想過，一個和信用卡大小相當的裝置，卻可以在上面跑 Linux 或 BSD，還可以經營自己的部落格，架設各種服務和容器，甚至在折騰一番後，還能透過 PCIe 通道外接獨立顯示卡來跑圖形運算或遊戲？這種「裝置」就是我們今天要介紹的硬體，也是最知名的嵌入式裝置：單板機。</br>
 
 # 單板機紹介
@@ -72,7 +78,7 @@ Piepaint 用自己目前使用的 Radxa Dragon Q6A 開發板和正在移植 main
 - 記憶體：12GB LPDDR5，12GB LPDDR5 記憶體對於 Linux Kernel 和 Buildroot 等大型專案的編譯相當有幫助。較大的記憶體容量允許系統同時執行更多 Compiler Jobs，減少因記憶體不足而使用 Swap 的情況。對於經常需要同時編譯多個 Kernel、建立交叉編譯工具鏈或執行容器的開發者而言，12GB 已經是一個相當實用的容量。</br>
 - 可更換的 EMMC/UFS 模組，改用 UFS 這類使用 SCSI 命令集進行儲存裝置通訊的快閃記憶體能夠顯著改善單板機的 I/O 效能，但一般情況下，使用 eMMC 足以滿足對於硬碟要求不高的場景(例如日常使用)。高階使用者也可以設置 PXE 網路開機。</br>
 - M.2 PCIe：板載 M.2 M-Key 2230 插槽，可用於安裝 NVMe SSD，提供比 UFS 更快的儲存效能。亦可安裝其它外部設備。可以根據使用需要添置擴展卡，以擴充單板機硬體機能。</br>
-- UEFI 韌體：高通晶片(MSM8998之後)均採用 EDK II 的 UEFI 韌體，包含常見的 Boot Services，Runtime Services，Variable Services 等標準化服務，以及 ACPI tables / Device tree 等啓動作業系統必須的組件**。UEFI 韌體儲存在 32MB 的 SPI NOR Flash 中。</br>
+- UEFI 韌體：高通晶片(MSM8998之後)均採用 EDK Ⅱ 的 UEFI 韌體，包含常見的 Boot Services，Runtime Services，Variable Services 等標準化服務，以及 ACPI tables / Device tree 等啓動作業系統必須的組件**。UEFI 韌體儲存在 32MB 的 SPI NOR Flash 中。</br>
 - USB 3.0 & USB 2：高速的 USB 3.0 接口可以用於連接高速外部硬體，亦可以用於更新開發板自己的 UEFI 韌體。此外也可以改善爲行動裝置移植 Linux 的體驗。</br>
 - GPIO:開發板提供 40-pin GPIO Header，支援 UART/SPI/I²C/I³C 等硬體通訊介面，可用於連接感測器，顯示器及各種外部控制設備。例如 POS 機的七段顯示器、電子模組和其他 IoT 周邊。搭配適當的驅動程式與外接電路，也可以使用 SPI 介面與外部 Flash 裝置通訊，甚至進行部分韌體燒錄工作。</br>
 
@@ -94,7 +100,7 @@ SM8750 MTP 是 Qualcomm 行動 SoC 的工程驗證平台，主要面向 OEM，OD
 - 記憶體：16GB LPDDR5X，對於 Linux Kernel 和 Buildroot 等大型專案的編譯相當有幫助。較大的記憶體容量允許系統同時執行更多 Compiler Jobs，減少因記憶體不足而使用 Swap 的情況。在效能要求較低的日常使用中，則可以同時使用更多程式，降低因記憶體不足而觸發 OOM Killer 的機率。
 - 512GB UFS 4.0：UFS 這類使用 SCSI 命令集進行儲存裝置通訊的快閃記憶體能夠顯著改善原型機的 I/O 效能，提升開機速度。其存取速度已經可以同 SATA3.0 或者 NVMe SSD 相比擬。實際使用時，較快的儲存裝置可以改善系統開機，應用程式載入，大型檔案讀寫，以及 IDE 等開發工具的啟動體驗。
 - 多機能 Type-C USB 3.0：高速 USB Type-C 介面可用於連接各種外部設備，例如 USB Hub，外接儲存裝置，鍵盤和滑鼠。同時支援 DisplayPort Alt Mode，還可以搭配支援影像輸出的 USB-C Dock 或轉接器，將 MTP 連接到外接顯示器。
-- LA 平臺^ UEFI韌體：採用 EDK II 的 UEFI 實作，包含常見的 Boot Services，Runtime Services，Variable Services 等標準化服務，但是沒有 ACPI 支援，也沒有 SMBIOS。僅提供純文字介面的 BDS Menu 供使用者設定 UEFI 韌體。可以通過覆寫 `uefivarstore` 分割的內容來調整開機次序。
+- LA 平臺^ UEFI韌體：採用 EDK Ⅱ 的 UEFI 實作，包含常見的 Boot Services，Runtime Services，Variable Services 等標準化服務，但是沒有 ACPI 支援，也沒有 SMBIOS。僅提供純文字介面的 BDS Menu 供使用者設定 UEFI 韌體。可以通過覆寫 `uefivarstore` 分割的內容來調整開機次序。UEFI 韌體和作業系統一同存儲在 UFS 快閃記憶體中，具有單獨的 frimware 分割，作業系統無法存取和修改其內容。
 - 1440 × 3120 解析度，最高 120Hz 更新率的 OLED 顯示面板：OLED 採用像素自發光技術，具有高對比度，純黑顯示及較好的色彩表現。由於每個像素可以獨立控制發光，顯示大量黑色內容時可能比傳統 LCD 更省電，但實際功耗仍取決於亮度、畫面內容及更新率。
 - Dual SIM support, 5G 數據機：整合 Snapdragon X80 5G Modem-RF，支援 5G NR 等行動網路技術。相較於一般 SBC，行動 SoC 工程平台最大的特色之一，就是可以直接研究 Modem，RF，SIM 和行動網路相關子系統。實際可用的頻段和雙 SIM 功能仍取決於 MTP 的 RF 硬體配置，天線，SIM 介面及韌體。5G 數據機還可以讓使用者隨時隨地存取高速的網際網路連線，即使沒有 Wi-Fi，乙太網路也無妨。
 - 支援外置 SD 卡: 提供外部 SD 卡儲存介面，可用於擴充容量，存放測試資料及建立獨立的測試系統。方便測試不同的 Linux Distribution 或 Kernel。</br>
@@ -157,6 +163,39 @@ Qualcomm 在 Snapdragon 835 以後的裝置中改爲了現在的 UEFI 啓動鏈�
 另外 XBL 可以被 U-Boot 所替換。一些沒有設置 eFUSE 安全啓動的裝置就可以使用 U-Boot 取代 XBL 作爲 UEFI 韌體實作。來精簡開機流程，並替換專有的 XBL 程式碼。
 :::
 
+## 設定序列埠連接
+
+序列埠(Serial Port)是單板機上最常見，重要性僅次於 JTAG 的底層除錯手段。尤其是與開機韌體(Bootloader)及核心早期啟動相關的 Debug Log，往往只能透過序列埠才能完整檢視。PC 上一般採用 RS-232 序列埠，單板機等嵌入式裝置多採用 UART 作爲主要序列埠介面。由於這類日誌經常包含裝置序號，硬體識別碼甚至系統環境資訊，在公開分享日誌前需要特別留意脫敏——這也是為什麼一般市售手機不會刻意留出實體 UART 介面的原因之一。</br>
+
+單板機的 UART 一般位於 GPIO PIN 上，此時需要結合廠家提供的 GPIO Pin map 來尋找。例如 Radxa Q6A 單板機的 UART 序列埠位於 GPIO 的[第6(GND)，第8(TX)，第10(RX)三個 pin](https://docs.radxa.com/en/dragon/q6a/system-config/uart-debug)，接線時務必記得 TX 與 RX 要**交叉相接**(板子的 TX 接轉接器的 RX，板子的 RX 接轉接器的 TX)，GND 則與 GND 相連。同時確認轉接器邏輯準位與開發板相符，多數單板機為 3.3V，切勿誤接 5V 或 RS-232 高壓電平。</br>
+
+:::warning
+
+絕對不要在任何 Radxa 開發板上連接 3.3V 或 5V 供電，這會燒毀 SoC GPIO 連接埠！在使用 Programmer 的 3.3V/5V 電源時，請確認裝置 UART 的實際需要電壓。可參閱廠家提供的文件或社群實驗結果做參考。
+:::
+
+在電腦上安裝 `minicom` 或 `putty` 之類可以存取 UART 控制臺的應用，指定鮑率，然後存取 UART 序列埠：</br>
+
+```bash
+# Qualcomm (或大部分)裝置 UART 鮑率一般爲 115200，部分平臺（如部分 Rockchip 板卡）則會使用 1500000 或 9600，具體請參閱廠商文件。
+sudo minicom -D /dev/ttyUSB0 -b 115200 
+```
+
+此時應該可以存取 UART console，可以在終端機裡打字。重開機單板機，就可以看到 boot log 了。</br>
+而對於 SM8750 MTP 這種開發裝置，因爲廠商事先做好了「免拆卸除錯(Closed-case debugging, CCD)」，裝置搭載了 FTDI（如 `FT232` / `FT4232`）等 USB-to-UART 橋接晶片，因此只需要一條對應的 USB 傳輸線與電腦相連即可讀取序列埠輸出，無需額外購買 USB-to-TTL 轉接器。</br>
+</br>
+如果 UART console 沒有顯示作業系統的 boot log，請修改核心開機引數，將系統的控制臺設定爲 UART console(例: `console=ttyMSM0,115200n8 earlycon no_console_suspend`)。
+
+:::tip
+如果妳在使用 UART 控制臺遇到下面的情況時，請檢查鮑率是否設定正確。不正確的鮑率會導致輸出訊息錯誤，亂碼，或者無法輸出任何資訊。
+
+> UART Log Example:</br>
+> EDKPiepaint: ...「世界」！時間靜止吧！Wrÿÿÿÿÿÿÿ⓹ÿÿ❾ÿ№˲©℗€₩₩‰ÿ℆÷&Ⅲ×ÿ・ÿÿ@##$%!₃²æ??????!————</br>
+
+出現這類大量 `ÿ` 字元通常是因為接收端鮑率設定得比裝置實際鮑率低所導致。序列埠閒置時處於高電位的「mark」狀態(編碼為二進位 `1`)；當兩端鮑率不匹配時，接收端會將高速傳輸的線路跳變誤判為起始位(Start Bit)，隨後在線路回到靜止的 mark 狀態後繼續取樣，結果把所有資料位元都讀成二進位 `1`(即 `0xFF`，在擴展 ASCII / Latin-1 中對應字元 `ÿ`)。</br>
+:::
+
+
 ## Primary Bootloader(PBL)
 
 ## Secondary Bootloader(SBL)
@@ -165,12 +204,79 @@ Qualcomm 在 Snapdragon 835 以後的裝置中改爲了現在的 UEFI 啓動鏈�
 
 # 創造屬於我們的世界：安裝適合自己的作業系統
 
+給單板機安裝作業系統，並不像想象中如此難艱。很多單板機廠家都會在自己的產品幫助文檔下附上支援度較好的社群開發，維護的作業系統。官方亦會釋出自己開發的作業系統(例如 Radxa OS，Raspberry Pi OS)。使用者只需要下載作業系統映像檔，然後使用 `dd` 命令語寫到SD卡上開機即可。一般社群維護的作業系統(如 Armbian, Arch Linux unofficial ports)都會採用 mainline kernel，使得作業系統核心與套件時刻保持最新。但主線核心可能對部分硬體支援不佳。</br>
+
+接下來，就讓 Piepaint 來演示，如何在 Radxa Dragon Q6A 單板機上安裝 Armbian Linux 作業系統。</br>
+Armbian Linux，全稱 Armbian GNU/Linux，是基於 Debian/Ubuntu 專門爲單板機，機上盒等嵌入式裝置開發，最佳化的 Linux 發行版。針對不同硬體平台提供相應的 Kernel，Device Tree，啟動配置及系統映像。並刪除了 Ubuntu 系統中無用的 bloatware (例如 Snap, Ubuntu Pro 訂閱[^4]...)。日常生活中需要的大部分需求，都可以在僅 TTY 控制臺的環境下輕鬆應對。因此妳可以用單板機實現很多以往需要專門伺服器才可以做的事(性相關的不可以！)。例如架設個人相簿，影音中心，GNSS 實時間授時伺服器，亦或是充當遠端控制其他裝置的「控制中心」。</br>
+
+本次示範將選擇 GNOME Desktop 映像，以便同時體驗圖形桌面和一般 Linux 開發環境。若妳只是想將 Q6A 用作家庭伺服器或無人值守的網路服務平台，則可以選擇 Minimal 或 Server 映像，減少不必要的桌面套件和資源消耗。</br>
+
+:::tip
+相較於完整桌面版 Debian/Ubuntu，Armbian 的 Minimal 和 Server 映像通常只預裝較精簡的系統套件，適合部署在資源有限的嵌入式裝置上。Desktop 映像則可以依照使用需求選擇 GNOME，KDE Plasma 等桌面環境。</br>
+下面的表格展示了它們的區別：</br>
+
+|映像類型|特點|用途|
+|-------|---|----|
+|Minimal|最精簡的 CLI 環境|	IoT，嵌入式，輕量服務|
+|Server|CLI 環境，包含常用伺服器工具及套件|自架服務，Docker 容器，Web Server 等|
+|Desktop|預載桌面環境|一般使用，工作站等|
+
+:::
+
+首先前往 [Armbian Linux 的官方網址](https://armbian.com/)，拒絕該網站的所有 Cookies 和追蹤器。點擊導航欄上的「Boards」，會來到硬體選擇的網頁。在下方的搜尋欄中鍵入「Dragon Q6A」(或[按此](https://armbian.com/boards/radxa-dragon-q6a)前往下載頁面)，前往系統映像下載頁面。</br>
+
+妳會看到很多不同功能的映像檔，一般都採用廠商釋出的 7.0.11 核心原始碼，或是 upstream 的 7.3 核心。本次示範將選擇基於 `Edge` Kernel 7.3.1 建置的映像。</br>
+
+相較於 Vendor Kernel，這個版本更適合用來研究較新的 Linux Mainline 變更，驅動程式和 Device Tree。不過，`Edge` 分支仍然屬於開發及測試用途，部分硬體可能尚未完全支援，也可能在後續更新中出現 Regression。若希望獲得更穩定的日常使用體驗，則應優先考慮官方標記為 Stable 的 Vendor Kernel 映像。</br>
+
+<img src="/assets/armbian-website-q6a.png">
+
+選擇基於 Ubuntu 26.04 的 GNOME 映像檔，採用 upstream kernel 建置，按下右邊的「Direct Download」來下載映像，同時按下右邊的「SHA」字樣，取得該映像的 SHA 雜湊值，建議下載完成後，使用 `sha256sum` 檢視檔案的雜湊值，與官方釋出的數值比對，防止下載時檔案被篡改。
+
+```bash
+sha256sum Armbian_26.11.2_Radxa-dragon-q6a_resolute_edge_7.3.1_gnome_desktop.img.xz
+```
+
+確認雜湊值正確後，準備 SD卡，或者使用官方的 eMMC/UFS 快閃記憶體模組，使用 `dd` 命令語將映像燒錄到 SD卡或 UFS 上(或者改用 Armbian Imager 無需在終端機鍵入指令)：
+
+```bash
+unxz ~/Downloads/Armbian_26.11.2_Radxa-dragon-q6a_resolute_edge_7.3.1_gnome_desktop.img.xz && sudo dd if=~/Downloads/Armbian_26.11.2_Radxa-dragon-q6a_resolute_edge_7.3.1_gnome_desktop.img of=/dev/sdX bs=1M status=progress conv=fsync
+```
+
+等待指令執行完成並安全移除裝置後，將 SD 卡插入單板機通電開機即可(若板子上同時裝有已寫入系統的 eMMC / UFS 或 NVMe SSD，開機時可能需要在啟動畫面進入 UEFI Boot Menu，手動選擇從 SD 卡開機)。</br>
+單板機開機完成後，按照螢幕上的設定指引，完成系統時區，裝置名稱，使用者相關的設定，完成初始化後，便可以正式進入 Armbian Linux，開始安裝自己需要的軟體和服務。除了軟體套件和開機流程不同外，安裝了 Armbian 的單板機和智慧手機與一般 x86 電腦無異。</br>
+下面的熒幕擷取畫面展示了安裝 Armbian 的 Radxa Q6A 單板機，注意「Kernel」一欄展示的核心版本爲「6.18」，因圖片擷取時間較早，不能反應當前的實際情況。
+
+<img src="/assets/q6a-fastfetch.png">
 
 
+:::tip[Vendor kernel 與 Mainline kernel 的差異]
+Vendor kernel(也作 downstream kernel)，是以晶片廠商或開發板廠商提供的核心為基礎，包含尚未合併到 Linux Mainline 的專用驅動，Patch 和硬體初始化程式。相比主線核心，downstream kernel 的硬體支援程度較佳。</br>
+但是核心版本可能較爲老舊，核心很難更新。甚至根本不可能更新。所有的 Android 手機都採用晶片廠家 BSP 的 heavily modified downstream kernel 作爲 Vendor kernel[^5]。</br>
+Mainline kernel，使用 Linux Kernel 官方主線原始碼，方便追蹤最新開發，參與 Upstream 和進行不同平台之間的技術移植。相較於依賴特定廠商 BSP，Mainline Kernel 通常具有更好的長期維護性和通用性。但部分硬體可能尚未有完整驅動。
+:::
+
+在單板機上建置常用軟體也非常容易。大多數自由軟體都提供原始碼和詳細的編譯指南，使用者僅需按照指南說明安裝建置用的相依套件，然後鍵入 `make` 即可編譯。不同單板機的 CPU 架構，記憶體容量和硬體加速能力有所差異，某些大型專案可能需要調整編譯參數，甚至使用交叉編譯工具鏈。</br>
+如果妳想要了解作業系統的硬體支援情況，或者探究相關使用指導，可以前往對應作業系統的裝置支援列表檢視。許多社群專案也會在 `README` 中列明目前裝置的支援情況。例如 Nura(曾用名 PostmarketOS) Wiki 就是一個很好的參考：</br>
+
+<img src="/assets/pmos-wiki-q6a-device.png">
+
+Linux 發行版內建的 `man` 工具也爲使用者提供了命令的基本用法等指南。</br>
+在實際活用中，搜尋 Linux 和嵌入式裝置相關的書籍或網路資料來學習也是不錯的做法，也是重要的學習手段。</br>
+
+# 寫在最後：在方寸電路板上，親手點亮屬於自己的世界
+
+從認識這塊僅有信用卡大小的單板電腦開始，我們一路拆解了它與傳統 x86 電腦、微控制器之間的界線，比較了 Radxa Dragon Q6A 這類市售開發板與 Qualcomm SM8750 MTP 工程原型機的硬體底蘊，親手透過 `dd` 將 Armbian 寫入儲存介質，最後順著 UART 串口終端機上滾動的字元，見證了從 PBL，XBL，UEFI 一路交棒至 Linux Kernel 的整場開機「奇跡」。</br>
+
+許多人初接觸嵌入式裝置時，往往會對黑漆漆的螢幕，繁雜的 Device Tree 或是滿螢幕的 Bootlog 感到卻步；但當妳真正接上那幾條杜邦線、看懂串口吐出的第一行訊息時就會發現，單板機最迷人的地方從來不只是「便宜」或「省電」，而是**它願意把系統底層的每一寸控制權交還到妳手上**——沒有黑盒子的束縛，每一次編譯，每一次除錯，都是人與硬體最直接的對話。</br>
+
+無論妳手邊的是一張入門級的樹莓派、一塊用來折騰主線核心的 Radxa Dragon Q6A，還是一台充滿未知挑戰的工程原型機，不妨現在就找出那條 USB-to-TTL 串口線，接上 TX，RX 與 GND，按下電源鍵。屬於妳的嵌入式世界，就從終端機跳出第一個字元的那一刻正式啟程。</br>
 
 
-[^1]: :官方建議搭配 30W 電源供應器。實際功耗則會依照 CPU 負載，外接裝置和周邊使用情況而有所不同。
+[^1]:官方建議搭配 30W 電源供應器。實際功耗則會依照 CPU 負載，外接裝置和周邊使用情況而有所不同。
     
-[^2]: :大部分 SBC 的 CPU 和 RAM 都焊接在 PCB 上，不能像傳統桌面電腦一樣更換 CPU 或增加 DIMM 記憶體。
+[^2]:大部分 SBC 的 CPU 和 RAM 都焊接在 PCB 上，不能像傳統桌面電腦一樣更換 CPU 或增加 DIMM 記憶體。
     
-[^3]: :不同作業系統，Kernel，CPU Governor 和散熱環境都可能影響最終成績，因此不應將這組分數視為兩款 SoC 的絕對性能排名。試驗時將 Radxa Q6A 置於20攝氏度的環境，使用 Armbian 和 6.18 核心，無散熱風扇，使用記憶卡開機測得。
+[^3]:不同作業系統，Kernel，CPU Governor 和散熱環境都可能影響最終成績，因此不應將這組分數視為兩款 SoC 的絕對性能排名。試驗時將 Radxa Q6A 置於20攝氏度的環境，使用 Armbian 和 6.18 核心，無散熱風扇，使用記憶卡開機測得。
+[^4]:儘管 Ubuntu Pro 是免費的，使用者可以藉此免費獲得5年的安全性更新支援。
+[^5]:現在 Android 裝置使用的 GKI(Generic Kernel Image)將通用核心與 Vendor Kernel Modules 分離，因此依然基於廠商和晶片廠家的 BSP downstream kernel 修改而來。亦包含大量平台專用驅動和韌體。

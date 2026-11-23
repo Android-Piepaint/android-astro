@@ -56,7 +56,7 @@ lang: 'zh_TW'
 
 忘記之前在 Duckduckgo 上爬文的時候在哪裏看到的一段總結了，覺得對於高通平臺的總結非常正確：</br>
 
-> 「這或許就是高通「萬物基於 Android 的」理念，把手機上 Bootloader 鎖的概念帶到了筆電上。基於軟體的 UEFI Secure boot （高通的開機韌體基於 Coreboot 和 EDK II UEFI 開發，叫做「Core platform boot」）可以關掉，但是熔燬在 eFUSE 上的硬體 secure boot 卻不能關掉。」</br>
+> 「這或許就是高通「萬物基於 Android 的」理念，把手機上 Bootloader 鎖的概念帶到了筆電上。基於軟體的 UEFI Secure boot （高通的開機韌體基於 Coreboot 和 EDK Ⅱ UEFI 開發，叫做「Core platform boot」）可以關掉，但是熔燬在 eFUSE 上的硬體 secure boot 卻不能關掉。」</br>
 
 所謂的「爲了使用者安全」，實際是用「安全」爲名，限制了使用者的自由，阻止了使用者隨意的更換軟硬體。難怪史托曼從來不會看上 Arm 筆電！雖然不會像 Intel，AMD 那樣在 Microcode 或者 硬體內內建「後門（Intel ME 管理引擎就是例子)」，但卻可以做出比 X86 更加限制使用者自由的行爲來（例如 Lenovo 在自家的驍龍筆電上限制 EDL 刷機的 「VIP 映像驗證」）。
 
