@@ -100,7 +100,7 @@ SM8750 MTP 是 Qualcomm 行動 SoC 的工程驗證平台，主要面向 OEM，OD
 - 記憶體：16GB LPDDR5X，對於 Linux Kernel 和 Buildroot 等大型專案的編譯相當有幫助。較大的記憶體容量允許系統同時執行更多 Compiler Jobs，減少因記憶體不足而使用 Swap 的情況。在效能要求較低的日常使用中，則可以同時使用更多程式，降低因記憶體不足而觸發 OOM Killer 的機率。
 - 512GB UFS 4.0：UFS 這類使用 SCSI 命令集進行儲存裝置通訊的快閃記憶體能夠顯著改善原型機的 I/O 效能，提升開機速度。其存取速度已經可以同 SATA3.0 或者 NVMe SSD 相比擬。實際使用時，較快的儲存裝置可以改善系統開機，應用程式載入，大型檔案讀寫，以及 IDE 等開發工具的啟動體驗。
 - 多機能 Type-C USB 3.0：高速 USB Type-C 介面可用於連接各種外部設備，例如 USB Hub，外接儲存裝置，鍵盤和滑鼠。同時支援 DisplayPort Alt Mode，還可以搭配支援影像輸出的 USB-C Dock 或轉接器，將 MTP 連接到外接顯示器。
-- LA 平臺^ UEFI韌體：採用 EDK Ⅱ 的 UEFI 實作，包含常見的 Boot Services，Runtime Services，Variable Services 等標準化服務，但是沒有 ACPI 支援，也沒有 SMBIOS。僅提供純文字介面的 BDS Menu 供使用者設定 UEFI 韌體。可以通過覆寫 `uefivarstore` 分割的內容來調整開機次序。UEFI 韌體和作業系統一同存儲在 UFS 快閃記憶體中，具有單獨的 frimware 分割，作業系統無法存取和修改其內容。
+- LA 平臺^ UEFI韌體：採用 EDK Ⅱ 的 UEFI 實作，包含常見的 Boot Services，Runtime Services，Variable Services 等標準化服務，但是沒有 ACPI 支援，也沒有 SMBIOS。僅提供純文字介面的 BDS Menu 供使用者設定 UEFI 韌體。可以通過覆寫 `uefivarstore` 分割的內容來調整開機次序。UEFI 韌體和作業系統一同存儲在 UFS 快閃記憶體中，具有單獨的 firmware 分割，作業系統無法存取和修改其內容。
 - 1440 × 3120 解析度，最高 120Hz 更新率的 OLED 顯示面板：OLED 採用像素自發光技術，具有高對比度，純黑顯示及較好的色彩表現。由於每個像素可以獨立控制發光，顯示大量黑色內容時可能比傳統 LCD 更省電，但實際功耗仍取決於亮度、畫面內容及更新率。
 - Dual SIM support, 5G 數據機：整合 Snapdragon X80 5G Modem-RF，支援 5G NR 等行動網路技術。相較於一般 SBC，行動 SoC 工程平台最大的特色之一，就是可以直接研究 Modem，RF，SIM 和行動網路相關子系統。實際可用的頻段和雙 SIM 功能仍取決於 MTP 的 RF 硬體配置，天線，SIM 介面及韌體。5G 數據機還可以讓使用者隨時隨地存取高速的網際網路連線，即使沒有 Wi-Fi，乙太網路也無妨。
 - 支援外置 SD 卡: 提供外部 SD 卡儲存介面，可用於擴充容量，存放測試資料及建立獨立的測試系統。方便測試不同的 Linux Distribution 或 Kernel。</br>
@@ -184,6 +184,44 @@ sudo minicom -D /dev/ttyUSB0 -b 115200
 
 ```text
 SoC Power reset -> PBL(CPBL --> APBL) -> XBL(UEFI) -> Standard UEFI boot flow(SEC -> PEI -> DXE -> BDS -> TSL -> EBS -> RT) -> UEFI OS Loader*** -> HLOS Kernel*****
+```
+```text
+SoC power reset
+       │
+       ▼
+   PBL (CPBL/APBL)
+       │
+       ▼
+   SBL / XBL
+       │
+       ├──────────────► Gunyah Hypervisor
+       │                       │
+       ▼                       │
+      UEFI       ◄─────────────┘
+       │
+       ▼
+      SEC
+       │
+       ▼
+      PEI
+       │
+       ▼
+      DXE
+       │
+       ▼
+      BDS
+       │
+       ▼
+   TSL / OS Loader
+       │
+       ▼
+      EBS
+       │
+       ▼
+      RT
+       │
+       ▼
+   HLOS Kernel
 ```
 
 :::note
@@ -287,7 +325,8 @@ PBL 儲存在晶片內部的 BootROM 中，這一部分的程式一經寫入便�
 ## Secondary Bootloader(SBL)
 
 SBL(Secondary Bootloader)接過來自 PBL 的程式碼指令，還有她畢生的心願，開始了另一場「單程旅途」...</br>
-SBL 經過 PBL 的有效簽章驗證後，會開始硬體初始化(硬體總線，DDR，硬體時鐘，CDT，USB 控制器，電源管理等)及自檢(POST)流程，此後會設定 QSEE，讀取 QHEE 配置檔配置所支援的硬體特性。在新平臺(8650之後)上，還會驗證並設定 SOCCP，PDP，Hypervisor 等機能。自 SD835(MSM8998)晶片後，SBL 被擴展性更好，相容 UEFI 標準的 XBL 所取代，因此 SBL 這一概念在現今的裝置上不復存在，這裡描述 SBL 所負責的事務也是 XBL 要負責的事務。但 boot log 依然可以看到 SBL 的身影。</br>
+
+SBL 經過 PBL 的有效簽章驗證後，會開始硬體初始化(硬體總線，DDR，硬體時鐘，CDT，USB 控制器，電源管理等)及自檢(POST)流程，此後會設定 QSEE，讀取 QHEE 配置檔配置所支援的硬體特性。在新平臺(8650之後)上，還會驗證並設定 SOCCP，PDP，Hypervisor 等機能。Qualcomm 不同世代的 SoC 採用過不同的 Bootloader 架構。早期平台常見 SBL(Secondary Bootloader)等階段；後續平台則逐步採用 XBL(eXtensible Bootloader)架構，並將原本由多個 Bootloader 元件負責的工作重新組織。</br>
 爲了方便程式開發人員除錯，SBL/XBL 還提供基於 Qualcomm 專有 Sahara 協定的記憶體轉儲和崩潰轉儲模式(Qualcomm Memory Dump & CrashDump mode*)，此時 Host 可以透過 Sahara 協定與裝置通訊，讀取 Bootloader 所提供的記憶體區段，建立 RAM Dump，供開發者分析系統崩潰原因。</br>
 
 > _*:俗名「900E」埠，因爲其 USB Product ID 爲 900E 而得名。_
@@ -529,11 +568,12 @@ SBL/XBL 在整個開機流程中扮演了相當重要的角色，如果說前面
 ## Extensible Bootloader(XBL), UEFI kicks in
 
 XBL 被 SBL 加載之後，便會按照編譯韌體時產生的 `xbl_config` 分割中的內容，設定 XBL 執行環境，此後開始硬體初始化(硬體總線，DDR，硬體時鐘，CDT，USB 控制器，電源管理等)及自檢(POST)流程，此後會設定 QSEE，讀取 QHEE 配置檔配置所支援的硬體特性。在新平臺(8650之後)上，還會驗證並設定 SOCCP，PDP，Hypervisor 等機能。</br>
+
 之後會加載基於 EDK Ⅱ 的 UEFI 韌體，包含完整的 UEFI Runtime services，Boot services 和 Variable services。開始 UEFI 平臺的標準啟動流程。承載着大家對自由世界和可信計算的渴望，UEFI 開始了屬於她的「單向旅程」，也是整個開機流程的「最後旅程」。高通平臺的 UEFI 韌體開機流程與 x86 PC 基本一致。</br>
 
 ### UEFI Start, SEC(Security Phase) 階段開始
 
-當 UEFI 韌體被 XBL 執行後，SEC 階段也就自然開始了。SEC 是整個 UEFI 開機流程中最先開始的階段，負責建立 UEFI 韌體最初始的執行環境。其入口程式通常包含與處理器架構相關的低階組合語言程式碼，並可搭配 C 語言實作其他初始化功能。其主要工作包括：建立供後續程式使用的 Temporary RAM(臨時記憶體區段，在 Arm 裝置上，一般是 SoC 的 boot processor)。在高通裝置上，這個 Boot processor 是由 PBL 預先初始化的一個 CPU 核心所負責。建立初始 Stack，準備 PEI Foundation 所需的執行環境。SEC 是 UEFI 信任啟動鏈的根基(Root of trust)，負責延續既有的信任啟動鏈，必要時驗證下一階段韌體的完整性。同時向下一階段傳遞臨時用記憶體的區段位址，硬體平臺的資訊和可用棧的大小。</br>
+當 UEFI 韌體被 XBL 執行後，SEC 階段也就自然開始了。SEC 是整個 UEFI 開機流程中最先開始的階段，負責建立 UEFI 韌體最初始的執行環境。其入口程式通常包含與處理器架構相關的低階組合語言程式碼，並可搭配 C 語言實作其他初始化功能。其主要工作包括：建立供後續程式使用的 Temporary RAM(臨時記憶體區段，例如利用 SoC 內部 SRAM 或其他平台提供的暫存記憶體)。在高通裝置上，這個 Boot processor 是由 PBL 預先初始化的一個 CPU 核心所負責。建立初始 Stack，準備 PEI Foundation 所需的執行環境。SEC 是 **UEFI 信任啟動鏈**的根基(Root of trust)，負責延續既有的信任啟動鏈，必要時驗證下一階段韌體的完整性。同時向下一階段傳遞臨時用記憶體的區段位址，硬體平臺的資訊和可用棧的大小。</br>
 
 ```yaml
 UEFI Start     [ 2235]
@@ -552,6 +592,7 @@ Timer Delta   : +1 mS
 ### PEI(Pre-EFI Initialization)階段
 
 PEI 是 UEFI 開機流程的第二個階段，主要負責完成必要的硬體初始化，建立永久記憶體環境，準備 DXE 階段所需的硬體資源資訊，和 UEFI 韌體更新/恢復等機能。另外 PEI 還會檢查當前裝置的啟動狀態(boot status，例如 Normal boot，Cold boot，Firmware update)。在 WP 這種支援 ACPI 的裝置平臺上，還需要處理 ACPI sleep 相關的動作。例如負責將處於 S3 sleep 的硬體恢復到睡眠前的正常狀態。</br>
+
 PEI 由 PEI Foundation, PEI Dispatcher, PEIM 和 PPI(PEIMs-to-PEIMs Interfaces) 四部分組合而成。PEI 階段的程式碼需要儘量精簡，因為此時可使用的記憶體和系統服務仍然有限。與 DXE 相比，PEI 所提供的服務相對簡單，因此大部分較複雜的硬體初始化及驅動程式工作會留到 DXE 階段處理。</br>
 
 ```yaml
@@ -762,6 +803,7 @@ BDS Entry      [ 3164]  # 進入 BDS 階段。
 ### BDS(Boot Device Select)階段
 
 BDS 是緊接在 DXE 之後的 UEFI 開機階段，負責選擇開機裝置，以及載入作業系統或其他 EFI 應用程式。當 DXE Dispatcher 完成必要的驅動程式派遣，平台所需的 UEFI Protocol 與服務也大致就緒後，韌體便會進入 BDS 階段，開始決定接下來要從哪個裝置，以何種方式啟動作業系統或其他 EFI 程式。</br>
+
 在標準 UEFI 開機流程中，BDS 會依據 Boot Manager 的設定與 Boot Option，尋找可用的開機項目，並嘗試載入對應的 EFI 映像。這個階段也可能提供開機選單，裝置選擇，USB 開機及其他功能。</br>
 從這次 SM8750 MTP 的 UART Log 可以看到，`QcomBds.efi` 雖然早在 DXE 階段便已載入，但直到 `BDS Entry [3164]` 出現，才代表韌體正式進入 BDS。接下來就來看看 Qualcomm 的 QcomBds 如何處理開機選項，以及它如何將控制權交給後續的 Android Bootloader（ABL）或其他 EFI 開機程式。
 
@@ -810,6 +852,7 @@ ConvertPages: failed to find range 1C22E0000 - 1C22FEFFF
 ### TSL(Transient System Load) 與 RT(Runtime)
 
 當 BDS 找到合適的開機項目，並成功載入對應的 EFI 映像後，開機流程便會進入 TSL(Transient System Load)階段。此時，韌體已經完成大部分必要的硬體初始化，接下來則由被載入的 OS Loader 接手，繼續完成作業系統的啟動工作。屬於 UEFI 的單程旅途，也即將走到終點...</br>
+
 以一般 UEFI 開機流程而言，這個階段通常會執行作業系統的 Bootloader，例如 GRUB 或 `systemd-boot`。Bootloader 可以繼續使用 UEFI Boot Services，讀取檔案，取得記憶體配置資訊，載入 OS Kernel 並準備將控制權交給作業系統。</br>
 
 當 Bootloader 完成準備工作，並呼叫 `ExitBootServices()`(EBS) 後，UEFI Boot Services 便正式終止，系統進入 RT(Runtime)階段。從這一刻起，作業系統接管硬體與系統資源的管理；不過，部分 UEFI Runtime Services 仍會保留下來，供作業系統在開機後使用，例如讀取或修改 UEFI Variables，以及取得系統時間等功能。</br>
